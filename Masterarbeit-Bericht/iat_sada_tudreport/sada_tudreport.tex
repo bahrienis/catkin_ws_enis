@@ -1,0 +1,130 @@
+% =================================================================================
+% Hier auswählen, ob TUD-Design oder nicht
+% =================================================================================
+\newif\ifTUDdesign
+\TUDdesigntrue					% TUD-Design
+%\TUDdesignfalse				% Für Rechner ohne installierte TUDdesign-Pakete
+% =================================================================================
+
+
+% =================================================================================
+% Hier Daten für studentische Arbeit eingeben
+% =================================================================================
+\newcommand{\SADATyp}{Master Thesis}
+\newcommand{\SADATitel}{Kamerabasierte Fahrbahnerkennung zur automatisierten Fahrbahnführung eines Modellauto}
+\newcommand{\SADAStadt}{Darmstadt}
+\newcommand{\SADAAutor}{Bahri Enis Demirtel}
+\newcommand{\SADABetreuer}{Dr. -Ing. Eric Lenz}
+\newcommand{\SADABetreuerII}{}
+\newcommand{\SADABetreuerIII}{}
+\newcommand{\SADABegin}{02. May 2017}
+\newcommand{\SADAAbgabe}{02. November 2017}
+\newcommand{\SADASeminar}{15. November 2017}
+% =================================================================================
+
+
+% =================================================================================
+% Auswahl des IAT-Fachgebiets (rtm / rtp)
+% =================================================================================
+\newif\ifrtm
+\rtmtrue	% rtm
+%\rtmfalse	% rtp
+% =================================================================================
+
+
+% =================================================================================
+% Erklärung, dass die Arbeit ohne Hilfe Dritter etc. erstellt wurde
+% =================================================================================
+\def\SADAVarianteErklaerung{ETIT}		% FB 18, Elektrotechnik
+%\def\SADAVarianteErklaerung{MBDA}		% FB 16, Maschinenbau, Diplomarbeit
+%\def\SADAVarianteErklaerung{MBSA}		% FB 16, Maschinenbau, Studienarbeit
+% =================================================================================
+
+
+% =================================================================================
+% Ausnahmen von der automatischen Silbentrennung
+% =================================================================================
+\hyphenation{Aktu-ali-sie-rung Screen-shots Pa-rallel-ro-bo-ter Zu-stands-raum-mo-del-le nach-voll-zieh-bar Pro-jekt-se-mi-nar}
+% =================================================================================
+
+
+% =================================================================================
+% Hier NICHTS ändern!
+% =================================================================================
+\ifTUDdesign
+	% Ggf. Option "numbers=noenddot" einfügen, damit "Abbildung 3.1: _" statt "Abbildung 3.1.: _" verwendet wird.
+	\documentclass[11pt, twoside, colorback, accentcolor=tud2c, nopartpage, bigchapter, fleqn, ngerman, longdoc]{tudreport}
+\else
+	\documentclass[11pt, a4paper, twoside, fleqn, ngerman]{scrreprt}
+  % Für Entwurf auf Rechnern ohne installierte TUDdesign-Pakete	
+	\usepackage{exscale}	% Korrektur math-Zeichen
+	\usepackage{eurosym}
+\fi
+\input{common/includes.tex}				% verwendete Pakete einbinden
+\input{common/setup.tex}					% LaTeX-Einstellungen
+\input{common/commonmacros.tex}		% oft verwendete Befehle
+% =================================================================================
+
+
+% =================================================================================
+% Hier beginnt das eigentliche Dokument
+% =================================================================================
+\begin{document}
+\input{common/preface.tex} % Titelseite, Aufgabenstellung, Erklärung, Abstract, Inhaltsverzeichnis, etc.
+
+\input{inc/Introduction.tex}
+\input{inc/Tipps.tex}
+%\input{inc/Hinweise_Allgemein.tex}
+\input{inc/Hinweise_LaTeX.tex}
+\input{inc/Verzeichnisstruktur.tex}
+\input{inc/Zusammenfassung.tex}
+
+
+% =================================================================================
+% Anhang
+% =================================================================================
+\appendix % Damit wird der Anhang begonnen. Die Kapitel werden ab jetzt mit Buchstaben nummeriert
+
+\input{inc/Anhang.tex}
+
+\input{inc/commonmacros_desc.tex}
+
+% =================================================================================
+
+
+%% =================================================================================
+%% Abbildungsverzeichnis
+%% =================================================================================
+%\cleardoublepage
+%\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+%\addcontentsline{toc}{chapter}{\listfigurename}	% In Inhaltsverzeichnis von
+%												% Dokument und pdf aufnehmen
+%\listoffigures
+%% =================================================================================
+%
+%% =================================================================================
+%% Tabellenverzeichnis
+%% =================================================================================
+%\cleardoublepage
+%\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+%\addcontentsline{toc}{chapter}{\listtablename}	% In Inhaltsverzeichnis von
+%												% Dokument und pdf aufnehmen
+%\listoftables
+%% =================================================================================
+
+% =================================================================================
+% Literaturverzeichnis
+% =================================================================================
+\cleardoublepage
+\phantomsection					% Für Aufnahme ins Inhaltsverzeichnis
+\addcontentsline{toc}{chapter}{\bibname}	% In Inhaltsverzeichnis von
+											% Dokument und pdf aufnehmen
+%\bibliographystyle{gerabbrv}	% Verweise nummeriert in eckigen Klammern, alphabetisch sortiert
+\bibliographystyle{gerunsrt}	% Verweise nummeriert in eckigen Klammern, nach Erscheinung sortiert
+
+
+\bibliography{./bib/literature}	% Literaturverzeichnis einfügen, mit Angabe der
+								% Bibtex-Datei
+% =================================================================================
+
+\end{document}

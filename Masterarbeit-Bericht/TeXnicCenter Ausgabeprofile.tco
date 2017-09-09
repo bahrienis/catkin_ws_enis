@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<txcop:outputProfiles version="1" xmlns:txcop="http://schemas.ToolsCenter.org/TeXnicCenter/OutputProfiles.xsd">
+	<outputProfileList>
+		<outputProfile name="LaTeX =&gt; PS =&gt; PDF" stopOnLatexError="false">
+			<texCommand execute="true" path="C:\Programme\MiKTeX 2.9\miktex\bin\latex.exe" arguments="--src -interaction=nonstopmode &quot;%Wm&quot; -synctex=-1 --extra-mem-top=8000000"/>
+			<bibTexCommand execute="true" path="C:\Programme\MiKTeX 2.9\miktex\bin\bibtex.exe" arguments="&quot;%bm&quot;"/>
+			<makeIndexCommand execute="true" path="C:\Programme\MiKTeX 2.9\miktex\bin\makeindex.exe" arguments="&quot;%tm.idx&quot; -t &quot;%tm.ilg&quot; -o &quot;%tm.ind&quot;"/>
+			<preProcessors/>
+			<postProcessors>
+				<processor name="DviPs (PDF)" path="C:\Programme\MiKTeX 2.9\miktex\bin\dvips.exe" arguments="-P pdf &quot;%Bm.dvi&quot;" inputFile="" outputFile=""/>
+				<processor name="Ghostscript (ps2pdf)" path="C:\Programme\GhostScript\bin\gswin32c.exe" arguments="-sPAPERSIZE=a4 -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=&quot;%bm.pdf&quot; -c save pop -f &quot;%bm.ps&quot;" inputFile="" outputFile=""/>
+			</postProcessors>
+			<viewer path="C:\Programme\SumatraPDF\SumatraPDF.exe" closeBeforeCompilation="false">
+				<viewProjectCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="C:\Programme\SumatraPDF\SumatraPDF.exe" server="SUMATRA" topic="control" command="[Open(&quot;%bm.pdf&quot;,0,0,1)]"/>
+				</viewProjectCommand>
+				<viewCurrentFileCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="C:\Programme\SumatraPDF\SumatraPDF.exe" server="SUMATRA" topic="control" command="[ForwardSearch(&quot;%bm.pdf&quot;,&quot;%Wc&quot;, %l,0,0,0)]"/>
+				</viewCurrentFileCommand>
+				<viewCloseCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="" server="acroviewR10" topic="control" command="[DocClose(&quot;%bm.pdf&quot;)]"/>
+				</viewCloseCommand>
+			</viewer>
+		</outputProfile>
+		<outputProfile name="LaTeX =&gt; PDF" stopOnLatexError="false">
+			<texCommand execute="true" path="C:\Programme\MiKTeX 2.9\miktex\bin\pdflatex.exe" arguments="-interaction=nonstopmode &quot;%pm&quot; -synctex=-1 --extra-mem-top=80000000"/>
+			<bibTexCommand execute="true" path="C:\Programme\MiKTeX 2.9\miktex\bin\bibtex.exe" arguments="&quot;%bm&quot;"/>
+			<makeIndexCommand execute="true" path="C:\Programme\MiKTeX 2.9\miktex\bin\makeindex.exe" arguments="&quot;%tm.idx&quot; -t &quot;%tm.ilg&quot; -o &quot;%tm.ind&quot;"/>
+			<preProcessors/>
+			<postProcessors/>
+			<viewer path="C:\Programme\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Programme\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f', '%l')]\&quot;&quot;" closeBeforeCompilation="false">
+				<viewProjectCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="C:\Programme\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Programme\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f', '%l')]\&quot;&quot;" server="SUMATRA" topic="control" command="[Open(&quot;%bm.pdf&quot;,0,0,1)]"/>
+				</viewProjectCommand>
+				<viewCurrentFileCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="C:\Programme\SumatraPDF\SumatraPDF.exe -inverse-search &quot;\&quot;C:\Programme\TeXnicCenter\TeXnicCenter.exe\&quot; /ddecmd \&quot;[goto('%f', '%l')]\&quot;&quot;" server="SUMATRA" topic="control" command="[ForwardSearch(&quot;%bm.pdf&quot;,&quot;%Wc&quot;, %l,0,0,0)]"/>
+				</viewCurrentFileCommand>
+				<viewCloseCommand type="dde">
+					<commandLineCommand path="" arguments=""/>
+					<ddeCommand path="" server="acroviewR10" topic="control" command="[DocClose(&quot;%bm.pdf&quot;)]"/>
+				</viewCloseCommand>
+			</viewer>
+		</outputProfile>
+	</outputProfileList>
+</txcop:outputProfiles>
