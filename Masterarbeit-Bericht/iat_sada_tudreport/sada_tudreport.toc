@@ -8,7 +8,7 @@
 \contentsline {section}{1.1. Introduction}{1}{chapter.1}
 \contentsline {section}{1.2. Problem Statement and Objective Target}{1}{chapter.1}
 \contentsline {section}{1.3. Structure of Paper}{2}{chapter.1}
-\contentsline {chapter}{\numberline {2}Tipps f\"ur die Durchf\"uhrung einer wissenschaftlichen Arbeit}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Fundamentals}{3}{chapter.2}
 \contentsline {section}{1. Phase: Einarbeitung und Literaturrecherche}{3}{chapter.2}
 \contentsline {section}{Generelles zu Treffen mit dem Betreuer}{3}{chapter.2}
 \contentsline {subsection}{Literaturrecherche und -management}{3}{chapter.2}
@@ -21,28 +21,29 @@
 \contentsline {section}{Organisatorisches}{6}{chapter.2}
 \contentsline {section}{Allgemeines zu Hilfsmitteln bei der Erstellung und Bearbeitung}{6}{chapter.2}
 \contentsline {subsection}{Empfohlene Programme}{7}{chapter.2}
-\contentsline {chapter}{\numberline {3}Allgemeine Hinweise und Informationen zum Erstellen einer schriftlichen Arbeit mit \LaTeX }{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Editor}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Rechtschreibung}{9}{section.3.2}
-\contentsline {section}{\numberline {3.3}Zitate und korrekte Zitierweise}{9}{section.3.3}
-\contentsline {section}{\numberline {3.4}Gliederung des Dokuments}{11}{section.3.4}
-\contentsline {section}{\numberline {3.5}Bilder}{11}{section.3.5}
-\contentsline {section}{\numberline {3.6}Tabellen}{13}{section.3.6}
-\contentsline {section}{\numberline {3.7}Mathematische Formeln}{14}{section.3.7}
-\contentsline {section}{\numberline {3.8}Auszeichnungen und Hervorhebungen}{15}{section.3.8}
-\contentsline {section}{\numberline {3.9}Einbinden von Quellcode}{16}{section.3.9}
-\contentsline {section}{\numberline {3.10}Abst\"ande und Sonderzeichen}{16}{section.3.10}
-\contentsline {section}{\numberline {3.11}Definition eigener Befehle}{17}{section.3.11}
-\contentsline {section}{\numberline {3.12}Sonstiges}{17}{section.3.12}
-\contentsline {chapter}{\numberline {4}Verzeichnisstruktur und vordefinierte Befehle der IAT-Vorlage}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Verzeichnisse}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Verzeichnis \texttt {common}}{20}{section.4.2}
-\contentsline {section}{\numberline {4.3}Angaben \"uber die Arbeit}{20}{section.4.3}
-\contentsline {section}{\numberline {4.4}"`Entwurfsmodus"'}{21}{section.4.4}
-\contentsline {chapter}{\numberline {5}Zusammenfassung und Ausblick}{23}{chapter.5}
-\contentsline {chapter}{\numberline {A}Checkliste}{25}{appendix.A}
-\contentsline {chapter}{\numberline {B}Programme zur Erstellung von Grafiken}{27}{appendix.B}
-\contentsline {section}{\numberline {B.1}Vektorgrafiken}{27}{section.B.1}
-\contentsline {section}{\numberline {B.2}Pixelgrafiken}{28}{section.B.2}
-\contentsline {chapter}{\numberline {C}Das T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}-System}{29}{appendix.C}
-\contentsline {chapter}{\numberline {D}Befehle in commonmacros.tex}{33}{appendix.D}
+\contentsline {chapter}{\numberline {3}Implementation}{9}{chapter.3}
+\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Editor}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Rechtschreibung}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}Zitate und korrekte Zitierweise}{11}{section.4.3}
+\contentsline {section}{\numberline {4.4}Gliederung des Dokuments}{13}{section.4.4}
+\contentsline {section}{\numberline {4.5}Bilder}{13}{section.4.5}
+\contentsline {section}{\numberline {4.6}Tabellen}{15}{section.4.6}
+\contentsline {section}{\numberline {4.7}Mathematische Formeln}{15}{section.4.7}
+\contentsline {section}{\numberline {4.8}Auszeichnungen und Hervorhebungen}{17}{section.4.8}
+\contentsline {section}{\numberline {4.9}Einbinden von Quellcode}{17}{section.4.9}
+\contentsline {section}{\numberline {4.10}Abst\"ande und Sonderzeichen}{18}{section.4.10}
+\contentsline {section}{\numberline {4.11}Definition eigener Befehle}{19}{section.4.11}
+\contentsline {section}{\numberline {4.12}Sonstiges}{19}{section.4.12}
+\contentsline {chapter}{\numberline {5}Related Works}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Verzeichnisse}{21}{section.5.1}
+\contentsline {section}{\numberline {5.2}Verzeichnis \texttt {common}}{21}{section.5.2}
+\contentsline {section}{\numberline {5.3}Angaben \"uber die Arbeit}{22}{section.5.3}
+\contentsline {section}{\numberline {5.4}"`Entwurfsmodus"'}{23}{section.5.4}
+\contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}
+\contentsline {chapter}{\numberline {A}Checkliste}{27}{appendix.A}
+\contentsline {chapter}{\numberline {B}Programme zur Erstellung von Grafiken}{29}{appendix.B}
+\contentsline {section}{\numberline {B.1}Vektorgrafiken}{29}{section.B.1}
+\contentsline {section}{\numberline {B.2}Pixelgrafiken}{30}{section.B.2}
+\contentsline {chapter}{\numberline {C}Das T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}-System}{31}{appendix.C}
+\contentsline {chapter}{\numberline {D}Befehle in commonmacros.tex}{35}{appendix.D}

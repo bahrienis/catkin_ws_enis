@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  9 SEP 2017 18:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  9 SEP 2017 21:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1445,54 +1445,6 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 37.
  (./sada_tudreport.toc
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 11.61607pt on input line 23.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 8.16005pt on input line 23.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 7.00804pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 11.37402pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 7.99002pt on input line 23.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 6.86201pt on input line 23.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 38.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1555,49 +1507,37 @@ Package babel Info: Redefining ngerman shorthand "~
 ]) (./inc/Introduction.tex
 chapter 1.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 1.
+(babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 6.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 6.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 45.
+(babel)             in language  on input line 46.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 45.
-
-LaTeX Warning: Citation `Kopka' on page 1 undefined on input line 60.
-
-
-LaTeX Warning: Citation `Schmidt' on page 1 undefined on input line 61.
-
-
-LaTeX Warning: Citation `Friedrich' on page 1 undefined on input line 62.
-
-
-LaTeX Warning: Citation `Willberg' on page 1 undefined on input line 63.
-
+(babel)             in language  on input line 46.
 
 Underfull \vbox (badness 3849) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 52.
  [1
 
 
 ])
-(./inc/Tipps.tex
+(./inc/Fundamentals.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1629,22 +1569,22 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 29.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 50.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 50.
+(babel)             in language  on input line 51.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 50.
+(babel)             in language  on input line 55.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 50.
+(babel)             in language  on input line 55.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 55.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 55.
 
 [3
 
 
 ]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 51.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 51.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 63.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1707,7 +1647,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 194.
  [6])
-(./inc/Hinweise_LaTeX.tex
+(./inc/Implementation.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1734,54 +1674,33 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 23.23215pt on input line 2.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 16.2241pt on input line 2.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 13.92009pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 22.74805pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 15.88603pt on input line 2.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 13.63004pt on input line 2.
+) (./inc/Evaluation_and_Discussion.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [9]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [10
+
+
+]
+chapter 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 17.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1791,70 +1710,40 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 20.
 
-LaTeX Warning: Citation `Duden' on page 9 undefined on input line 25.
+LaTeX Warning: Citation `Duden' on page 11 undefined on input line 25.
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 34.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 34.
 
-LaTeX Warning: Citation `APB' on page 9 undefined on input line 39.
+LaTeX Warning: Citation `APB' on page 11 undefined on input line 39.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 40.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 40.
-[9]
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 9.98405pt on input line 56.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 6.04803pt on input line 56.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 9.77602pt on input line 56.
-LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 5.92201pt on input line 56.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 56.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 56.
- [10]
+(babel)             in language  on input line 41.
+[11]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 58.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 58.
 
+Underfull \vbox (badness 1715) has occurred while \output is active []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 63.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 63.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 63.
+ [12]
 Underfull \hbox (badness 1708) in paragraph at lines 64--70
 []\T1/5ch/m/n/11 Das In-halts-ver-zeich-nis wird in L[]T[]X au-to-ma-tisch er-s
 tellt. In-ner-halb der ein-zel-nen Ka-
@@ -1872,31 +1761,31 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 92.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 97.
+(babel)             in language  on input line 102.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 97.
+(babel)             in language  on input line 102.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 97.
+(babel)             in language  on input line 102.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 97.
-[11] <./Bilder/BSB_Beispiel-ext.pdf, id=206, 303.81505pt x 72.33022pt>
+(babel)             in language  on input line 102.
+[13] <./Bilder/BSB_Beispiel-ext.pdf, id=217, 303.81505pt x 72.33022pt>
 File: ./Bilder/BSB_Beispiel-ext.pdf Graphic file (type pdf)
 
 <use ./Bilder/BSB_Beispiel-ext.pdf>
 Package pdftex.def Info: ./Bilder/BSB_Beispiel-ext.pdf used on input line 127.
 (pdftex.def)             Requested size: 303.8143pt x 72.33003pt.
 
-Underfull \vbox (badness 4927) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 136.
+(babel)             in language  on input line 141.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 136.
- [12 <./Bilder/BSB_Beispiel-ext.pdf>]
+(babel)             in language  on input line 141.
+ [14 <./Bilder/BSB_Beispiel-ext.pdf>]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 145.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1953,32 +1842,29 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 178.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 178.
-
-Underfull \vbox (badness 5924) has occurred while \output is active []
-
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 184.
- [13]
+(babel)             in language  on input line 187.
+ [15]
 
-LaTeX Warning: Citation `DIN1338' on page 14 undefined on input line 192.
+LaTeX Warning: Citation `DIN1338' on page 16 undefined on input line 192.
 
 LaTeX Font Info:    Font shape `T1/5ch/b/it' in size <11> not available
 (Font)              Font shape `T1/5ch/b/sl' tried instead on input line 215.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 238.
+(babel)             in language  on input line 252.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 238.
+(babel)             in language  on input line 252.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 238.
+(babel)             in language  on input line 252.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 238.
-[14]
+(babel)             in language  on input line 252.
+[16]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 261.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1990,60 +1876,116 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 292.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 305.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 305.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 298.
+(babel)             in language  on input line 305.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 298.
- [15]
+(babel)             in language  on input line 305.
+ [17]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 318.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 318.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 358.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 358.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 358.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 352.
- [16]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 379.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 379.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 387.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 387.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 397.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 397.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 397.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 397.
- [17]) (./inc/Verzeichnisstruktur.tex
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
+(babel)             in language  on input line 358.
  [18]
-chapter 4.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 379.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 379.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 387.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 387.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 397.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 397.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 397.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 397.
+ [19]
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 11.61607pt on input line 409.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.16005pt on input line 409.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.00804pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 11.37402pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.99002pt on input line 409.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.86201pt on input line 409.
+)
+(./inc/Related_Works.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [20]
+chapter 5.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
 
-LaTeX Warning: Citation `Richtlinien' on page 19 undefined on input line 11.
+LaTeX Warning: Citation `Richtlinien' on page 21 undefined on input line 11.
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 25.
@@ -2057,18 +1999,15 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 34.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 34.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 37.
+(babel)             in language  on input line 41.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 37.
- [19
+(babel)             in language  on input line 41.
+[21
 
 
 ]
@@ -2077,47 +2016,19 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 57.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 65.
+(babel)             in language  on input line 73.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 65.
+(babel)             in language  on input line 73.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 65.
+(babel)             in language  on input line 73.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 65.
-
-[20]
+(babel)             in language  on input line 73.
+ [22]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 88.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 88.
-) (./inc/Zusammenfassung.tex
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
- [21]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
- [22
-
-
-]
-chapter 5.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
-) (./inc/Anhang.tex
+) (./inc/Conclusion.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2139,11 +2050,42 @@ Package babel Info: Redefining ngerman shorthand "~
 
 
 ]
+chapter 6.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+) (./inc/Anhang.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [25]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [26
+
+
+]
 chapter A.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
+
+LaTeX Warning: Reference `cha:Hinweise-Latex' on page 27 undefined on input lin
+e 24.
+
 
 Underfull \vbox (badness 2556) has occurred while \output is active []
 
@@ -2155,7 +2097,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 54.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 54.
- [25]
+ [27]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2165,7 +2107,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 64.
 
-[26]
+[28]
 chapter B.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 64.
@@ -2176,10 +2118,10 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 67.
 
-LaTeX Warning: Citation `TikZ' on page 27 undefined on input line 90.
+LaTeX Warning: Citation `TikZ' on page 29 undefined on input line 90.
 
 
-LaTeX Warning: Citation `pgfplots' on page 27 undefined on input line 90.
+LaTeX Warning: Citation `pgfplots' on page 29 undefined on input line 90.
 
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 112.
@@ -2189,7 +2131,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 112.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 112.
-[27
+[29
 
 
 ]
@@ -2205,7 +2147,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 159.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 159.
- [28]
+ [30]
 chapter C.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 159.
@@ -2219,7 +2161,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 248.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 248.
-[29
+[31
 
 
 ]
@@ -2233,7 +2175,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 281.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 281.
- [30])
+ [32])
 (./inc/commonmacros_desc.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -2243,7 +2185,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [31]
+ [33]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2252,7 +2194,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [32
+ [34
 
 
 ]
@@ -2275,7 +2217,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 30.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 30.
-[33]
+[35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -2286,7 +2228,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 64.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 64.
- [34]
+ [36]
 LaTeX Font Info:    Font shape `U/xmdeuf/m/n' will be
 (Font)              scaled to size 11.12044pt on input line 78.
 LaTeX Font Info:    Font shape `U/xmdeuf/m/n' will be
@@ -2304,7 +2246,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 95.
- [35]
+ [37]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -2315,7 +2257,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 127.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 127.
- [36]
+ [38]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 176.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2325,7 +2267,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 176.
 
-[37]
+[39]
 LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <11> not available
 (Font)              Font shape `T1/txtt/bx/n' tried instead on input line 206.
 LaTeX Font Info:    Try loading font information for TS1+txtt on input line 206
@@ -2349,7 +2291,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 218.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 218.
- [38]
+ [40]
 LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <9.2> not available
 (Font)              Font shape `T1/txtt/bx/n' tried instead on input line 232.
 LaTeX Font Info:    Font shape `TS1/txtt/b/n' in size <9.2> not available
@@ -2370,7 +2312,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 118.
 
-[39]
+[41]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 118.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2379,7 +2321,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 118.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 118.
- [40
+ [42
 
 
 ]
@@ -2401,19 +2343,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 130.
  ) 
 Here is how much of TeX's memory you used:
- 17919 strings out of 493029
- 272486 string characters out of 6136235
- 490133 words of memory out of 5000000
- 20811 multiletter control sequences out of 15000+600000
- 246997 words of font info for 264 fonts, out of 8000000 for 9000
+ 17878 strings out of 493029
+ 271894 string characters out of 6136235
+ 490011 words of memory out of 5000000
+ 20767 multiletter control sequences out of 15000+600000
+ 209456 words of font info for 213 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 70i,14n,108p,856b,2701s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,108p,745b,2701s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{section*.13} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -2441,10 +2380,10 @@ hare/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/txfonts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (50 pages, 277601 bytes).
+Output written on sada_tudreport.pdf (52 pages, 276255 bytes).
 PDF statistics:
- 655 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
- 130 named destinations out of 1000 (max. 500000)
- 405 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 669 PDF objects out of 1000 (max. 8388607)
+ 577 compressed objects within 6 object streams
+ 133 named destinations out of 1000 (max. 500000)
+ 413 words of extra memory for PDF output out of 10000 (max. 10000000)
 
