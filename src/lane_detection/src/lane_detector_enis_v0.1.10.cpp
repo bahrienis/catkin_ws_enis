@@ -18,6 +18,19 @@
 #include "opencv2/imgcodecs.hpp"
 
 
+
+
+#include <cstdio>
+#include <cstdlib>
+#include <vector>
+#include "spline.h"
+
+
+
+
+
+
+
 using namespace std;
 using namespace cv;
 
@@ -82,7 +95,7 @@ int main(int argc, char **argv) {
         clock_t begin = clock();
 
 
-        
+       
         if (sayi >= 294) {
             sayi = 0;
         }
@@ -91,10 +104,10 @@ int main(int argc, char **argv) {
         sayi++;
         cout << "frame : " << sayi << endl;
 
-        
+         
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-//    std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame145.jpg";
+ //       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame140.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -169,7 +182,7 @@ int main(int argc, char **argv) {
         imshow("Sobel", grad);
 
         Canny(grad, dst, 255, 255, 3);
-        cvtColor(dst, cdst, CV_GRAY2BGR);
+//        cvtColor(dst, cdst, CV_GRAY2BGR);
 
 
         Rect Rec4(0, 0, 640, 190);
@@ -496,7 +509,7 @@ int main(int argc, char **argv) {
         imshow("Sobel+Canny+Hough Trasformation1", upOutputImggray);
         imshow("Sobel+Canny+Hough Trasformation2", downOutputImggray);
         imshow("Input", inputImg);
-        imshow("cdst", cdst);
+//      imshow("cdst", cdst);
 
         waitKey(1000);
 
@@ -520,6 +533,7 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
        x[i]=l[0];
         for(i=0;i<N;i++)
         y[i]=l[1];   */
+    
     n = 2; //polinomun derecesi
     double X[2 * n + 1];
     for (i = 0; i < 2 * n + 1; i++) {

@@ -5,53 +5,61 @@
 \label{sec:Introduction}
 \addcontentsline{toc}{section}{1.1. Introduction}
 
-Technology is also developing in the automotive industry like in other industries over
-time. The number ofsensors and accordingly features in automobiles increases 
-exponentially. One of the these sensors is color camera. At the beginning, the cameras
-were used in the automobile industry just for helping to park and to drive backwards. 
-Nowadays, one of the main functions of color cameras is lane detection in autonomous 
-cars and in the cars which have lane departure warning system.
-In this master thesis must be the lanes detected and formulated mathematically.
+As in all industries, technology in the automotive industry is continuing to develop 
+day by day. For example, the number of sensors, and their corresponding features, is 
+increasing exponentially. One such sensor is the color camera. To begin with, in the 
+automotive industry, cameras were used only to assist drivers in parking and reversing. 
+Nowadays, however, one of the main functions of color cameras is lane detection, in both 
+autonomous cars and in cars equipped with a lane departure warning system. In this 
+master's thesis, the lanes will be detected and then formulated mathematically.
 
-The results of this master thesis will be expanded by the students, which will be
-participated to the Echtzeitsysteme Projektseminar at the Technical University of 
-Darmstadt. One of the aim of this seminar is to attend the Carolo-Cup which is organized 
-annual by Technical University of Braunschweig. Because of that, in this master thesis, 
-width of track, its curvature and changes of curvature of which, are used from 
-Carolo-Cup. In real life, they are more problems for detecting lanes, they are shadows 
-of which can be caused by appearances of trees and buildings, the dirt left on the road 
-surface etc.
+The results of this master's thesis will be utilized and expanded upon by the students 
+who will participated in the Echtzeitsysteme Projektseminar at the Technical University 
+of Darmstadt. One of the aims of this seminar is to attend the Carolo-Cup organized 
+annually by the Technical University of Braunschweig. Because of that, the width, the 
+curvature, and the changes of the curvature of the track used in this master's thesis 
+are the same as those belonging to the track used in the Carolo-Cup. In a real-life 
+situation, there are of course oftentimes more factors that can hinder lane detection, 
+including shadows cast by trees, buildings, and other structures; sunlight directly 
+entering the lens of the camera and similarly less-than-ideal lighting conditions; 
+dirt and debris on the road surface; and so on.
 
-Thereby, the lanes of track must be detected in enough short time and there shouldn't
-be any dead time between lane detection and formulating mathematically. Other main thing,
-the lane detection must be enough robust sein. The lanes must be detected also certainly 
-with expected light conditions.
+Therefore, the lanes of the track must be detected in a sufficiently short amount of 
+time and there should be no dead time between lane detection and mathematical 
+formulation. Lane detection must also be sufficiently robust, so that it should not be 
+disrupted by less-than-ideal lighting conditions.
 
 \section*{1.2. Problem Statement and Objective Target}
 \label{sec:Problem Statement and Objective Target}
 \addcontentsline{toc}{section}{1.2. Problem Statement and Objective Target}
 
-Autonomous driving is one of the active researching themes. Autonomous driving can be 
-studied in two fundamentel tasks. These tasks are : lane detection and lane guidance. 
-For lane detection, they are different scientific techniques in the literature. All of 
-these techniques have advantages and disadvantages for different situations. For example,
-some of these techniques are suitable just "lines"  not for curves. Some of them are 
-suit for also curves but they are not good in different light conditions and some of them
-are robust and suit for curves but they are so much computationally expensive. In these
-master thesis, our aim is, to research and implement the best method for Carola-Cup.
+Autonomous driving is a topic currently being actively researched. Research on 
+autonomous driving can be conducted in two fundamental areas: lane detection and lane 
+guidance. With regard to lane detection, there are different scientific techniques that 
+can be utilized, according to the literature, all with their own advantages and 
+disadvantages under different conditions. For example, some techniques are suitable for 
+straight lines, but not for curves. Others are suitable for curves as well but do not 
+function well under certain light conditions. Others still are quite robust and 
+suitable for curves, yet are computationally intensive (resulting in a video feed with 
+significant gaps). In this master's thesis, my aim is to research and implement the 
+most appropriate and effective method for use in the Carola-Cup.
+
 
 
 \section*{1.3. Structure of Thesis}
 \label{sec:Structure of Paper}
 \addcontentsline{toc}{section}{1.3. Structure of Paper}
 
-In Chapter \ref{cha:Fundamentals} is explained the fundamentals of lane detection. 
-All methods, which are used in this thesis, are also explained in this chapter with 
-their reasons. Some methods are also compared with their advantages and disadvantages.
+In Chapter \ref{cha:Fundamentals}, the fundamentals of lane detection are explained. All 
+methods utilized in this thesis, along with their respective justifications, are also 
+explained in this chapter. Some methods are also compared with regard to their 
+advantages and disadvantages.
 
-In Chapter \ref{cha:Implementation} is explained steps of implementation. These steps
-are properties of track, hardware of model car and used software libraries and 
-programs. In this chapter will also explained detailed program flow.
+
+In Chapter \ref{cha:Implementation}, the steps of implementation are explained. The 
+components can be divided broadly into the properties of the track, the hardware of the 
+model car, and the software libraries and programs to be utilized. In this chapter, the 
+program flow will also be explained in detail.
 
 In Chapter \ref{cha:Evaulation and Discussion}
 
