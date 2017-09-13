@@ -87,11 +87,18 @@ int main(int argc, char **argv) {
         Mat abs_grad_x, abs_grad_y;
         Mat cdst, dst;
         Mat upOutputImggray, downOutputImggray;
+        
+        
+        
+        int firstpicsize = 100;
+        int secondpicsize = 150;
+        int thirdpicsize = 230;
+        
 
         clock_t begin = clock();
 
 
-       /*
+       
         if (sayi >= 294) {
             sayi = 0;
         }
@@ -99,11 +106,11 @@ int main(int argc, char **argv) {
         std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-*/
+
          
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame142.jpg";
+//       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame142.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -137,7 +144,7 @@ int main(int argc, char **argv) {
         
         
         
-        Rect Rec1(0, 100, 640, 380);
+        Rect Rec1(0, firstpicsize , 640, (480 - firstpicsize));
         line(inputImg, Point(0,99),Point(640,99),Scalar(0,255,0),1,CV_AA);
      //   rectangle(inputImg, Rec1, Scalar(255), 1, 8, 0);
     //    rectangle(inputImg, Point(0, 0),Point(640, 99), Scalar(255), 1, 8, 0);
@@ -182,7 +189,7 @@ int main(int argc, char **argv) {
 //        cvtColor(dst, cdst, CV_GRAY2BGR);
 
 
-        Rect Rec4(0, 0, 640, 190);
+        Rect Rec4(0, 0, 640, secondpicsize);
  //       rectangle(dst, Rec4, Scalar(255), 1, 8, 0);
 
         Mat upOutputImg = grad(Rec4);
@@ -323,29 +330,29 @@ int main(int argc, char **argv) {
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
             circle(upOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-             circle(inputImg, Point(l[0], l[1]+100), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+             circle(inputImg, Point(l[0], (l[1]+firstpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //    circle(upOutputImggray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             if (l[0] >= ((thebiggestvalue11position + thebiggestvalue11_1_position) / 2) && l[0] < 639) {
                 x1[numofpointsoffirstlane1] = l[0];
                 //    x[i+1] = l[2];
-                y1[numofpointsoffirstlane1] = l[1] + 100;
+                y1[numofpointsoffirstlane1] = (l[1] + firstpicsize);
                 numofpointsoffirstlane1++;
                 //  y[i+1] = l[3];
 
             } else if (l[0] > 0 && l[0] <= ((thebiggestvalue11position + thebiggestvalue11_1_position) / 2) && l[0] >= ((thebiggestvalue12position + thebiggestvalue12_1_position) / 2)) {
                 x2[numofpointsofsecondlane1] = l[0];
-                y2[numofpointsofsecondlane1] = l[1] + 100;
+                y2[numofpointsofsecondlane1] = (l[1] + firstpicsize);
                 numofpointsofsecondlane1++;
             } else if (l[0] > 0 && l[0] <= ((thebiggestvalue12position + thebiggestvalue12_1_position) / 2)) {
                 x3[numofpointsofthirdlane1] = l[0];
-                y3[numofpointsofthirdlane1] = l[1] + 100;
+                y3[numofpointsofthirdlane1] = (l[1] + firstpicsize);
                 numofpointsofthirdlane1++;
             }
         }
 
 
 
-        Rect Rec5(0, 190, 640, 190);
+        Rect Rec5(0, secondpicsize, 640, thirdpicsize);
  //       rectangle(dst, Rec5, Scalar(255), 1, 8, 0);
 
         Mat downOutputImg = grad(Rec5);
@@ -466,23 +473,23 @@ int main(int argc, char **argv) {
 
             Vec4i l = lines2P[i];
             circle(downOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-            circle(inputImg, Point(l[0], l[1]+290), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(inputImg, Point(l[0], (l[1]+firstpicsize+secondpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //  circle(downOutputImggray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             if (l[0] >= ((thebiggestvalue21position + thebiggestvalue21_1_position) / 2) && l[0] < 639) {
                 x1[numofpointsoffirstlane2 + numofpointsoffirstlane1] = l[0];
                 //    x[i+1] = l[2];
-                y1[numofpointsoffirstlane2 + numofpointsoffirstlane1] = l[1] + 290;
+                y1[numofpointsoffirstlane2 + numofpointsoffirstlane1] = (l[1] + firstpicsize+secondpicsize);
                 numofpointsoffirstlane2++;
                 //  y[i+1] = l[3];
 
             } else if (l[0] > 0 && l[0] <= ((thebiggestvalue21position + thebiggestvalue21_1_position) / 2) && l[0] >= ((thebiggestvalue22position + thebiggestvalue22_1_position) / 2)) {
                 x2[numofpointsofsecondlane2 + numofpointsofsecondlane1] = l[0];
-                y2[numofpointsofsecondlane2 + numofpointsofsecondlane1] = l[1] + 290;
+                y2[numofpointsofsecondlane2 + numofpointsofsecondlane1] = (l[1] + firstpicsize+secondpicsize);
                 numofpointsofsecondlane2++;
 
             } else if (l[0] > 0 && l[0] <= ((thebiggestvalue22position + thebiggestvalue22_1_position) / 2)) {
                 x3[numofpointsofthirdlane2 + numofpointsofthirdlane1] = l[0];
-                y3[numofpointsofthirdlane2 + numofpointsofthirdlane1] = l[1] + 290;
+                y3[numofpointsofthirdlane2 + numofpointsofthirdlane1] = (l[1] + firstpicsize+secondpicsize);
                 numofpointsofthirdlane2++;
             }
         }
@@ -498,9 +505,9 @@ int main(int argc, char **argv) {
          
 
         
-        curvefitting(numofpointsoffirstlane2, numofpointsoffirstlane1, x1, y1, inputImg, "blue");
-        curvefitting(numofpointsofsecondlane2, numofpointsofsecondlane1, x2, y2, inputImg, "green");
-        curvefitting(numofpointsofthirdlane2, numofpointsofthirdlane1, x3, y3, inputImg, "red");
+        curvefitting(numofpointsoffirstlane2, numofpointsoffirstlane1, y1, x1, inputImg, "blue");
+        curvefitting(numofpointsofsecondlane2, numofpointsofsecondlane1, y2, x2, inputImg, "green");
+        curvefitting(numofpointsofthirdlane2, numofpointsofthirdlane1, y3, x3, inputImg, "red");
 
 
         imshow("Sobel+Canny+Hough Trasformation1", upOutputImggray);
@@ -589,15 +596,15 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
 
 
     int p, r;
-    for (p = 0; p < 640; p++) {
+    for (p = 100; p < 480; p++) {
         r = a[0] + a[1] * p + a[2] * p * p;
-        if (r >= 0 && r <= 480) {
+        if (r >= 0 && r <= 640) {
             if (color == "red")
-                circle(inputImg, Point(p, r), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImg, Point(r, p), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             else if (color == "blue")
-                circle(inputImg, Point(p, r), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(r, p), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
             else if (color == "green")
-                circle(inputImg, Point(p, r), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(r, p), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
         }
     }
 
