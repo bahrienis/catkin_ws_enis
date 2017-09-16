@@ -32,7 +32,7 @@ using namespace cv;
 
 
 void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
-        double *x, double *y, Mat inputImg, string color);
+        double *y, double *x, Mat inputImg, string color);
 
 
 int main(int argc, char **argv) {
@@ -98,7 +98,7 @@ int main(int argc, char **argv) {
         clock_t begin = clock();
 
 
-   /*   
+       
         if (sayi >= 294) {
             sayi = 0;
         }
@@ -106,11 +106,13 @@ int main(int argc, char **argv) {
         std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-*/ 
-         
-        //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
+
+        
+        
+        
+//std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame142.jpg";
+//       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame61.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -118,7 +120,7 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
-        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
@@ -145,7 +147,7 @@ int main(int argc, char **argv) {
         
         
         Rect Rec1(0, firstpicsize , 640, (480 - firstpicsize));
-        line(inputImg, Point(0,99),Point(640,99),Scalar(0,255,0),1,CV_AA);
+//        line(inputImg, Point(0,99),Point(640,99),Scalar(0,255,0),1,CV_AA);
      //   rectangle(inputImg, Rec1, Scalar(255), 1, 8, 0);
     //    rectangle(inputImg, Point(0, 0),Point(640, 99), Scalar(255), 1, 8, 0);
         
@@ -322,6 +324,69 @@ int main(int argc, char **argv) {
         int numofpointsofsecondlane2 = 0;
         int numofpointsofthirdlane1 = 0;
         int numofpointsofthirdlane2 = 0;
+        
+        
+        
+        
+        int numofpointsoffirstlane1new = 0;
+        double x11[10000], y11[10000];
+        bool isthereanypixel = true;
+        
+        
+        
+        
+        
+        int numofpointsoffirstlane1newrectangle = 0;
+        double x11rectangle[10000], y11rectangle[10000];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+           
+        int numofpointsofsecondlane2new = 0;
+        double x22[10000], y22[10000];
+        bool isthereanypixel2 = true;
+        
+        
+        
+        
+        
+        int numofpointsofsecondlane2newrectangle = 0;
+        double x22rectangle[10000], y22rectangle[10000];     
+        
+        
+        
+        
+        
+        
+        
+      
+        
+        
+                int numofpointsofthirdlane3new = 0;
+        double x33[10000], y33[10000];
+        bool isthereanypixel3 = true;
+        
+        
+        
+        
+        
+        int numofpointsofthirdlane3newrectangle = 0;
+        double x33rectangle[10000], y33rectangle[10000]; 
+        
+        
+        
+        
+        
+        
+        
+        
 
         //1. Bild         
 
@@ -330,7 +395,7 @@ int main(int argc, char **argv) {
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
             circle(upOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-             circle(inputImg, Point(l[0], (l[1]+firstpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+//             circle(inputImg, Point(l[0], (l[1]+firstpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //    circle(upOutputImggray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             if (l[0] >= ((thebiggestvalue11position + thebiggestvalue11_1_position) / 2) && l[0] < 639) {
                 x1[numofpointsoffirstlane1] = l[0];
@@ -473,7 +538,7 @@ int main(int argc, char **argv) {
 
             Vec4i l = lines2P[i];
             circle(downOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-            circle(inputImg, Point(l[0], (l[1]+firstpicsize+secondpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+//            circle(inputImg, Point(l[0], (l[1]+firstpicsize+secondpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //  circle(downOutputImggray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             if (l[0] >= ((thebiggestvalue21position + thebiggestvalue21_1_position) / 2) && l[0] < 639) {
                 x1[numofpointsoffirstlane2 + numofpointsoffirstlane1] = l[0];
@@ -497,17 +562,588 @@ int main(int argc, char **argv) {
         
         
      
-           for(int abc = 0; abc < (numofpointsofsecondlane1 + numofpointsofsecondlane2); abc++){
-               cout << "x2 degeri : " << x2[abc] << " y2 degeri : " << y2[abc] << endl;
+ /*          for(int abc = 0; abc < (numofpointsoffirstlane1 + numofpointsoffirstlane2); abc++){
+               cout << "x1 degeri : " << x1[abc] << " y1 degeri : " << y1[abc] << endl;
             
            }
-        
+ */       
          
+        
+        
+        
+        
+     
+        
+        for(int firstcolor=0;firstcolor<(numofpointsoffirstlane2+numofpointsoffirstlane1);firstcolor++){
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor])[0] = 255;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor])[1] = 0;  
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor])[2] = 0; 
+            
+            
+            inputImg.at<cv::Vec3b>(y1[firstcolor] + 1,x1[firstcolor])[0] = 255;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y1[firstcolor] + 1 ,x1[firstcolor])[1] = 0;  
+            inputImg.at<cv::Vec3b>(y1[firstcolor] + 1 ,x1[firstcolor])[2] = 0;  
+            
+            
+            
+            inputImg.at<cv::Vec3b>(y1[firstcolor] - 1 ,x1[firstcolor])[0] = 255;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y1[firstcolor] - 1 ,x1[firstcolor])[1] = 0;  
+            inputImg.at<cv::Vec3b>(y1[firstcolor] - 1 ,x1[firstcolor])[2] = 0;  
+            
+            
+            
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor] + 1)[0] = 255;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor] + 1)[1] = 0;  
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor] + 1)[2] = 0;  
+            
+            
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor] - 1)[0] = 255;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor] - 1)[1] = 0;  
+            inputImg.at<cv::Vec3b>(y1[firstcolor],x1[firstcolor] - 1)[2] = 0;  
+        }
+        
+        
+        
+        for(int secondcolor=0;secondcolor<(numofpointsofsecondlane2+numofpointsofsecondlane1);secondcolor++){
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor])[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor])[1] = 255;  
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor])[2] = 0;  
+            
+            inputImg.at<cv::Vec3b>(y2[secondcolor] + 1,x2[secondcolor])[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y2[secondcolor] + 1,x2[secondcolor])[1] = 255;  
+            inputImg.at<cv::Vec3b>(y2[secondcolor] + 1,x2[secondcolor])[2] = 0;  
+            
+            inputImg.at<cv::Vec3b>(y2[secondcolor] - 1,x2[secondcolor])[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y2[secondcolor] - 1,x2[secondcolor])[1] = 255;  
+            inputImg.at<cv::Vec3b>(y2[secondcolor] - 1,x2[secondcolor])[2] = 0;  
+            
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor] + 1)[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor] + 1)[1] = 255;  
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor] + 1)[2] = 0;  
+            
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor] - 1)[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor] - 1)[1] = 255;  
+            inputImg.at<cv::Vec3b>(y2[secondcolor],x2[secondcolor] - 1)[2] = 0;  
+            
+            
+        }
+        
+        
+        
+        for(int thirdcolor=0;thirdcolor<(numofpointsofthirdlane2+numofpointsofthirdlane1);thirdcolor++){
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor])[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor])[1] = 0;  
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor])[2] = 255;
+            
+            inputImg.at<cv::Vec3b>(y3[thirdcolor] + 1,x3[thirdcolor])[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y3[thirdcolor] + 1,x3[thirdcolor])[1] = 0;  
+            inputImg.at<cv::Vec3b>(y3[thirdcolor] + 1,x3[thirdcolor])[2] = 255; 
+            
+            inputImg.at<cv::Vec3b>(y3[thirdcolor] - 1,x3[thirdcolor])[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y3[thirdcolor] - 1,x3[thirdcolor])[1] = 0;  
+            inputImg.at<cv::Vec3b>(y3[thirdcolor] - 1,x3[thirdcolor])[2] = 255; 
+            
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor] + 1)[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor] + 1)[1] = 0;  
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor] + 1)[2] = 255; 
+            
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor] - 1)[0] = 0;  //turn the pixel value @ (k,i) to yellow (0,255,255)
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor] - 1)[1] = 0;  
+            inputImg.at<cv::Vec3b>(y3[thirdcolor],x3[thirdcolor] - 1)[2] = 255; 
+        }
+        
+        
+        
+        
+        
+           
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+       Point tmp1_pixel;
+       int allpixels1;
+        
+     int  tmp1 = y1[0];
+     
+        for(allpixels1=0;allpixels1<(numofpointsoffirstlane2+numofpointsoffirstlane1);allpixels1++){
+            
+        
+           if(y1[allpixels1] > tmp1){
+               tmp1 = y1[allpixels1];
+               tmp1_pixel.x = x1[allpixels1];
+               tmp1_pixel.y = y1[allpixels1];
+           }
+           
+            
+        }
+   
+     
+     
+     
+        
+        for(allpixels1=0;allpixels1<(numofpointsoffirstlane2+numofpointsoffirstlane1);allpixels1++){
+            
+            
+           int tmp1_pixely = tmp1_pixel.y;
+          
+            
+            
+            if((((tmp1_pixel.x-(tmp1_pixel.y/5)) <= x1[allpixels1]) && (x1[allpixels1] <= (tmp1_pixel.x+(tmp1_pixel.y/5)))) && (((tmp1_pixel.y-(tmp1_pixel.y/5)) <= y1[allpixels1]) && (y1[allpixels1] <= (tmp1_pixel.y)))){
+            
+                
+                
+                
+                x11[numofpointsoffirstlane1new] = x1[allpixels1];
+                y11[numofpointsoffirstlane1new] = y1[allpixels1];
+            numofpointsoffirstlane1new++;
+            
+            
+           
+            
+            
+            
+            x11rectangle[numofpointsoffirstlane1newrectangle] = x1[allpixels1];
+            y11rectangle[numofpointsoffirstlane1newrectangle] = y1[allpixels1];
+            numofpointsoffirstlane1newrectangle++;
+            
+            
+            
+            
+            
+      //      cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
+            rectangle(inputImg, Point((tmp1_pixel.x-(tmp1_pixel.y/5)), (tmp1_pixel.y-(tmp1_pixel.y/5))),Point((tmp1_pixel.x+(tmp1_pixel.y/5)), tmp1_pixel.y), Scalar(255), 1, 8, 0);
+                
+        }
+            
+            
+    
+           
+            if(isthereanypixel && allpixels1 == (numofpointsoffirstlane2+numofpointsoffirstlane1-1)){
+          //  if(tmp1_pixel.y>100){
+                
+                
+                allpixels1 = 0;
+               //isthereanypixel = true;
+                
+               
+
+               
+     
+                 int  tmp1rectangle = y11rectangle[0];
+                 for(int rectanglepixels=0;rectanglepixels < numofpointsoffirstlane1newrectangle; rectanglepixels++){
+                     
+      
+                     
+                     if(y11rectangle[rectanglepixels] <= tmp1rectangle){
+                         
+                         
+                         
+                      tmp1rectangle = y11rectangle[rectanglepixels];
+                         
+                         tmp1_pixel.x = x11rectangle[rectanglepixels];
+                         tmp1_pixel.y = y11rectangle[rectanglepixels];
+                         
+                         
+                     }
+                     
+                     
+                     
+                 }
+                 
+                  if(tmp1_pixely==tmp1_pixel.y){
+                         isthereanypixel = false;
+                     }
+                 
+                 cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
+                
+                
+                 
+                 std::fill_n(x11rectangle, numofpointsoffirstlane1newrectangle, 0);
+                 std::fill_n(y11rectangle, numofpointsoffirstlane1newrectangle, 0);
+                
+                 numofpointsoffirstlane1newrectangle = 0;
+                 
+     
+                
+            }
+            
+    
+            
+        
+        }
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+          Point tmp2_pixel;
+       int allpixels2;
+        
+     int  tmp2 = y2[0];
+     
+        for(allpixels2=0;allpixels2<(numofpointsofsecondlane2+numofpointsofsecondlane1);allpixels2++){
+            
+        
+           if(y2[allpixels2] > tmp2){
+               tmp2 = y2[allpixels2];
+               tmp2_pixel.x = x2[allpixels2];
+               tmp2_pixel.y = y2[allpixels2];
+           }
+           
+            
+        }
+   
+     
+     
+     
+        
+        for(allpixels2=0;allpixels2<(numofpointsofsecondlane2+numofpointsofsecondlane1);allpixels2++){
+            
+            
+           int tmp2_pixely = tmp2_pixel.y;
+          
+            
+            
+            if((((tmp2_pixel.x-(tmp2_pixel.y/5)) <= x2[allpixels2]) && (x2[allpixels2] <= (tmp2_pixel.x+(tmp2_pixel.y/5)))) && (((tmp2_pixel.y-(tmp2_pixel.y/2.2)) <= y2[allpixels2]) && (y2[allpixels2] <= (tmp2_pixel.y)))){
+            
+                
+                
+                
+                x22[numofpointsofsecondlane2new] = x2[allpixels2];
+                y22[numofpointsofsecondlane2new] = y2[allpixels2];
+            numofpointsofsecondlane2new++;
+            
+            
+           
+            
+            
+            
+            x22rectangle[numofpointsofsecondlane2newrectangle] = x2[allpixels2];
+            y22rectangle[numofpointsofsecondlane2newrectangle] = y2[allpixels2];
+            numofpointsofsecondlane2newrectangle++;
+            
+            
+            
+            
+            
+      //      cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
+            rectangle(inputImg, Point((tmp2_pixel.x-(tmp2_pixel.y/5)), (tmp2_pixel.y-(tmp2_pixel.y/2.2))),Point((tmp2_pixel.x+(tmp2_pixel.y/5)), tmp2_pixel.y), Scalar(255), 1, 8, 0);
+                
+        }
+            
+            
+    
+           
+            if(isthereanypixel2 && allpixels2 == (numofpointsofsecondlane2+numofpointsofsecondlane1-1)){
+      //      if(tmp1_pixel.y>100){
+                
+                
+                allpixels2 = 0;
+               //isthereanypixel = true;
+                
+               
+               
+               
+     
+                 int  tmp2rectangle = y22rectangle[0];
+                 for(int rectanglepixels2=0;rectanglepixels2 < numofpointsofsecondlane2newrectangle; rectanglepixels2++){
+                     
+                     
+                     
+                     if(y22rectangle[rectanglepixels2] <= tmp2rectangle){
+                         
+                         
+                         
+                      tmp2rectangle = y22rectangle[rectanglepixels2];
+                         
+                         tmp2_pixel.x = x22rectangle[rectanglepixels2];
+                         tmp2_pixel.y = y22rectangle[rectanglepixels2];
+                         
+                     }
+                     
+                     
+                     
+                 }
+                 
+                  if(tmp2_pixely==tmp2_pixel.y){
+                         isthereanypixel2 = false;
+                     }
+                 
+                 cout << "simdi bu kac : " << tmp2_pixel.y << endl; 
+                
+                
+                 
+                 std::fill_n(x22rectangle, numofpointsofsecondlane2newrectangle, 0);
+                 std::fill_n(y22rectangle, numofpointsofsecondlane2newrectangle, 0);
+                
+                 numofpointsofsecondlane2newrectangle = 0;
+                 
+     
+                
+            }
+            
+    
+        
+        
+        }  
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+       
+          Point tmp3_pixel;
+       int allpixels3;
+        
+     int  tmp3 = y3[0];
+     
+        for(allpixels3=0;allpixels3<(numofpointsofthirdlane2+numofpointsofthirdlane1);allpixels3++){
+            
+        
+           if(y3[allpixels3] > tmp3){
+               tmp3 = y3[allpixels3];
+               tmp3_pixel.x = x3[allpixels3];
+               tmp3_pixel.y = y3[allpixels3];
+           }
+           
+            
+        }
+   
+     
+     
+     
+        
+        for(allpixels3=0;allpixels3<(numofpointsofthirdlane2+numofpointsofthirdlane1);allpixels3++){
+            
+            
+           int tmp3_pixely = tmp3_pixel.y;
+          
+            
+            
+            if((((tmp3_pixel.x-(tmp3_pixel.y/5)) <= x3[allpixels3]) && (x3[allpixels3] <= (tmp3_pixel.x+(tmp3_pixel.y/5)))) && (((tmp3_pixel.y-(tmp3_pixel.y/5)) <= y3[allpixels3]) && (y3[allpixels3] <= (tmp3_pixel.y)))){
+            
+                
+                
+                
+                x33[numofpointsofthirdlane3new] = x3[allpixels3];
+                y33[numofpointsofthirdlane3new] = y3[allpixels3];
+            numofpointsofthirdlane3new++;
+            
+            
+           
+            
+            
+            
+            x33rectangle[numofpointsofthirdlane3newrectangle] = x3[allpixels3];
+            y33rectangle[numofpointsofthirdlane3newrectangle] = y3[allpixels3];
+            numofpointsofthirdlane3newrectangle++;
+            
+            
+            
+            
+            
+      //      cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
+            rectangle(inputImg, Point((tmp3_pixel.x-(tmp3_pixel.y/5)), (tmp3_pixel.y-(tmp3_pixel.y/5))),Point((tmp3_pixel.x+(tmp3_pixel.y/5)), tmp3_pixel.y), Scalar(255), 1, 8, 0);
+                
+        }
+            
+            
+    
+           
+            if(isthereanypixel3 && allpixels3 == (numofpointsofthirdlane2+numofpointsofthirdlane1-1)){
+      //      if(tmp1_pixel.y>100){
+                
+                
+                allpixels3 = 0;
+               //isthereanypixel = true;
+                
+               
+               
+               
+     
+                 int  tmp3rectangle = y33rectangle[0];
+                 for(int rectanglepixels3=0;rectanglepixels3 < numofpointsofthirdlane3newrectangle; rectanglepixels3++){
+                     
+                     
+                     
+                     if(y33rectangle[rectanglepixels3] <= tmp3rectangle){
+                         
+                         
+                         
+                      tmp3rectangle = y33rectangle[rectanglepixels3];
+                         
+                         tmp3_pixel.x = x33rectangle[rectanglepixels3];
+                         tmp3_pixel.y = y33rectangle[rectanglepixels3];
+                         
+                     }
+                     
+                     
+                     
+                 }
+                 
+                  if(tmp3_pixely==tmp3_pixel.y){
+                         isthereanypixel3 = false;
+                     }
+                 
+                 cout << "simdi bu kac : " << tmp3_pixel.y << endl; 
+                
+                
+                 
+                 std::fill_n(x33rectangle, numofpointsofthirdlane3newrectangle, 0);
+                 std::fill_n(y33rectangle, numofpointsofthirdlane3newrectangle, 0);
+                
+                 numofpointsofthirdlane3newrectangle = 0;
+                 
+     
+                
+            }
+            
+    
+        
+        
+        }  
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+         
+        
+        
+        
+        
 
         
-        curvefitting(numofpointsoffirstlane2, numofpointsoffirstlane1, y1, x1, inputImg, "blue");
-        curvefitting(numofpointsofsecondlane2, numofpointsofsecondlane1, y2, x2, inputImg, "green");
-        curvefitting(numofpointsofthirdlane2, numofpointsofthirdlane1, y3, x3, inputImg, "red");
+        curvefitting(0, numofpointsoffirstlane1new, y11, x11, inputImg, "blue");
+        curvefitting(0, numofpointsofsecondlane2new, y22, x22, inputImg, "green");
+        curvefitting(00, numofpointsofthirdlane3new, y33, x33, inputImg, "red");
 
 
         imshow("Sobel+Canny+Hough Trasformation1", upOutputImggray);
@@ -515,8 +1151,17 @@ int main(int argc, char **argv) {
         imshow("Input", inputImg);
 //      imshow("cdst", cdst);
 
+        
+        
+        
         waitKey(1000);
 
+        
+        
+        
+        
+        
+        
         clock_t end = clock();
         double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * elapsed_secs);
@@ -596,7 +1241,7 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
 
 
     int p, r;
-    for (p = 100; p < 480; p++) {
+    for (p = 0; p < 480; p++) {
         r = a[0] + a[1] * p + a[2] * p * p;
         if (r >= 0 && r <= 640) {
             if (color == "red")
