@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="src">
+        <in>IPM.cpp</in>
+        <in>cubic_spline.cpp</in>
+        <in>example.cpp</in>
+        <in>lane_detector_enis.cpp</in>
+        <in>lane_detector_enis_v0.0.1.cpp</in>
+        <in>lane_detector_enis_v0.0.2.cpp</in>
+        <in>lane_detector_enis_v0.0.3.cpp</in>
+        <in>lane_detector_enis_v0.0.4.cpp</in>
+        <in>lane_detector_enis_v0.0.5.cpp</in>
+        <in>lane_detector_enis_v0.0.6.cpp</in>
+        <in>lane_detector_enis_v0.0.7.cpp</in>
+        <in>lane_detector_enis_v0.1.0.cpp</in>
+        <in>lane_detector_enis_v0.1.1.cpp</in>
+        <in>lane_detector_enis_v0.1.10.cpp</in>
+        <in>lane_detector_enis_v0.1.11.cpp</in>
+        <in>lane_detector_enis_v0.1.13.cpp</in>
+        <in>lane_detector_enis_v0.1.14.cpp</in>
+        <in>lane_detector_enis_v0.1.15.cpp</in>
+        <in>lane_detector_enis_v0.1.2.cpp</in>
+        <in>lane_detector_enis_v0.1.3.cpp</in>
+        <in>lane_detector_enis_v0.1.4.cpp</in>
+        <in>lane_detector_enis_v0.1.5.cpp</in>
+        <in>lane_detector_enis_v0.1.5_deneme.cpp</in>
+        <in>lane_detector_enis_v0.1.6.cpp</in>
+        <in>lane_detector_enis_v0.1.7.cpp</in>
+        <in>lane_detector_enis_v0.1.8.cpp</in>
+        <in>lane_detector_enis_v0.1.9.cpp</in>
+        <in>lane_detector_enis_v0.1.9_IPM.cpp</in>
+        <in>lane_detector_enis_v0.2.0.cpp</in>
+        <in>lane_detector_enis_v0.2.1.cpp</in>
+        <in>lane_detector_enis_v0.2.2.cpp</in>
+        <in>listener.cpp</in>
+        <in>main.cpp</in>
+        <in>my_publisher.cpp</in>
+        <in>polynomial_fit.cpp</in>
+        <in>talker.cpp</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>CMakeLists.txt</itemPath>
+      <itemPath>Makefile</itemPath>
+      <itemPath>nbproject/private/launcher.properties</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand>${CMAKE} -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=${IDE_CC} -DCMAKE_CXX_COMPILER=${IDE_CXX} -DCMAKE_C_FLAGS_DEBUG="-g3 -gdwarf-2" -DCMAKE_CXX_FLAGS_DEBUG="-g3 -gdwarf-2" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .</preBuildCommand>
+        </preBuild>
+      </makefileType>
+      <item path="src/IPM.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/cubic_spline.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/example.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.6.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.0.7.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.0.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.10.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.11.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.13.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.14.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.15.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.5_deneme.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.6.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.7.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.8.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.9.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.1.9_IPM.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.2.0.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.2.1.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/lane_detector_enis_v0.2.2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/listener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/my_publisher.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/polynomial_fit.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/talker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

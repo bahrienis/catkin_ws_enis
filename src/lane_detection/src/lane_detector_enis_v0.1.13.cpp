@@ -1154,7 +1154,7 @@ int main(int argc, char **argv) {
         
         
         
-        waitKey(1000);
+        waitKey(1);
 
         
         
