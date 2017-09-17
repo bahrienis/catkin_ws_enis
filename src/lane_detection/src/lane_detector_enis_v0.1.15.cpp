@@ -31,9 +31,6 @@
 
 
 
-#include "nanoflann.hpp"
-#include "Eigen/Dense"
-
 
 
 using namespace std;
@@ -363,11 +360,7 @@ int main(int argc, char **argv) {
         
       
         
-        
-//   Eigen::MatrixXf mat(alldetectedpoints.size(), 2);
-//   for()
-                
-                
+            
                 
                 
         
@@ -416,42 +409,105 @@ int main(int argc, char **argv) {
      current_x = nextPointX;
   }
   
-       
-//for(int i=0;i < alldetectedpoints.size();i++){
-//          
-//         if((((x_coord_RightLine-(max_y_forRightLine/20)) <= alldetectedpoints.at(i).x) && (alldetectedpoints.at(i).x <= (x_coord_RightLine+(max_y_forRightLine/20)))) && (((max_y_forRightLine-(max_y_forRightLine/10)) <= alldetectedpoints.at(i).y) && (alldetectedpoints.at(i).y <= max_y_forRightLine))){
-//            
-//            rightLineRect.push_back(Point(x_coord_RightLine,max_y_forRightLine))  
-//                
-//           
-//            rectangle(gradgray, Point((x_coord_RightLine-(max_y_forRightLine/20)), (max_y_forRightLine-(max_y_forRightLine/10))),Point((x_coord_RightLine+(max_y_forRightLine/20)), max_y_forRightLine), Scalar(255), 1, 8, 0);
-//                
-//        } 
-//}    
+   
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      std::vector<Point> middleLine;     
+  
+  
+        
+  numOfPoints=5;
+  step = 20;
+  current_x = x_coord_MiddleLine;
+  vector<double> x_middleLine;
+  vector<double> y_middleLine;
+ // flann::KDTreeIndexParams indexParams;
+ // flann::Index kdtree(Mat(alldetectedpoints).reshape(1), indexParams);
+  for (int current_y = max_y_forMiddleLine; current_y>0; current_y-=step){
+     
       
-        
-        
-        
-        
-        
-        
-        
+     std::vector<float> query;
+     query.push_back(current_x);
+     query.push_back(current_y);
+     vector<int> indices;
+     vector<float> dists;
+     kdtree.knnSearch(query, indices, dists, numOfPoints);
+    
+     int x_sum = 0;
+     int y_sum = 0;
+     int thresholdMiddleLine = 500;
+     for(int i=0; i<indices.size(); i++){
+         x_sum+=alldetectedpoints.at(indices.at(i)).x;
+         y_sum+=alldetectedpoints.at(indices.at(i)).y;
+     }
+     double nextPointX = x_sum/indices.size();
+     double nextPointY = y_sum/indices.size();
+     
+     if(x_middleLine.size()==0 || 
+             (x_middleLine.size()>0 && 
+             abs(nextPointX-x_middleLine.back())<thresholdMiddleLine && 
+             abs(nextPointY-y_middleLine.back())<thresholdMiddleLine)){
+        middleLine.push_back(Point(nextPointX, nextPointY));
+        x_middleLine.push_back(nextPointX);
+        y_middleLine.push_back(nextPointY);
+     }
+    
+    
+     current_x = nextPointX;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
         
          curvefitting(0, x_rightLine.size(), y_rightLine, x_rightLine, gradgray, "blue");
+         
+         
+         curvefitting(0, x_middleLine.size(), y_middleLine, x_middleLine, gradgray, "red");
         
-        
-        
+    
         Mat tried;
          
          	 backward_ipm.applyHomography( gradgray, tried );	
