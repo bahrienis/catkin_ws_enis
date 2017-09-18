@@ -129,6 +129,11 @@ int main(int argc, char **argv) {
         
         
         std::vector<Point2f> alldetectedpoints;
+        std::vector<Point2f> rightline;
+        std::vector<Point2f> rightlinerect;
+        std::vector<double> x_right;
+        std::vector<double> y_right;
+        
         
         double x1[10000], y1[10000];
         double x2[10000], y2[10000];
@@ -147,20 +152,20 @@ int main(int argc, char **argv) {
 
 
        
-       if (sayi >= 294) {
+ /*      if (sayi >= 294) {
             sayi = 0;
         }
 
         std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-
+*/
         
         
         
 //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-//       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame156.jpg";
+       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame156.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -173,7 +178,7 @@ int main(int argc, char **argv) {
             cout << "can not open " << filename << endl;
             return -1;
         }
-       
+        
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
@@ -325,8 +330,10 @@ int main(int argc, char **argv) {
         HoughLinesP(grad, lines1P, 2, CV_PI / 180, 2, 2, 2);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
- //           circle(gradgray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(gradgray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(gradgray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             alldetectedpoints.push_back(Point2f(l[0], l[1]));
+            alldetectedpoints.push_back(Point2f(l[2], l[3]));
         }
         
         
@@ -358,229 +365,67 @@ int main(int argc, char **argv) {
         
         
         
-      
-        
-            
-                
-                
-        
-        
-  std::vector<Point> rightLine;     
-  
-  
-        
-  int numOfPoints=5;
-  int step = 20;
-  int current_x = x_coord_RightLine;
-  vector<double> x_rightLine;
-  vector<double> y_rightLine;
-  flann::KDTreeIndexParams indexParams;
-  flann::Index kdtree(Mat(alldetectedpoints).reshape(1), indexParams);
-  for (int current_y = max_y_forRightLine; current_y>0; current_y-=step){
-
+        int x_value = x_coord_RightLine;
+        int y_value = max_y_forRightLine;
    
-     std::vector<float> query;
-     query.push_back(current_x);
-     query.push_back(current_y);
-     vector<int> indices;
-     vector<float> dists;
-     kdtree.knnSearch(query, indices, dists, numOfPoints);
-    
-     int x_sum = 0;
-     int y_sum = 0;
-     int threshold = 100;
-     for(int i=0; i<indices.size(); i++){
-         x_sum+=alldetectedpoints.at(indices.at(i)).x;
-         y_sum+=alldetectedpoints.at(indices.at(i)).y;
-     }
-     double nextPointX = x_sum/indices.size();
-     double nextPointY = y_sum/indices.size();
-     
-     if(x_rightLine.size()==0 || 
-             (x_rightLine.size()>0 && 
-             abs(nextPointX-x_rightLine.back())<threshold && 
-             abs(nextPointY-y_rightLine.back())<threshold)){
-        rightLine.push_back(Point(nextPointX, nextPointY));
-        x_rightLine.push_back(nextPointX);
-        y_rightLine.push_back(nextPointY);
-     }
-    
-    
-     current_x = nextPointX;
-  }
-  
-   
-        
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      std::vector<Point> middleLine;     
-  
-  
+      for(int i=0;i<alldetectedpoints.size();i++) { 
+         int x_coord = alldetectedpoints.at(i).x;
+         int  y_coord = alldetectedpoints.at(i).y;
+          
+         if(x_coord>=x_value-30 && x_coord <= x_value+30
+                 && y_coord <= y_value && y_coord >= y_value-30){
         
- numOfPoints=5;
-  step = 20;
-  current_x = x_coord_MiddleLine;
-  vector<double> x_middleLine;
-  vector<double> y_middleLine;
- // flann::KDTreeIndexParams indexParams;
- // flann::Index kdtree(Mat(alldetectedpoints).reshape(1), indexParams);
-  for (int current_y = max_y_forMiddleLine; current_y>0; current_y-=step){
-     
-
-   
-     std::vector<float> query;
-     query.push_back(current_x);
-     query.push_back(current_y);
-     vector<int> indices;
-     vector<float> dists;
-     kdtree.knnSearch(query, indices, dists, numOfPoints);
-    
-     int x_sum = 0;
-     int y_sum = 0;
-     int thresholdMiddleLine = 100;
-     for(int i=0; i<indices.size(); i++){
-         x_sum+=alldetectedpoints.at(indices.at(i)).x;
-         y_sum+=alldetectedpoints.at(indices.at(i)).y;
-     }
-     double nextPointX = x_sum/indices.size();
-     double nextPointY = y_sum/indices.size();
-     
-     if(x_middleLine.size()==0 || 
-             (x_middleLine.size()>0 && 
-             abs(nextPointX-x_middleLine.back())<thresholdMiddleLine && 
-             abs(nextPointY-y_middleLine.back())<thresholdMiddleLine)){
-        middleLine.push_back(Point(nextPointX, nextPointY));
-        x_middleLine.push_back(nextPointX);
-        y_middleLine.push_back(nextPointY);
-        
+  rectangle(gradgray,Point(x_value-30,y_value),Point(x_value+30,y_value-30),Scalar(255), 1, 8, 0);
+  rightline.push_back(alldetectedpoints.at(i));
+  x_right.push_back(alldetectedpoints.at(i).x);
+  y_right.push_back(alldetectedpoints.at(i).y);
+  
+    rightlinerect.push_back(alldetectedpoints.at(i));
+  
+      }
+         if(rightlinerect.size()>1 && i == alldetectedpoints.size()-1){
+             
+             y_value = rightlinerect.at(0).y;
+             
+             for(int j=1;j<rightlinerect.size();j++){
+                 if(rightlinerect.at(j).y < y_value){
+                   y_value = rightlinerect.at(j).y;
+                   x_value = rightlinerect.at(j).x;
                    
-   circle(gradgray, Point(nextPointX, nextPointY), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
-   
-     }
-    
-    
-     current_x = nextPointX;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    
-      std::vector<Point> leftLine;     
-  
-  
-        
-  numOfPoints=5;
-  step = 20;
-  current_x = x_coord_LeftLine;
-  vector<double> x_leftLine;
-  vector<double> y_leftLine;
- // flann::KDTreeIndexParams indexParams;
- // flann::Index kdtree(Mat(alldetectedpoints).reshape(1), indexParams);
-  for (int current_y = max_y_forLeftLine; current_y>0; current_y-=step){
-     
-
-   
-     std::vector<float> query;
-     query.push_back(current_x);
-     query.push_back(current_y);
-     vector<int> indices;
-     vector<float> dists;
-     kdtree.knnSearch(query, indices, dists, numOfPoints);
-    
-     int x_sum = 0;
-     int y_sum = 0;
-     int thresholdLeftLine = 100;
-     for(int i=0; i<indices.size(); i++){
-         x_sum+=alldetectedpoints.at(indices.at(i)).x;
-         y_sum+=alldetectedpoints.at(indices.at(i)).y;
-     }
-     double nextPointX = x_sum/indices.size();
-     double nextPointY = y_sum/indices.size();
-     
-     if(x_leftLine.size()==0 || 
-             (x_leftLine.size()>0 && 
-             abs(nextPointX-x_leftLine.back())<thresholdLeftLine && 
-             abs(nextPointY-y_leftLine.back())<thresholdLeftLine)){
-        leftLine.push_back(Point(nextPointX, nextPointY));
-        x_leftLine.push_back(nextPointX);
-        y_leftLine.push_back(nextPointY);
-        
-                   
-   circle(gradgray, Point(nextPointX, nextPointY), 1, Scalar(255, 0, 0), 5, CV_AA, 0);
-   
-     }
-    
-    
-     current_x = nextPointX;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-        
-         curvefitting(0, x_rightLine.size(), y_rightLine, x_rightLine, gradgray, "blue");
+                 }
+             }
+ 
+             rightlinerect.clear();
+             i=0; 
+                      
+         }
+         if(rightlinerect.size()==1 && i == alldetectedpoints.size()-1){
+             
+            i =  alldetectedpoints.size();
+         }
          
          
-         curvefitting(0, x_middleLine.size(), y_middleLine, x_middleLine, gradgray, "red");
+         
+         
+      }
+  
+     
+         
+     
+  
+         curvefitting(0, rightline.size(), y_right, x_right, gradgray, "blue");
+         
+         
+   //      curvefitting(0, x_middleLine.size(), y_middleLine, x_middleLine, gradgray, "red");
         
     
-          curvefitting(0, x_leftLine.size(), y_leftLine, x_leftLine, gradgray, "green");
+   //       curvefitting(0, x_leftLine.size(), y_leftLine, x_leftLine, gradgray, "green");
           
    
-          
-          
-          
-          /*Mat tried;
+         
+         
+         /*Mat tried;
          
          	 backward_ipm.applyHomography( gradgray, tried );	
                  //backward_ipm.drawPoints(origPoints, inputImg );
@@ -590,12 +435,13 @@ int main(int argc, char **argv) {
                  
         
                imshow("try", tried); 
-            */     
-       imshow("Hough", outputImg4gray);          
-       imshow("Sobel", gradgray);  
                  
+       
+             */    
 
-	 	 
+	        imshow("Hough", outputImg4gray);          
+       imshow("Sobel", gradgray);  
+        	 
 	
 
         
@@ -608,10 +454,9 @@ int main(int argc, char **argv) {
         
         
         
-       waitKey(100);
+       waitKey(1);
 
-        
-        
+ 
         
         
         
