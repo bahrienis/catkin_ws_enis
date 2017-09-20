@@ -54,6 +54,9 @@
         <in>lane_detector_enis_v0.2.0.cpp</in>
         <in>lane_detector_enis_v0.2.1.cpp</in>
         <in>lane_detector_enis_v0.2.2.cpp</in>
+        <in>lane_detector_enis_v0.3.1.cpp</in>
+        <in>lane_detector_enis_v0.4.1.cpp</in>
+        <in>lane_detector_enis_v0.5.1.cpp</in>
         <in>listener.cpp</in>
         <in>main.cpp</in>
         <in>my_publisher.cpp</in>

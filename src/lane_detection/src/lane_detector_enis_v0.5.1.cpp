@@ -172,11 +172,11 @@ int main(int argc, char **argv) {
 
 
        
-      if (sayi >= 294) {
+      if (sayi >= 251) {
             sayi = 0;
         }
 
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_14.09.2017_lightoff/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
 
@@ -253,7 +253,7 @@ int main(int argc, char **argv) {
 
 
 
-      //  Canny(grad, dst, 255, 255, 3);
+        //Canny(grad, dst, 255, 255, 3);
         cvtColor(grad, gradgray, CV_GRAY2BGR);
 
 
@@ -314,14 +314,14 @@ int main(int argc, char **argv) {
                        
         for(int i=0;i<numOfRedLinesUp;i++){
             if(findredlinesarray1[i] - findredlinesarray1[i + 1] > 25){
-                midLineIndex = i+1;
+                midLineIndex = i + 1;
                 break;
             }
         }
         if(midLineIndex>0){
             for(int i=midLineIndex;i<numOfRedLinesUp;i++){
                if(findredlinesarray1[i] - findredlinesarray1[i + 1] > 25){
-                leftLineIndex = i+1;
+                leftLineIndex = i + 1;
                 break;
                } 
             }
@@ -550,9 +550,9 @@ int main(int argc, char **argv) {
          
          curvefitting(0, middleline.size(), y_middle, x_middle, gradgray, "red");
         
-   
+         if(x_coord_LeftLine != x_coord_RightLine){
         curvefitting(0, leftline.size(), y_left, x_left, gradgray, "green");
-          
+         }    
    
          
          
@@ -585,7 +585,7 @@ int main(int argc, char **argv) {
         
         
         
-       waitKey(1);
+       waitKey(1000);
 
  
         
