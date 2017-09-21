@@ -21,7 +21,8 @@
 
 
 
-
+#include "IPM.h"
+#include "IPM.cpp"
 
 
 
@@ -32,7 +33,7 @@ using namespace cv;
 
 
 void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
-        double *y, double *x, Mat inputImg, string color);
+        double *y, double *x, Mat inputImg, string color, IPM ipm);
 
 
 int main(int argc, char **argv) {
@@ -62,6 +63,58 @@ int main(int argc, char **argv) {
 
 
     int sayi = 0;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     // The 4-points at the input image	
+	vector<Point2f> origPoints;
+	origPoints.push_back( Point2f(0, dHeight) );
+	origPoints.push_back( Point2f(dWidth, dHeight) );
+	origPoints.push_back( Point2f(dWidth, 80) );
+	origPoints.push_back( Point2f(0, 80) );
+  	 
+	// The 4-points correspondences in the destination image
+	vector<Point2f> dstPoints;
+	dstPoints.push_back( Point2f(dWidth/2-50, dHeight) );
+	dstPoints.push_back( Point2f(dWidth/2+50, dHeight) );
+	dstPoints.push_back( Point2f(dWidth, 0) );
+	dstPoints.push_back( Point2f(0, 0));
+	
+	// IPM object
+	
+	 
+	 
+	IPM ipm( Size(dWidth, dHeight), Size(dWidth, dHeight), origPoints, dstPoints );
+        
+        
+        IPM backward_ipm( Size(dWidth, dHeight), Size(dWidth, dHeight), dstPoints, origPoints);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     // Main loop
     int frameNum = 0;
@@ -99,20 +152,20 @@ int main(int argc, char **argv) {
 
 
        
-        if (sayi >= 294) {
+   /*     if (sayi >= 294) {
             sayi = 0;
         }
 
         std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-
+*/
         
         
         
 //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-//       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame61.jpg";
+      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame50.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -139,6 +192,18 @@ int main(int argc, char **argv) {
         
         
         
+        
+        
+        
+        /*
+        Mat afterIPM;
+     ipm.applyHomography( inputImg, afterIPM );
+ 
+     */
+     
+     
+     
+     
         
         
         
@@ -763,7 +828,7 @@ int main(int argc, char **argv) {
                          isthereanypixel = false;
                      }
                  
-                 cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
+             //    cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
                 
                 
                  
@@ -917,7 +982,7 @@ int main(int argc, char **argv) {
                          isthereanypixel2 = false;
                      }
                  
-                 cout << "simdi bu kac : " << tmp2_pixel.y << endl; 
+          //       cout << "simdi bu kac : " << tmp2_pixel.y << endl; 
                 
                 
                  
@@ -1047,7 +1112,7 @@ int main(int argc, char **argv) {
                          isthereanypixel3 = false;
                      }
                  
-                 cout << "simdi bu kac : " << tmp3_pixel.y << endl; 
+       //          cout << "simdi bu kac : " << tmp3_pixel.y << endl; 
                 
                 
                  
@@ -1074,82 +1139,39 @@ int main(int argc, char **argv) {
      
      
      
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+     /*
+     Mat tried;
          
+         	 backward_ipm.applyHomography( gradgray, tried );	
+                 //backward_ipm.drawPoints(origPoints, inputImg );
+                 
+                 
+                 
+                 
         
-        
-        
+               imshow("try", tried); 
+     
+     */
+     
+     
+     
+     
+     
+     
+     
+      
         
 
         
-        curvefitting(0, numofpointsoffirstlane1new, y11, x11, inputImg, "blue");
-        curvefitting(0, numofpointsofsecondlane2new, y22, x22, inputImg, "green");
-        curvefitting(00, numofpointsofthirdlane3new, y33, x33, inputImg, "red");
+        curvefitting(0, numofpointsoffirstlane1new, y11, x11, inputImg, "blue", ipm);
+        curvefitting(0, numofpointsofsecondlane2new, y22, x22, inputImg, "green",ipm);
+        curvefitting(0, numofpointsofthirdlane3new, y33, x33, inputImg, "red",ipm);
 
 
         imshow("Sobel+Canny+Hough Trasformation1", upOutputImggray);
         imshow("Sobel+Canny+Hough Trasformation2", downOutputImggray);
         imshow("Input", inputImg);
-//      imshow("cdst", cdst);
+       // imshow("AfterIPM",afterIPM);
 
         
         
@@ -1172,7 +1194,7 @@ int main(int argc, char **argv) {
 
 
 void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
-        double *x, double *y, Mat inputImg, string color) {
+        double *x, double *y, Mat inputImg, string color, IPM ipm) {
     int i, j, k, n, N;
     cout.precision(4); //set precision
     cout.setf(ios::fixed);
@@ -1244,13 +1266,15 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
     for (p = 0; p < 480; p++) {
         r = a[0] + a[1] * p + a[2] * p * p;
         if (r >= 0 && r <= 640) {
-            if (color == "red")
-                circle(inputImg, Point(r, p), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            if (color == "red"){
+               
+                circle(inputImg, ipm.applyHomography(Point(r,p)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            }
             else if (color == "blue")
-                circle(inputImg, Point(r, p), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImg, ipm.applyHomography(Point(r, p)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
             else if (color == "green")
-                circle(inputImg, Point(r, p), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
-        }
+                circle(inputImg, ipm.applyHomography(Point(r, p)), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+       }
     }
 
 

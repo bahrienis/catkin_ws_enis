@@ -22,7 +22,7 @@ opencv2/features2d/features2d.hpp
 iostream
 -
 
-/home/enis/catkin_ws/src/lane_detection/src/lane_detector_enis_v0.5.1.cpp
+/home/enis/catkin_ws/src/lane_detection/src/lane_detector_enis_v0.3.1.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -35,10 +35,6 @@ opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
 -
-opencv2/flann/miniflann.hpp
-/home/enis/catkin_ws/src/lane_detection/src/opencv2/flann/miniflann.hpp
-opencv2/flann/flann_base.hpp
-/home/enis/catkin_ws/src/lane_detection/src/opencv2/flann/flann_base.hpp
 iostream
 -
 stdio.h
@@ -55,11 +51,9 @@ termios.h
 -
 opencv2/core/core.hpp
 /home/enis/catkin_ws/src/lane_detection/src/opencv2/core/core.hpp
-cmath
+stdio.h
 -
 ctime
--
-vector
 -
 opencv2/imgcodecs.hpp
 /home/enis/catkin_ws/src/lane_detection/src/opencv2/imgcodecs.hpp
