@@ -26,7 +26,10 @@
 \contentsline {chapter}{\numberline {3}Implementation}{9}{chapter.3}
 \contentsline {section}{3.1.Test Track}{9}{chapter.3}
 \contentsline {section}{3.2.Hardware}{9}{chapter.3}
-\contentsline {section}{3.3.Software}{9}{chapter.3}
+\contentsline {subsection}{3.2.1. Model Auto}{9}{chapter.3}
+\contentsline {subsection}{3.2.2. Microcontroller and Main Board}{9}{chapter.3}
+\contentsline {subsection}{3.2.3. Camera}{9}{chapter.3}
+\contentsline {section}{3.3.Software}{10}{figure.caption.9}
 \contentsline {chapter}{\numberline {4}Evaulation and Discussion}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}Editor}{11}{section.4.1}
 \contentsline {section}{\numberline {4.2}Rechtschreibung}{11}{section.4.2}
