@@ -11,26 +11,26 @@
 \contentsline {chapter}{\numberline {2}Fundamentals}{3}{chapter.2}
 \contentsline {section}{2.1.Properties of Truck at Carolo-Cup}{3}{chapter.2}
 \contentsline {section}{2.2. Inverse Perspective Mapping}{3}{figure.caption.8}
-\contentsline {section}{2.3. Edge Detection}{5}{figure.caption.8}
-\contentsline {subsection}{2.3.1. Sobel Operator}{5}{figure.caption.8}
-\contentsline {section}{2.4. Hough - Transformation}{5}{figure.caption.8}
-\contentsline {subsection}{2.4.1. Standart Hough - Transformation}{5}{figure.caption.8}
-\contentsline {subsection}{2.4.2. Probabilistic Hough - Transformation}{5}{figure.caption.8}
-\contentsline {section}{2.5. Curve Fitting}{5}{figure.caption.8}
-\contentsline {subsection}{Ergebnissicherung}{6}{figure.caption.8}
-\contentsline {section}{4. Phase: Dokumentation und Pr\"asentation}{6}{figure.caption.8}
-\contentsline {subsection}{Wissenschaftliches Schreiben}{7}{figure.caption.8}
-\contentsline {subsection}{Verteidigung und Pr\"asentation}{7}{figure.caption.8}
-\contentsline {section}{Organisatorisches}{8}{figure.caption.8}
-\contentsline {section}{Allgemeines zu Hilfsmitteln bei der Erstellung und Bearbeitung}{8}{figure.caption.8}
-\contentsline {subsection}{Empfohlene Programme}{9}{figure.caption.8}
+\contentsline {section}{2.3. Edge Detection}{6}{figure.caption.10}
+\contentsline {subsection}{2.3.1. Sobel Operator}{7}{figure.caption.10}
+\contentsline {section}{2.4. Hough - Transformation}{7}{figure.caption.10}
+\contentsline {subsection}{2.4.1. Standart Hough - Transformation}{7}{figure.caption.10}
+\contentsline {subsection}{2.4.2. Probabilistic Hough - Transformation}{7}{figure.caption.10}
+\contentsline {section}{2.5. Curve Fitting}{7}{figure.caption.10}
+\contentsline {subsection}{Ergebnissicherung}{7}{figure.caption.10}
+\contentsline {section}{4. Phase: Dokumentation und Pr\"asentation}{7}{figure.caption.10}
+\contentsline {subsection}{Wissenschaftliches Schreiben}{8}{figure.caption.10}
+\contentsline {subsection}{Verteidigung und Pr\"asentation}{8}{figure.caption.10}
+\contentsline {section}{Organisatorisches}{9}{figure.caption.10}
+\contentsline {section}{Allgemeines zu Hilfsmitteln bei der Erstellung und Bearbeitung}{9}{figure.caption.10}
+\contentsline {subsection}{Empfohlene Programme}{10}{figure.caption.10}
 \contentsline {chapter}{\numberline {3}Implementation}{11}{chapter.3}
 \contentsline {section}{3.1.Test Track}{11}{chapter.3}
 \contentsline {section}{3.2.Hardware}{11}{chapter.3}
 \contentsline {subsection}{3.2.1. Model Auto}{11}{chapter.3}
 \contentsline {subsection}{3.2.2. Microcontroller and Main Board}{11}{chapter.3}
 \contentsline {subsection}{3.2.3. Camera}{11}{chapter.3}
-\contentsline {section}{3.3.Software}{12}{figure.caption.9}
+\contentsline {section}{3.3.Software}{12}{figure.caption.11}
 \contentsline {chapter}{\numberline {4}Evaulation and Discussion}{13}{chapter.4}
 \contentsline {section}{\numberline {4.1}Editor}{13}{section.4.1}
 \contentsline {section}{\numberline {4.2}Rechtschreibung}{13}{section.4.2}

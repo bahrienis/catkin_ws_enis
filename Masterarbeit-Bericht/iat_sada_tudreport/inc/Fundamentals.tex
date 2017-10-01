@@ -14,12 +14,12 @@ competition is changing. For example, in the competitions until 2017 there was n
 traffic sign but from 2017 there are also some traffic signs, speed limit zones, 
 blocked areas and crosswalks with pedestrian. Because of this reason, in the 
 competitions until 2017, there was only one way to understand who has the right of way. 
-If there is a stop linevin the way which in front of intersection, it means, the car 
+If there is a stop line in the way which in front of intersection, it means, the car 
 has to wait until the intersection is free. In the competitions from 2017, the 
-intersections are in different parts: They are "Intersections with stop lines", 
-"Intersections with give-way lines", "Intersections with priority to right", 
-"Enforced crossing direction - give-way condition", "Enforced crossing direction - 
-right of way condition". Except "Intersections with priority to right", they all have 
+intersections are in different parts: They are 'Intersections with stop lines', 
+'Intersections with give-way lines', 'Intersections with priority to right', 
+'Enforced crossing direction - give-way condition', 'Enforced crossing direction - 
+right of way condition'. Except 'Intersections with priority to right', they all have 
 traffic signs, which signs who has priority. If there is a no traffic sign, it means,
 right side always have priority.
 
@@ -50,7 +50,7 @@ transformation and calibration.
 
 \begin{itemize}
  \item \textbf{Intrinsic Parameters :} Instrinsic parameters include are specific to a camera. It includes information
-of the local length ($f_x$, $f_y$) and optical centers ($c_x$, $c_y$). It is also called camera matrix. It depends on 
+of the focal length ($f_x$, $f_y$) and optical centers ($c_x$, $c_y$). It is also called camera matrix. It depends on 
 the camera only, so once calibrated, it can be stored for future purposes. It is expressed as a 3x3 matrix: 
 
  \begin{center}
@@ -63,9 +63,56 @@ f_x & 0 & c_x \\
 $  \end{center}
 
  \item \textbf{Extrinsic Parameters :} Extrinsic parameters are relevant with the camera position. The parameters are H 
- and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. \cite{Richtlinien}
+ and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. 
  
- \end{itemize}
+  \end{itemize}
+  
+ \begin{figure}
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[width=150mm,scale=1]{./Bilder/Related_positions_of_the_camera.png}
+	\caption{Related Positions of the Camera \cite{IPM}}
+\end{figure}
+ 
+ As seen at Abbildung 2.2, the camera on the car has field of view 2(FOV2) at its real position of camera but in this 
+ case, the view is not bird-eye view so if the same FOV want to be seen from bird-eye view, IPM will virtually change
+ the position to Virtual position 2 of camera. In this case, although the camera is at its real position, it will look
+ like that it is at the virtual position 2. For that, the image coordinates must be also changed. Below, steps of IPM 
+ calculations will be from the paper of \cite{IPM} described.
+ 
+ In the formula, original image coordinates will be defined as (x,y), the destination image coordinates will be 
+ defined as ($x^*$,$y^*$), the distance between ground and camera will be defines as H, the focal length of camera 
+ will be defines as f and the tilt angle of camera will be defined as $\theta$.
+ 
+\begin{center}
+ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ ;
+ $y^* = H \frac{y sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ 
+\end{center}
+
+In this equation , the transformed component values of $x^*$ and $y^*$ may be less than or equal to zero. Because of 
+this reason, a constant d is defined as $
+\begin{vmatrix}
+H(sin \theta + cos \theta)/(f sin \theta - cos \theta) 
+\end{vmatrix}
+$  + 1. This means that the coordinate point in the original source image has been mapped into the point of  the 
+destination image coordinate system. Below there is the proposed equation :
+ 
+ \begin{center}
+ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
+ $y^* = H \frac{y sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
+ where d = 
+ $\begin{vmatrix}
+ \frac{H(sin \theta + f cos \theta)}{f sin \theta - cos \theta}
+ \end{vmatrix}$ + 1
+\end{center}
+
+\begin{figure}
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[width=150mm,scale=1]{./Bilder/Procedures_of_IPM.png}
+	\caption{Procedures of IPM \cite{IPM}}
+\end{figure}
+
 %
 \section*{2.3. Edge Detection}\label{sec:Edge Detection}
 \addcontentsline{toc}{section}{2.3. Edge Detection}
@@ -73,8 +120,31 @@ $  \end{center}
 Edge detectors are essential parts of most of computer vision systems. Edge detectors decrease dramatically the 
 amount of data to be processed and extract the useful part of images. They work by detecting discontinuities in 
 brightness. In this project, the edge detector was used, the lanes to detect and prevent unnecessary information 
-from images.
+from images.  
 
+Well known edge detectors are :
+
+\begin{itemize}
+ \item Sobel-Operator
+ \item Canny Edge Detector
+ \item Laplacian Edge Detector
+ \item Prewitt-Operator
+ \end{itemize}
+
+According to \cite{Machine_Vision},there are three steps at edge detection algoritm. They are :
+\begin{itemize}
+ \item \textbf{Filtering : } It is often utilized to improve the functioning of an edge detector against noise. 
+ The more filtering is applied, however, the greater the loss of edge strength.
+ 
+ \item \textbf{Enhancement : } To be able to better detect edges, changes in the intensity in the area 
+ surrounding a point must be determined. Pixels in which a significant change in intensity occurs are 
+ emphasized by enhancement, which is usually applied by calculating the gradient magnitude.
+  
+ \item \textbf{Detection : } Though many points in an image have a nonzero value for the gradient, not all of 
+ these points are actually edges. Because only points with strong edge content are desired, a method must be 
+ applied to determine which points are actual edge points. Thresholding is often utilized to do so.
+ 
+\end{itemize}
 
 \subsection*{2.3.1. Sobel Operator}\label{sec:Sobel Operator}
 \addcontentsline{toc}{subsection}{2.3.1. Sobel Operator}
