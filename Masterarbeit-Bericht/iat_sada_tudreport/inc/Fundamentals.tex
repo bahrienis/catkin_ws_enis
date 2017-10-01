@@ -33,14 +33,39 @@ Right: Intersections with stop lines at Carolo-Cup}
 
 
 %
-\section*{2.2. Sobel Operator}\label{sec:Sobel Operator}
-\addcontentsline{toc}{section}{2.2. Sobel Operator}
+\section*{2.2. Inverse Perspective Mapping}\label{sec:Inverse Perspective Mapping}
+\addcontentsline{toc}{section}{2.2. Inverse Perspective Mapping}
 %
-\begin{itemize}
- \item persönliche Treffen sollten gut vorbereitet werden (z.B. Fragenkatalog)
- \item Ergebnisse des Treffens und Anmerkungen des Betreuers festhalten (Notizen)
-\end{itemize}
+Inverse Perspective Mapping(IPM) is an algorithm which obtain accurate bird's-eye view images from the sequential 
+of forward looking cameras. At IPM algorithm, each image pixel is re-mapped, and a new array of pixels is created 
+where the lines in perspective are transformed into straight lines and objects are distorted. IPM is one of the 
+most used methods at lane detection. At lane detection, IPM ensures to show the lanes vertical and parallel to 
+each other. On the other hand, because of re-mapping of pixels, IPM is a computationally expensive method. Because 
+of this reason, in this master thesis, in some methods, except to remap the all pixels of images, just the pixels,
+which are relevant to lane and accordingly the fitted curve were remapped. Thanks to this, in some methods, so many 
+time of computing was saved.
 
+For using IPM method, the intrinsic and extrinsic parameters of camera are necessary to process images for coordinate 
+transformation and calibration. 
+
+\begin{itemize}
+ \item \textbf{Intrinsic Parameters :} Instrinsic parameters include are specific to a camera. It includes information
+of the local length ($f_x$, $f_y$) and optical centers ($c_x$, $c_y$). It is also called camera matrix. It depends on 
+the camera only, so once calibrated, it can be stored for future purposes. It is expressed as a 3x3 matrix: 
+
+ \begin{center}
+  camera matrix =  $
+ \begin{bmatrix} 
+f_x & 0 & c_x \\
+0 & f_y & c_y \\
+0 & 0 & 1 \\
+\end{bmatrix}
+$  \end{center}
+
+ \item \textbf{Extrinsic Parameters :} Extrinsic parameters are relevant with the camera position. The parameters are H 
+ and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. \cite{Richtlinien}
+ 
+ \end{itemize}
 %
 \section*{2.3. Edge Detection}\label{sec:Edge Detection}
 \addcontentsline{toc}{section}{2.3. Edge Detection}
@@ -49,6 +74,10 @@ Edge detectors are essential parts of most of computer vision systems. Edge dete
 amount of data to be processed and extract the useful part of images. They work by detecting discontinuities in 
 brightness. In this project, the edge detector was used, the lanes to detect and prevent unnecessary information 
 from images.
+
+
+\subsection*{2.3.1. Sobel Operator}\label{sec:Sobel Operator}
+\addcontentsline{toc}{subsection}{2.3.1. Sobel Operator}
 
 %
 \section*{2.4. Hough-Transformation}\label{sec:Hough - Transformation}
@@ -76,8 +105,8 @@ from images.
 
 
 %
-\section*{2.5. Curve Fitting or Spline-Interpolation}\label{sec:Curve Fitting or Spline-Interpolation}
-\addcontentsline{toc}{section}{2.5. Curve Fitting or Spline-Interpolation}
+\section*{2.5. Curve Fitting}\label{sec:Curve Fitting}
+\addcontentsline{toc}{section}{2.5. Curve Fitting}
 %
 \begin{itemize}
  \item dient der Reorganisation der Arbeit
@@ -214,3 +243,4 @@ $P_\text{rägnanz}\; O_\text{rdnung}\; E_\text{infachheit}\; M_\text{otivation}$ 
  \item Plots $\rightarrow$ \texttt{pgfplots}
  \item Blockschaltbilder $\rightarrow$ \texttt{TikZ}
 \end{itemize}
+
