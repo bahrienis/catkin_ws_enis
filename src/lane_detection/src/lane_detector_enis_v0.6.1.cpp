@@ -276,7 +276,7 @@ cvtColor(grad, gradcolor, CV_GRAY2BGR);
 
 
    
-            Rect Rec1(0, firstpicsize , 640, (480 - firstpicsize));
+            Rect Rec1(0, 2*dHeight/5 , 640, 3*dHeight/5);
 //        line(inputImg, Point(0,99),Point(640,99),Scalar(0,255,0),1,CV_AA);
      //   rectangle(inputImg, Rec1, Scalar(255), 1, 8, 0);
     //    rectangle(inputImg, Point(0, 0),Point(640, 99), Scalar(255), 1, 8, 0);
@@ -384,20 +384,18 @@ cvtColor(grad, gradcolor, CV_GRAY2BGR);
         
         
         
-             
-
-        
+    
         
         
                         //1. Bild         
 
         vector<Vec4i> lines1P;
-        HoughLinesP(grad, lines1P, 1, CV_PI / 180, 0, 0, 0);
+        HoughLinesP(outputImg1, lines1P, 1, CV_PI / 180, 0, 0, 0);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
-            circle(gradcolor, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(outputImg1color, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
           //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-                circle(gradcolor, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(outputImg1color, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
                 houghPoints.push_back(Point(l[0], l[1]));
                 houghPoints.push_back(Point(l[2], l[3]));
          
@@ -419,9 +417,16 @@ cvtColor(grad, gradcolor, CV_GRAY2BGR);
    
      
         
-    rectangle(gradcolor, Point(x_coord_RightLine + y_coord_RightLine/10,y_coord_RightLine), Point(x_coord_RightLine - y_coord_RightLine/10,y_coord_RightLine - y_coord_RightLine/10), Scalar(0,255,0),1,8,0);    
-        
-        
+   rectangle(outputImg1color, Point(x_coord_RightLine + y_coord_RightLine/3,y_coord_RightLine), Point(x_coord_RightLine - y_coord_RightLine/3,y_coord_RightLine - y_coord_RightLine/3), Scalar(0,255,0),1,8,0);           
+   Rect rectanglessmall(Point(x_coord_RightLine + y_coord_RightLine/3,y_coord_RightLine), Point(x_coord_RightLine - y_coord_RightLine/3,y_coord_RightLine - y_coord_RightLine/3));
+     
+   
+   
+   
+   
+   
+   
+
         
         
         
