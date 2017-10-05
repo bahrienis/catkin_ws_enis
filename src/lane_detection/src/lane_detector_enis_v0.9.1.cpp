@@ -16,8 +16,6 @@
 #include <stdio.h>
 #include <ctime>
 #include "opencv2/imgcodecs.hpp"
-#include <vector>
-
 
 
 
@@ -36,35 +34,6 @@ using namespace cv;
 
 void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
         double *y, double *x, Mat inputImg, string color, IPM ipm);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 int main(int argc, char **argv) {
@@ -104,16 +73,6 @@ int main(int argc, char **argv) {
     
     
     
-    
-      vector<int> redlines;
-      vector<Point2f> houghpoints;
-    
-    
-    
- 
-
-        int numOfPoints = 5;
-        int step = heightofframe/16;
     
     
     
@@ -191,7 +150,8 @@ int main(int argc, char **argv) {
         int secondpicsize = 50;
         int thirdpicsize = 330;
         
-      
+        vector<int> redlines;
+        vector<Point> houghpoints;
         int rightLaneIndex = 0;
         int rightLaneIndexStart = 0;
         int rightLaneIndexFinish = 0;
@@ -203,6 +163,8 @@ int main(int argc, char **argv) {
         Point rightLaneStart = Point(0,0);
         Point middleLaneStart = Point(0,0);
         Point leftLaneStart = Point(0,0);
+        
+        vector<Point> rightLanePoints;
         
 
         clock_t begin = clock();
@@ -282,7 +244,7 @@ int main(int argc, char **argv) {
         
         
         
-        threshold(outputImg3, cdst1, 0.6*maxVal, 255, 1);
+        threshold(outputImg3, cdst1, 0.5*maxVal, 255, 1);
         
         
         
@@ -397,11 +359,11 @@ int main(int argc, char **argv) {
         HoughLinesP(grad, lines1P, 1, CV_PI / 180, 0, 0, 0);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
-            circle(gradcolor, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
           //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-                circle(gradcolor, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-                houghpoints.push_back(Point2f(l[0], l[1]));
-                houghpoints.push_back(Point2f(l[2], l[3]));
+                circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                houghpoints.push_back(Point(l[0], l[1]));
+                houghpoints.push_back(Point(l[2], l[3]));
 
          
   }
@@ -431,81 +393,113 @@ int main(int argc, char **argv) {
         
         
         
+  /*      int right_x = rightLaneStart.x;
+        int right_y = rightLaneStart.y;
         
+     
         
-        
-        
-        
-        
-        
-        
-        
-        
-           flann::KDTreeIndexParams indexParams;
-           houghpoints.convertTo(houghpoints,CV_32F);
-        flann::Index kdtree(Mat(houghpoints).reshape(1), indexParams);
-        
-        
-        
-        
-       for (int current_y = rightLaneStart.y; current_y > 0; current_y -= step) { 
-        
-        
-        std::vector<float> query;
-        vector<int> indices;
-        vector<float> dists;
-        kdtree.knnSearch(query, indices, dists, numOfPoints);
-
-        vector<int> k_nearest_x;
-        vector<int> k_nearest_y;
-
-        for (int i = 0; i < indices.size(); i++) {
-            int cur_x = houghpoints.at(indices.at(i)).x;
-            int cur_y = houghpoints.at(indices.at(i)).y;
-
+       for(int i=0;i<houghpoints.size();i++){ 
+           
+       if((houghpoints.at(i).x>=rightLaneStart.x-right_y/10 && houghpoints.at(i).x<=rightLaneStart.x+right_y/10) && (houghpoints.at(i).y<=rightLaneStart.y+right_y/10 && houghpoints.at(i).y>= rightLaneStart.y-right_y/10)){ 
+           rightLanePoints.push_back(houghpoints.at(i));
+           rectangle(inputImg, Point(rightLaneStart.x-right_y/10, rightLaneStart.y+right_y/10),Point(rightLaneStart.x+right_y/10, rightLaneStart.y-right_y/10), Scalar(255), 1, 8, 0);
+           
+       }
+       
+       
+       
+       if(rightLanePoints.size()>=5 && i == houghpoints.size()-1){
+           
           
-cout << "results : " << cur_x << " " << cur_y << endl;
-        
-        }
-
-
-        double nextPointX = accumulate(k_nearest_x.begin(), k_nearest_x.end(), 0.0) / k_nearest_x.size();
-        double nextPointY = accumulate(k_nearest_y.begin(), k_nearest_y.end(), 0.0) / k_nearest_y.size();
-
-
-        
+           int temp = rightLanePoints.at(0).y;
+           for(int j=0;j<rightLanePoints.size();j++){
+               
+               if(rightLanePoints.at(j).y< temp){
+                   rightLaneStart = rightLanePoints.at(j);
+                  
+               }
+           }
+            cout << "deneme : " << rightLaneStart << endl;
+           i=0;
+            right_x = rightLaneStart.x;
+         right_y = rightLaneStart.y;
+           rightLanePoints.clear();
        }
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+       } 
        
+       */ 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        int x_value = rightLaneStart.x;
+        int y_value = rightLaneStart.y;
+   
+
+      for(int i=0;i<houghpoints.size();i++) { 
+         int x_coord = houghpoints.at(i).x;
+         int  y_coord = houghpoints.at(i).y;
+          
+         if(x_coord>=x_value-y_value/8 && x_coord <= x_value+y_value/8
+                 && y_coord < y_value && y_coord >= y_value-y_value/5){
+        
+  rectangle(inputImg,Point(x_value-y_value/8,y_value),Point(x_value+y_value/8,y_value-y_value/5),Scalar(255), 1, 8, 0);
+  
+    rightLanePoints.push_back(houghpoints.at(i));
+  
+      }
+         
+         if(rightLanePoints.size()>0 && i == houghpoints.size()-1){
+             
+             y_value = rightLanePoints.at(0).y;
+             
+             for(int j=1;j<rightLanePoints.size();j++){
+                 if(rightLanePoints.at(j).y < y_value){
+                   y_value = rightLanePoints.at(j).y;
+                   x_value = rightLanePoints.at(j).x;
+                   
+                 }
+             }
+ 
+             rightLanePoints.clear();
+             i=0; 
+                      
+         }
+         if(rightLanePoints.size()==1 && i == houghpoints.size()-1){
+             
+            i =  houghpoints.size();
+         }
+  
+      }
+  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
