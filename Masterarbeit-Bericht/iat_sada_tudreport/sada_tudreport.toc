@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Standart Hough-Transformation}{7}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Probabilistic Hough-Transformation}{7}{subsection.2.4.2}
 \contentsline {section}{\numberline {2.5}K-Nearest Neighbours}{7}{section.2.5}
-\contentsline {section}{\numberline {2.6}Curve Fitting}{8}{section.2.6}
+\contentsline {section}{\numberline {2.6}Curve Fitting}{7}{section.2.6}
 \contentsline {chapter}{\numberline {3}Implementation}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Test Track}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Hardware}{10}{section.3.2}
