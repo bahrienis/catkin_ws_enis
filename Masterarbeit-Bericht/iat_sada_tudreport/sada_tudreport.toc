@@ -16,14 +16,18 @@
 \contentsline {section}{2.4. Hough - Transformation}{7}{figure.caption.10}
 \contentsline {subsection}{2.4.1. Standart Hough - Transformation}{7}{figure.caption.10}
 \contentsline {subsection}{2.4.2. Probabilistic Hough - Transformation}{7}{figure.caption.10}
-\contentsline {section}{2.5. Curve Fitting}{7}{figure.caption.10}
+\contentsline {section}{2.5. K-Nearest Neighbors}{7}{figure.caption.10}
+\contentsline {section}{2.6. Curve Fitting}{7}{figure.caption.10}
 \contentsline {chapter}{\numberline {3}Implementation}{9}{chapter.3}
-\contentsline {section}{3.1.Test Track}{9}{chapter.3}
-\contentsline {section}{3.2.Hardware}{9}{chapter.3}
-\contentsline {subsection}{3.2.1. Model Auto}{9}{chapter.3}
-\contentsline {subsection}{3.2.2. Microcontroller and Main Board}{9}{chapter.3}
-\contentsline {subsection}{3.2.3. Camera}{10}{chapter.3}
-\contentsline {section}{3.3.Software}{10}{figure.caption.11}
-\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{13}{chapter.4}
-\contentsline {chapter}{\numberline {5}Related Works}{15}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{17}{chapter.6}
+\contentsline {section}{\numberline {3.1}Test Track}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hardware}{10}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Model Auto}{10}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Microcontroller and Main Board}{10}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Camera}{11}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Software}{12}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Development Environment and Related Softwares}{12}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Method 1}{13}{subsection.3.3.2}
+\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{15}{chapter.4}
+\contentsline {chapter}{\numberline {5}Related Works}{17}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{19}{chapter.6}
+\contentsline {chapter}{Literaturverzeichnis}{21}{section*.14}

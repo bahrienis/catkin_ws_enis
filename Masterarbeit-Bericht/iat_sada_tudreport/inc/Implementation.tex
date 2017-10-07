@@ -1,8 +1,9 @@
 %
 \chapter{Implementation}\label{cha:Implementation}
 %
-\section*{3.1.Test Track}\label{sec:Test Track}
-\addcontentsline{toc}{section}{3.1.Test Track}
+\section{Test Track}\label{sec:Test Track}
+
+
 
 As before mentioned, medium-term goal of this master thesis is attending to the Carola-Cup at Braunschweig University 
 so the test truck was prepaid in the Carola-Cup properties by Nicolas Acero Sepulveda, who did his bachelor thesis also
@@ -13,24 +14,37 @@ approximately 2 meters long and the curve radius of the curved part of test truc
 is the tightest curve at Carola-Cup so with this test truck can be tested the worst case situation. In the Carola-Cup 
 competition, the truck is much more bigger but for testing this master thesis, we don't need to build bigger test truck.
 
+\begin{figure}[H]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[width=150mm,scale=1]{./Bilder/Test Truck.jpg}
+	\caption{Test Truck}
+\end{figure}
 
 %
-\section*{3.2.Hardware}\label{sec:Hardware}
-\addcontentsline{toc}{section}{3.2.Hardware}
+\section{Hardware}\label{sec:Hardware}
+
+
 
 %
-\subsection*{3.2.1. Model Auto}\label{sec:Model Auto}
-\addcontentsline{toc}{subsection}{3.2.1. Model Auto}
+\subsection{Model Auto}\label{sec:Model Auto}
+
 
 During the course of this master thesis, a model automobile was being used which was prepared for the Projectseminar 
 Echtzeitsysteme at Technical University of Darmstadt. The chassis, steering mechanism, power train, and engine control 
 were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is 
 approximately 1 m/s and the minimum steering radius is around 90 cm. 
 
-%
+\begin{figure}[H]
+	\centering
+	\hspace*{0cm}   
+	\includegraphics[width=150mm,scale=1]{./Bilder/Model Auto.jpg}
+	\caption{Model Auto}
+\end{figure}
 
-\subsection*{3.2.2. Microcontroller and Main Board}\label{sec:Microcontroller and Main Board}
-\addcontentsline{toc}{subsection}{3.2.2. Microcontroller and Main Board}
+%
+\subsection{Microcontroller and Main Board}\label{sec:Microcontroller and Main Board}
+
 
 In this model auto, there is a microcontroller and a main board. The microcontroller is used for controlling steering 
 and receiving the measurements from ultrasonic sensors and hall effect sensors. The 16-bit microcontroller is from 
@@ -38,12 +52,11 @@ MB96300 series from Fujitsu company.
 
 The main board on the model car is from PD10BI-MT ThinMini-ITX series from MiTAC company. This main board communicate 
 with the microcontroller over via UART interface through USB connection. On this main board, there is an Intel 
-Quadcore-Processor and an Intel HD Graphics card. Furthermore, there is a 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA 
-and HDMI connections.
+Quadcore-Processor and an Intel HD Graphics card. Furthermore, there is a 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as power supply.
 %
 
-\subsection*{3.2.3. Camera}\label{sec:Camera}
-\addcontentsline{toc}{subsection}{3.2.3. Camera}
+\subsection{Camera}\label{sec:Camera}
+
 
 The camera is one of the main components of lane detection and accordingly, autonomous driving. For this thesis, I had 
 to research the most suitable camera because all cameras have different properties.
@@ -68,7 +81,7 @@ that the Genius Widecam F100 camera is the best choice for this master thesis be
 and the FOV value is 120 degrees. The FPS is 30 Hz at a 1920x1080 pixel resolution. With this camera, it is possible 
 to detect most if not all lanes, including when there are curves. 
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
 	\hspace*{0cm}   
 	\includegraphics[width=150mm,scale=1]{./Bilder/Genius_F100_camera.png}
@@ -77,8 +90,28 @@ to detect most if not all lanes, including when there are curves.
 
 
 %
-\section*{3.3.Software}\label{sec:Software}
-\addcontentsline{toc}{section}{3.3.Software}
+\section{Software}\label{sec:Software}
+
+
+In this chapter, the software algorithms will be focused, which are defined in this master thesis.  Through program flow charts and explaination of all steps of program flow charts, it will be tried to explain algorithms better. For finding the best solution, 5 different source codes versions(?variants/?methods) were generated. For all these source codes,the computing times were calculated and compared which solution can detect the lanes better. In next pages, there are detailed explanations of used versions(?variants/?methods). The development environment and the used softwares will be also described , which are used in master thesis.
+
+\subsection{Development Environment and Related Softwares}
+\label{sec:Development Environment and Related Softwares}
+
+As also mentioned at subsection \ref{sec:Microcontroller and Main Board}, in this project the introduced main board was used. One of the compact and fast version of Linux 16.04 operating system, \textit{Lubuntu} was installed in this main board.
+
+The version \textit{Kinetic} of ROS was used for implementation of this master thesis. ROS is the abbreviation of \textbf{R}obotic \textbf{O}perating \textbf{S}ystem, which is a robotics middleware (i.e. collection of software frameworks for robot software development). At Ros wiki page\cite{ROS}, ROS is defined that, ROS is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.
+
+For using prepaid image processing functions, an open source computer vision and machine learning software library was used, which is called as OpenCV. According to OpenCV website\cite{OpenCV}, there are more than 2500 optimized algorithms in OpenCV library and OpenCV has more than 47 thousand people of user community.
+
+ROS can be programmed by programming languages Python, C++ or Lisp and OpenCV can be programmed by programming languages Python or C++. In this master thesis, C++ was used.
+
+\subsection{Method 1}\label{sec:Method 1}
+
+
+
+
+ 
 %
 
 

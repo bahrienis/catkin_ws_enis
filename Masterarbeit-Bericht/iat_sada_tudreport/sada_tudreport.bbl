@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{IPM}
+{\sc Lin, Chien-Chuan} \btxandlong{}\ {\sc Ming-Shi Wang}: {\em A Vision Based
+  Top-View Transformation Model for a Vehicle Parking Assistant}.
+\newblock Sensors, Department of Engineering Science, National Cheng Kung
+  University Taiwan, No.1, University Road,Tainan City 701, Taiwan, 2012.
+
+\bibitem{Machine_Vision}
+{\sc Ramesh~Jain, Rangachar~Kasturi, Brian G.~Schunck}: {\em Machine Vision}.
+\newblock McGraw-Hill, 1995.
+
+\bibitem{ROS}
+{\sc Dirk, Thomas}: {\em What is ROS}, May 2014.
+
+\bibitem{OpenCV}
+{\sc Team, OpenCV}: {\em About}, 2017.
+
+\end{thebibliography}

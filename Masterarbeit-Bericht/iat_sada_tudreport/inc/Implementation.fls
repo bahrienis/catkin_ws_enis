@@ -1,0 +1,7 @@
+PWD /home/enis/catkin_ws/Masterarbeit-Bericht/iat_sada_tudreport/inc
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT Implementation.tex
+OUTPUT Implementation.log
