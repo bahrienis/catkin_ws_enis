@@ -5,48 +5,73 @@ The style file: gerunsrt.bst
 Database file #1: ./bib/literature.bib
 Warning--entry type for "ROS" isn't style-file defined
 --line 28 of file ./bib/literature.bib
-Warning--entry type for "OpenCV" isn't style-file defined
+Warning--entry type for "Sobel_Operator" isn't style-file defined
 --line 37 of file ./bib/literature.bib
+Warning--entry type for "k_nearest_neighbours_wikipedia" isn't style-file defined
+--line 58 of file ./bib/literature.bib
 Warning--I didn't find a database entry for "Richtlinien"
-You've used 4 entries,
+Warning--I didn't find a database entry for "OpenCV"
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbours
+while executing---line 1056 of file gerunsrt.bst
+You've used 6 entries,
             2016 wiz_defined-function locations,
-            517 strings with 4599 characters,
-and the built_in function-call counts, 648 in all, are:
-= -- 54
-> -- 20
+            528 strings with 5000 characters,
+and the built_in function-call counts, 950 in all, are:
+= -- 80
+> -- 28
 < -- 0
-+ -- 9
-- -- 5
-* -- 33
-:= -- 95
-add.period$ -- 6
-call.type$ -- 4
++ -- 13
+- -- 7
+* -- 49
+:= -- 135
+add.period$ -- 9
+call.type$ -- 6
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 37
-empty$ -- 86
-format.name$ -- 5
-if$ -- 159
+cite$ -- 6
+duplicate$ -- 55
+empty$ -- 128
+format.name$ -- 7
+if$ -- 235
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 17
-num.names$ -- 4
-pop$ -- 27
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 24
+num.names$ -- 6
+pop$ -- 41
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 19
+skip$ -- 28
 stack$ -- 0
 substring$ -- 0
-swap$ -- 11
+swap$ -- 16
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 4
-width$ -- 5
-write$ -- 35
-(There were 3 warnings)
+while$ -- 6
+width$ -- 7
+write$ -- 51
+(There were 11 error messages)

@@ -16,8 +16,8 @@
 \contentsline {section}{\numberline {2.4}Hough-Transformation}{7}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Standart Hough-Transformation}{7}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}Probabilistic Hough-Transformation}{7}{subsection.2.4.2}
-\contentsline {section}{\numberline {2.5}K-Nearest Neighbours}{7}{section.2.5}
-\contentsline {section}{\numberline {2.6}Curve Fitting}{7}{section.2.6}
+\contentsline {section}{\numberline {2.5}K-Nearest Neighbours Algorithm}{7}{section.2.5}
+\contentsline {section}{\numberline {2.6}Curve Fitting}{8}{section.2.6}
 \contentsline {chapter}{\numberline {3}Implementation}{9}{chapter.3}
 \contentsline {section}{\numberline {3.1}Test Track}{9}{section.3.1}
 \contentsline {section}{\numberline {3.2}Hardware}{10}{section.3.2}
@@ -30,4 +30,4 @@
 \contentsline {chapter}{\numberline {4}Evaulation and Discussion}{15}{chapter.4}
 \contentsline {chapter}{\numberline {5}Related Works}{17}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusion}{19}{chapter.6}
-\contentsline {chapter}{Literaturverzeichnis}{21}{section*.15}
+\contentsline {chapter}{Literaturverzeichnis}{21}{section*.16}

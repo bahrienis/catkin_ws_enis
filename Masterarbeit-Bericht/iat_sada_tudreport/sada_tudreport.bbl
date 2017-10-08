@@ -10,10 +10,20 @@
 {\sc Ramesh~Jain, Rangachar~Kasturi, Brian G.~Schunck}: {\em Machine Vision}.
 \newblock McGraw-Hill, 1995.
 
+\bibitem{Sobel_Operator}
+{\sc Wikipedia}: {\em Sobel operator}, October 2017.
+
+\bibitem{k_nearest_neighbours}
+{\sc Xindong~Wu, Vipin~Kumar, J. Ross Quinlan Joydeep Ghosh Qiang Yang Hiroshi
+  Motoda Geoffrey J. McLachlan Angus Ng Bing Liu Philip S. Yu Zhi-Hua Zhou
+  Michael Steinbach David J. Hand Dan~Steinberg}: {\em Top 10 algorithms in
+  data mining}.
+\newblock Springer-Verlag London Limited 2007, 2007.
+
+\bibitem{k_nearest_neighbours_wikipedia}
+{\sc Wikipedia}: {\em k-nearest neighbors algorithm}, August 2017.
+
 \bibitem{ROS}
 {\sc Dirk, Thomas}: {\em What is ROS}, May 2014.
-
-\bibitem{OpenCV}
-{\sc Team, OpenCV}: {\em About}, 2017.
 
 \end{thebibliography}
