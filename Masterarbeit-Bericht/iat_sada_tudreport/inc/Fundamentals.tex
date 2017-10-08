@@ -195,19 +195,30 @@ One of the most used edge detectors at image processing and computer vision is S
 
 
 %
-\section{K-Nearest Neighbours Algorithm}\label{sec:K-Nearest Neighbors Algorithm}
+\section{K-Nearest Neighbors Algorithm}\label{sec:K-Nearest Neighbors Algorithm}
 %
-K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. Non-parametric technique means, that it doesn't make any assumptions on the underlaying data distribution. In the definition of KNN was used the term of 'lazy learning algorithm'. It means, it doesn't use the data training points to do any generalization. In other words, there is no explicit training phase or it is very minimal.  It also means that the training phase is pretty fast. Most of the lazy algorithms - especially KNN - makes decision based on the entire training data set. On the other hand, KNN is one of the top 10 data mining algorithms\cite{k_nearest_neighbours}. 
+K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. Non-parametric technique means, that it doesn't make any assumptions on the underlaying data distribution. In the definition of KNN was used the term of 'lazy learning algorithm'. It means, it doesn't use the data training points to do any generalization. In other words, there is no explicit training phase or it is very minimal.  It also means that the training phase is pretty fast. Most of the lazy algorithms - especially KNN - makes decision based on the entire training data set. On the other hand, KNN is one of the top 10 data mining algorithms\cite{k_nearest_neighbors}.
 
 \begin{figure}[H]
  \centering
-  \includegraphics[width=1\textwidth]{./Bilder/k-nearest-neighbours.png}\label{Procedures_of_IPM}
-  \caption{K-Nearest-Neighbours Algorithm\cite{k_nearest_neighbours_wikipedia}}
+  \includegraphics[width=1\textwidth]{./Bilder/k-nearest-neighbors.png}\label{Procedures_of_IPM}
+  \caption{K-Nearest-Neighbors Algorithm\cite{k_nearest_neighbors_wikipedia}}
 \end{figure}
+
+K-Nearest Neighbors Algorithm has advantages and disadvantages. According to \cite{k_nearest_neighbors_adv_disadv},the main advantages of KNN are simplicity, effectiveness, intuitiveness and competitive classification performance in many domains. On the other hand, KNN can have poor run-time performance when the training set is large. It is very sensitive to irrelevant or redundant features because all features contribute to the similarity and thus to the
+classification. The computation cost is also quite high because we need to compute distance of each query instance to all training samples. 
 
 %
 \section{Curve Fitting}\label{sec:Curve Fitting}
-%
+
+\emph{\color{red}Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting produces mostly mathematical equation that can be used to find points anywhere along
+the curve.\cite{Curve_Fitting}} They are several different types of curve fitting. Some of them are; linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called with different names with depending on their orders. For first order polynomial curve fitting is called as linear regression, for second order quadratic regression, for third order cubic regression.
+
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=1\textwidth]{./Bilder/Curve_Fitting_Polynomial.png}\label{Curve_Fitting_Polynomial}
+  \caption{Types of Polynomial Curve Fitting\cite{Curve_Fitting_Polynomial}}
+\end{figure}
 
 %
 

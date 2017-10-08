@@ -13,15 +13,29 @@
 \bibitem{Sobel_Operator}
 {\sc Wikipedia}: {\em Sobel operator}, October 2017.
 
-\bibitem{k_nearest_neighbours}
+\bibitem{k_nearest_neighbors}
 {\sc Xindong~Wu, Vipin~Kumar, J. Ross Quinlan Joydeep Ghosh Qiang Yang Hiroshi
   Motoda Geoffrey J. McLachlan Angus Ng Bing Liu Philip S. Yu Zhi-Hua Zhou
   Michael Steinbach David J. Hand Dan~Steinberg}: {\em Top 10 algorithms in
   data mining}.
 \newblock Springer-Verlag London Limited 2007, 2007.
 
-\bibitem{k_nearest_neighbours_wikipedia}
+\bibitem{k_nearest_neighbors_wikipedia}
 {\sc Wikipedia}: {\em k-nearest neighbors algorithm}, August 2017.
+
+\bibitem{k_nearest_neighbors_adv_disadv}
+{\sc Sadegh Bafandeh~Imandoust, Mohammad~Bolandraftar}: {\em Application of
+  K-Nearest Neighbor (KNN) Approach for Predicting Economic Events: Theoretical
+  Background}.
+\newblock S B Imandoust et al. Int. Journal of Engineering Research and
+  Applications, 3:605--610, October 2013.
+
+\bibitem{Curve_Fitting}
+{\em The KaleidaGraph Guide to Curve Fitting}.
+
+\bibitem{Curve_Fitting_Polynomial}
+{\sc Frost, Jim}: {\em Curve Fitting with Linear and Nonlinear Regression},
+  August 2013.
 
 \bibitem{ROS}
 {\sc Dirk, Thomas}: {\em What is ROS}, May 2014.
