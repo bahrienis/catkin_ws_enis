@@ -13,6 +13,10 @@ Warning--entry type for "Curve_Fitting" isn't style-file defined
 --line 80 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting_Polynomial" isn't style-file defined
 --line 88 of file ./bib/literature.bib
+Warning--entry type for "cv_bridge" isn't style-file defined
+--line 98 of file ./bib/literature.bib
+Warning--entry type for "OpenCV_Mat" isn't style-file defined
+--line 107 of file ./bib/literature.bib
 Warning--I didn't find a database entry for "Richtlinien"
 Warning--I didn't find a database entry for "OpenCV"
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
@@ -37,45 +41,45 @@ Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep 
 while executing---line 1056 of file gerunsrt.bst
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
 while executing---line 1056 of file gerunsrt.bst
-You've used 9 entries,
+You've used 11 entries,
             2016 wiz_defined-function locations,
-            541 strings with 5436 characters,
-and the built_in function-call counts, 1430 in all, are:
-= -- 123
-> -- 37
+            549 strings with 5543 characters,
+and the built_in function-call counts, 1720 in all, are:
+= -- 147
+> -- 45
 < -- 0
-+ -- 18
-- -- 9
-* -- 77
-:= -- 195
-add.period$ -- 13
-call.type$ -- 9
++ -- 22
+- -- 11
+* -- 93
+:= -- 233
+add.period$ -- 15
+call.type$ -- 11
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 78
-empty$ -- 194
-format.name$ -- 9
-if$ -- 358
+cite$ -- 11
+duplicate$ -- 92
+empty$ -- 236
+format.name$ -- 11
+if$ -- 432
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 11
 missing$ -- 8
-newline$ -- 34
-num.names$ -- 8
-pop$ -- 55
+newline$ -- 40
+num.names$ -- 10
+pop$ -- 69
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 50
+skip$ -- 61
 stack$ -- 0
 substring$ -- 21
-swap$ -- 23
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 9
-width$ -- 10
-write$ -- 73
+while$ -- 11
+width$ -- 13
+write$ -- 87
 (There were 11 error messages)

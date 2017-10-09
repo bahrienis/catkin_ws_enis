@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{IPM}
 {\sc Lin, Chien-Chuan} \btxandlong{}\ {\sc Ming-Shi Wang}: {\em A Vision Based
@@ -39,5 +39,11 @@
 
 \bibitem{ROS}
 {\sc Dirk, Thomas}: {\em What is ROS}, May 2014.
+
+\bibitem{cv_bridge}
+{\sc Wiki, ROS}: {\em cv bridge ROS Wiki}, December 2013.
+
+\bibitem{OpenCV_Mat}
+{\sc team~opencv~dev}: {\em Mat The Basic Image Container}, October 2017.
 
 \end{thebibliography}

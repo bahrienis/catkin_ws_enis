@@ -26,7 +26,8 @@
 \contentsline {subsection}{\numberline {3.2.3}Camera}{13}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Software}{14}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Development Environment and Related Softwares}{14}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Method 1/Case 1}{15}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.2}Preprocessing :}{15}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Method 1/Case 1 :}{16}{subsection.3.3.3}
 \contentsline {chapter}{\numberline {4}Evaulation and Discussion}{17}{chapter.4}
 \contentsline {chapter}{\numberline {5}Related Works}{19}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}

@@ -93,6 +93,7 @@ to detect most if not all lanes, including when there are curves.
 
 In this chapter, the software algorithms will be focused, which are defined in this master thesis.  Through program flow charts and explaination of all steps of program flow charts, it will be tried to explain algorithms better. For finding the best solution, 5 different source codes versions(?variants/?methods) were generated. For all these source codes,the computing times were calculated and compared which solution can detect the lanes better. In next pages, there are detailed explanations of used versions(?variants/?methods). The development environment and the used softwares will be also described , which are used in master thesis.
 
+%
 \subsection{Development Environment and Related Softwares}
 \label{sec:Development Environment and Related Softwares}
 
@@ -104,7 +105,35 @@ For using prepaid image processing functions, an open source computer vision and
 
 ROS can be programmed by programming languages Python, C++ or Lisp and OpenCV can be programmed by programming languages Python or C++. In this master thesis, C++ was used.
 
-\subsection{Method 1/Case 1}\label{sec:Method 1}
+%
+\subsection{Preprocessing :}\label{sec:Preprocessing}
+
+There are so different possibilities for lane detection algorithms. Of course, each of them has some advantages and disadvantages. In this master thesis, some different methods were defined and in this chapter, these methods will be explained in detail.
+
+In all these methods, some processes are common, which is called as preprocessing phase. At the beginning,\emph{\color{blue} the frames are gotten from the camera via ROS-Topic.} ROS uses different image formats but OpenCV uses as another image format Matrix(Mat) object. This taken frame via ROS-Topic must be converted from ROS image data type to Mat object. For that converting, a ROS-Package were used, which is called as \textit{cvbridge}\cite{cv_bridge}. cvbridge converts to ROS image format to Mat Object which is the OpenCV Image Format. 
+
+Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains the informations like the size of matrix, storing method and etc. It has always fixed size but the size of matrix is variable from image to image.
+
+There are so many methods, which can store the pixel values to the Mat object. In this case, the color space and used data type can be choosed. For gray images, it is easy to choose the color space because there are just two colors : black and white. With changing the density of colors(black and white), it is possible to create many shades of gray. There are more methods for colorful images. Colorful images have generally three or four components. These three components are used for RGB color values. The RGB colors are based on red, green and blues colors which can be detected all colors by human eyes. For transparency of a color can be used a fouth component which is calles as alpha(A).
+
+There are also another color systems, which have some advantages\cite{OpenCV_Mat}. 
+
+\begin{itemize}
+
+\item RGB system is so similar to human eye use, but at OpenCV display system uses BGR system which has another row of colors than RGB system  
+
+\item HSV and HLS systems are more natural way to describe colors. They decompose colors into their hue, saturation and value/luminance components. Another advantage of HSV and HLS make less sensitive to the light conditions of the input image.
+
+\item At JPEG image formats is used YCrCb system.
+
+\item if the distance of a given color to another color want to be measured is CIE L*a*b* more suitable than others.
+
+\end{itemize}
+
+%
+\subsection{Method 1/Case 1 :}\label{sec:Method 1}
+
+
 
 
 
