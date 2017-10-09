@@ -3,14 +3,7 @@
 %
 \section{Test Track}\label{sec:Test Track}
 
-As before mentioned, medium-term goal of this master thesis is attending to the Carola-Cup at Braunschweig University 
-so the test truck was prepaid in the Carola-Cup properties by Nicolas Acero Sepulveda, who did his bachelor thesis also
-with this model auto. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes 
-of the truck were made by using white electrical tape. The straight part of the truck was made on one of these PVC 
-floor carpet and the curved part of truck was made on second PVC floor carpet. The straigt part of the truck is 
-approximately 2 meters long and the curve radius of the curved part of test truck is approximately 1 meter. This curve 
-is the tightest curve at Carola-Cup so with this test truck can be tested the worst case situation. In the Carola-Cup 
-competition, the truck is much more bigger but for testing this master thesis, we don't need to build bigger test truck.
+As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed.
 
 \begin{figure}[H]
 	\centering
@@ -114,22 +107,25 @@ In all these methods, some processes are common, which is called as preprocessin
 
 Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains the informations like the size of matrix, storing method and etc. It has always fixed size but the size of matrix is variable from image to image.
 
-There are so many methods, which can store the pixel values to the Mat object. In this case, the color space and used data type can be choosed. For gray images, it is easy to choose the color space because there are just two colors : black and white. With changing the density of colors(black and white), it is possible to create many shades of gray. There are more methods for colorful images. Colorful images have generally three or four components. These three components are used for RGB color values. The RGB colors are based on red, green and blues colors which can be detected all colors by human eyes. For transparency of a color can be used a fouth component which is calles as alpha(A).
+There are so many methods, which can store the pixel values to the Mat object. In this case, the color space and used data type can be choosed. For gray images, it is easy to choose the color space because there are just two colors : black and white. With changing the density of colors(black and white), it is possible to create many shades of gray. There are more methods for colorful images. Colorful images have generally three or four channels. These three channels are used for RGB color values. The RGB colors are based on red, green and blues colors which can be detected all colors by human eyes. For transparency of a color can be used a fouth channel which is calles as alpha(A).
 
-There are also another color systems, which have some advantages\cite{OpenCV_Mat}. 
+There are also another color formats, which have some advantages\cite{OpenCV_Mat}. 
 
 \begin{itemize}
 
-\item RGB system is so similar to human eye use, but at OpenCV display system uses BGR system which has another row of colors than RGB system  
+\item RGB format is so similar to human eye use, but at OpenCV display system uses BGR format which has another row of colors than RGB format  
 
-\item HSV and HLS systems are more natural way to describe colors. They decompose colors into their hue, saturation and value/luminance components. Another advantage of HSV and HLS make less sensitive to the light conditions of the input image.
+\item HSV and HLS formats are more natural way to describe colors. They decompose colors into their hue, saturation and value/luminance components. Another advantage of HSV and HLS make less sensitive to the light conditions of the input image.
 
-\item At JPEG image formats is used YCrCb system.
+\item At JPEG image formats is used YCrCb format.
 
-\item if the distance of a given color to another color want to be measured is CIE L*a*b* more suitable than others.
+\item if the distance of a given color to another color want to be measured, CIE L*a*b* format is more suitable than others.
 
 \end{itemize}
 
+After the frame from Camera via ROS-Topic was received, the colorful frame has to be converted to grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, grayscale format of input image is needed. To convert a frame from BGR format to grayscale format brings some advantages, the main advantage is the processing time. Normally colorful frame matrix content has three or four channels but at grayscale frame matrix content has just one channel so grayscale frame matrix size is much smaller compare to colorful frame matrix size. Because of this reason the image processing time is much more smaller at grayscale format compare to BGR format. For converting BGR formatted frame to grayscale formatted frame, \textit{cvtColor} function from OpenCV is used.
+
+ For stabile lane detection, the light conditions must be considered. Because of this reason, I 
 %
 \subsection{Method 1/Case 1 :}\label{sec:Method 1}
 
