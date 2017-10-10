@@ -125,7 +125,11 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 
 After the frame from Camera via ROS-Topic was received, the colorful frame has to be converted to grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, grayscale format of input image is needed. To convert a frame from BGR format to grayscale format brings some advantages, the main advantage is the processing time. Normally colorful frame matrix content has three or four channels but at grayscale frame matrix content has just one channel so grayscale frame matrix size is much smaller compare to colorful frame matrix size. Because of this reason the image processing time is much more smaller at grayscale format compare to BGR format. For converting BGR formatted frame to grayscale formatted frame, \textit{cvtColor} function from OpenCV is used.
 
- For stabile lane detection, the light conditions must be considered. Because of this reason, I 
+ For stabile lane detection, the light conditions must be considered. Because of this reason, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels were searched. After finding the lightest and darkest pixels, light conditions can be estimated approximately. These values will be used in the next step. After this processing, a filter is applied to all frames which tranforms an image into a binary image by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value. Otherwise it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamical parameter, the lanes are more clear detectable and noises can be cancelled more successful.
+ 
+ This preprocessing part is common for all cases but after this process, there are differences at cases.
+ 
+
 %
 \subsection{Method 1/Case 1 :}\label{sec:Method 1}
 
