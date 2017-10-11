@@ -126,14 +126,19 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 After the frame from Camera via ROS-Topic was received, the colorful frame has to be converted to grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, grayscale format of input image is needed. To convert a frame from BGR format to grayscale format brings some advantages, the main advantage is the processing time. Normally colorful frame matrix content has three or four channels but at grayscale frame matrix content has just one channel so grayscale frame matrix size is much smaller compare to colorful frame matrix size. Because of this reason the image processing time is much more smaller at grayscale format compare to BGR format. For converting BGR formatted frame to grayscale formatted frame, \textit{cvtColor} function from OpenCV is used.
 
  For stabile lane detection, the light conditions must be considered. Because of this reason, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels were searched. After finding the lightest and darkest pixels, light conditions can be estimated approximately. These values will be used in the next step. After this processing, a filter is applied to all frames which tranforms an image into a binary image by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value. Otherwise it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamical parameter, the lanes are more clear detectable and noises can be cancelled more successful.
+
+After threshold filter, an edge detection filter must be applied. In this master thesis, the Sobel operator is used which explained at Chapter 2 in detail.
  
  This preprocessing part is common for all cases but after this process, there are differences at cases.
  
-
 %
-\subsection{Method 1/Case 1 :}\label{sec:Method 1}
+\subsection{Method 1/Case 1 : Hough Transformation + Curve Fitting + IPM}\label{sec:Method 1}
 
+We get frames from camera 640x480 pixels resolution. It was the default value at that camera. The resolution of the camera can be increased by its settings, but it is not possible to decrease. For decreasing the resolution of the camera, there is another method and it is used in another case so it will be explained when it is used in another case. In this case, the minimum resolution is used, which the camera allows us. There are some reasons. The most important reasons is, if the resolution is increased, there are more pixels so the computing time increases too. High computing time is something, which we don't want to have.
 
+Height of the frame has 640 pixels, the 540 pixels from bottom 
+
+ 
 
 
 
