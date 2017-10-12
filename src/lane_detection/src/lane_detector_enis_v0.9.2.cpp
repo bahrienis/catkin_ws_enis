@@ -32,8 +32,98 @@ using namespace std;
 using namespace cv;
 
 
-void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
-        double *y, double *x, Mat inputImg, string color, IPM ipm);
+
+
+void curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, string color, IPM ipm) {
+    int i, j, k, n, N;
+    cout.precision(4); //set precision
+    cout.setf(ios::fixed);
+    N = lanePoints.size(); //lines.size();
+    /*   double x[N],y[N];
+       for(i=0;i<N;i++)
+       x[i]=l[0];
+        for(i=0;i<N;i++)
+        y[i]=l[1];   */
+    
+    n = 2; //polinomun derecesi
+    double X[2 * n + 1];
+    for (i = 0; i < 2 * n + 1; i++) {
+        X[i] = 0;
+        for (j = 0; j < N; j++)
+            X[i] = X[i] + pow((double(lanePoints.at(j).y)), i);
+    }
+    double B[n + 1][n + 2], a[n + 1];
+    for (i = 0; i <= n; i++)
+        for (j = 0; j <= n; j++)
+            B[i][j] = X[i + j];
+    double Y[n + 1];
+    for (i = 0; i < n + 1; i++) {
+        Y[i] = 0;
+        for (j = 0; j < N; j++)
+            Y[i] = Y[i] + pow(double(lanePoints.at(j).y), i) * double(lanePoints.at(j).x);
+    }
+    for (i = 0; i <= n; i++)
+        B[i][n + 1] = Y[i];
+    n = n + 1;
+    /*	cout<<"\nThe Normal (Augmented Matrix) is as follows:\n";
+            for(i=0;i<n;i++)
+            {
+                    for(j=0;j<=n;j++)
+                    cout<<B[i][j]<<setw(16);
+                    cout<<"\n";
+            }
+     */ for (i = 0; i < n; i++)
+        for (k = i + 1; k < n; k++)
+            if (B[i][i] < B[k][i])
+                for (j = 0; j <= n; j++) {
+                    double temp = B[i][j];
+                    B[i][j] = B[k][j];
+                    B[k][j] = temp;
+                }
+    for (i = 0; i < n - 1; i++)
+        for (k = i + 1; k < n; k++) {
+            double t = B[k][i] / B[i][i];
+            for (j = 0; j <= n; j++)
+                B[k][j] = B[k][j] - t * B[i][j];
+        }
+    for (i = n - 1; i >= 0; i--) {
+        a[i] = B[i][n];
+        for (j = 0; j < n; j++)
+            if (j != i)
+                a[i] = a[i] - B[i][j] * a[j];
+        a[i] = a[i] / B[i][i];
+    }
+    cout << "\nThe values of the cofficients are as follows:\n";
+    for (i = 0; i < n; i++)
+        cout << "x´" << i << "=" << a[i] << endl;
+    cout << "\nHence the fitted Polynomial is given by:\ny=";
+    for (i = 0; i < n; i++)
+        cout << " + (" << a[i] << ")" << "x´" << i;
+    cout << "\n";
+
+
+    int p, r;
+    for (p = 0; p < 480; p++) {
+        r = a[0] + a[1] * p + a[2] * p * p;
+        if (r >= 0 && r <= 640) {
+            if (color == "red"){    
+                circle(inputImgIPM, ipm.applyHomography(Point(r,p)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImg, Point(r,p), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            }
+            else if (color == "blue"){
+                circle(inputImgIPM, ipm.applyHomography(Point(r,p)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(r,p), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+            }
+            
+            else if (color == "green"){
+                circle(inputImgIPM, ipm.applyHomography(Point(r,p)), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(r, p), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+            }
+       }
+    }
+
+
+} 
 
 
 
@@ -43,59 +133,65 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
 
 
 
-/*
-void rectangle(Point Startpoint){
+
+
+vector<Point> rectangle(Mat inputImg, Point Startpoint, vector<Point> houghpoints ){
     
     
+     vector<Point> rectanglePoints;
+     vector<Point> lanePoints;
     
-    
-     int x_value = rightLaneStart.x;
-        int y_value = rightLaneStart.y;
+      int x_value = Startpoint.x;
+        int y_value = Startpoint.y;
+        
    
 
       for(int i=0;i<houghpoints.size();i++) { 
          int x_coord = houghpoints.at(i).x;
          int  y_coord = houghpoints.at(i).y;
           
-         if(x_coord>=x_value-y_value/8 && x_coord <= x_value+y_value/8
-                 && y_coord < y_value && y_coord >= y_value-y_value/5){
+         if(x_coord>x_value-y_value/8 && x_coord < x_value+y_value/8
+                 && y_coord < y_value && y_coord > y_value-y_value/5){
         
   rectangle(inputImg,Point(x_value-y_value/8,y_value),Point(x_value+y_value/8,y_value-y_value/5),Scalar(255), 1, 8, 0);
   
-    rightLanePoints.push_back(houghpoints.at(i));
+    rectanglePoints.push_back(houghpoints.at(i));
+    lanePoints.push_back(houghpoints.at(i));
   
       }
          
-         if(rightLanePoints.size()>0 && i == houghpoints.size()-1){
+         if(rectanglePoints.size()>0 && i == houghpoints.size()-1){
              
-             y_value = rightLanePoints.at(0).y;
+             y_value = rectanglePoints.at(0).y;
              
-             for(int j=1;j<rightLanePoints.size();j++){
-                 if(rightLanePoints.at(j).y < y_value){
-                   y_value = rightLanePoints.at(j).y;
-                   x_value = rightLanePoints.at(j).x;
+             for(int j=1;j<rectanglePoints.size();j++){
+                 if(rectanglePoints.at(j).y < y_value){
+                   y_value = rectanglePoints.at(j).y;
+                   x_value = rectanglePoints.at(j).x;
                    
                  }
              }
  
-             rightLanePoints.clear();
+             rectanglePoints.clear();
              i=0; 
                       
          }
-         if(rightLanePoints.size()==1 && i == houghpoints.size()-1){
+         if(rectanglePoints.size()==1 && i == houghpoints.size()-1){
              
             i =  houghpoints.size();
          }
   
       }
+      
         
         
         
-        
+     return lanePoints;
         
         
 }
-*/
+
+
 
 int main(int argc, char **argv) {
 
@@ -185,6 +281,7 @@ int main(int argc, char **argv) {
 
 
         Mat inputImg;
+        Mat inputImgIPM;
         Mat inputImgGray;
         Mat outputImg;
         Mat outputImg1;
@@ -225,9 +322,10 @@ int main(int argc, char **argv) {
         Point middleLaneStart = Point(0,0);
         Point leftLaneStart = Point(0,0);
         
-        vector<Point> rightLanePoints;
+       
         
-
+        
+        
         clock_t begin = clock();
 
 
@@ -462,21 +560,21 @@ int main(int argc, char **argv) {
        for(int i=0;i<houghpoints.size();i++){ 
            
        if((houghpoints.at(i).x>=rightLaneStart.x-right_y/10 && houghpoints.at(i).x<=rightLaneStart.x+right_y/10) && (houghpoints.at(i).y<=rightLaneStart.y+right_y/10 && houghpoints.at(i).y>= rightLaneStart.y-right_y/10)){ 
-           rightLanePoints.push_back(houghpoints.at(i));
+           rectanglePoints.push_back(houghpoints.at(i));
            rectangle(inputImg, Point(rightLaneStart.x-right_y/10, rightLaneStart.y+right_y/10),Point(rightLaneStart.x+right_y/10, rightLaneStart.y-right_y/10), Scalar(255), 1, 8, 0);
            
        }
        
        
        
-       if(rightLanePoints.size()>=5 && i == houghpoints.size()-1){
+       if(rectanglePoints.size()>=5 && i == houghpoints.size()-1){
            
           
-           int temp = rightLanePoints.at(0).y;
-           for(int j=0;j<rightLanePoints.size();j++){
+           int temp = rectanglePoints.at(0).y;
+           for(int j=0;j<rectanglePoints.size();j++){
                
-               if(rightLanePoints.at(j).y< temp){
-                   rightLaneStart = rightLanePoints.at(j);
+               if(rectanglePoints.at(j).y< temp){
+                   rightLaneStart = rectanglePoints.at(j);
                   
                }
            }
@@ -484,7 +582,7 @@ int main(int argc, char **argv) {
            i=0;
             right_x = rightLaneStart.x;
          right_y = rightLaneStart.y;
-           rightLanePoints.clear();
+           rectanglePoints.clear();
        }
         
        } 
@@ -492,16 +590,26 @@ int main(int argc, char **argv) {
        */ 
         
         
+        ipm.applyHomography(inputImg,inputImgIPM);
         
         
         
         
         
         
+        vector<Point> rightLanePoints = rectangle(inputImg, rightLaneStart,houghpoints);
+        curvefitting(rightLanePoints, inputImg, inputImgIPM, "blue",ipm);
         
+        vector<Point> middleLanePoints = rectangle(inputImg, middleLaneStart,houghpoints);
+        curvefitting(middleLanePoints, inputImg, inputImgIPM,"red",ipm);
         
+        vector<Point> leftLanePoints = rectangle(inputImg, leftLaneStart,houghpoints);
+        curvefitting(leftLanePoints, inputImg, inputImgIPM,"green",ipm);
+        
+      /*  
        int x_value = rightLaneStart.x;
         int y_value = rightLaneStart.y;
+        vector<Point> lanePoints;
    
 
       for(int i=0;i<houghpoints.size();i++) { 
@@ -513,34 +621,35 @@ int main(int argc, char **argv) {
         
   rectangle(inputImg,Point(x_value-y_value/8,y_value),Point(x_value+y_value/8,y_value-y_value/5),Scalar(255), 1, 8, 0);
   
-    rightLanePoints.push_back(houghpoints.at(i));
+    rectanglePoints.push_back(houghpoints.at(i));
+    lanePoints.push_back(houghpoints.at(i));
   
       }
          
-         if(rightLanePoints.size()>0 && i == houghpoints.size()-1){
+         if(rectanglePoints.size()>0 && i == houghpoints.size()-1){
              
-             y_value = rightLanePoints.at(0).y;
+             y_value = rectanglePoints.at(0).y;
              
-             for(int j=1;j<rightLanePoints.size();j++){
-                 if(rightLanePoints.at(j).y < y_value){
-                   y_value = rightLanePoints.at(j).y;
-                   x_value = rightLanePoints.at(j).x;
+             for(int j=1;j<rectanglePoints.size();j++){
+                 if(rectanglePoints.at(j).y < y_value){
+                   y_value = rectanglePoints.at(j).y;
+                   x_value = rectanglePoints.at(j).x;
                    
                  }
              }
  
-             rightLanePoints.clear();
+             rectanglePoints.clear();
              i=0; 
                       
          }
-         if(rightLanePoints.size()==1 && i == houghpoints.size()-1){
+         if(rectanglePoints.size()==1 && i == houghpoints.size()-1){
              
             i =  houghpoints.size();
          }
   
       }  
         
-        
+        */
         
        
   
@@ -566,6 +675,7 @@ int main(int argc, char **argv) {
         
 
         imshow("Input Image", inputImg);
+        imshow("Input Image IPM", inputImgIPM);
         imshow("Sobel", grad);
         imshow("Sobel color", gradcolor);
 
