@@ -134,11 +134,26 @@ After threshold filter, an edge detection filter must be applied. In this master
 %
 \subsection{Method 1/Case 1 : Hough Transformation + Curve Fitting + IPM}\label{sec:Method 1}
 
-We get frames from camera 640x480 pixels resolution. It was the default value at that camera. The resolution of the camera can be increased by its settings, but it is not possible to decrease. For decreasing the resolution of the camera, there is another method and it is used in another case so it will be explained when it is used in another case. In this case, the minimum resolution is used, which the camera allows us. There are some reasons. The most important reasons is, if the resolution is increased, there are more pixels so the computing time increases too. High computing time is something, which we don't want to have.
+When the preprocessing part is over, the lanes must be detected. For the finding the position of lanes, the Standart Hough Transformation is used. But the Standart Hough Transformation didn't used to all of the frame, the frame were cropped. This cropping has a reason and there is an advantage thanks of cropping. It will be explained soon in detail.
 
-Height of the frame has 640 pixels, the 540 pixels from bottom 
+We get frames from camera 640x480 pixels resolution. It was the default value at that camera. The resolution of the camera can be increased by its settings, but it is not possible to decrease. For decreasing the resolution of the camera, there is another method and it is used in another case so it will be explained when it is used in another case. In this case, the minimum resolution is used, which the camera allows us. There are some reasons. The most important reasons is, if the resolution is increased, there are more pixels so the computing time increases too. High computing time is something, which we don't want to have.
+ 
+Height of the frame has 640 pixels, but as before mentioned, the frame was cropped. As seen at Figure \ref{fig:Case1_withoutCropped}, if there is a curve, far points from camera won't be the part of truck. There can be some stuffs which are not relevant with truck and lanes so these stuffs caused to produce Standart Hough Transformation lines. In this thesis, the Standart Hough Transformation were used, if there is an edge which could detected by Sobel Operator, produces a red line so the first 100 pixels of frame height were took off and the last 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown just last 540 pixels of frame height so they don't cover the irrelevant informations at the frame. If there is a lane, the red lines are so close each other but if there is no lane, there are so many distance between red lines. At Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. All these group include a lane. 
 
  
+
+
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Original Image]{\includegraphics[width=0.3\textwidth]{./Bilder/Case1_inputImg.png}\label{fig:Case1_inputImg}}
+  \hfill
+  \subfloat[Hough Transformation without Cropping Image]{\includegraphics[width=0.3\textwidth]{./Bilder/Case1_withoutCropped.png}\label{fig:Case1_withoutCropped}}
+  \hfill
+  \subfloat[Hough Transformation with Cropping Image]{\includegraphics[width=0.3\textwidth]{./Bilder/Case1_withCropped.png}\label{fig:Case1_withCropped}}
+  \caption{Detecting Lane Positions}
+\end{figure}
+
 
 
 

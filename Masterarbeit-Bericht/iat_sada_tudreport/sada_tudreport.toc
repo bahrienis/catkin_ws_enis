@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {3.3.1}Development Environment and Related Softwares}{14}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Preprocessing :}{15}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Method 1/Case 1 : Hough Transformation + Curve Fitting + IPM}{16}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{17}{chapter.4}
-\contentsline {chapter}{\numberline {5}Related Works}{19}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}
-\contentsline {chapter}{Literaturverzeichnis}{23}{section*.17}
+\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{19}{chapter.4}
+\contentsline {chapter}{\numberline {5}Related Works}{21}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{23}{chapter.6}
+\contentsline {chapter}{Literaturverzeichnis}{25}{section*.18}
