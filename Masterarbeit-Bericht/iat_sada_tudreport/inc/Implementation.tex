@@ -138,11 +138,7 @@ When the preprocessing part is over, the lanes must be detected. For the finding
 
 We get frames from camera 640x480 pixels resolution. It was the default value at that camera. The resolution of the camera can be increased by its settings, but it is not possible to decrease. For decreasing the resolution of the camera, there is another method and it is used in another case so it will be explained when it is used in another case. In this case, the minimum resolution is used, which the camera allows us. There are some reasons. The most important reasons is, if the resolution is increased, there are more pixels so the computing time increases too. High computing time is something, which we don't want to have.
  
-Height of the frame has 640 pixels, but as before mentioned, the frame was cropped. As seen at Figure \ref{fig:Case1_withoutCropped}, if there is a curve, far points from camera won't be the part of truck. There can be some stuffs which are not relevant with truck and lanes so these stuffs caused to produce Standart Hough Transformation lines. In this thesis, the Standart Hough Transformation were used, if there is an edge which could detected by Sobel Operator, produces a red line so the first 100 pixels of frame height were took off and the last 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown just last 540 pixels of frame height so they don't cover the irrelevant informations at the frame. If there is a lane, the red lines are so close each other but if there is no lane, there are so many distance between red lines. At Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. All these group include a lane. 
-
- 
-
-
+Height of the frame has 640 pixels, but as before mentioned, the frame was cropped. As seen at Figure \ref{fig:Case1_withoutCropped}, if there is a curve, far points from camera won't be the part of truck. There can be some stuffs which are not relevant with truck and lanes so these stuffs caused to produce Standart Hough Transformation lines. In this thesis, the Standart Hough Transformation were used, if there is an edge which could detected by Sobel Operator, produces a red line so the first 100 pixels of frame height were took off and the last 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown just last 540 pixels of frame height so they don't cover the irrelevant informations at the frame. If there is a lane, the red lines are so close each other but if there is no lane, there are so many distance(at least 50 pixels) between red lines. At Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. All these group include a lane. Thanks of Standart Hough Transformation, we know that, between which vertically pixels stand the lanes. 
 
 \begin{figure}[H]
   \centering
@@ -154,7 +150,30 @@ Height of the frame has 640 pixels, but as before mentioned, the frame was cropp
   \caption{Detecting Lane Positions}
 \end{figure}
 
+After this processing, we have to find the starting points of lanes and the all pixels which are on the lanes. For that, we have to use Probabilistic Hough Transformation. Probabilistic Hough Transformation is a bit different than Standart Hough Transformation. Standart Hough Transformation is more suitable for straight lanes but if there is a curve, Standart Hough Transformation doesn't work enough good. As before mentioned, a line can be represented as y = mx+c or in parametric form, as $\rho$ = x $\cos \theta$ + y$ \sin \theta$ where  $\rho$ is the perpendicular distance from origin to the line, and $\theta$ is the angle formed by this perpendicular line and horizontal axis measured in counter-clockwise. But it is different at Probabilistic Hough Transformation. A line is represented by two or more points. If Probabilistic Hough Transformation finds at least two points from the same lane, it represents beginning and ending points of these lines.
 
+In this master thesis, the lines are not shown because we don't see the Probabilistic Hough Lines. We need just these points(pixels), which are on the lanes. 
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Original Image with Probabilistic Hough Transformation]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_HoughPoints_Original.png}\label{fig:Case1_HoughPoints_Original}}
+  \hfill
+  \subfloat[A Image with Sobel Operator and Probabilistic Hough Transformation]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_HoughPoints_Sobel.png}\label{fig:Case1_HoughPoints_Sobel}}
+  \caption{Probabilistic Hough Transformation Points}
+\end{figure} 
+ 
+At Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPoints_Sobel}, Probabilistic Hough Transformation Points(green pixels) are shown. They are so many pixels, which are found by Probabilistic Hough Transformation. There are some parameters at this function in OpenCV.  With changing the parameters of Probabilistic Hough Transformation in OpenCV, less Hough Points on the lanes can be found but finding too few Hough points can cause some problems while detecting the lanes. On the other hand, finding so many Hough points need also more computing time, this is also a situation which we don't want to have. So in this case, the parameters of Probabilistic Hough Transformation fuction in OpenCV must be optimized. Thanks of optimization, the best solution (less computing time and good lane detection) is found.
+
+Now, we know, that between which pixel columns stand lanes so we can find the start pixels of lanes. For that, we have to find the Hough pixels for all lanes(right, middle and left lane) at the lowest part of the frame. Each Hough points which are on a lane, can be compared with each other so the Hough point of the lane, which is the lowest part of the frame can be found. It is the starting point of the lane. This process must be done for all lanes which can be seen on the frame.
+
+Next part of the project is getting the Hough points which are relevant the lanes. For each lane, the Hough points must be grouped. For getting Hough points which are relevant with lanes, 'rectangle' method is used, which is named by me. At rectangle method, a rectangle is drawn and save coordinates of all Hough points in that rectangle. All Hough points are saved in a vector and the uppest Hough point at the rectangle must be found. From that point, another rectangle must be drawn but the size of rectangles are going to progressively smaller. Because the objects are going to seem smaller when they are far away from the camera. There is an exception at middle lane. Middle lane has dashed lines so the rectangles at middle lane must be bigger than at the left and right lanes.
+
+Last part of this case is curve fitting. 
+ 
+ 
+ 
+ 
+all of the pixels in the 100th column
 
 
 

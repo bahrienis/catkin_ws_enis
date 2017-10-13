@@ -518,9 +518,13 @@ int main(int argc, char **argv) {
         HoughLinesP(grad, lines1P, 1, CV_PI / 180, 0, 0, 0);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
-            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
           //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-                circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                            circle(gradcolor, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+          //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(gradcolor, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                
                 houghpoints.push_back(Point(l[0], l[1]));
                 houghpoints.push_back(Point(l[2], l[3]));
 
@@ -552,7 +556,10 @@ int main(int argc, char **argv) {
         
         
         
-  /*      int right_x = rightLaneStart.x;
+ 
+        
+        
+         /*      int right_x = rightLaneStart.x;
         int right_y = rightLaneStart.y;
         
      
@@ -652,10 +659,6 @@ int main(int argc, char **argv) {
         */
         
        
-  
-        
-        
-        
         
         
         
@@ -675,7 +678,7 @@ int main(int argc, char **argv) {
         
 
         imshow("Input Image", inputImg);
-        imshow("Input Image IPM", inputImgIPM);
+ imshow("Input Image IPM", inputImgIPM);
         imshow("Sobel", grad);
         imshow("Sobel color", gradcolor);
 
