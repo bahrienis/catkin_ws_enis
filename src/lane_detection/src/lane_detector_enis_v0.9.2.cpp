@@ -25,7 +25,7 @@
 #include "IPM.cpp"
 
 
-
+//Hough Transformation + Rectangle + Curve Fitting + IPM
 
 
 using namespace std;
@@ -135,8 +135,19 @@ void curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, strin
 
 
 
-vector<Point> rectangle(Mat inputImg, Point Startpoint, vector<Point> houghpoints ){
+vector<Point> rectangle(Mat inputImg, Point Startpoint, vector<Point> houghpoints, String whichlane ){
     
+    double dividebyx = 0;
+    double dividebyy = 0;
+    
+    if(whichlane == "middle"){
+        dividebyx = 5;
+        dividebyy = 2.25;      
+    }
+    else{
+        dividebyx = 8;
+        dividebyy = 5;  
+    }
     
      vector<Point> rectanglePoints;
      vector<Point> lanePoints;
@@ -150,10 +161,14 @@ vector<Point> rectangle(Mat inputImg, Point Startpoint, vector<Point> houghpoint
          int x_coord = houghpoints.at(i).x;
          int  y_coord = houghpoints.at(i).y;
           
-         if(x_coord>x_value-y_value/8 && x_coord < x_value+y_value/8
-                 && y_coord < y_value && y_coord > y_value-y_value/5){
+         if(x_coord>=x_value-y_value/dividebyx && x_coord <= x_value+y_value/dividebyx
+                 && y_coord < y_value && y_coord >= y_value-y_value/dividebyy){
         
-  rectangle(inputImg,Point(x_value-y_value/8,y_value),Point(x_value+y_value/8,y_value-y_value/5),Scalar(255), 1, 8, 0);
+  rectangle(inputImg,Point(x_value-y_value/dividebyx,y_value),Point(x_value+y_value/dividebyx,y_value-y_value/dividebyy),Scalar(255), 1, 8, 0);
+  
+  
+  
+  
   
     rectanglePoints.push_back(houghpoints.at(i));
     lanePoints.push_back(houghpoints.at(i));
@@ -343,7 +358,7 @@ int main(int argc, char **argv) {
         
 //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame155.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -604,13 +619,13 @@ int main(int argc, char **argv) {
         
         
         
-        vector<Point> rightLanePoints = rectangle(inputImg, rightLaneStart,houghpoints);
+        vector<Point> rightLanePoints = rectangle(inputImg, rightLaneStart,houghpoints, "right");
         curvefitting(rightLanePoints, inputImg, inputImgIPM, "blue",ipm);
         
-        vector<Point> middleLanePoints = rectangle(inputImg, middleLaneStart,houghpoints);
+        vector<Point> middleLanePoints = rectangle(inputImg, middleLaneStart,houghpoints,"middle");
         curvefitting(middleLanePoints, inputImg, inputImgIPM,"red",ipm);
         
-        vector<Point> leftLanePoints = rectangle(inputImg, leftLaneStart,houghpoints);
+        vector<Point> leftLanePoints = rectangle(inputImg, leftLaneStart,houghpoints,"left");
         curvefitting(leftLanePoints, inputImg, inputImgIPM,"green",ipm);
         
       /*  

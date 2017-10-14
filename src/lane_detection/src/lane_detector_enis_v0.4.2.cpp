@@ -24,6 +24,8 @@
 #include "IPM.h"
 #include "IPM.cpp"
 
+//IPM + Hough Transformation + KNN + Curve Fitting
+
 
 
 using namespace std;
@@ -227,7 +229,7 @@ int main(int argc, char **argv) {
 
 
 
-        if (sayi >= 294) {
+   /*     if (sayi >= 294) {
             sayi = 0;
         }
 
@@ -235,12 +237,12 @@ int main(int argc, char **argv) {
         sayi++;
         cout << "frame : " << sayi << endl;
 
-
+*/
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-        //      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame163.jpg";
+              std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";

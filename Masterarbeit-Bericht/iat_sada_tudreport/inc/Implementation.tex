@@ -132,7 +132,7 @@ After threshold filter, an edge detection filter must be applied. In this master
  This preprocessing part is common for all cases but after this process, there are differences at cases.
  
 %
-\subsection{Method 1/Case 1 : Hough Transformation + Curve Fitting + IPM}\label{sec:Method 1}
+\subsection{Method 1/Case 1 : Hough Transformation + Rectangle + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
 
 When the preprocessing part is over, the lanes must be detected. For the finding the position of lanes, the Standart Hough Transformation is used. But the Standart Hough Transformation didn't used to all of the frame, the frame were cropped. This cropping has a reason and there is an advantage thanks of cropping. It will be explained soon in detail.
 
@@ -168,16 +168,39 @@ Now, we know, that between which pixel columns stand lanes so we can find the st
 
 Next part of the project is getting the Hough points which are relevant the lanes. For each lane, the Hough points must be grouped. For getting Hough points which are relevant with lanes, 'rectangle' method is used, which is named by me. At rectangle method, a rectangle is drawn and save coordinates of all Hough points in that rectangle. All Hough points are saved in a vector and the uppest Hough point at the rectangle must be found. From that point, another rectangle must be drawn but the size of rectangles are going to progressively smaller. Because the objects are going to seem smaller when they are far away from the camera. There is an exception at middle lane. Middle lane has dashed lines so the rectangles at middle lane must be bigger than at the left and right lanes.
 
-Last part of this case is curve fitting. 
+\emph{\color{blue} Here must be a picture of rectangles}
+
+Last part of this case is curve fitting. Curve Fitting is an algorithm which gives a mathematical description and this mathematical description has the best fit to a series of data points. But in this master thesis, usage of curve fitting is changed a bit. At curve fitting, the coordinates of Hough points are used but we changed the x and y axises of these Hough points because y-axises of these coordinates have more range than x-axises so this swapping raises the stability of the curve fitting.
+
+After using the Hough points as input, three different mathematical equation are produced. One of these equation is for the left lane, the other one is for the middle lane and the last equation is for the right lane. While producing of these equations, of course just relevant Hough points are used. For example, for left lane curve equation, the Hough points from the left lane were used. 
  
+Next part of this case is plotting the curves which are produced by curve fitting function. We start from 0th pixel to 480th pixel vertically and the output values of equation for each vertically pixels are found. For each lane, the curves are plotted in different color.  
  
- 
+At the last part of this case is Inverse Perspective Mapping. End of the project, we want to get mathematical description of lanes from bird's-eye view. So the perspective of lanes must be changed from the camera side to the top of the truck side. For that, we have to use 'findHomography' function from OpenCV. Thanks this function, all curve points can be converted to perspective of the top of the truck side. All pixels could also be converted from camera perspective to the top of the truck perspective but in that case, we had to convert 640x480 pixels, respectively 307200 pixels. But in this case, we convert just 480 pixels for each lane, it means, we convert totally 1440 pixels. Because of this reason, this case is efficienter that to convert all pixels.
+ 	 		 	
+
+
+\emph{\color{blue} Here must be a picture of curve fitting}
  
 all of the pixels in the 100th column
 
-
-
- 
 %
 
+\subsection{Method 2/Case 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}\label{sec:Case 2}
 
+As we before mentioned, preprocessing part is common for all cases. In this case, frames which are taken from camera, are convert directly from camera perspective to top of the truck perspective.At Section \ref{sec:Case 1} (Case 1), we convert the just Curve Fitting pixels from the camera perspective to the top of the truck perspective. To convert 640x480 pixels, respectively 307200 pixels take a bit longer time compare to the Case 1. Original frame which can be seen at Figure \ref{fig:Case2_InputImg} is converted to the frame which can be see at Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.
+
+ 
+\begin{figure}[H]
+  \centering
+  \subfloat[Original Image]{\includegraphics[width=0.45\textwidth]{./Bilder/Case2_InputImg.png}\label{fig:Case2_InputImg}}
+  \hfill
+  \subfloat[A Image with Inverse Perspective Mapping]{\includegraphics[width=0.45\textwidth]{./Bilder/Case2_IPM.png}\label{fig:Case2_IPM}}
+  \caption{Inverse Perspective Mapping}
+\end{figure} 
+
+Next step of this case is that finding between which vertically pixels stand the lanes. At Case 1(Section \ref{sec:Case 1} we had to apply Standart Hough Transformation to the frame whose the first 100 pixels of frame vertically were took off(380x640 pixels). After IPM implementation, we don't need to apply Standart Hough Transformation to the so big part of the frame. Just last 160 vertically pixels (160x640 pixels) is enough to find all positions of lanes.
+
+After finding between which vertically pixels stand the lanes, the Probabilistic Hough Transformation was used.
+
+%
