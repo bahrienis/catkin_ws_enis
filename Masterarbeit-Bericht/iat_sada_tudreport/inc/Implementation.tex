@@ -3,7 +3,7 @@
 %
 \section{Test Track}\label{sec:Test Track}
 
-As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed.
+As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed.
 
 \begin{figure}[H]
 	\centering
@@ -21,7 +21,7 @@ As previously mentioned, the medium-term goal of this master thesis is attending
 \subsection{Model Auto}\label{sec:Model Auto}
 
 
-During the course of this master thesis, a model automobile was being used which was prepared for the Projectseminar 
+During the course of this master's thesis, a model automobile was being used which was prepared for the Projectseminar 
 Echtzeitsysteme at Technical University of Darmstadt. The chassis, steering mechanism, power train, and engine control 
 were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is 
 approximately 1 m/s and the minimum steering radius is around 90 cm. 
@@ -37,13 +37,13 @@ approximately 1 m/s and the minimum steering radius is around 90 cm.
 \subsection{Microcontroller and Main Board}\label{sec:Microcontroller and Main Board}
 
 
-In this model auto, there is a microcontroller and a main board. The microcontroller is used for controlling steering 
+In this model automobile, there is a microcontroller and a main board. The microcontroller is used for controlling steering 
 and receiving the measurements from ultrasonic sensors and hall effect sensors. The 16-bit microcontroller is from 
 MB96300 series from Fujitsu company.
 
-The main board on the model car is from PD10BI-MT ThinMini-ITX series from MiTAC company. This main board communicate 
+The main board on the model car is from PD10BI-MT ThinMini-ITX series from MiTAC company. This main board communicates 
 with the microcontroller over via UART interface through USB connection. On this main board, there is an Intel 
-Quadcore-Processor and an Intel HD Graphics card. Furthermore, there is a 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as power supply.
+Quadcore-Processor and an Intel HD Graphics card. Furthermore, there is an 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as a power supply.
 %
 
 \subsection{Camera}\label{sec:Camera}
@@ -55,19 +55,19 @@ to research the most suitable camera because all cameras have different properti
 At the beginning of the Projectseminar Echtzeitsysteme, the Logitech C270 HD Webcam was being used. The resolution of 
 the camera is 1280x960 pixels and the Frame per Second (FPS) value is 30 Hertz (Hz) at a 640x480 pixel resolution. 
 The field of View (FOV) is just 60 degrees. The problem with this camera is that if there is a curve, the camera 
-cannot see all of the lanes, and thus is not very suitable for lane detection. When I started my master thesis, there 
+cannot see all of the lanes, and thus is not very suitable for lane detection. When I started my master's thesis, there 
 was a Kinect v2 camera on the model car.  The Kinect v2 camera was developed by Microsoft and released in 2013. This 
 camera has a depth sensor with a resolution of 512x424 pixels and its FOV is 70x60 degrees. The FPS value is 30 Hz at 
 a 512x424 pixel resolution. This camera also has a color camera with resolution of 1920x1080 pixels and a FOV of 
 84.1x53.8 degrees. The FPS value is 30 Hz at a 1920x1080 pixel resolution. This camera had two main disadvantages for 
-this master thesis. The first disadvantage is the FOV value of camera. This value is better than the value of Logitech 
+this master's thesis. The first disadvantage is the FOV value of camera. This value is better than the value of Logitech 
 C270 camera but it is still not enough for curve lane detection. The second main disadvantage is the location of the 
 color camera. The color camera of this camera is not in the middle of camera, but rather, on the right. This is a 
 disadvantage for us because when there are curves going left as opposed to right, the camera is unable to see the 
 left and even perhaps the middle lane of the truck. Thus, this is problematic for lane detection.
 
 Due to these reasons, I had to choose a camera which has a sufficiently high FOV value. After doing research, I decided 
-that the Genius Widecam F100 camera is the best choice for this master thesis because this camera has a FOV value of 
+that the Genius Widecam F100 camera is the best choice for this master's thesis because this camera has a FOV value of 
 120 degrees and it can also be used with the Linux Operating System. The resolution of this camera is 1920x1080 pixels 
 and the FOV value is 120 degrees. The FPS is 30 Hz at a 1920x1080 pixel resolution. With this camera, it is possible 
 to detect most if not all lanes, including when there are curves. 
@@ -84,61 +84,61 @@ to detect most if not all lanes, including when there are curves.
 \section{Software}\label{sec:Software}
 
 
-In this chapter, the software algorithms will be focused, which are defined in this master thesis.  Through program flow charts and explaination of all steps of program flow charts, it will be tried to explain algorithms better. For finding the best solution, 5 different source codes versions(?variants/?methods) were generated. For all these source codes,the computing times were calculated and compared which solution can detect the lanes better. In next pages, there are detailed explanations of used versions(?variants/?methods). The development environment and the used softwares will be also described , which are used in master thesis.
+In this chapter, the software algorithms defined in this master's thesis will be focused on. With the aid of program flow charts and explanations of all their steps, the algorithms will themselves be better explained. In order to find the best solution, five different source code versions(?variants/?methods) were generated. For all these source codes, the computing times were calculated and compared in terms of which solution can detect the lanes better. In the following pages, there are detailed explanations of the versions utilized (?variants/?methods). The development environment and the software utilized in this master's thesis will be also described.
 
 %
 \subsection{Development Environment and Related Softwares}
 \label{sec:Development Environment and Related Softwares}
 
-As also mentioned at subsection \ref{sec:Microcontroller and Main Board}, in this project the introduced main board was used. One of the compact and fast version of Linux 16.04 operating system, \textit{Lubuntu} was installed in this main board.
+As also mentioned at subsection \ref{sec:Microcontroller and Main Board}, in this project the previously introduced main board was utilized. One of the compact and fast versions of the Linux 16.04 operating system, \textit{Lubuntu} was installed in this main board.
 
-The version \textit{Kinetic} of ROS was used for implementation of this master thesis. ROS is the abbreviation of \textbf{R}obotic \textbf{O}perating \textbf{S}ystem, which is a robotics middleware (i.e. collection of software frameworks for robot software development). At ROS wiki page\cite{ROS}, ROS is defined that, ROS is an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.
+The version \textit{Kinetic} of ROS was used for implementation of this master's thesis. ROS is the abbreviation of \textbf{R}obotic \textbf{O}perating \textbf{S}ystem, which is a robotics middleware (i.e. collection of software frameworks for robot software development). On the ROS wiki page\cite{ROS}, ROS is defined as an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.
 
-For using prepaid image processing functions, an open source computer vision and machine learning software library was used, which is called as OpenCV. According to OpenCV website\cite{OpenCV}, there are more than 2500 optimized algorithms in OpenCV library and OpenCV has more than 47 thousand people of user community.
+For using prepaid image processing functions, an open-source computer vision and machine learning software library called OpenCV was used. According to the OpenCV website\cite{OpenCV}, there are more than 2500 optimized algorithms in the OpenCV library and OpenCV has a user community of more than 47 thousand people.
 
-ROS can be programmed by programming languages Python, C++ or Lisp and OpenCV can be programmed by programming languages Python or C++. In this master thesis, C++ was used.
+ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV can be programmed with Python or C++ programming languages. In this master's thesis, C++ was used.
 
 %
 \subsection{Preprocessing :}\label{sec:Preprocessing}
 
-There are so different possibilities for lane detection algorithms. Of course, each of them has some advantages and disadvantages. In this master thesis, some different methods were defined and in this chapter, these methods will be explained in detail.
+There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods were defined and in this chapter, these methods will be explained in detail.
 
-In all these methods, some processes are common, which is called as preprocessing phase. At the beginning,\emph{\color{blue} the frames are gotten from the camera via ROS-Topic.} ROS uses different image formats but OpenCV uses as another image format Matrix(Mat) object. This taken frame via ROS-Topic must be converted from ROS image data type to Mat object. For that converting, a ROS-Package were used, which is called as \textit{cvbridge}\cite{cv_bridge}. cvbridge converts to ROS image format to Mat Object which is the OpenCV Image Format. 
+In all of these methods, some processes are common, and this is called the preprocessing phase. At the beginning,\emph{\color{blue} the frames are obtained from the camera via ROS-Topic.} ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
 
-Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains the informations like the size of matrix, storing method and etc. It has always fixed size but the size of matrix is variable from image to image.
+Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains information like the size of matrix, storing method, etc. It always has a fixed size but the size of matrix is variable from image to image.
 
-There are so many methods, which can store the pixel values to the Mat object. In this case, the color space and used data type can be choosed. For gray images, it is easy to choose the color space because there are just two colors : black and white. With changing the density of colors(black and white), it is possible to create many shades of gray. There are more methods for colorful images. Colorful images have generally three or four channels. These three channels are used for RGB color values. The RGB colors are based on red, green and blues colors which can be detected all colors by human eyes. For transparency of a color can be used a fouth channel which is calles as alpha(A).
+There are so many methods which can store the pixel values to the Mat object. In this case, the color space and the data type utilized can be chosen. For gray images, it is easy to choose the color space because there are just two colors : black and white. By changing the density of colors(black and white), it is possible to create many shades of gray. There are more methods for color images. Color images generally have three or four channels. These three channels are used for RGB color values. The RGB colors are based on the colors red, green, and blue, which can all be detected by the human eye. For the transparency of a color, a fourth channel called alpha(A) can be used.
 
 There are also another color formats, which have some advantages\cite{OpenCV_Mat}. 
 
 \begin{itemize}
 
-\item RGB format is so similar to human eye use, but at OpenCV display system uses BGR format which has another row of colors than RGB format  
+\item The RGB format is quite similar to the human eye, but the OpenCV display system uses the BGR format, which uses another row of colors.  
 
-\item HSV and HLS formats are more natural way to describe colors. They decompose colors into their hue, saturation and value/luminance components. Another advantage of HSV and HLS make less sensitive to the light conditions of the input image.
+\item The HSV and the HLS formats are more natural ways to display colors. They decompose colors into their hue, saturation, and value/luminance components. Another advantage of the HSV and the HLS formats is that they are less sensitive to the light conditions of the input image.
 
-\item At JPEG image formats is used YCrCb format.
+\item In JPEG image formats the YCrCb format is used.
 
-\item if the distance of a given color to another color want to be measured, CIE L*a*b* format is more suitable than others.
+\item if the distance of a given color to another color is to be measured, CIE L*a*b* format is more suitable than others.
 
 \end{itemize}
 
-After the frame from Camera via ROS-Topic was received, the colorful frame has to be converted to grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, grayscale format of input image is needed. To convert a frame from BGR format to grayscale format brings some advantages, the main advantage is the processing time. Normally colorful frame matrix content has three or four channels but at grayscale frame matrix content has just one channel so grayscale frame matrix size is much smaller compare to colorful frame matrix size. Because of this reason the image processing time is much more smaller at grayscale format compare to BGR format. For converting BGR formatted frame to grayscale formatted frame, \textit{cvtColor} function from OpenCV is used.
+After the frame from Camera via ROS-Topic was received, the color frame had to be converted to a grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, the grayscale format of the input image is needed. Converting a frame from BGR format to grayscale format has some advantages, the main advantage being the processing time. Normally color frame matrix content has three or four channels, but grayscale frame matrix content has just one channel, so grayscale frame matrix size is much smaller compared to color frame matrix size. Because of this, the image processing time is much more less for the grayscale format compared to BGR format. In order to covert the BGR formatted frame to a grayscale formatted frame, the \textit{cvtColor} function from OpenCV is used.
 
- For stabile lane detection, the light conditions must be considered. Because of this reason, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels were searched. After finding the lightest and darkest pixels, light conditions can be estimated approximately. These values will be used in the next step. After this processing, a filter is applied to all frames which tranforms an image into a binary image by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value. Otherwise it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamical parameter, the lanes are more clear detectable and noises can be cancelled more successful.
+For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. After finding the lightest and darkest pixels, it is possible to estimate the lighting conditions. These values are then used in the next step. After this processing, a filter is applied to all frames, transforming images into binary images by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value; otherwise, it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamic parameter, the lanes are more able to be more clearly detected and noise can be cancelled more successfully.
 
-After threshold filter, an edge detection filter must be applied. In this master thesis, the Sobel operator is used which explained at Chapter 2 in detail.
+After the threshold filter, an edge detection filter must be applied. In this master's thesis, the Sobel-Operator is used. This is explained in Chapter 2 in detail.
  
- This preprocessing part is common for all cases but after this process, there are differences at cases.
+This preprocessing part is common for all cases but after this process, the cases diverge.
  
 %
-\subsection{Method 1/Case 1 : Hough Transformation + Rectangle + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
+\subsection{Method 1/Case 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
 
-When the preprocessing part is over, the lanes must be detected. For the finding the position of lanes, the Standart Hough Transformation is used. But the Standart Hough Transformation didn't used to all of the frame, the frame were cropped. This cropping has a reason and there is an advantage thanks of cropping. It will be explained soon in detail.
+When the preprocessing part is over, the lanes must be detected. In order to find the position of lanes, the Standart Hough Transformation is used. But the Standart Hough Transformation does not utilize all of the frame; rather, the frame is cropped. There is an advantage of cropping the frame, which will be explained in detail.
 
-We get frames from camera 640x480 pixels resolution. It was the default value at that camera. The resolution of the camera can be increased by its settings, but it is not possible to decrease. For decreasing the resolution of the camera, there is another method and it is used in another case so it will be explained when it is used in another case. In this case, the minimum resolution is used, which the camera allows us. There are some reasons. The most important reasons is, if the resolution is increased, there are more pixels so the computing time increases too. High computing time is something, which we don't want to have.
+The frames obtained from the camera are at a resolution of 640x480 pixels, which is the default value. The resolution of the camera can be increased by adjusting its settings, but it is not possible to decrease it this way. In order to decrease the resolution of the camera, there is another method. This method is used in another case, and will be explained there. In this case, the minimum resolution the camera allows is used. There are some reasons for this, the most important being that if the resolution is increased, there are also more pixels, and thus the computing time increases as well. High computing time is of course undesirable.
  
-Height of the frame has 640 pixels, but as before mentioned, the frame was cropped. As seen at Figure \ref{fig:Case1_withoutCropped}, if there is a curve, far points from camera won't be the part of truck. There can be some stuffs which are not relevant with truck and lanes so these stuffs caused to produce Standart Hough Transformation lines. In this thesis, the Standart Hough Transformation were used, if there is an edge which could detected by Sobel Operator, produces a red line so the first 100 pixels of frame height were took off and the last 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown just last 540 pixels of frame height so they don't cover the irrelevant informations at the frame. If there is a lane, the red lines are so close each other but if there is no lane, there are so many distance(at least 50 pixels) between red lines. At Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. All these group include a lane. Thanks of Standart Hough Transformation, we know that, between which vertically pixels stand the lanes. 
+The original height of the frame was 640 pixels, but as previously mentioned, the frame was cropped. As seen in Figure \ref{fig:Case1_withoutCropped}, when there is a curve, the camera also detects points that do not belong to the track. When the frame is not cropped, the detection of irrelevant points would result in the undesired production of red Standard Hough Transformation lines. As a result, first 100 pixels of the frame height were removed and the last 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown only in the last 540 pixels of frame height and do not cover the irrelevant parts of the frame. If there is a lane, the red lines are very close each other, but if there is no lane, there is a distance of at least 50 pixels between the red lines. In Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. In each group, there is a lane. Thanks to the Standard Hough Transformation, we know which lanes are between which pixel columns.
 
 \begin{figure}[H]
   \centering
@@ -201,6 +201,41 @@ As we before mentioned, preprocessing part is common for all cases. In this case
 
 Next step of this case is that finding between which vertically pixels stand the lanes. At Case 1(Section \ref{sec:Case 1} we had to apply Standart Hough Transformation to the frame whose the first 100 pixels of frame vertically were took off(380x640 pixels). After IPM implementation, we don't need to apply Standart Hough Transformation to the so big part of the frame. Just last 160 vertically pixels (160x640 pixels) is enough to find all positions of lanes.
 
-After finding between which vertically pixels stand the lanes, the Probabilistic Hough Transformation was used.
+After finding between which pixel columns stand the lanes, the Probabilistic Hough Transformation was used. Thanks to Probabilistic Hough Transformation, on the lanes appear Hough points. As metioned in Case 1 at Section \ref{sec:Case 1}, there are some parameters at Probabilistic Hough Transformations, so number of Hough points can be descreased or increased. Decreasing the number of Hough Points descrease also the computing time but, so much decreasing the number of Hough Points can cause the loose stability of detecting lanes. So the parameters must be setted in the most efficient way.
+
+We have already found out between which pixel columns stand the lanes. So we have to group Hough points according to lanes. If the camera can see all there lanes, then we have to Hough points to the three groups but if there is a curve, the camera can see just the right and middle lane so the Hough points must be in this case to the two groups. For each lane must be found the starting points of the lanes. For that, all Hough points in a group must be compared with each other then the Hough point which are the lowest points of the frame, are the starting points. 
+
+The next step of this case is k-nearest neighbors algorithm (KNN). KNN is a learning algorithm. Here KNN is used instead of rectangle method which is used in Case 1 at Section \ref{sec:Case 1}. For KNN are used the functions from OpenCV. There are some parameters at these functions. For example, we can set, that 'how many neighbour points will the functions find?'. The parameters must be setted in the most efficient way. It means, we want to get stabil and fast results. 
+
+The latest step of this case is curve fitting. End of the KNN algoritm, we don't get so many Hough points like in rectangle method for curve fitting algorithm.It means, the curve fitting algorithm uses less points as input so it produces the mathematical equation of lanes much more faster. Here also x and y coordinates of Hough points were swapped for getting more stable curves. After getting the mathematical description of lanes, for each vertical pixels, the equation result is calculated and plotted on the frame. So the lanes can be detected, mathematically described and plotted on the frame.
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./Bilder/Case2_OutputImage.png}\label{fig:Case2_OutputImage}}
+  \caption{Output Image}
+\end{figure} 
+
+
+\subsection{Method 3/Case 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}\label{sec:Case 3}
+
+This case is so similar to case 2 at Section \ref{sec:Case 2}. Like in Case 2, at the beginning of this case, Preprocessing Part is used, then Inverse Perspective Mapping for all pixels implemented. After that, for 160x640 pixels, Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until now, the implementation was totally same with Case 2. In Case 2, there were used k-nearest neighbours (KNN) method was used but in this case, the rectangle method is used which was used in Case 1 at Section \ref{sec:Case 1}. But at the usage of rectangle method, there is a difference than the rectangle method which was used at Case 1. At Case 1, the size of rectangles were going to progressively smaller but in this case, the size of rectangles are always same because the Inverse Perspective Method(IPM) was used at the beginning of case so the lanes are shown on the top of track. But the size of rectangles at middle lane is bigger than the size of rectangle at left and right lanes. Because of the dashed lines, we had to use bigger sized rectangles at the middle lane.
+
+After the rectangle method was used,  the curve fitting method is used, like in other cases, x and y coordinates of Probabilistic Hough points should be swapped after rectangle methods. Thanks these swapping, the curve fitting works more stable. After producing 3 different equations for three different lanes, output values for all pixel columns are calculated and plotted at the frame. 
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./Bilder/Case3_OutputImage.png}\label{fig:Case3_OutputImage}}
+  \caption{Output Image}
+\end{figure}
+
+\subsection{Method 4/Case 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}\label{sec:Case 4}
+
+This case is also so similar to case 2. There is just one difference between Case 2 at \ref{sec:Case 2} and this case. The only difference is resizing the frame at the beginning of the case. The frame comes from the camera with 64x480 pixels resolution but we resize this frame from 640x480 pixels resolution to 320x240 pixels resolution. For resizing, a 'resize' function from OpenCV were used because we can't get less resolution than 640x480 pixels from the camera so we had to use a function for resizing. Because of resizing, we had to use sometimes different parameters than Case 2. We had to find the optimal parameters for efficient and good lane detection.
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./Bilder/Case4_OutputImage.png}\label{fig:Case4_OutputImage}}
+  \caption{Output Image(320x240 pixels resolution)}
+\end{figure}
 
 %

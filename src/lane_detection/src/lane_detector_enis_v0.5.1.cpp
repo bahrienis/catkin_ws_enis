@@ -185,7 +185,7 @@ int main(int argc, char **argv) {
         
 //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame50.jpg";
+      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -446,10 +446,10 @@ int main(int argc, char **argv) {
          int x_coord = alldetectedpoints.at(i).x;
          int  y_coord = alldetectedpoints.at(i).y;
           
-         if(x_coord>=x_value-30 && x_coord <= x_value+30
+         if(x_coord>=x_value-50 && x_coord <= x_value+50
                  && y_coord < y_value && y_coord >= y_value-90){
         
-  rectangle(gradgray,Point(x_value-30,y_value),Point(x_value+30,y_value-90),Scalar(255), 1, 8, 0);
+  rectangle(gradgray,Point(x_value-50,y_value),Point(x_value+50,y_value-90),Scalar(255), 1, 8, 0);
   middleline.push_back(alldetectedpoints.at(i));
   x_middle.push_back(alldetectedpoints.at(i).x);
   y_middle.push_back(alldetectedpoints.at(i).y);

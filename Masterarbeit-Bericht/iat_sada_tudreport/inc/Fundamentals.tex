@@ -5,19 +5,7 @@
 %
 \section{Properties of Truck at Carola-Cup}\label{sec:Properties of Truck at Carolo-Cup}
 %
-The Carolo-Cup is an annual competition at the Technical University of Braunschweig 
-which are attended by student. Every year the truck and some properties of the 
-competition is changing. For example, in the competitions until 2017 there was no 
-traffic sign but from 2017 there are also some traffic signs, speed limit zones, 
-blocked areas and crosswalks with pedestrian. Because of this reason, in the 
-competitions until 2017, there was only one way to understand who has the right of way. 
-If there is a stop line in the way which in front of intersection, it means, the car has to wait until the intersection is free. In the competitions from 2017, the 
-intersections are in different parts: They are 'Intersections with stop lines', 
-'Intersections with give-way lines', 'Intersections with priority to right', 
-'Enforced crossing direction - give-way condition', 'Enforced crossing direction - 
-right of way condition'. Except 'Intersections with priority to right', they all have traffic signs, which signs who has priority. If there is a no traffic sign, it means,right side always have priority.
-
-
+The Carolo-Cup is an annual competition at the Technical University of Braunschweig which are attended by students. Every year the truck and some properties of the competition are changing. For example, in the competitions until 2017 there was no traffic sign, but starting in 2017 there are also some traffic signs, speed limit zones, blocked areas and crosswalks for pedestrian. Because of this, in the competitions until 2017, there was only one way to understand who had the right of way. If there is a stop line on the road in front of an intersection, it means the car has to wait until the intersection is free. In the competitions starting from 2017, the intersections are in different parts: They are 'Intersections with stop lines', 'Intersections with give-way lines', 'Intersections with priority to right', 'Enforced crossing direction - give-way condition', 'Enforced crossing direction - right of way condition'. Except 'Intersections with priority to right', they all have traffic signs stating who has priority. If there is a no traffic sign, it means the right side always has priority.
 
 \begin{figure}[H]
 	\centering
@@ -26,7 +14,6 @@ right of way condition'. Except 'Intersections with priority to right', they all
 	\caption{Left: Markings for sharp turns at Carolo-Cup.
 Right: Intersections with stop lines at Carolo-Cup}
 \end{figure}
-
 
 %
 \section{Inverse Perspective Mapping}\label{sec:Inverse Perspective Mapping}
@@ -38,7 +25,7 @@ In order to use the IPM method, the intrinsic and extrinsic parameters of camera
 \begin{itemize}
 
 \item \textbf{Intrinsic Parameters :} Intrinsic parameters are camera-specific. It includes
-information of the focal length ($f_x$, $f_y$) and optical centers ($c_x$, $c_y$). It is also called a camera matrix. It depends on the camera only, so once calibrated, it can be stored for future purposes. It is expressed as a 3x3 matrix:
+information of the focal length ($f_x$, $f_y$) and optical centers ($c_x$, $c_y$). It is also called a camera matrix. Although the intrinsic parameters are camera-specific, once the camera is calibrated, the modified intrinsic parameters can be stored for future purposes. It is expressed as a 3x3 matrix:
 
  \begin{center}
   camera matrix =  $
@@ -49,7 +36,7 @@ f_x & 0 & c_x \\
 \end{bmatrix}
 $  \end{center}
 
-\item \textbf{Extrinsic Parameters :} Extrinsic parameters are dependent on the camera position. The parameters are H and $\theta$. H is the distance between the camera and ground.. $\theta$ is the camera tilt angle. 
+\item \textbf{Extrinsic Parameters :} Extrinsic parameters are dependent on the camera position. The parameters are H and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. 
  
 \end{itemize}
   
@@ -60,16 +47,16 @@ $  \end{center}
   \caption{Related Positions of the Camera \cite{IPM}}
 \end{figure}
 
- As seen at \ref{Procedures_of_IPM}, the camera on the car has field of view 2(FOV2) at the real position of the camera but in this case, the view is not a bird's-eye view, so if the same FOV is to be observed from a bird's-eye view, IPM will virtually change the position to Virtual Position 2 of the camera. In this case, although the camera is at its real position, it will appear as though it is at Virtual Position 2. For that, the image coordinates must be also changed. Below, steps of IPM calculations from the paper of \cite{IPM} will be detailed.
+ As seen at \ref{Procedures_of_IPM}, the camera on the car has field of view 2(FOV2) at the real position of the camera but in this case, the view is not a bird's-eye view, so if the same FOV is to be observed from a bird's-eye view, IPM will virtually change the position to Virtual Position 2 of the camera. In this case, although the camera is at its real position, it will appear as though it is at Virtual Position 2. For that, the image coordinates must also be changed. Below, the steps of IPM calculations from the paper of \cite{IPM} will be detailed.
  
-In the formula,  the original image coordinates will be defined as (x,y), the destination image coordinates will be defined as ($x^*$,$y^*$), the distance between the ground and the camera will be defined as H, the focal length of camera will be defined as f, and the tilt angle of camera will be defined as $\theta$.
+In the formula, the original image coordinates will be defined as (x,y), the destination image coordinates will be defined as ($x^*$,$y^*$), the distance between the ground and the camera will be defined as H, the focal length of camera will be defined as f, and the tilt angle of camera will be defined as $\theta$.
  
 \begin{center}
  $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ ;
  $y^* = H \frac{y sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ 
 \end{center}
 
-In this equation , the transformed component values of $x^*$ and $y^*$ may be less than or equal to zero. Because of 
+In this equation, the transformed component values of $x^*$ and $y^*$ may be less than or equal to zero. Because of 
 this reason, a constant d is defined as $
 \begin{vmatrix}
 H(sin \theta + cos \theta)/(f sin \theta - cos \theta) 
@@ -96,13 +83,13 @@ $  + 1. This means that the coordinate point in the original source image has be
 \section{Edge Detection}\label{sec:Edge Detection}
 %
 
-Edge detectors are essential parts of most of computer vision systems. Edge detectors dramatically decrease the amount of data to be processed and extract the useful parts of images. They work by detecting discontinuities in brightness. In this project, the edge detector was used in order to detect the lanes and to exclude unnecessary information from images. There are different methods for edge detection, but they can be grouped into two categories. They are :
+Edge detectors are essential parts of most computer vision systems. Edge detectors dramatically decrease the amount of data to be processed and extract the useful parts of images. They work by detecting discontinuities in brightness. In this project, the edge detector was used in order to detect the lanes and to exclude unnecessary information from images. There are different methods for edge detection, but they can be grouped into two categories. They are :
 
 \begin{itemize}
 
-\item \textbf{Gradient method : } This method searches for the maximum and minimum in the first derivative of the image and within can find the edges. For this method, the first order derivative filter must be used. For example : Sobel-Operator.
+\item \textbf{Gradient method : } This method searches for the maximum and minimum in the first derivative of the image and with that, the edges can be found. For this method, the first order derivative filter must be used. For example : Sobel-Operator.
  
-\item \textbf{Laplacian method : } This method searches for the zero crossing in the second derivative of the image and with it, can find the edges. For this method, the second order derivative filter must be used. For example : Laplacian Filter. 
+\item \textbf{Laplacian method : } This method searches for the zero crossing in the second derivative of the image and with that, the edges can be found. For this method, the second order derivative filter must be used. For example : Laplacian Filter. 
   
 \end{itemize}
  
@@ -129,12 +116,12 @@ Well known smoothing filters are :
  
  \end{itemize}
  
-In this master thesis, the Sobel Operator was utilized, so it will be described in more detail.
+In this master's thesis, the Sobel Operator was utilized, so it will be described in more detail.
 
 %
 \subsection{Sobel Operator}\label{sec:Sobel Operator}
 
-One of the most used edge detectors at image processing and computer vision is Sobel Operator. The Sobel Operator uses vertical and horizantel masks. These masks are used odd-sized square matrices and they are generally 3x3 matrices.
+One of the most used edge detectors in image processing and computer vision is the Sobel Operator. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices.
 
 
 \begin{figure}[H]
@@ -167,7 +154,7 @@ One of the most used edge detectors at image processing and computer vision is S
 %
 \section{K-Nearest Neighbors Algorithm}\label{sec:K-Nearest Neighbors Algorithm}
 %
-K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. Non-parametric technique means, that it doesn't make any assumptions on the underlaying data distribution. In the definition of KNN was used the term of 'lazy learning algorithm'. It means, it doesn't use the data training points to do any generalization. In other words, there is no explicit training phase or it is very minimal.  It also means that the training phase is pretty fast. Most of the lazy algorithms - especially KNN - makes decision based on the entire training data set. On the other hand, KNN is one of the top 10 data mining algorithms\cite{k_nearest_neighbors}.
+K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. The non-parametric technique means that it doesn't make any assumptions on the underlaying data distribution. In the definition of KNN, the term 'lazy learning algorithm' is used. It means it doesn't use the data training points to do any generalization. In other words, there is no explicit training phase or it is very minimal.  It also means that the training phase is pretty fast. Most of the lazy algorithms - especially KNN - make decisions based on the entire training data set. On the other hand, KNN is one of the top 10 data mining algorithms\cite{k_nearest_neighbors}.
 
 \begin{figure}[H]
  \centering
@@ -175,14 +162,13 @@ K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. Non-parame
   \caption{K-Nearest-Neighbors Algorithm\cite{k_nearest_neighbors_wikipedia}}
 \end{figure}
 
-K-Nearest Neighbors Algorithm has advantages and disadvantages. According to \cite{k_nearest_neighbors_adv_disadv},the main advantages of KNN are simplicity, effectiveness, intuitiveness and competitive classification performance in many domains. On the other hand, KNN can have poor run-time performance when the training set is large. It is very sensitive to irrelevant or redundant features because all features contribute to the similarity and thus to the
-classification. The computation cost is also quite high because we need to compute distance of each query instance to all training samples. 
+The K-Nearest Neighbors Algorithm has advantages and disadvantages. According to \cite{k_nearest_neighbors_adv_disadv},the main advantages of KNN are simplicity, effectiveness, intuitiveness and competitive classification performance in many domains. On the other hand, KNN can have poor run-time performance when the training set is large. It is very sensitive to irrelevant or redundant features because all features contribute to the similarity and thus to the classification. The computation cost is also quite high because we need to compute distance of each query instance to all training samples. 
 
 %
 \section{Curve Fitting}\label{sec:Curve Fitting}
 
-\emph{\color{red}Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting produces mostly mathematical equation that can be used to find points anywhere along
-the curve.\cite{Curve_Fitting}} They are several different types of curve fitting. Some of them are; linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called with different names with depending on their orders. For first order polynomial curve fitting is called as linear regression, for second order quadratic regression, for third order cubic regression.
+\emph{\color{red}Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting produces mostly mathematical equations that can be used to find points anywhere along
+the curve.\cite{Curve_Fitting}} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression, second order as quadratic regression, and third order as cubic regression.
 
 \begin{figure}[H]
  \centering
