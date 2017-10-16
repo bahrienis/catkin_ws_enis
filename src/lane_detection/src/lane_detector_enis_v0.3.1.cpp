@@ -152,20 +152,20 @@ int main(int argc, char **argv) {
 
 
        
-   /*     if (sayi >= 294) {
+        if (sayi >= 294) {
             sayi = 0;
         }
 
         std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-*/
+
         
         
         
 //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame50.jpg";
+//      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame50.jpg";
      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";

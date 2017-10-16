@@ -344,7 +344,7 @@ int main(int argc, char **argv) {
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame155.jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame38.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
