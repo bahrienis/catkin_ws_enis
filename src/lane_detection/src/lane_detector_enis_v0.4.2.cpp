@@ -84,6 +84,7 @@ void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, s
             bool is_y_coord_valid = y_coord_vect.size() == 0 || abs(cur_y - y_coord_vect.back()) < 100;
 
             if (is_x_coord_valid && is_y_coord_valid) {
+              //if (true) {
                 k_nearest_x.push_back(cur_x);
                 k_nearest_y.push_back(cur_y);
             }
@@ -107,7 +108,7 @@ void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, s
                 circle(inputImg, Point(nextPointX, nextPointY), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             current_x = nextPointX;
         } else if (direction_detected) {
-            current_x = direction == 1 ? current_x + step : current_x - step;
+            current_x = direction == 1 ? current_x + 15 : current_x - 15;
         }
     }
 }
@@ -229,20 +230,20 @@ int main(int argc, char **argv) {
 
 
 
-/*        if (sayi >= 251) {
+        if (sayi >= 1520) {
             sayi = 0;
         }
 
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_14.09.2017_lightoff/frame" + std::to_string(sayi) + ".jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-*/
+
 
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-              std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+ //             std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame1470.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -277,7 +278,7 @@ int main(int argc, char **argv) {
 
 
 
-        GaussianBlur(outputImg, outputImg1, Size(3, 3), 0, 0, BORDER_DEFAULT); //GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
+        GaussianBlur(outputImg, outputImg1, Size(5, 5), 0, 0, BORDER_DEFAULT); //GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
 
         cvtColor(outputImg1, outputImg2, CV_BGR2GRAY); // Bunu sil
 
@@ -287,7 +288,7 @@ int main(int argc, char **argv) {
         cout << "max val: " << maxVal << endl;
 
 
-        threshold(outputImg2, cdst1, 0.6 * maxVal, 255, 1);
+        threshold(outputImg2, cdst1, 0.9 * maxVal, 255, 1);
 
 
 
@@ -312,7 +313,7 @@ int main(int argc, char **argv) {
 
 
 
-        Rect Rec1(0, 320, 640, 160);
+        Rect Rec1(0, 300, 640, 180);
 
         outputImg4 = grad(Rec1);
         cvtColor(outputImg4, outputImg4gray, CV_GRAY2BGR);
@@ -411,7 +412,7 @@ int main(int argc, char **argv) {
         flann::KDTreeIndexParams indexParams;
         flann::Index kdtree(Mat(alldetectedpoints).reshape(1), indexParams);
 
-        int numOfPoints = 5;
+        int numOfPoints = 2;
         int step = 30;
         vector<double> x_rightLine;
         vector<double> y_rightLine;

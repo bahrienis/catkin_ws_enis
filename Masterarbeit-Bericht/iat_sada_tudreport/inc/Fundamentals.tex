@@ -121,7 +121,53 @@ In this master's thesis, the Sobel Operator was utilized, so it will be describe
 %
 \subsection{Sobel Operator}\label{sec:Sobel Operator}
 
-One of the most used edge detectors in image processing and computer vision is the Sobel Operator. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices.
+The Sobel Operator, sometimes called the Sobel filter is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. \emph{\color{red}The operator uses two 3x3 kernels which are convolved with the original image to calculate approximations of the derivatives - one for horizontal changes, and one for vertical. If we define A as the source image, and $G_{x}$ and $G_{y}$ are two images which at each point contain the horizontal and vertical derivative approximations respectively, the computations are as follows:}
+
+\[
+  G_{x} = 
+  \begin{bmatrix}
+	+1 & 0 & -1 \\
+	+2 & 0 & -2 \\
+	+1 & 0 & -1 \\
+   \end{bmatrix} * A  \quad
+  G_{y} = 
+  \begin{bmatrix}
+	+1 & +2 & +1 \\
+	0 & 0 & 0 \\
+	+1 & -2 & -1 \\
+  \end{bmatrix} * A
+\]
+
+where * here denotes the 2-dimensional signal processing convolution operation.
+
+Since the Sobel kernels can be decomposed as the products of an averaging and a differentiation kernel, they compute the gradient with smoothing. For example, \textbf{$G_{x}$}  can be written as
+
+$  \begin{bmatrix}
+	+1 & 0 & -1 \\
+	+2 & 0 & -2 \\
+	+1 & 0 & -1 \\
+   \end{bmatrix} =  \begin{bmatrix}
+	1 \\
+	2 \\
+	1 \\
+  \end{bmatrix} \begin{bmatrix}
+	+1 & 0 & -1
+  \end{bmatrix}
+$
+
+The x-coordinate is defined here as increasing in the 'right'-direction, and the y-coordinate is defined as increasing in the 'down'-direction. At each point in the image, the resulting gradient approximations can be combined to give the gradient magnitude, using:
+
+G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$
+
+Using this information, we can also calculate the gradient's direction:
+
+$\theta = atan(\dfrac{G_{y}}{G_{x}})$
+
+where, for example, $\theta$ is 0 for a vertical edge which is lighter on the right side.\cite{Sobel_Operator}
+
+
+
+
 
 
 \begin{figure}[H]
@@ -130,7 +176,34 @@ One of the most used edge detectors in image processing and computer vision is t
   \hfill
   \subfloat[Sobel Operator applied Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Sobel_Operator.png}\label{fig:f2}}
   \caption{Sobel Operator\cite{Sobel_Operator}}
-\end{figure}
+\end{figure} 
+
+
+%
+\subsection{Canny Edge Detector}\label{sec:Canny Edge Detector}
+
+Canny edge detector was developed in 1986 and called with the name of its developer John F. Canny. Canny edge detector is also so popular edge detector like Sobel operator. Canny edge detector is a multi-stage algorithm and it can be analyzed in 5 different stages.\cite{Canny_Edge_Detector2}
+
+\begin{enumerate}
+\item \textbf{Noise Reduction : } To get so stabile lane detection results, we have to reduce/remove all noise from frames. Lane detection without filter out the noise can cause false detection. Gaussian filter is used for removing noise in the frames. Gaussian filter blurs images and remove detail and noise. The size of Gaussian filter kernel must be (2k+1)x(2k+1). It is important to choose the size of Gaussien filter because if the size of kernel is larger, detector's sensitivity to noise is lower but on the other hand,\emph{\color{red} the localization error to detect the edge will slightly increase with the increase of the Gaussian filter kernel size.} \cite{Canny_Edge_Detector}
+
+\item \textbf{Finding Intensity Gradient of the Image : } \emph{\color{red}The Canny algorithm basically finds edges where the grayscale intensity of the image changes the most. These areas are found by determining gradients of the image. Gradients at each pixel in the smoothed image are determined by applying what is known as the Sobel operator. Sobel operator has already explained in section \ref{sec:Sobel Operator}.}
+
+
+\item \textbf{Non-maximum Suppression : }
+\item \textbf{Double Thresholding : }
+\item \textbf{Hysteresis Thresholding : }
+\end{enumerate}
+
+
+\begin{figure}[H]
+  \centering
+  \subfloat[Original Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Sobel_Original.png}\label{fig:f1}}
+  \hfill
+  \subfloat[Canny Edge Detector applied Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Canny_Edge_Detector.png}\label{fig:f2}}
+  \caption{Canny Edge Detector\cite{Canny_Edge_Detector}}
+\end{figure} 
+
 
 
 
