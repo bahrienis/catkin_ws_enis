@@ -5,14 +5,14 @@
 %
 \section{Properties of Truck at Carola-Cup}\label{sec:Properties of Truck at Carolo-Cup}
 %
-The Carolo-Cup is an annual competition at the Technical University of Braunschweig which are attended by students. Every year the truck and some properties of the competition are changing. For example, in the competitions until 2017 there was no traffic sign, but starting in 2017 there are also some traffic signs, speed limit zones, blocked areas and crosswalks for pedestrian. Because of this, in the competitions until 2017, there was only one way to understand who had the right of way. If there is a stop line on the road in front of an intersection, it means the car has to wait until the intersection is free. In the competitions starting from 2017, the intersections are in different parts: They are 'Intersections with stop lines', 'Intersections with give-way lines', 'Intersections with priority to right', 'Enforced crossing direction - give-way condition', 'Enforced crossing direction - right of way condition'. Except 'Intersections with priority to right', they all have traffic signs stating who has priority. If there is a no traffic sign, it means the right side always has priority.
+The Carolo-Cup is an annual competition at the Technical University of Braunschweig which are attended by students. Every year the truck and some properties of the competition are changing. For example, in the competitions until 2017 there was no traffic sign, but starting in 2017 there are also some traffic signs, speed limit zones, blocked areas and crosswalks for pedestrian. Because of this, in the competitions until 2017, there was only one way to understand who had the right of way. If there is a stop line on the road in front of an intersection, it means the car has to wait until the intersection is free. In the competitions starting from 2017, the intersections are in different parts: They are 'Intersections with stop lines', 'Intersections with give-way lines', 'Intersections with priority to right', 'Enforced crossing direction - give-way condition', 'Enforced crossing direction - right of way condition'. Except 'Intersections with priority to right', they all have traffic signs stating who has priority. If there is a no traffic sign, it means the right side always has priority.\cite{Carolo_Cup}
 
 \begin{figure}[H]
 	\centering
 	\hspace*{0cm}   
 	\includegraphics[width=120mm,scale=1]{./Bilder/Intersections.png}
 	\caption{Left: Markings for sharp turns at Carolo-Cup.
-Right: Intersections with stop lines at Carolo-Cup}
+Right: Intersections with stop lines at Carolo-Cup\cite{Carolo_Cup}}
 \end{figure}
 
 %
@@ -39,7 +39,6 @@ $  \end{center}
 \item \textbf{Extrinsic Parameters :} Extrinsic parameters are dependent on the camera position. The parameters are H and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. 
  
 \end{itemize}
-  
   
 \begin{figure}[H]
 \centering
@@ -190,9 +189,12 @@ Canny edge detector was developed in 1986 and called with the name of its develo
 \item \textbf{Finding Intensity Gradient of the Image : } \emph{\color{red}The Canny algorithm basically finds edges where the grayscale intensity of the image changes the most. These areas are found by determining gradients of the image. Gradients at each pixel in the smoothed image are determined by applying what is known as the Sobel operator. Sobel operator has already explained in section \ref{sec:Sobel Operator}.}
 
 
-\item \textbf{Non-maximum Suppression : }
-\item \textbf{Double Thresholding : }
-\item \textbf{Hysteresis Thresholding : }
+\item \textbf{Non-maximum Suppression : } Non-maximum suppression is an edge thinning technique which is used as an intermediate step in many computer vision algorithms. \emph{\color{red}The image is scanned along the image gradient direction, and if pixels are not part of the local maxima they are set to zero. This has the effect of supressing all image information that is not part of local maxima.}
+
+\item \textbf{Double Thresholding : } \emph{\color{red}After application of non-maximum suppression, remaining edge pixels provide a more accurate representation of real edges in an image. However, some edge pixels remain that are caused by noise and color variation. In order to account for these spurious responses, it is essential to filter out edge pixels with a weak gradient value and preserve edge pixels with a high gradient value. This is accomplished by selecting high and low threshold values. If an edge pixel's gradient value is higher than the high threshold value, it is marked as a strong edge pixel. If an edge pixel's gradient value is smaller than the high threshold value and larger than the low threshold value, it is marked as a weak edge pixel. If an edge pixel's value is smaller than the low threshold value, it will be suppressed. The two threshold values are empirically determined and their definition will depend on the content of a given input image.}
+
+\item \textbf{Hysteresis Thresholding : } Hysteresis Thresholding is the last part of Canny Edge Detector. Until this step, strong edge pixels are extracted from the true edges but there are also some weak edge pixels, some of them are extracted from true edges and some of them are extracted from some noise. So the weak edge pixels which are extracted from true edge, should be strong edge pixels and the weak edge pixels which are extracted from noises must be removed. If there is a weak edge pixel, 8 neighbour pixels of that weak edge pixel is checked and if at least, one pixel of these neighbour pixels is a strong edge pixel then, this weak edge pixels stay as edges in the end picture. 
+
 \end{enumerate}
 
 
@@ -243,11 +245,49 @@ The K-Nearest Neighbors Algorithm has advantages and disadvantages. According to
 \emph{\color{red}Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting produces mostly mathematical equations that can be used to find points anywhere along
 the curve.\cite{Curve_Fitting}} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression, second order as quadratic regression, and third order as cubic regression.
 
+
 \begin{figure}[H]
  \centering
   \includegraphics[width=1\textwidth]{./Bilder/Curve_Fitting_Polynomial.png}\label{Curve_Fitting_Polynomial}
   \caption{Types of Polynomial Curve Fitting\cite{Curve_Fitting_Polynomial}}
 \end{figure}
+
+
+\emph{\color{blue}In this master thesis, curve fitting is used for getting the best mathematical descriptions of lanes. Curve fitting uses as input the Hough points, which appear on the lanes and give as output a mathematical equation. First order polynomial curve fitting is more suitable for defining straight lines and second order polynomial curve fitting is more suitable for defining curves. There are straight and curve lanes so first order polynomial curve fitting wouldn't be enough for our project because of this reason, in this master thesis, second order polynimal curve fitting is used.}
+
+\emph{\color{blue}There are so many different methods for curve fitting. One of the most famous method is the least squares method. In this master thesis also the least squares method is used. Next, it will be described, how to generate a polynomial curve fitting with using the least squares method.}
+
+\emph{\color{blue}A data set can be mostly expressed the relationship between variable with an equation which is mostly representated with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :}
+
+y = $ a_{k}x^{k} + ... + a_{1}x + a_{0} + \epsilon $ 
+
+\emph{\color{blue}The general polynomial regression model with the error $\epsilon$ provide typically an estimate rather than an implicit value of the dataset for any given value of x. A data set which has N data points, can be described with the maximum order of the polynomial which is k = N - 1 but mostly the lowest possible order of polynomial is choosed.}
+
+\emph{\color{blue} The aim of the least squares' method is to minimise the variance between dataset values and estimated values from the polynomial equation.}
+
+\emph{\color{blue} For determining the coefficients of the polynomial regression model ($ a_{k}, a_{k-1}, ..., a_{1} $) must be solved the following linear equations.}
+
+ $
+ \begin{bmatrix}
+N & $$\sum_{i=1}^{N} x_{i}$$ & $\dots$ & $$\sum_{i=1}^{N} x_{i}^{k}$$ \\
+$$\sum_{i=1}^{N} x_{i}$$ & $$\sum_{i=1}^{N} x_{i}^2$$ & $\dots$ & $$\sum_{i=1}^{N} x_{i}^{k+1}$$ \\
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
+$$\sum_{i=1}^{N} x_{i}^{k}$$ & $$\sum_{i=1}^{N} x_{i}^{k+1}$$ & $\dots$ & $$\sum_{i=1}^{N} x_{i}^{2k}$$ \\
+
+\end{bmatrix}  \begin{bmatrix}
+	 a_{0}  \\
+	 a_{1}  \\
+	 \vdots  \\
+	 a_{k}  \\
+  \end{bmatrix} = 
+  \begin{bmatrix}
+	 $$\sum_{i=1}^{N} y_{i}$$  \\
+	 $$\sum_{i=1}^{N} x_{i}y_{i}$$  \\
+	 \vdots  \\
+	 $$\sum_{i=1}^{N} x_{i}^{k}y_{i}$$  \\
+  \end{bmatrix}
+$ 
+
 
 %
 

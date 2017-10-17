@@ -152,14 +152,14 @@ int main(int argc, char **argv) {
 
 
        
-        if (sayi >= 294) {
+   /*     if (sayi >= 294) {
             sayi = 0;
         }
 
         std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
         sayi++;
         cout << "frame : " << sayi << endl;
-
+*/
         
         
         
@@ -173,18 +173,18 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
-       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+ /*      inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
         }
-        
+ */       
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
         
-//        bool bSuccess = cap.read(inputImg);
+        bool bSuccess = cap.read(inputImg);
 
         
         
