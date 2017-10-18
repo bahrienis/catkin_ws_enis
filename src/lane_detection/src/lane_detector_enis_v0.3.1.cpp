@@ -46,6 +46,41 @@ int main(int argc, char **argv) {
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
     cap.set(CV_CAP_PROP_FPS, 30); //change the frame value
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    cap.set(CV_CAP_PROP_CONTRAST, 0.1); //change the frame value
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     if (!cap.isOpened()) //if not success, exit program
     {
@@ -232,7 +267,7 @@ int main(int argc, char **argv) {
         
         
         
-        threshold(outputImg3, cdst1, 0.6*maxVal, 255, 1);
+        threshold(outputImg3, cdst1, 0.9*maxVal, 255, 1);
         
         
         
