@@ -3,30 +3,32 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: sada_tudreport.aux
 The style file: gerunsrt.bst
 Database file #1: ./bib/literature.bib
-Warning--entry type for "Carolo_Cup" isn't style-file defined
+Warning--entry type for "Statis" isn't style-file defined
 --line 4 of file ./bib/literature.bib
+Warning--entry type for "Carolo_Cup" isn't style-file defined
+--line 12 of file ./bib/literature.bib
 Warning--entry type for "ROS" isn't style-file defined
---line 37 of file ./bib/literature.bib
+--line 45 of file ./bib/literature.bib
 Warning--entry type for "Sobel_Operator" isn't style-file defined
---line 46 of file ./bib/literature.bib
-Warning--entry type for "Canny_Edge_Detector" isn't style-file defined
 --line 54 of file ./bib/literature.bib
+Warning--entry type for "Canny_Edge_Detector" isn't style-file defined
+--line 62 of file ./bib/literature.bib
 Warning--entry type for "Canny_Edge_Detector2" isn't style-file defined
---line 63 of file ./bib/literature.bib
+--line 71 of file ./bib/literature.bib
 Warning--entry type for "k_nearest_neighbors_wikipedia" isn't style-file defined
---line 84 of file ./bib/literature.bib
+--line 92 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting" isn't style-file defined
---line 106 of file ./bib/literature.bib
+--line 114 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting2" isn't style-file defined
---line 112 of file ./bib/literature.bib
+--line 120 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting_Polynomial" isn't style-file defined
---line 122 of file ./bib/literature.bib
+--line 130 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting_Plot" isn't style-file defined
---line 131 of file ./bib/literature.bib
-Warning--entry type for "cv_bridge" isn't style-file defined
 --line 139 of file ./bib/literature.bib
+Warning--entry type for "cv_bridge" isn't style-file defined
+--line 147 of file ./bib/literature.bib
 Warning--entry type for "OpenCV_Mat" isn't style-file defined
---line 148 of file ./bib/literature.bib
+--line 156 of file ./bib/literature.bib
 Warning--I didn't find a database entry for "Richtlinien"
 Warning--I didn't find a database entry for "OpenCV"
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
@@ -51,45 +53,45 @@ Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep 
 while executing---line 1056 of file gerunsrt.bst
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
 while executing---line 1056 of file gerunsrt.bst
-You've used 16 entries,
+You've used 17 entries,
             2016 wiz_defined-function locations,
-            568 strings with 5895 characters,
-and the built_in function-call counts, 2400 in all, are:
-= -- 202
-> -- 62
+            573 strings with 5993 characters,
+and the built_in function-call counts, 2544 in all, are:
+= -- 214
+> -- 66
 < -- 0
-+ -- 31
-- -- 15
-* -- 125
-:= -- 313
-add.period$ -- 20
-call.type$ -- 16
++ -- 33
+- -- 16
+* -- 133
+:= -- 331
+add.period$ -- 21
+call.type$ -- 17
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 126
-empty$ -- 340
-format.name$ -- 15
-if$ -- 610
+cite$ -- 17
+duplicate$ -- 133
+empty$ -- 361
+format.name$ -- 16
+if$ -- 647
 int.to.chr$ -- 0
-int.to.str$ -- 16
+int.to.str$ -- 17
 missing$ -- 8
-newline$ -- 55
-num.names$ -- 14
-pop$ -- 103
+newline$ -- 58
+num.names$ -- 15
+pop$ -- 110
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 95
+skip$ -- 101
 stack$ -- 0
 substring$ -- 21
-swap$ -- 43
+swap$ -- 46
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 15
-width$ -- 18
-write$ -- 120
+while$ -- 16
+width$ -- 19
+write$ -- 127
 (There were 11 error messages)
