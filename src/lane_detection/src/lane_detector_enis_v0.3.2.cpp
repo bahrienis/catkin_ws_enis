@@ -202,24 +202,26 @@ int main(int argc, char **argv) {
            //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
 //      std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame50.jpg";
      
+   std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+      
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
-        //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
+      //  std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
         //std::string filename = "/home/enis/Desktop/frame12.jpg"; 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
- /*      inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
         }
- */       
+        
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
         
-        bool bSuccess = cap.read(inputImg);
+  //      bool bSuccess = cap.read(inputImg);
 
         
         
@@ -267,7 +269,7 @@ int main(int argc, char **argv) {
         
         
         
-        threshold(outputImg3, cdst1, 0.9*maxVal, 255, 1);
+        threshold(outputImg3, cdst1, 0.6*maxVal, 255, 1);
         
         
         
@@ -952,7 +954,7 @@ int main(int argc, char **argv) {
           
             
             
-            if((((tmp2_pixel.x-(tmp2_pixel.y/5)) <= x2[allpixels2]) && (x2[allpixels2] <= (tmp2_pixel.x+(tmp2_pixel.y/5)))) && (((tmp2_pixel.y-(tmp2_pixel.y/2.2)) <= y2[allpixels2]) && (y2[allpixels2] <= (tmp2_pixel.y)))){
+            if((((tmp2_pixel.x-(tmp2_pixel.y/4)) <= x2[allpixels2]) && (x2[allpixels2] <= (tmp2_pixel.x+(tmp2_pixel.y/4)))) && (((tmp2_pixel.y-(tmp2_pixel.y/2.2)) <= y2[allpixels2]) && (y2[allpixels2] <= (tmp2_pixel.y)))){
             
                 
                 
@@ -975,7 +977,7 @@ int main(int argc, char **argv) {
             
             
       //      cout << "simdi bu kac : " << tmp1_pixel.y << endl; 
-            rectangle(inputImg, Point((tmp2_pixel.x-(tmp2_pixel.y/5)), (tmp2_pixel.y-(tmp2_pixel.y/2.2))),Point((tmp2_pixel.x+(tmp2_pixel.y/5)), tmp2_pixel.y), Scalar(255), 1, 8, 0);
+            rectangle(inputImg, Point((tmp2_pixel.x-(tmp2_pixel.y/4)), (tmp2_pixel.y-(tmp2_pixel.y/2.2))),Point((tmp2_pixel.x+(tmp2_pixel.y/4)), tmp2_pixel.y), Scalar(255), 1, 8, 0);
                 
         }
             
