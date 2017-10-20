@@ -216,11 +216,62 @@ Canny edge detector was developed in 1986 and called with the name of its develo
 %
 \section{Hough-Transformation}\label{sec:Hough-Transformation}
 %
+\emph{\color{red}The Hough Transformation is a technique which can be used to isolate features of a particular shape within an image.}\emph{\color{blue} The Hough Transformation, which is universally used today was invented by Richard O. Duda and Peter E. Hart in 1972 but related patent was taken by Paul Hough in 1962.\cite{Hough_Transformation} In computer vision, simple edges like straight lines, curves and ellipses are needed to be often detected because of this reason, this technique used often in computer vision and image processing. Hough Transformation is used mostly after an edge detection algorithm. There are different types of Hough Transformation. In this master thesis, two types of Hough Transformation was used. They are :}
 
-%
-\subsection{Standart Hough-Transformation}\label{sec:Standart Hough - Transformation}
-%
+\begin{itemize}
 
+\item \textbf{Standard Hough-Transformation : }\emph{\color{blue}This type of Hough-Transformation is used mostly for detecting straight lines. It will be explained in detail, how the Standard Hough-Transformation works then it will be more clear why it is more suitable for detecting straight lines.}
+
+\item \textbf{Probabilistic Hough-Transformation : }\emph{\color{blue} This type of Hough-Transformation is suitable for both straight lines and curves so in this master thesis, the Probabilistic Hough-Transform was used for detecting lanes. It will be explained how the Probabilistic Hough-Transformation works.}
+
+\end{itemize}
+%
+\subsection{Standard Hough-Transformation}\label{sec:Standard Hough - Transformation}
+%
+\emph{\color{blue}The Standard Hough-Transformation, which is also called linear Hough-Transformation, is used for detecting straight lines. There are so many different forms for describing a line segment analytically. One of the convenient equation for describing a line in an image(Cartesian) space is :}
+
+  \begin{center}
+
+$ \rho = x cos \theta + y sin \theta $
+
+  \end{center}
+  
+ \emph{\color{red} In this equation, \textit{$ \rho $} is the length of a normal from the origin to the line and \textit{$ \theta $} is the orientation of \textit{r} with respect to X-axis.}
+ 
+ 
+ \begin{figure}[H]
+ \centering
+  \includegraphics[width=1\textwidth]{./Bilder/Standard_Hough_Transformation.png}\label{Standart_Hough_Transformation}
+  \caption{Standart Hough Transformation\cite{Standart_Hough_Transformation}}
+\end{figure}
+ 
+\emph{\color{blue}In the left side of Figure \ref{Standart_Hough_Transformation}, a line is shown in an image (Cartesian) space and in the right side of same Figure is shown of the transformed of the same line to the Hough space. A point in the image (Cartesian) space is transformed as a sinusoidal curve in Hough space. A line can be defined as a set of points so a line is transformed as a set of sinusoids intersecting at a point to Hough Space. In this case, to detect points in the Hough space means also to detect the lines in Cartesian space. After detecting points in the Hough Space, the points must be inverse transformed to get corresponding lines in the Cartesian space.}
+
+\emph{\color{blue}In this master thesis, for detecting Hough lines, the function of \textit{cv2.HoughLines()} in OpenCV was used. The function is :}
+
+  \begin{center}
+  
+$HoughLines(dst, lines, \rho, \theta, threshold, srn, stn )  $
+
+  \end{center}
+
+The parameters of functions will be described in detail.\ref{Standart_Hough_Transformation2}
+ 
+\begin{itemize}
+
+\item \textbf{dst : }Output of the edge detector. It should be a grayscale image (although in fact it is a binary one).
+ 
+\item \textbf{lines : }A vector that will store the parameters ($ \rho $, $ \theta $) of the detected lines.
+
+\item \textbf{$ \rho $ : }The resolution of the parameter $ \rho $ in pixels. In this master thesis, \textbf{1 pixel} was used.
+
+\item \textbf{$ \theta $ : }The resolution of the parameter $ \theta $ in radians. In this master thesis, \textbf{1 degree}(CV$ \_ $PI/180) was used.
+
+\item \textbf{threshold : }The minimum number of intersections to 'detect' a line.
+
+\item \textbf{srn and stn : }These both parameters are for the multi-scale Hough transformation. srn is a divisor for the distance resolution $ \rho $ and stn is a divisor for the distance resolution $ \theta $. Default values of both parameters are zero.
+
+\end{itemize}
 
 %
 \subsection{Probabilistic Hough-Transformation}\label{sec:Probabilistic Hough-Transformation}
@@ -374,6 +425,7 @@ y = 0.0278$x^{2} $ - 0.1628x +0.2291
   \includegraphics[width=1\textwidth]{./Bilder/Curve_Fitting.png}\label{Curve_Fitting}
   \caption{Curve Fitting\cite{Curve_Fitting_Plot}}
 \end{figure}
+
 
 
 \section{Rectangle Method}\label{sec:Rectangle Method}
