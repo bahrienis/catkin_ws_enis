@@ -182,11 +182,13 @@ Next part of this case is plotting the curves which are produced by curve fittin
  
 At the last part of this case is Inverse Perspective Mapping. End of the project, we want to get mathematical description of lanes from bird's-eye view. So the perspective of lanes must be changed from the camera side to the top of the truck side. For that, we have to use 'findHomography' function from OpenCV. Thanks this function, all curve points can be converted to perspective of the top of the truck side. All pixels could also be converted from camera perspective to the top of the truck perspective but in that case, we had to convert 640x480 pixels, respectively 307200 pixels. But in this case, we convert just 480 pixels for each lane, it means, we convert totally 1440 pixels. Because of this reason, this case is efficienter that to convert all pixels.
  	 		 	
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_CurveFitting.png}\label{fig:Case1_CurveFitting}}
+  \caption{Curve Fitting}
+\end{figure} 
 
 
-\emph{\color{blue} Here must be a picture of curve fitting}
- 
-all of the pixels in the 100th column
 
 %
 

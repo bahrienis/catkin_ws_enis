@@ -8,29 +8,29 @@ Warning--entry type for "Statis" isn't style-file defined
 Warning--entry type for "Carolo_Cup" isn't style-file defined
 --line 12 of file ./bib/literature.bib
 Warning--entry type for "ROS" isn't style-file defined
---line 45 of file ./bib/literature.bib
+--line 56 of file ./bib/literature.bib
 Warning--entry type for "Sobel_Operator" isn't style-file defined
---line 54 of file ./bib/literature.bib
+--line 65 of file ./bib/literature.bib
 Warning--entry type for "Canny_Edge_Detector" isn't style-file defined
---line 62 of file ./bib/literature.bib
+--line 97 of file ./bib/literature.bib
 Warning--entry type for "Canny_Edge_Detector2" isn't style-file defined
---line 71 of file ./bib/literature.bib
-Warning--entry type for "Standart_Hough_Transformation" isn't style-file defined
---line 89 of file ./bib/literature.bib
+--line 106 of file ./bib/literature.bib
+Warning--entry type for "Standard_Hough_Transformation" isn't style-file defined
+--line 124 of file ./bib/literature.bib
 Warning--entry type for "k_nearest_neighbors_wikipedia" isn't style-file defined
---line 120 of file ./bib/literature.bib
+--line 155 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting" isn't style-file defined
---line 142 of file ./bib/literature.bib
+--line 177 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting2" isn't style-file defined
---line 148 of file ./bib/literature.bib
+--line 183 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting_Polynomial" isn't style-file defined
---line 158 of file ./bib/literature.bib
+--line 193 of file ./bib/literature.bib
 Warning--entry type for "Curve_Fitting_Plot" isn't style-file defined
---line 167 of file ./bib/literature.bib
+--line 202 of file ./bib/literature.bib
 Warning--entry type for "cv_bridge" isn't style-file defined
---line 175 of file ./bib/literature.bib
+--line 210 of file ./bib/literature.bib
 Warning--entry type for "OpenCV_Mat" isn't style-file defined
---line 184 of file ./bib/literature.bib
+--line 219 of file ./bib/literature.bib
 Warning--I didn't find a database entry for "Richtlinien"
 Warning--I didn't find a database entry for "OpenCV"
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
