@@ -21,12 +21,21 @@
 \bibitem{Sobel_Operator}
 {\sc Wikipedia}: {\em Sobel operator}, October 2017.
 
+\bibitem{GaussianBlur}
+{\sc Team, OpenCV~Dev}: {\em Image Filtering}, October 2017.
+
+\bibitem{addWeighted}
+{\sc Team, OpenCV~Dev}: {\em Operations on Arrays}, October 2017.
+
 \bibitem{Canny_Edge_Detector2}
 {\sc Technology~Delhi, Indian~Institute~of}: {\em Canny Edge Detector}, March
   2009.
 
 \bibitem{Canny_Edge_Detector}
 {\sc Wikipedia}: {\em Canny Edge Detector}, May 2017.
+
+\bibitem{Canny_Edge_Detector3}
+{\sc Team, OpenCV~Dev}: {\em Canny Edge Detector}, October 2017.
 
 \bibitem{Hough_Transformation}
 {\sc Duda, Richard~O.} \btxandlong{}\ {\sc Peter~E. Hart}: {\em Use of the
@@ -36,6 +45,9 @@
 
 \bibitem{Standard_Hough_Transformation}
 {\sc Sharma, Nabin}: {\em Linear Hough Transform Using Python}, December 2012.
+
+\bibitem{Standard_Hough_Transformation2}
+{\sc Team, Opencv~Dev}: {\em Hough Line Transform}, October 2017.
 
 \bibitem{k_nearest_neighbors}
 {\sc Xindong~Wu, Vipin~Kumar, J. Ross Quinlan Joydeep Ghosh Qiang Yang Hiroshi

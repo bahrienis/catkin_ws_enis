@@ -1,7 +1,7 @@
 %
 \chapter{Fundamentals}\label{cha:Fundamentals}
 %
-%Eine wissenschaftliche Abschlussarbeit kann im Allgemeinen in die folgenden 4 Phasen gegliedert werden.
+\emph{\color{blue}In this chapter, the fundamentals of lane detection will be explained. All methods, which are used in the thesis,will be theoretically focused and also usage of their functions in software will be also shown. Also, some advantages and disadvantages of methods will be mentioned.} 
 %
 \section{Properties of Truck at Carola-Cup}\label{sec:Properties of Truck at Carolo-Cup}
 %
@@ -193,10 +193,6 @@ $\theta = atan(\dfrac{G_{y}}{G_{x}})$
 where, for example, $\theta$ is 0 for a vertical edge which is lighter on the right side.\cite{Sobel_Operator}
 
 
-
-
-
-
 \begin{figure}[H]
   \centering
   \subfloat[Original Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Sobel_Original.png}\label{fig:f1}}
@@ -214,7 +210,7 @@ void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, do
 
   \end{center}
 
-The parameters of the function will be described in detail.\ref{GaussianBlur}
+The parameters of the function will be described in detail.\cite{GaussianBlur}
  
 \begin{itemize}
 
@@ -240,6 +236,7 @@ void cvtColor(InputArray src, OutputArray dst, int code, int dstCn=0 )
 
  \end{center}
  
+ The parameters of the function will be described in detail.
  
  \begin{itemize}
 
@@ -262,6 +259,7 @@ void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksiz
 
  \end{center}
  
+ The parameters of the function will be described in detail.
  
   \begin{itemize}
 
@@ -281,13 +279,15 @@ void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksiz
 
   \end{itemize}
 
-\emph{\color{blue}Last step of Sobel operator is approximating the gradient by adding both directional gradients. One step ago, gradients of x and y coordinates calculated separately. With following command, weighted sum of these two gradients must be calculated.\ref{addWeighted}}
+\emph{\color{blue}Last step of Sobel operator is approximating the gradient by adding both directional gradients. One step ago, gradients of x and y coordinates calculated separately. With following command, weighted sum of these two gradients must be calculated.\cite{addWeighted}}
 
  \begin{center}
  
 void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, double gamma, OutputArray dst, int dtype=-1)
  
   \end{center}
+  
+  The parameters of the function will be described in detail.
   
     \begin{itemize}
 
@@ -337,10 +337,32 @@ Canny edge detector was developed in 1986 and called with the name of its develo
   \caption{Canny Edge Detector\cite{Canny_Edge_Detector}}
 \end{figure} 
 
-\emph{\color{blue}Canny Edge Detector is also a function in OpenCV. As Sobel Operator, before Canny Edge Detector is used, a filter should be used(like Gaussian Filter) and the image must be converted to gray scale.}
+\emph{\color{blue}Canny Edge Detector is also a function in OpenCV. As Sobel Operator, before Canny Edge Detector is used, a filter should be used(like Gaussian Filter) and the image must be converted to gray scale. With the following command, Canny Edge Detector can be runned in OpenCV.\cite{Canny_Edge_Detector3}}
 
+ \begin{center}
+ 
+void Canny(InputArray image, OutputArray edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)
 
+ \end{center}
+ 
+ The parameters of the function will be described in detail.\cite{Canny_Edge_Detector3}
+ 
+     \begin{itemize}
 
+\item \textbf{image : }Input image, which has to be 8-bit single channel.
+
+\item \textbf{edges : }Output image, which is in the same size and type.
+
+\item \textbf{threshold1 : }First threshold for the hysteresis procedure.
+
+\item \textbf{threshold2 : }Second threshold for the hysteresis procedure.
+
+\item \textbf{apertureSize : }Size of the extended Sobel kernel.
+
+\item \textbf{L2gradient : }A flag for image gradient magnitude.
+
+\end{itemize}
+ 
 %
 \section{Hough-Transformation}\label{sec:Hough-Transformation}
 %
@@ -350,7 +372,7 @@ Canny edge detector was developed in 1986 and called with the name of its develo
 
 \item \textbf{Standard Hough Line Transformation : }\emph{\color{blue}This type of Hough-Transformation is used mostly for detecting straight lines. It will be explained in detail, how the Standard Hough-Transformation works then it will be more clear why it is more suitable for detecting straight lines.}
 
-\item \textbf{Probabilistic Hough-Transformation : }\emph{\color{blue} This type of Hough-Transformation is suitable for both straight lines and curves so in this master thesis, the Probabilistic Hough-Transform was used for detecting lanes. It will be explained how the Probabilistic Hough-Transformation works.}
+\item \textbf{Probabilistic Hough Transformation : }\emph{\color{blue} This type of Hough-Transformation is suitable for both straight lines and curves so in this master thesis, the Probabilistic Hough-Transform was used for detecting lanes. It will be explained how the Probabilistic Hough Transformation works.}
 
 \end{itemize}
 %
@@ -383,7 +405,7 @@ $HoughLines(dst, lines, \rho, \theta, threshold, srn, stn )  $
 
   \end{center}
 
-The parameters of the function will be described in detail.\ref{Standard_Hough_Transformation2}
+The parameters of the function will be described in detail.\cite{Standard_Hough_Transformation2}
  
 \begin{itemize}
 
@@ -449,6 +471,31 @@ K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. The non-pa
 \end{figure}
 
 The K-Nearest Neighbors Algorithm has advantages and disadvantages. According to \cite{k_nearest_neighbors_adv_disadv},the main advantages of KNN are simplicity, effectiveness, intuitiveness and competitive classification performance in many domains. On the other hand, KNN can have poor run-time performance when the training set is large. It is very sensitive to irrelevant or redundant features because all features contribute to the similarity and thus to the classification. The computation cost is also quite high because we need to compute distance of each query instance to all training samples. 
+
+\emph{\color{blue}K-Nearest Neighbors Algorithm is also a function in OpenCV. The following command shows the usage of the KNN function in OpenCV.}
+
+\begin{center}
+
+void flann::Index$\_$<T>::knnSearch(const vector<T>$\&$ query, vector<int>$\&$ indices, vector<float>$\&$ dists, int knn, const SearchParams$\&$ params)
+
+\end{center}
+
+The parameters of the function will be described in detail.\cite{k_nearest_neighbors_OpenCV}
+
+\begin{itemize}
+
+\item \textbf{query : }The query point.
+
+\item \textbf{indices : }The indices of the KNN are found in this vector.
+
+\item \textbf{dists : }The distances of the KNN are found in this vector.
+
+\item \textbf{knn : }Number of nearest neighbors to search for.
+
+\item \textbf{params : }There are some different optional parameters, which can be used in this function.
+
+\end{itemize}
+
 
 %
 \section{Curve Fitting}\label{sec:Curve Fitting}
@@ -586,8 +633,6 @@ y = 0.0278$x^{2} $ - 0.1628x +0.2291
 \end{figure}
 
 
-
-\section{Rectangle Method}\label{sec:Rectangle Method}
 
 
 %
