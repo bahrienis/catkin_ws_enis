@@ -283,7 +283,7 @@ int main(int argc, char **argv) {
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
-        //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
+          std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
  //             std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame1470.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
@@ -292,18 +292,18 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
- /*       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
         }
-*/
+
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
 
-             bool bSuccess = cap.read(inputImg);
+//             bool bSuccess = cap.read(inputImg);
 
 
 
@@ -346,7 +346,7 @@ imshow("Input1", inputImg1);
         cout << "max val: " << maxVal << endl;
 
 
-        threshold(outputImg2, cdst1, 0.9 * maxVal, 255, 1);
+        threshold(outputImg2, cdst1, 0.6 * maxVal, 255, 1);
 
 
 
@@ -371,7 +371,7 @@ imshow("Input1", inputImg1);
 
 
 
-        Rect Rec1(0, 300, 640, 180);
+        Rect Rec1(0, 280, 640, 200);
 
         outputImg4 = grad(Rec1);
         cvtColor(outputImg4, outputImg4gray, CV_GRAY2BGR);

@@ -66,6 +66,10 @@
 \newblock S B Imandoust et al. Int. Journal of Engineering Research and
   Applications, 3:605--610, October 2013.
 
+\bibitem{k_nearest_neighbors_OpenCV}
+{\sc Team, OpenCV~Dev}: {\em Fast Approximate Nearest Neighbor Search}, October
+  2017.
+
 \bibitem{Curve_Fitting}
 {\em The KaleidaGraph Guide to Curve Fitting}.
 

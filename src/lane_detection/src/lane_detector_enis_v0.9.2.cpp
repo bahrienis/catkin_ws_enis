@@ -404,7 +404,7 @@ int main(int argc, char **argv) {
 
 
 
-        threshold(outputImg3, cdst1, 0.5 * maxVal, 255, 1);
+        threshold(outputImg3, cdst1, 0.6 * maxVal, 255, 1);
 
 
 

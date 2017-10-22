@@ -496,7 +496,7 @@ int main(int argc, char **argv) {
         HoughLinesP(upOutputImg, lines1P, 1, CV_PI / 180, 0, 0, 0);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
-            circle(upOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(upOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
 //             circle(inputImg, Point(l[0], (l[1]+firstpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //    circle(upOutputImggray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             if (l[0] >= ((thebiggestvalue11position + thebiggestvalue11_1_position) / 2) && l[0] < 639) {
@@ -639,7 +639,7 @@ int main(int argc, char **argv) {
 
 
             Vec4i l = lines2P[i];
-            circle(downOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(downOutputImggray, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
 //            circle(inputImg, Point(l[0], (l[1]+firstpicsize+secondpicsize)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //  circle(downOutputImggray, Point(l[2], l[3]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             if (l[0] >= ((thebiggestvalue21position + thebiggestvalue21_1_position) / 2) && l[0] < 639) {
@@ -1200,9 +1200,9 @@ int main(int argc, char **argv) {
         
 
         
-        curvefitting(0, numofpointsoffirstlane1new, y11, x11, afterIPM, "blue", ipm);
-        curvefitting(0, numofpointsofsecondlane2new, y22, x22, afterIPM, "green",ipm);
-        curvefitting(0, numofpointsofthirdlane3new, y33, x33, afterIPM, "red",ipm);
+        curvefitting(0, numofpointsoffirstlane1new, y11, x11, inputImg, "blue", ipm);
+        curvefitting(0, numofpointsofsecondlane2new, y22, x22, inputImg, "green",ipm);
+        curvefitting(0, numofpointsofthirdlane3new, y33, x33, inputImg, "red",ipm);
 
 
         imshow("Sobel+Canny+Hough Trasformation1", upOutputImggray);
@@ -1305,12 +1305,12 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
         if (r >= 0 && r <= 640) {
             if (color == "red"){
                
-                circle(inputImg, ipm.applyHomography(Point(r,p)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImg, Point(r,p), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             }
             else if (color == "blue")
-                circle(inputImg, ipm.applyHomography(Point(r, p)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(r, p), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
             else if (color == "green")
-                circle(inputImg, ipm.applyHomography(Point(r, p)), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(r, p), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
        }
     }
 
