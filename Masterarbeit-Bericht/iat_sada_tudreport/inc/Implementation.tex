@@ -1,16 +1,24 @@
 %
 \chapter{Implementation}\label{cha:Implementation}
 %
+\emph{\color{blue}In this chapter, the implementation part of this master's thesis will be described. The test track which was implemented before by another student, the hardware part of the model auto, which was used in this master's thesis and at last, the software part which was programmed for detecting the lanes will be explained in detail.}
+
+\emph{\color{blue}In the software part at the section \ref{sec:Software}, the all cases will be descriebed, which are programmed during this master's thesis. For understanding better, the picture of each steps and also block diagram of the cases will be shown.}
+
+%
 \section{Test Track}\label{sec:Test Track}
 
-As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed.
+As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. \emph{\color{blue}At Figure \ref{fig:Test_Truck}, the test truck is shown which was used for the testing of this master's thesis.}
+
 
 \begin{figure}[H]
 	\centering
-	\hspace*{0cm}   
-	\includegraphics[width=150mm,scale=1]{./Bilder/Test Truck.jpg}
+		\includegraphics[width=1\textwidth]{./Bilder/Test_Truck.jpg}
 	\caption{Test Truck}
+	\label{fig:Test_Truck}
 \end{figure}
+
+
 
 %
 \section{Hardware}\label{sec:Hardware}
@@ -101,9 +109,9 @@ ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV 
 %
 \subsection{Preprocessing}\label{sec:Preprocessing}
 
-There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods were defined and in this chapter, these methods will be explained in detail.
+There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods\emph{color{blue}cases} were defined and in this chapter, these methods\emph{color{blue}cases} will be explained in detail.
 
-In all of these methods, some processes are common, and this is called the preprocessing phase. At the beginning,\emph{\color{blue} the frames are obtained from the camera via ROS-Topic.} ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
+In all of these methods\emph{color{blue}cases}, some processes are common, and this is called the preprocessing phase. At the beginning,\emph{\color{blue} the frames are obtained from the camera via ROS-Topic.} ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
 
 Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains information like the size of matrix, storing method, etc. It always has a fixed size but the size of matrix is variable from image to image.
 
@@ -133,6 +141,17 @@ This preprocessing part is common for all cases but after this process, the case
  
 %
 \subsection{Case 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
+
+The algorithms and their orders which was used in this case, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Case 1 is shown.
+
+\emph{\color{blue}}
+
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=1\textwidth]{./Bilder/Case1_BlockDiagram.png}		 \caption{Block Diagram of Case 1}
+  \label{fig:Case1_BlockDiagram}
+\end{figure}
+
 
 
 \textbf{1. Step : }\emph{\color{blue}As in all cases, in this case also the first step is preprocessing part. When the preprocessing part is over, the lanes must be detected. }
@@ -224,6 +243,12 @@ At Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 \subsection{Case 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}\label{sec:Case 2}
 
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=1\textwidth]{./Bilder/Case2_BlockDiagram.png}\label{fig:Case2_BlockDiagram}
+	\caption{Block Diagram of Case 2}
+\end{figure}
+
 \textbf{1. Step : }\emph{\color{blue}As before mentioned, the preprocessing part is common for all cases. So in this case, the preprocessing part was also the first step.}
 
 \textbf{2. Step : }\emph{\color{blue}In this case, the frames which are taken from camera, are converted directly from the camera perspective to the eye's-bird view perspective. At Section \ref{sec:Case 1} (Case 1), just the Curve Fitting pixels were converted from the camera perspective to the top of the track perspective. To convert 640x480 pixels, respectively 307200 pixels take a bit longer time compare to the Case 1. Original frame which can be seen at Figure \ref{fig:Case2_InputImg} is converted to the frame which can be see at Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.}
@@ -272,9 +297,11 @@ At Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 \subsection{Case 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}\label{sec:Case 3}
 
-This case is so similar to case 2 at Section \ref{sec:Case 2}. Like in Case 2, at the beginning of this case, Preprocessing Part was applied, then Inverse Perspective Mapping for all pixels implemented. After that, for 200x640 pixels, Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until now, the implementation was totally same with Case 2. In Case 2, there were used k-nearest neighbours (KNN) method was used but in this case, the rectangle method is used which was used in Case 1 at Section \ref{sec:Case 1}. But at the usage of rectangle method, there is a difference than the rectangle method which was used at Case 1. At Case 1, the size of rectangles were going to progressively smaller but in this case, the size of rectangles are always same because the Inverse Perspective Method(IPM) was used at the beginning of case so the lanes are shown on the top of track. But the size of rectangles at middle lane is bigger than the size of rectangle at left and right lanes. Because of the dashed lines, we had to use bigger sized rectangles at the middle lane.
+This case is a cover case of the Case 1 at Section \ref{sec:Case 1} and the Case 2 at Section \ref{sec:Case 2}. Like in Case 2, at the beginning of this case, Preprocessing Part was applied, then Inverse Perspective Mapping for all pixels implemented. After that, for 200x640 pixels, Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until now, the implementation was totally same with Case 2. In Case 2, there were used k-nearest neighbours (KNN) method was used but in this case, the rectangle method is used which was used in Case 1 at Section \ref{sec:Case 1}. But at the usage of rectangle method, there is a difference than the rectangle method which was used at Case 1. At Case 1, the size of rectangles were going to progressively smaller but in this case, the size of rectangles are always same because the Inverse Perspective Method(IPM) was used at the beginning of this case so the lanes are shown from the top of track. But the size of rectangles at middle lane is bigger than the size of rectangle at left and right lanes. Because of the dashed lines, we had to use bigger sized rectangles at the middle lane.
 
-After the rectangle method was used,  the curve fitting method is used, like in other cases, x and y coordinates of Probabilistic Hough points should be swapped after rectangle methods. Thanks these swapping, the curve fitting works more stable. After producing 3 different equations for three different lanes, output values for all pixel columns are calculated and plotted at the frame. 
+After the rectangle method was used,  the curve fitting method is used. Like in other cases, x and y coordinates of Probabilistic Hough points should be swapped after rectangle methods. Thanks these swapping, the curve fitting works more stable. After producing 3 different equations for three different lanes, output values for all pixel columns are calculated and plotted at the frame. At the Figure \ref{fig:Case3_OutputImage}, the fitted curves are shown.
+
+Last step of this case is like in all cases, to publish the equations of the fitted curves which produced from the lanes. This fitted curves are published with Ros Topics.
 
 \begin{figure}[H]
   \centering
@@ -284,7 +311,7 @@ After the rectangle method was used,  the curve fitting method is used, like in 
 
 \subsection{Method 4/Case 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}\label{sec:Case 4}
 
-This case is also so similar to case 2. There is just one difference between Case 2 at \ref{sec:Case 2} and this case. The only difference is resizing the frame at the beginning of the case. The frame comes from the camera with 64x480 pixels resolution but we resize this frame from 640x480 pixels resolution to 320x240 pixels resolution. For resizing, a 'resize' function from OpenCV were used because we can't get less resolution than 640x480 pixels from the camera so we had to use a function for resizing. Because of resizing, we had to use sometimes different parameters than Case 2. We had to find the optimal parameters for efficient and good lane detection.
+This case is so similar to case 2. There is just one difference between Case 2 at \ref{sec:Case 2} and this case. The only difference is resizing the frame at the beginning of the case. The frame comes from the camera with 64x480 pixels resolution but we resize this frame from 640x480 pixels resolution to 320x240 pixels resolution. For resizing, a 'resize' function from OpenCV were used because we can't get less resolution than 640x480 pixels from the camera so we had to use a function for resizing. Because of resizing, we had to use sometimes different parameters than Case 2. We had to find the optimal parameters for efficient and good lane detection. Results of this case can be shown at the Frame \ref{fig:Case4_OutputImage}.
 
 \begin{figure}[H]
   \centering
