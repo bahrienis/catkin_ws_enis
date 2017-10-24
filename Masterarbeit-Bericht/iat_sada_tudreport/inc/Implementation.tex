@@ -1,21 +1,21 @@
 %
 \chapter{Implementation}\label{cha:Implementation}
 %
-\emph{\color{blue}In this chapter, the implementation part of this master's thesis will be described. The test track which was implemented before by another student, the hardware part of the model auto, which was used in this master's thesis and at last, the software part which was programmed for detecting the lanes will be explained in detail.}
+In this chapter, the implementation part of this master's thesis will be described. The test track, which was implemented before by another student; the hardware part of the model automobile, which was used in this master's thesis; and finally, the software part which was programmed for detecting the lanes will all be  explained in detail.
 
-\emph{\color{blue}In the software part at the section \ref{sec:Software}, the all cases will be descriebed, which are programmed during this master's thesis. For understanding better, the picture of each steps and also block diagram of the cases will be shown.}
+In the Software section in \ref{sec:Software}, all methods programmed and utilized during this master's thesis will be descriebed. In order to better demonstrate the process, pictures of each step, as well as block diagrams of each method, will be shown.
 
 %
 \section{Test Track}\label{sec:Test Track}
 
-As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. \emph{\color{blue}At Figure \ref{fig:Test_Truck}, the test truck is shown which was used for the testing of this master's thesis.}
+As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. \emph{\color{blue}In Figure \ref{fig:Test_Track}, the test track used in the testing of this master's thesis is shown.}
 
 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=1\textwidth]{./Bilder/Test_Truck.jpg}
-	\caption{Test Truck}
-	\label{fig:Test_Truck}
+		\includegraphics[width=1\textwidth]{./Bilder/Test_Track.jpg}
+	\caption{Test Track}
+	\label{fig:Test_Track}
 \end{figure}
 
 
@@ -109,9 +109,9 @@ ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV 
 %
 \subsection{Preprocessing}\label{sec:Preprocessing}
 
-There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods\emph{color{blue}cases} were defined and in this chapter, these methods\emph{color{blue}cases} will be explained in detail.
+There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods were defined, and in this chapter, these methods will be explained in detail.
 
-In all of these methods\emph{color{blue}cases}, some processes are common, and this is called the preprocessing phase. At the beginning,\emph{\color{blue} the frames are obtained from the camera via ROS-Topic.} ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
+In all of these methods, some processes are common, and this is called the preprocessing phase. At the beginning, the frames are obtained from the camera via ROS-Topic. ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
 
 Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains information like the size of matrix, storing method, etc. It always has a fixed size but the size of matrix is variable from image to image.
 
@@ -131,18 +131,86 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 
 \end{itemize}
 
-After the frame from Camera via ROS-Topic was received, the color frame had to be converted to a grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, the grayscale format of the input image is needed. Converting a frame from BGR format to grayscale format has some advantages, the main advantage being the processing time. Normally color frame matrix content has three or four channels, but grayscale frame matrix content has just one channel, so grayscale frame matrix size is much smaller compared to color frame matrix size. Because of this, the image processing time is much more less for the grayscale format compared to BGR format. In order to covert the BGR formatted frame to a grayscale formatted frame, the \textit{cvtColor} function from OpenCV is used.
+After the frame from Camera via ROS-Topic was received, the color frame had to be converted to a grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, the grayscale format of the input image is needed. Converting a frame from BGR format to grayscale format has some advantages, the main advantage being the processing time. Normally color frame matrix content has three or four channels, but grayscale frame matrix content has just one channel, so grayscale frame matrix size is much smaller compared to color frame matrix size. Because of this, the image processing time is much more less for the grayscale format compared to BGR format. In order to convert the BGR formatted frame to a grayscale formatted frame, the \textit{cvtColor} function from OpenCV is used.
 
-For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. After finding the lightest and darkest pixels, it is possible to estimate the lighting conditions. These values are then used in the next step. After this processing, a filter is applied to all frames, transforming images into binary images by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value; otherwise, it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamic parameter, the lanes are more able to be more clearly detected and noise can be cancelled more successfully.
+For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. \emph{\color{blue}For the finding the lightest and the darkest pixels, the following function in OpenCV was used. This function will be explained in detail.}\citep{addWeighted}
+
+
+\begin{center}
+
+void minMaxLoc(InputArray src, double* minVal, double* maxVal=0, Point* minLoc=0, Point* maxLoc=0, InputArray mask=noArray())
+
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{src : }Input single channel array.
+
+\item \textbf{minVal : }Pointer to the returned minimum value.
+
+\item \textbf{maxVal : }Pointer to the returned maximum value.
+
+\item \textbf{minLoc : }Pointer to the returned minimum location.
+
+\item \textbf{maxLoc : }Pointer to the returned maximum location.
+
+\item \textbf{mask : }Optional mask used to select a sub-array.
+
+\end{itemize}
+
+
+After finding the lightest and darkest pixels, it is possible to estimate the lighting conditions. These values are then used in the next step. After this processing, a filter is applied to all frames, transforming images into binary images by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value; otherwise, it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamic parameter, the lanes are more able to be more clearly detected and noise can be cancelled more successfully. \emph{\color{blue}For this thresholding operation, the following function in OpenCV was used. This function will be explained in detail.}\citep{threshold}
+
+
+\begin{center}
+
+double threshold(InputArray src, OutputArray dst, double thresh, double maxval, int type)
+
+\end{center}
+
+\begin{itemize}
+
+\item \textbf{src : }Input single channel array, which is 8-bit or 32-bit floating point.
+
+\item \textbf{dst: }Output array which has the same size and type as src. 
+
+\item \textbf{thresh : }Threshold value.
+
+\item \textbf{maxval : }Maximum value to use with the THRESH\_BINARY and THRESH\_BINARY\_INV thresholding types.
+
+\item \textbf{type : }Thresholding type, which can be THRESH\_BINARY, THRESH\_BINARY\_INV, THRESH\_TRUNC, THRESH\_TOZERO and THRESH\_TOZERO\_INV.
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 After the threshold filter, an edge detection filter must be applied. In this master's thesis, the Sobel-Operator is used. This is explained in Chapter 2 in detail.
  
 This preprocessing part is common for all cases but after this process, the cases diverge. 
  
 %
-\subsection{Case 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
+\subsection{Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
 
-The algorithms and their orders which was used in this case, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Case 1 is shown.
+The algorithms and their orders which was used in this method, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Method 1 is shown.
 
 \emph{\color{blue}}
 
@@ -154,12 +222,12 @@ The algorithms and their orders which was used in this case, will be explained s
 
 
 
-\textbf{1. Step : }\emph{\color{blue}As in all cases, in this case also the first step is preprocessing part. When the preprocessing part is over, the lanes must be detected. }
+\textbf{Step 1 : }As with all methods, the first step is preprocessing part. When the preprocessing part is over, the lanes must be detected. 
 
-\textbf{2. Step : }\emph{\color{blue} As second part, the positions of lanes should be found.} In order to find the position of lanes, the Standart Hough Transformation is used. But the Standart Hough Transformation does not \emph{\color{blue}shouldn't} utilize all of the frame; rather, the frame is cropped. There is an advantage of cropping the frame, which will be explained in detail.
+\textbf{Step 2 : }Secondly, the positions of the lanes should be found. In order to find the positions of the lanes, the Standard Hough Transformation is used. But the Standard Hough Transformation should not utilize the entire frame; rather, the frame is cropped. There is an advantage to cropping the frame, which will be explained in detail.
 
 
-The frames obtained from the camera are at a resolution of 640x480 pixels, which is the default value. The resolution of the camera can be increased by adjusting its settings, but it is not possible to decrease it \emph{\color{blue}the resolution} this way. In order to decrease the resolution of the camera, there is another method. This method is used in another case, and will be explained there. In this case, the minimum resolution the camera allows is used. There are some reasons for this, the most important being that if the resolution is increased, there are also more pixels, and thus the computing time increases as well. High computing time is of course undesirable.
+The frames obtained from the camera are at a resolution of 640x480 pixels, which is the default value. The resolution of the camera can be increased by adjusting its settings, but it is not possible to decrease it this way. In order to decrease the resolution of the camera, there is another technique that can be used. This technique is used with another method, and will be explained there. With this method, the minimum resolution the camera allows is used. There are some reasons for this, the most important being that if the resolution is increased, there are also more pixels, and thus the computing time increases as well. High computing time is of course undesirable.
  
 The original height of the frame was 640 pixels, but as previously mentioned, the frame was cropped. As seen in Figure \ref{fig:Case1_withoutCropped}, when there is a curve, the camera also detects points that do not belong to the track. When the frame is not cropped, the detection of irrelevant points would result in the undesired production of red Standard Hough Transformation lines. As a result, first 100 pixels of the frame height were removed and the last 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown only in the last 540 pixels of frame height and do not cover the irrelevant parts of the frame. If there is a lane, the red lines are very close each other, but if there is no lane, there is a distance of at least 50 pixels between the red lines. In Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. In each group, there is a lane. Thanks to the Standard Hough Line Transformation, we know which lanes are between which pixel columns.
 
@@ -172,9 +240,9 @@ The original height of the frame was 640 pixels, but as previously mentioned, th
 \end{figure}
 
 
-\emph{\color{blue} But here there is also another problem. If a curve wanted to be detected, everything works in this step perfectly(see Figure \ref{fig:Case1_withCropped}) but it a straight lane wanted to be detected, a problem occurs. As seen in Figure \ref{fig:Case1_Straight_Standard_Hough}, beginning part of middle lane can be grouped with the left lane. With other words, there are again three different groups for 3 different lanes but each group of red lines don't separate lanes clearly from each other so we can't find the correctly start points of middle and left lanes. For grouping the lanes clearly, the frame must be cropped in two pieces.}
+But here there is also another problem. If a curve is to be detected, everything in this step works as it should (see Figure \ref{fig:Case1_withCropped}), but if a straight lane is to be detected, a problem occurs. As seen in Figure \ref{fig:Case1_Straight_Standard_Hough}, the beginning of the middle lane can be grouped with the left lane. In other words, there are again three different groups for three different lanes but each group of red lines fails to separate the lanes clearly from each other. As a result, the correct starting points of the middle and left lanes are not able to be found. In order for the lanes to be detected clearly, the frame must be divided into two horizontal rows.
 
-\emph{\color{blue} At the beginning, the 100 pixels from the top was already removed for detecting positions of lanes clearly and now, the rest of the frame must be divided in two pieces. From experimental results, the rest of frame is cropped with 150 and 230 pixels. So the lanes can be grouped in two different small frames and in each small frame, the starting points of lanes must be found. As seen at Figure \ref{fig:Case1_Standard_Hough_Straight_2Parts}, when the frame is cropped in 2 pieces, the lanes can be grouped separately.}
+As previously mentioned, 100 pixels were already cropped from the top of the image in order to detect the positions of the lanes clearly and now, the rest of the frame must be divided into two rows. Based on the experimental results, the top row is 150 pixels high and the bottom row is 230 pixels high. As a result, the lanes can be grouped into two small frames and in each small frame, the starting points of lanes must be found. As seen in Figure \ref{fig:Case1_Standard_Hough_Straight_2Parts}, when the frame is divided into two pieces, the lanes can be grouped separately.
 
 \begin{figure}[H]
   \centering
@@ -185,9 +253,9 @@ The original height of the frame was 640 pixels, but as previously mentioned, th
 \end{figure} 
 
 
-\textbf{3. Step : }\emph{\color{blue} After the lanes are grouped separately in two different small frames, whose heights are 230 and 150 pixels, the points(pixels) on the lanes must be found in two small frames. }For that, we have to use Probabilistic Hough Transformation. Probabilistic Hough Transformation is a bit different than Standart Hough Line Transformation because Standart Hough Transformation is more suitable for straight lanes but if there is a curve, Standart Hough Transformation can't detect lanes enough good. As before mentioned, a line can be represented as y = mx+c or in parametric form, as $\rho$ = x $\cos \theta$ + y$ \sin \theta$ where  $\rho$ is the perpendicular distance from origin to the line, and $\theta$ is the angle formed by this perpendicular line and horizontal axis measured in counter-clockwise. But it is different at Probabilistic Hough Transformation. A line is represented by two or more points. If Probabilistic Hough Transformation finds at least two points from the same line, it represents beginning and ending points of these lines.
+\textbf{Step 3 : }After the lanes are grouped separately in two different small frames, the heights of which are 230 and 150 pixels, the points (pixels) on the lanes must be found in two small frames. For that, we have to use Probabilistic Hough Transformation. The Probabilistic Hough Transformation is a bit different than Standard Hough Line Transformation because Standard Hough Transformation is more suitable for straight lanes. However, if there is a curve, the Standard Hough Transformation is not able to detect lanes very well. As previously mentioned, a line can be represented as y = mx+c or in parametric form, as $\rho$ = x $\cos \theta$ + y$ \sin \theta$ where  $\rho$ is the perpendicular distance from origin to the line, and $\theta$ is the angle formed by this perpendicular line and horizontal axis measured in counter-clockwise. However, is different in the case of the Probabilistic Hough Transformation. A line is represented by two or more points. If the Probabilistic Hough Transformation finds at least two points from the same line, it represents the two end points of these lines.
 
-\emph{\color{blue}In this master thesis,the Probabilistic Hough lines are not drawn because just the points(pixels) which are detected on the lanes with Probabilistic Hough Transformation are needed. }
+In this master's thesis, the Probabilistic Hough lines are not drawn because just the points (pixels) which are detected in the lanes with the Probabilistic Hough Transformation are needed. 
 
 
 \begin{figure}[H]
@@ -198,12 +266,12 @@ The original height of the frame was 640 pixels, but as previously mentioned, th
   \caption{Probabilistic Hough Transformation Points}
 \end{figure} 
  
-At Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPoints_Sobel}, Probabilistic Hough Transformation Points(green pixels) are shown. They are so many pixels, which are found by Probabilistic Hough Transformation. There are some parameters at this function in OpenCV.  With changing the parameters of Probabilistic Hough Transformation in OpenCV, less Hough Points on the lanes can be found but finding too few Hough points can cause some problems while detecting the lanes. On the other hand, finding so many Hough points need also more computing time, this is also a situation which we don't want to have. So in this case, the parameters of Probabilistic Hough Transformation fuction in OpenCV must be optimized. Thanks of optimization, the best solution (less computing time and good lane detection) is found.
+In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPoints_Sobel}, the Probabilistic Hough Transformation Points (green pixels) are shown. The Probabilistic Hough Transformation detected a large number of pixels. By changing the parameters of the Probabilistic Hough Transformation found in OpenCV, fewer Hough Points on the lanes are able to be detected, but detecting too few Hough points can also cause some problems for detecting the lanes. On the other hand, detecting a large number of Hough Points results in more computing time, which is undesirable. So in this case, the parameters of Probabilistic Hough Transformation fuction in OpenCV must be optimized. Thanks to optimization, the best solution (less computing time and good lane detection) is found.
 
-\textbf{4. Step : }\emph{\color{blue}Now, it is known, that between which pixel columns stand lanes(2. Step), and the points(pixels) on the lanes are also shown thanks to Probabilistic Hough Transformation( 3. Step), with these 2 steps, the starting points(pixels) of the lanes can be found. For that, for each groups of Hough lines, which were found in 2. Step, the Hough points are compared with each other, then the last pixels in the columns should be found. If the camera can see three lanes, then the different starting points for three different lanes must be found. It means, this process must be done for all lanes which can be seen on the frame.} 
+\textbf{Step 4 : }It is now known in which pixel columns the lanes lie (Step 2), and the points (pixels) on the lanes are also shown thanks to the Probabilistic Hough Transformation (Step 3), and after these two steps, the starting points (pixels) of the lanes can be found. In order to do that, the Hough Points for each group of Hough lines that were found in Step 2 are compared with each other, and then the last pixels in the columns should be found. If the camera can see three lanes, then the different starting points for the three different lanes must be found. This means that this process must be done for all lanes which can be seen in the frame.
 
 
-\textbf{5. Step : }\emph{\color{blue}Next step of this case is getting the Hough points which are relevant the lanes. Now, for each lane, the Hough points must be also grouped. For getting Hough points which are relevant with lanes, 'rectangle' method is used, which is named by me. At rectangle method, a rectangle is drawn for each lane at the starting point which was found in 4. Step, and the coordinates of all Hough points in that rectangle are saved in a vector and the highest Hough point in the rectangle must be found. From that point, another rectangle must be drawn but the size of rectangles are going to progressively smaller. Because the objects are going to seem smaller when they are far away from the camera. The size of the rectangles are similar but there is an exception at the middle lane. The middle lane has dashed lines so the rectangles at the middle lane must be bigger than at the left and right lanes. As seen at Figure \ref{fig:Case1_Rectangles}, the rectangles are shown in blue color and with this method, the noise and the Hough points which are not relevant with lanes are removed.}
+\textbf{Step 5 : }The next step in this method is getting the Hough Points which are relevant to the lanes. Now, for each lane, the Hough Points must be also grouped. For getting the Hough Points which are relevant to the lanes, what I term the 'rectangle' method is to be used. In the rectangle method, a rectangle is drawn for each lane at the starting point found in Step 4, and the coordinates of all of the Hough Points in that rectangle are saved in a vector. The highest Hough Point in the rectangle must then be found. From that point, another rectangle must be drawn, but the sizes of the rectangles are becoming progressively smaller, because the objects seem smaller the further away they are from the camera. The sizes of the rectangles are also similar but there is an exception with regard to the middle lane. The middle lane has dashed lines so the rectangles in the middle lane must be bigger than in the left and right lanes. As seen in Figure \ref{fig:Case1_Rectangles} (rectangles shown in blue), with this method, the noise and the Hough Points which are not relevant to the lanes are removed.
 
 
 \begin{figure}[H]
@@ -241,7 +309,7 @@ At Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 %
 
-\subsection{Case 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}\label{sec:Case 2}
+\subsection{Method 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}\label{sec:Case 2}
 
 \begin{figure}[H]
  \centering
@@ -295,7 +363,7 @@ At Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 \end{figure} 
 
 
-\subsection{Case 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}\label{sec:Case 3}
+\subsection{Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}\label{sec:Case 3}
 
 This case is a cover case of the Case 1 at Section \ref{sec:Case 1} and the Case 2 at Section \ref{sec:Case 2}. Like in Case 2, at the beginning of this case, Preprocessing Part was applied, then Inverse Perspective Mapping for all pixels implemented. After that, for 200x640 pixels, Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until now, the implementation was totally same with Case 2. In Case 2, there were used k-nearest neighbours (KNN) method was used but in this case, the rectangle method is used which was used in Case 1 at Section \ref{sec:Case 1}. But at the usage of rectangle method, there is a difference than the rectangle method which was used at Case 1. At Case 1, the size of rectangles were going to progressively smaller but in this case, the size of rectangles are always same because the Inverse Perspective Method(IPM) was used at the beginning of this case so the lanes are shown from the top of track. But the size of rectangles at middle lane is bigger than the size of rectangle at left and right lanes. Because of the dashed lines, we had to use bigger sized rectangles at the middle lane.
 
@@ -309,7 +377,7 @@ Last step of this case is like in all cases, to publish the equations of the fit
   \caption{Output Image}
 \end{figure}
 
-\subsection{Method 4/Case 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}\label{sec:Case 4}
+\subsection{Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}\label{sec:Case 4}
 
 This case is so similar to case 2. There is just one difference between Case 2 at \ref{sec:Case 2} and this case. The only difference is resizing the frame at the beginning of the case. The frame comes from the camera with 64x480 pixels resolution but we resize this frame from 640x480 pixels resolution to 320x240 pixels resolution. For resizing, a 'resize' function from OpenCV were used because we can't get less resolution than 640x480 pixels from the camera so we had to use a function for resizing. Because of resizing, we had to use sometimes different parameters than Case 2. We had to find the optimal parameters for efficient and good lane detection. Results of this case can be shown at the Frame \ref{fig:Case4_OutputImage}.
 

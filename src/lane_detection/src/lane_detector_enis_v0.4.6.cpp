@@ -397,10 +397,18 @@ imshow("Input1", inputImg1);
         cout << "max val: " << maxVal << endl;
 
 
+        
+        
+        
+        
         threshold(outputImg2, cdst1, 0.6 * maxVal, 255, 1);
+//cvAdaptiveThreshold(&outputImg2, &cdst1, 0.6 * maxVal,ADAPTIVE_THRESH_GAUSSIAN_C,CV_THRESH_BINARY,3,5);
 
 
-
+        
+        
+        
+        
         /// Gradient X
         Sobel(cdst1, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT); //inputImgGray i src ile değiştir
         /// Gradient Y

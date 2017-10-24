@@ -396,6 +396,8 @@ In this equation, \textit{$ \rho $} is the length of a normal from the origin to
 \end{figure}
  
  In the left side of Figure \ref{Standard_Hough_Line_Transformation_fig}, a line is shown in an Image (Cartesian) space and on the right side of same Figure, the same line is shown in its transformed state in the Hough space. A point in the Image (Cartesian) space is transformed into a sinusoidal curve in the Hough space. A line can be defined as a set of points, so a line is transformed into a set of sinusoids intersecting at a point in the Hough space. In this case, detecting points in the Hough space also means detecting the lines in the Cartesian space. After detecting points in the Hough Space, the points must be inversely transformed in order to get the corresponding lines in the Cartesian space.
+ 
+\emph{\color{red}Although Hough transform (HT) has been widely used in curve detection, it has two major drawbacks: First, for each nonzero pixel in the image, the parameters for the existing curve and redundant ones are both accumulated during the voting procedure. Second, the accumulator array (or Hough space) is predefined in a heuristic way. The more accuracy needed, the higher parameter resolution should be defined. These two needs usually result in a large storage requirement and low speed for real applications. Therefore, RHT was brought up to tackle this problem.}
 
 In this master's thesis, in order to detect the Hough lines, the function of \textit{cv2.HoughLines()} in OpenCV was used. The function is:
 
@@ -427,7 +429,11 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 \subsection{Probabilistic Hough-Transformation}\label{sec:Probabilistic Hough-Transformation}
 %
 
-Hough Transformation is computationally expensive. Probabilistic Hough Transformation is an optimization of Standard Hough Transformation which does not analyze all points in the image. Instead, it looks at only a random subset of points sufficient for line detection. In order to apply Probabilistic Hough Transformation, the threshold must be decreased.
+\emph{\color{blue}Probabilistic Hough Transformation is also called Randomized Hough Transformation, is a variant of the Standard Hough Transformation.}Hough Transformation is computationally expensive. Probabilistic Hough Transformation is an optimization of Standard Hough Transformation which does not analyze all points in the image. Instead, it looks at only a random subset of points sufficient for line detection. \emph{\color{blue}In order to apply Probabilistic Hough Transformation, the threshold must be decreased.} \emph{\color{red}Probabilistic Hough Transformation is commonly used to detect curves (straight line, circle, elipse,etc.) }
+
+
+
+\emph{\color{red}The basic idea of Hough transform (HT) is to implement a voting procedure for all potential curves in the image, and at the termination of the algorithm, curves that do exist in the image will have relatively high voting scores. Randomized Hough transform (RHT) is different from HT in that it tries to avoid conducting the computationally expensive voting process for every nonzero pixel in the image by taking advantage of the geometric properties of analytical curves, and thus improve the time efficiency and reduce the storage requirement of the original algorithm.}
 
   \begin{center}
   
@@ -472,9 +478,46 @@ K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. The non-pa
   \caption{K-Nearest-Neighbors Algorithm\cite{k_nearest_neighbors_wikipedia}}
 \end{figure}
 
+\emph{\color{red}By using the training dataset directly, KNN makes predictions. By searching the entire training set for the K most similar instances (the neighbors) and summarizing the output variable for those K instances, predictions are made for a new instance (x). {For regression this might be the mean output variable, in classification this might be the mode (or most common) class value.} Distance measure methods are used for the determining which of the K instances in the training dataset are the nearest to a new input. There are so many different distance measure methods. Some of them are :}
+
+\begin{itemize}
+
+\item \textbf{Euclidean Distance : }It is one of the most popular methods for distance measure. In this method, the square root of the sum of the squared differences between a new point and an existing point is calculated.
+
+  \begin{center}
+  
+\textbf{Euclidean} $ \sqrt{\sum_{i=1}^k  (x_{i} - y_{i})^2 } $
+
+  \end{center}
+  
+
+
+\item \textbf{Manhattan Distance : }It is called also City Block Distance. It calculates the distance between real vectors using the sum of their absolute difference.
+
+  \begin{center}
+  
+\textbf{Manhattan} $\sum_{i=1}^k \begin{vmatrix}x_{i} - y_{i} \end{vmatrix}$
+
+  \end{center}
+  
+
+\item \textbf{Minkowski Distance : }The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance.
+  
+  \begin{center}
+  
+\textbf{Minkowski} $ (\sum_{i=1}^k (\begin{vmatrix}x_{i} - y_{i} \end{vmatrix})^q)^{1/q}$
+
+  \end{center}
+
+\end{itemize}
+
+There are also some other distance measure methods like Tanimoto, Jaccard, Mahalanobis, cosine distance and so on. It must be decided which distance measure method should be used according the properties of the dataset. For example, if the input variables are similar in type (e.g. all measured widths and heights), the Euclidean distance measure method is good. However, if the input variables are not similar in type (such as age, gender, height, etc.), the Manhattan distance measure method is better than the Euclidean measure distance method.
+
+
+
 The K-Nearest Neighbors Algorithm has advantages and disadvantages. According to \cite{k_nearest_neighbors_adv_disadv},the main advantages of KNN are simplicity, effectiveness, intuitiveness and competitive classification performance in many domains. On the other hand, KNN can have poor run-time performance when the training set is large. It is very sensitive to irrelevant or redundant features because all features contribute to the similarity and thus to the classification. The computation cost is also quite high because we need to compute distance of each query instance to all training samples. 
 
-\emph{\color{blue}K-Nearest Neighbors Algorithm is also a function in OpenCV. The following command shows the usage of the KNN function in OpenCV.}
+K-Nearest Neighbors Algorithm is also a function in OpenCV. The following command shows the usage of the KNN function in OpenCV.
 
 \begin{center}
 
@@ -513,9 +556,9 @@ the curve.\cite{Curve_Fitting}} They are several different types of curve fittin
 \end{figure}
 
 
-\emph{\color{blue}In this master thesis, curve fitting is used for getting the best mathematical descriptions of lanes. Curve fitting uses as input the Hough points, which appear on the lanes and give as output a mathematical equation. First order polynomial curve fitting is more suitable for defining straight lines and second order polynomial curve fitting is more suitable for defining curves. There are straight and curve lanes so first order polynomial curve fitting wouldn't be enough for our project because of this reason, in this master thesis, second order polynimal curve fitting is used.}
+In this master's thesis, curve fitting is used for getting the best mathematical descriptions of lanes. Curve fitting uses the Hough points which appear on the lanes as input, and give a mathematical equation as output. First order polynomial curve fitting is more suitable for defining straight lines and second order polynomial curve fitting is more suitable for defining curves. There are both straight and curved lanes, so first order polynomial curve fitting is not sufficient for our project. Accordingly, in this master's thesis, second order polynimal curve fitting is used.
 
-\emph{\color{blue}There are so many different methods for curve fitting. One of the most famous method is the least squares method. In this master thesis also the least squares method is used. Next, it will be described, how to generate a polynomial curve fitting with using the least squares method.}
+There are so many different methods for curve fitting. One of the most famous methods is the least squares method, which is also the method utilized in this master's thesis. Next, how a polynomial curve fitting is generated using the least squares method will be described.
 
 \emph{\color{blue}A data set can be mostly expressed the relationship between variable with an equation which is mostly representated with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :}
 
@@ -523,11 +566,11 @@ the curve.\cite{Curve_Fitting}} They are several different types of curve fittin
 y = $ a_{k}x^{k} + ... + a_{1}x + a_{0} + \epsilon $ 
 \end{center}
 
-\emph{\color{blue}The general polynomial regression model with the error $\epsilon$ provide typically an estimate rather than an implicit value of the dataset for any given value of x. A data set which has N data points, can be described with the maximum order of the polynomial which is k = N - 1 but mostly the lowest possible order of polynomial is choosed.}
+The general polynomial regression model with the error $\epsilon$ typically provides an estimate rather than an implicit value of the dataset for any given value of x. A data set which has N data points can be described with the maximum order of the polynomial which is k = N - 1, but the lowest possible order of the polynomial is generally chosen.
 
-\emph{\color{blue} The aim of the least squares' method is to minimise the variance between dataset values and estimated values from the polynomial equation.}
+The aim of the least squares' method is to minimize the variance between dataset values and estimated values from the polynomial equation.
 
-\emph{\color{blue} For determining the coefficients of the polynomial regression model ($ a_{k}, a_{k-1}, ..., a_{1} $) must be solved the following linear equations.}
+In order to determine the coefficients of the polynomial regression model ($ a_{k}, a_{k-1}, ..., a_{1} $) must be solved the following linear equations.
 
 \begin{center}
  $
@@ -552,13 +595,13 @@ $$\sum_{i=1}^{N} x_{i}^{k}$$ & $$\sum_{i=1}^{N} x_{i}^{k+1}$$ & $\dots$ & $$\sum
 $ 
 \end{center}
 
-\emph{\color{blue}The equations, which in stardard form of Ma = b can be solved with so many different methods. In this master thesis, \textit{Cramer's Rule} was used for solving for the polynomial coefficients of curve fitting. With the help of the determinants of the square matrix M can be solved the linear system of equations for finding the coefficients. Each of the coefficients $a_{k}$ may be determined using the following equation :}
+The equations in the stardard form of Ma = b can be solved with many different methods. In this master's thesis, \textit{Cramer's Rule} was used to solve for the polynomial coefficients of curve fitting. With the help of the determinants of the square matrix, M can be solved for in any linear system of equations in order to find the coefficients. Each of the coefficients $a_{k}$ may be determined using the following equation :
 
 \begin{center}
 $a_{k} = \dfrac{det(M_{i})}{det(M)}$
 \end{center}
 
-\emph{\color{blue}For finding coefficients of polynomial curve fitting, we have to use the equation shown above so the determinate of $ M_{i} $ must be divided by determinate of M. Above, the equation Ma = b were shown so the determinate of M matrix can be calculated but for the determinate of $ M_{i} $ matrix, the M matrix must be modified. For finding the $ M_{i} $ matrix, the $ i^{th} $ column must be replaced with the column vector b, which was used at the equation Ma = b. For example, if the $ M_{0} $ matrix wanted to be determined, the M matrix must be modified like at the following\cite{Curve_Fitting2} :}
+In order to find the coefficients of polynomial curve fitting, we have to use the equation shown above, so the determinate of $ M_{i} $ must be divided by the determinate of M. Above, the equation Ma = b was shown, so the determinate of the M matrix can be calculated. However, for the determinate of $ M_{i} $ matrix, the M matrix must be modified. To find the $ M_{i} $ matrix, the $ i^{th} $ column must be replaced with the column vector b, which was used in the equation Ma = b. For example, if the $ M_{0} $ matrix is to be determined, the M matrix must be modified like at the following\cite{Curve_Fitting2} :
 
 
 \[
@@ -578,7 +621,7 @@ $$\sum_{i=1}^{N} x_{i}^{k}y_{i}$$ & $$\sum_{i=1}^{N} x_{i}^{k+1}$$ & $\dots$ & $
 \end{bmatrix}
 \]
 
-\emph{\color{blue}In this master thesis, $ 2^{nd} $ order polynomial equation is used so just the values of $ a_{0}, a_{1} and a_{2} $ must be calculated. For understanding curve fitting better, we are going to develop the $ 2^{nd} $ order polynomial curve fit for the given dataset.}
+In this master's thesis, the $ 2^{nd} $ order polynomial equation is used, so only the values of $ a_{0}, a_{1} and a_{2} $ must be calculated. To understand curve fitting better, we are going to develop the $ 2^{nd} $ order polynomial curve fit for the given dataset.
 
 \begin{center}
   \begin{tabular}{ | c | c | c | c | c | c | c |}
@@ -623,7 +666,7 @@ $ a_{0} = \dfrac{det(M_{0})}{det(M)}   \Longrightarrow  a_{0} = \dfrac{ 2671.196
 $ a_{1} = \dfrac{det(M_{1})}{det(M)} \Longrightarrow  a_{1} = \dfrac{ -1898.4602}{11661.2736} = -0.1628$  \vfill 
 $ a_{2} = \dfrac{det(M_{2})}{det(M)} \Longrightarrow  a_{2} = \dfrac{ 323.7632}{11661.2736} = 0.0278$
 
-\emph{\color{blue}In this case, the fitted curve function is :} \vfill 
+In this case, the fitted curve function is : \vfill 
 \begin{center}
 y = 0.0278$x^{2} $ - 0.1628x +0.2291
 \end{center}
