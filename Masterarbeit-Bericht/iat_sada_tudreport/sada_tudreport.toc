@@ -25,13 +25,14 @@
 \contentsline {subsection}{\numberline {3.2.1}Model Auto}{24}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Microcontroller and Main Board}{25}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Camera}{25}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Software}{27}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Development Environment and Related Softwares}{27}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Preprocessing}{27}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}{30}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}{36}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}{39}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}{40}{subsection.3.3.6}
+\contentsline {section}{\numberline {3.3}Response Time of the System}{27}{section.3.3}
+\contentsline {section}{\numberline {3.4}Software}{27}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Development Environment and Related Softwares}{27}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Preprocessing}{28}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}{30}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}{36}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}{39}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}{40}{subsection.3.4.6}
 \contentsline {chapter}{\numberline {4}Evaulation and Discussion}{41}{chapter.4}
 \contentsline {chapter}{\numberline {5}Related Works}{43}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusion}{45}{chapter.6}

@@ -88,6 +88,33 @@ to detect most if not all lanes, including when there are curves.
 \end{figure}
 
 
+
+
+
+
+
+
+
+\section{Response Time of the System}\label{sec:Response Time of the System}
+
+\emph{\color{blue}Before lane detection project has started, an experiment was done with the system. Aim of this experiment is to measure the response time of the all system. For measuring it, camera has to detect something and then the software must set an I/O pin on the main board. In other words, if the camera detects something, how long does it take to get a response from the main board.}
+
+\emph{\color{blue}For this experiment, a camera, a power supply, A LED and an oscilloscope are needed. A circuit with a power supply and a LED was designed. The LED was placed in a small box with a camera, and a probe of an oscilloscope was connected to the LED and the other probe of it was connected to an I/O Pin on the mainboard which can be setted by software.}
+
+\emph{\color{blue}Before the results were measured,  }
+
+and the frequency of the power supply was setted to 3,28 Hz. square wave
+
+
+
+
+
+
+
+
+
+
+
 %
 \section{Software}\label{sec:Software}
 
@@ -281,11 +308,11 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 \end{figure}
 
 
-\textbf{6. Step : }\emph{\color{blue}The next step of this case is curve fitting. Curve Fitting is an algorithm which gives a mathematical description and this mathematical description has the best fit to a series of data points. But in this master thesis, usage of curve fitting is changed a bit. At curve fitting, the coordinates of Hough points are used but we changed the x and y axises of these Hough points because y-axises of these coordinates have more range than x-axises so this swapping raises the stability of the curve fitting.}
+\textbf{Step 6 : }The next step of this method is curve fitting. Curve Fitting is an algorithm which gives a mathematical description and this mathematical description provides the best fit for a series of data points. But in this master's thesis, the curve fitting to be performed is modified. In this curve fitting, the coordinates of Hough Points are used but the x and y coordinates of these Hough Points are swapped, because the y-axes of these coordinates have more range than the x-axes. As a result, this swap raises the stability of the curve fitting.
 
-\emph{\color{blue}After using the Hough points as input, three different mathematical equation are produced. One of these equation is for the left lane, the other one is for the middle lane and the last equation is for the right lane. While producing of these equations, of course just relevant Hough points are used. For example, for left lane curve equation, the Hough points from the left lane were used.}
+After using the Hough Points as input, three different mathematical equations are produced. One of these equations is for the left lane, another is for the middle lane, and the last equation is for the right lane. In order to produce these equations, naturally, only the relevant Hough points are used. For example, for left lane curve equation, only the Hough Points from the left lane were used.
  
-\textbf{7. Step : }\emph{\color{blue}Next step of this case is plotting the fitted curves which are produced by curve fitting function. We start from 0th pixel to 480th pixel vertically and the output values of equation for each vertically pixels are found. For each lane, the fitted curves are plotted in different color. At Figure \ref{fig:Case1_CurveFittingwithoutIPM.png}}, the fitted curve can be seen.
+\textbf{Step 7 : }The next step of this method is plotting the fitted curves produced by the curve fitting function. We start from first pixel and continue to the 480th pixel vertically and the output values of the equation for each pixel in the column are found. For each lane, the fitted curves are plotted in different color. In Figure \ref{fig:Case1_CurveFittingwithoutIPM.png}, the fitted curve can be seen.
 
 
 \begin{figure}[H]
@@ -296,7 +323,7 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 
  
-\textbf{8. Step : }\emph{\color{blue}Until this step, the fitted curves were plotted from the camera view but end of the project, the fitted curves of the lanes wanted to be seen from bird's-eye view. So the perspective of lanes must be changed from the camera side to the top of the track side. This step can be called as 'Inverse Perspective Mapping(IPM)'. For IPM, a function from OpenCV, which is called as 'findHomography', was used. Thanks this function, all fitted curve points can be converted to perspective of the top of the track side. All pixels could also be converted from camera perspective to the top of the truck perspective but in that case, we had to convert 640x480 pixels, respectively 307200 pixels. But in this case, we convert just 480 pixels for each lane, it means, we convert totally 1440 pixels. Because of this reason, this case is more efficient than to convert all pixels.}
+\textbf{Step 8 : }Until this step, the fitted curves were plotted from the camera view, but at the end of the project, the fitted curves of the lanes need to be able to be seen from a bird's-eye view. As a result, the perspective of lanes must be changed from the camera side to the top of the track side. This step can be termed 'Inverse Perspective Mapping(IPM)'. For IPM, a function from OpenCV, which is called 'findHomography', was used. Thanks this function, all fitted curve points can be converted to the perspective of the top of the track side. It was also possible to convert all pixels from the camera perspective to the top of the track perspective, but in that case, it would have been necessary to convert 640x480 pixels, which means 307200 pixels in total. In this case, it is only necessary to convert 480 pixels for each lane, and so 1440 pixels in total. As a result, this method is more efficient than converting all pixels.
  	 		 	
 \begin{figure}[H]
   \centering
@@ -305,7 +332,7 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 \end{figure} 
 
 
-\textbf{9. Step : }\emph{\color{blue}The last step of this case is publishing the coefficients of the equations of the fitted curves from the bird's-eye view. When the auto wants to be steered, just the equations of the fitted curves are needed so these informations must be published. For this step, a ROS Topic must be created. The frequency of the rostopics can be changed.}
+\textbf{Step 9 : }The last step of this method is publishing the coefficients of the equations of the fitted curves from the bird's-eye view. In order to activate the automobile for autonomous driving, only the equations of the fitted curves are needed. For this step, a ROS Topic must be created. The frequency of the rostopics can be adjusted.
 
 %
 
@@ -317,9 +344,9 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 	\caption{Block Diagram of Case 2}
 \end{figure}
 
-\textbf{1. Step : }\emph{\color{blue}As before mentioned, the preprocessing part is common for all cases. So in this case, the preprocessing part was also the first step.}
+\textbf{Step 1 : }As previously mentioned, the preprocessing part is common for all methods. So in this method, the preprocessing part was also the first step.
 
-\textbf{2. Step : }\emph{\color{blue}In this case, the frames which are taken from camera, are converted directly from the camera perspective to the eye's-bird view perspective. At Section \ref{sec:Case 1} (Case 1), just the Curve Fitting pixels were converted from the camera perspective to the top of the track perspective. To convert 640x480 pixels, respectively 307200 pixels take a bit longer time compare to the Case 1. Original frame which can be seen at Figure \ref{fig:Case2_InputImg} is converted to the frame which can be see at Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.}
+\textbf{Step 2 : }In this method, the frames taken from the camera, are converted directly from the camera perspective to the bird's-eye view perspective. In Section \ref{sec:Case 1} (Method 1), only the curve fitting pixels were converted from the camera perspective to the top of the truck perspective. The time needed to convert 640x480 pixels (307200 pixels in total) is a bit more when compared to Method 1. The original frame, which can be seen in Figure \ref{fig:Case2_InputImg}, is converted to the frame which can be seen in Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.
 
  
 \begin{figure}[H]
@@ -331,7 +358,7 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 \end{figure} 
 
 
-\textbf{3. Step : }\emph{\color{blue}Next step of this case is that finding between which vertically pixels stand the lanes. At Case 1(Section \ref{sec:Case 1}, the frame had to be cropped at the beginning from the first 100 pixels and then rest of the frame must to be divided also in 2 pieces otherwise, the straight lanes cause the problem while grouping the lanes. In this case, the frame must not be cropped. In the Case 1, except the first 100 pixels of the frame, the Standard Hough Line Transformation must to be applied for 380x640 pixels. In this case, just the last 200 pixels of the frame is enough for appling Standard Hough Line Transformation. Because these 200 pixels can cover all lanes in the frame. At seen Figure \ref{fig:Case2_Standard_Hough_Transformation}, the all lanes can be seen and also the Hough lines can grouped the lanes.}   
+\textbf{Step 3 : }The next step of this method is finding the vertical pixels which the lanes lie between. In Method 1(Section \ref{sec:Case 1}, the first 100 pixels from the top of the frame were cropped and then rest of the frame was divided into two pieces. This was necessary because otherwise, the straight lanes would have caused a problem in the grouping of the lanes. In this method, it is not necessary to crop the frame. In Method 1, except for the first 100 pixels of the frame, it was necessary to apply the Standard Hough Line Transformation for 380x640 pixels. In this methood, it sufficient to apply the Standard Hough Line Transformation to only the last 200 pixels of the frame, because these 200 pixels are able to cover all lanes in the frame. In Figure \ref{fig:Case2_Standard_Hough_Transformation}, all lanes can be distinguished thanks to the Hough lines. 
 
 
 \begin{figure}[H]
@@ -342,18 +369,18 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 
 
-\textbf{4. Step : }\emph{\color{blue}After finding between which pixel columns stand the lanes at the 3. step, the Probabilistic Hough Transformation was used. Thanks to Probabilistic Hough Transformation, on the lanes appear Hough points. As metioned in Case 1 at Section \ref{sec:Case 1}, there are some parameters at Probabilistic Hough Transformations, so number of Hough points can be descreased or increased. Decreasing the number of Hough Points descrease also the computing time but, so much decreasing the number of Hough Points can cause the loose stability of detecting lanes. So the parameters must be setted in the most efficient way.}
+\textbf{Step 4 : }After finding which pixel columns the lanes lie between in Step 3, the Probabilistic Hough Transformation was used. Thanks to Probabilistic Hough Transformation, the Hough Points appear on the lanes. As mentioned in Method 1 in Section \ref{sec:Case 1}, there are some parameters in Probabilistic Hough Transformations, so the number of Hough Points can be descreased or increased. Decreasing the number of Hough Points also decreases the computing time but decreasing the number of Hough Points by too much can decrease the accuracy of lane detection. Therefore, the parameters must be set in an optimal way.
 
-\textbf{5. Step : }\emph{\color{blue}We have already found out between which pixel columns stand the lanes. So the Hough points must be grouped according to lanes. If the camera can see all there lanes, then there must be three different groups of Hough points but if there is a curve, the camera can see just the right and middle lane so the Hough points must be grouped in two groups in this case. For each lane must be found the starting points of the lanes. For that, all Hough points in a group must be compared with each other then the Hough point which are the latest points of the frame, are the starting points.}
+\textbf{Step 5 : }We have already found out which pixel columns the lanes lie between. The Hough Points must now be grouped according to lanes. If the camera can see all three lanes, then there must also be three different groups of Hough Points. However, if there is a curve, the camera can see just the right and middle lane, so the Hough Points must be grouped into two groups in this case. For each lane, the starting points of the lanes must be found. For that, all Hough Points in a group must be compared with each other. The Hough Points which are the closest to the bottom of the frame are the starting points.
 
-\textbf{6. Step : }\emph{\color{blue}The next step of this case is k-nearest neighbors algorithm (KNN). KNN is a learning algorithm. Here KNN is used instead of rectangle method which is used in Case 1. KNN algorithm divides the frames in some pieces, the in each layer, the nearest neighbor points are searched. This process begins from the starting points of the lanes which were found in the 5. step. The KNN functions are used from OpenCV. There are some parameters at these functions. For example, we can set, that 'how many neighbour points will the functions find?'. The parameters must be setted in the most efficient way. It means, the project must work the efficient and fast.}
+\textbf{Step 6 : }The next step of this method is the k-nearest neighbors algorithm (KNN). KNN is a learning algorithm. Here KNN is used instead of the rectangle method used in Method 1. The KNN algorithm divides the frames into some equal-sized pieces. The nearest neighbor points are found in each piece. This process begins from the starting points of the lanes which were found in Step 5. The KNN functions are used from OpenCV. There are some parameters in these functions. For example, we can set the number of neighbor points to be found. The parameters must be set optimally, meaning the project must work fast and efficiently.
 
-\textbf{7. Step : }\emph{\color{blue}After found the points from KNN at 6. step, which will be used as the input values of curve fitting function, then the function of the curve fitting is called. Advantage is KNN method is, KNN doesn't returns so many Hough points which are inputs of curve fitting compare to rectangle method. So here, curve fitting function produces the mathematical equations of the lane much more faster compare to Case 1.} 
+\textbf{Step 7 : }After finding the points from KNN in Step 6, which are to be used as the input values of the curve fitting function, then the function of the curve fitting is applied. The advantage of the KNN algorithm is that it does not return so many Hough Points, which are the input values of the curve fitting, when compared to rectangle method. So here, the curve fitting function produces the mathematical equations of the lane much faster when compared to Method 1.
 
-\textbf{8. Step : }\emph{\color{blue}After the equations of the fitted curves according to lanes, this equations have to be plotted like in the Case 1. Here also x and y coordinates of Hough points were swapped for getting more stable curves. For each vertical pixels, the equations results were drawn. End of it, the fitted curves for all lanes are plotted in the frame.}
+\textbf{Step 8 : }After the equations of the fitted curves for each of the lanes are calculated, these equations have to be plotted like in Method 1. Here, the x and y coordinates of the Hough Points were also swapped in order to get more stable curves. For each of the vertical pixels, the results of all of the equations were plotted in the frame.
 
 
-\textbf{9. Step : }\emph{\color{blue}The last step of this case is also, to publish coefficients of the equations of the fitted curves of each lanes, which can be seen by camera.}
+\textbf{Step 9 : }The last step of this method is also to publish the coefficients of the equations of the fitted curves of each of the lanes which can be seen by the camera.
 
 
 \begin{figure}[H]
@@ -365,11 +392,11 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 \subsection{Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}\label{sec:Case 3}
 
-This case is a cover case of the Case 1 at Section \ref{sec:Case 1} and the Case 2 at Section \ref{sec:Case 2}. Like in Case 2, at the beginning of this case, Preprocessing Part was applied, then Inverse Perspective Mapping for all pixels implemented. After that, for 200x640 pixels, Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until now, the implementation was totally same with Case 2. In Case 2, there were used k-nearest neighbours (KNN) method was used but in this case, the rectangle method is used which was used in Case 1 at Section \ref{sec:Case 1}. But at the usage of rectangle method, there is a difference than the rectangle method which was used at Case 1. At Case 1, the size of rectangles were going to progressively smaller but in this case, the size of rectangles are always same because the Inverse Perspective Method(IPM) was used at the beginning of this case so the lanes are shown from the top of track. But the size of rectangles at middle lane is bigger than the size of rectangle at left and right lanes. Because of the dashed lines, we had to use bigger sized rectangles at the middle lane.
+This method is a composite method of the Method 1 in Section \ref{sec:Case 1} and Method 2 in Section \ref{sec:Case 2}. As in Method 2, at the beginning of this method, the preprocessing part is applied, and then Inverse Perspective Mapping for all pixels is implemented. After that, for 200x640 pixels, the Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until this point, the implementation is completely identical to Method 2. In Method 2, however, at the point in the process where the k-nearest neighbours (KNN) method is used, the rectangle method used in Method 1 in Section \ref{sec:Case 1} is applied. There is, however, a difference between the rectangle method utilized here and the rectangle method from Method 1. In Method 1, the size of rectangles decreased progressively. However, in this method, the size of the rectangles is always the same because the Inverse Perspective Method(IPM) is used at the beginning. As a result, the lanes are shown from the top of track. The size of the rectangles in the middle lane is bigger than the size of the rectangles in the left and right lanes, however. Because of the dashed lines, it was necessary to use larger rectangles in the middle lane.
 
-After the rectangle method was used,  the curve fitting method is used. Like in other cases, x and y coordinates of Probabilistic Hough points should be swapped after rectangle methods. Thanks these swapping, the curve fitting works more stable. After producing 3 different equations for three different lanes, output values for all pixel columns are calculated and plotted at the frame. At the Figure \ref{fig:Case3_OutputImage}, the fitted curves are shown.
+After the rectangle method is used, the curve fitting method is used. As with the other methods, the x and y coordinates of Probabilistic Hough Points are swapped after the rectangle method is applied. Thanks to this swap, the curve fitting is more accurate. After producing three different equations for three different lanes, the output values for all pixel columns are calculated and plotted in the frame. In Figure \ref{fig:Case3_OutputImage}, the fitted curves are shown.
 
-Last step of this case is like in all cases, to publish the equations of the fitted curves which produced from the lanes. This fitted curves are published with Ros Topics.
+The last step of this method is as in the others: to publish the equations of the fitted curves produced from the lanes. These fitted curves are published with Ros Topics.
 
 \begin{figure}[H]
   \centering
@@ -379,7 +406,7 @@ Last step of this case is like in all cases, to publish the equations of the fit
 
 \subsection{Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}\label{sec:Case 4}
 
-This case is so similar to case 2. There is just one difference between Case 2 at \ref{sec:Case 2} and this case. The only difference is resizing the frame at the beginning of the case. The frame comes from the camera with 64x480 pixels resolution but we resize this frame from 640x480 pixels resolution to 320x240 pixels resolution. For resizing, a 'resize' function from OpenCV were used because we can't get less resolution than 640x480 pixels from the camera so we had to use a function for resizing. Because of resizing, we had to use sometimes different parameters than Case 2. We had to find the optimal parameters for efficient and good lane detection. Results of this case can be shown at the Frame \ref{fig:Case4_OutputImage}.
+This method is very similar to Method 2. There is just one difference between Method 2 in \ref{sec:Case 2} and this method. The only difference is resizing the frame at the beginning. The frame comes from the camera with a 640x480 pixel resolution, but this frame is resized from a 640x480 pixel resolution to a 320x240 pixel resolution. In order to do this, a 'resize' function from OpenCV is used because the smallest resolution able to be obtained from the camera is 640x480 pixels. Due to the resizing, it was sometimes necessary to use different parameters than in Method 2 in order to detect lanes optimally (efficiently and accurately). Results of this method are shown in Figure \ref{fig:Case4_OutputImage}.
 
 \begin{figure}[H]
   \centering
