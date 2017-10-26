@@ -101,13 +101,21 @@ to detect most if not all lanes, including when there are curves.
 
 \emph{\color{blue}For this experiment, a camera, a power supply, A LED and an oscilloscope are needed. A circuit with a power supply and a LED was designed. The LED was placed in a small box with a camera, and a probe of an oscilloscope was connected to the LED and the other probe of it was connected to an I/O Pin on the mainboard which can be setted by software.}
 
-\emph{\color{blue}Before the results were measured, the frequency of the camera was setted to 10 Frame per Second(FPS) and the power supply was setted to 3.28 Hz. square wave. It means, the LED turns on nearly every 305 ms. for 305 ms. then it turns off for 305 ms.}
+\emph{\color{blue}Before the results were measured, the frequency of the camera was setted to 10 Frame per Second(FPS) and the power supply was setted to 3.28 Hz. square wave. It means, the LED must be blinked nearly every 305 ms.}
+
+\emph{\color{blue}After the supply was turned off, the LED started to blink. For this experiment, a small firmware was written, which can detect red color, which was lighted by the red color LED.}
+
+\emph{\color{blue}In a box, the LED and a camera were placed together then the box was closed with that inside of the box was totally dark. When the red LED lights, the camera detects it and the firmware sets an I/O pin on the main board. For this experiment, two different cameras were used and the results were so similar.}
 
 
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=0.8\textwidth]{./Bilder/Response_Time2.png}		 \caption{Response Time of the System}
+  \label{fig:Response_Time_of_the_System}
+\end{figure}
 
 
-
-
+\emph{\color{blue}As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system is 156 ms. and the minimum response time of the system is 63 ms. and the average time is 106.6 ms.}
 
 
 
@@ -157,6 +165,20 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 \item if the distance of a given color to another color is to be measured, CIE L*a*b* format is more suitable than others.
 
 \end{itemize}
+
+
+
+
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=1\textwidth]{./Bilder/Presprocessing_Figure.png}	
+  \caption{Block Diagram of the Preprocessing Part}
+  \label{fig:Block_Diagram_of_the_Preprocessing_Part}
+\end{figure}
+
+
+
+
 
 After the frame from Camera via ROS-Topic was received, the color frame had to be converted to a grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, the grayscale format of the input image is needed. Converting a frame from BGR format to grayscale format has some advantages, the main advantage being the processing time. Normally color frame matrix content has three or four channels, but grayscale frame matrix content has just one channel, so grayscale frame matrix size is much smaller compared to color frame matrix size. Because of this, the image processing time is much more less for the grayscale format compared to BGR format. In order to convert the BGR formatted frame to a grayscale formatted frame, the \textit{cvtColor} function from OpenCV is used.
 
@@ -239,7 +261,7 @@ This preprocessing part is common for all cases but after this process, the case
 
 The algorithms and their orders which was used in this method, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Method 1 is shown.
 
-\emph{\color{blue}}
+
 
 \begin{figure}[H]
  \centering

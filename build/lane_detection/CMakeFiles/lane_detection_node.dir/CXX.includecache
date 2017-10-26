@@ -22,7 +22,7 @@ opencv2/features2d/features2d.hpp
 iostream
 -
 
-/home/enis/catkin_ws/src/lane_detection/src/lane_detector_enis_v0.4.6.cpp
+/home/enis/catkin_ws/src/lane_detection/src/lane_detector_enis_v0.4.5.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -67,12 +67,6 @@ IPM.h
 /home/enis/catkin_ws/src/lane_detection/src/IPM.h
 IPM.cpp
 /home/enis/catkin_ws/src/lane_detection/src/IPM.cpp
-ros/ros.h
-/home/enis/catkin_ws/src/lane_detection/src/ros/ros.h
-std_msgs/String.h
-/home/enis/catkin_ws/src/lane_detection/src/std_msgs/String.h
-sstream
--
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h
@@ -2153,22 +2147,6 @@ string
 -
 
 /opt/ros/kinetic/include/std_msgs/Header.h
-string
--
-vector
--
-map
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
-
-/opt/ros/kinetic/include/std_msgs/String.h
 string
 -
 vector

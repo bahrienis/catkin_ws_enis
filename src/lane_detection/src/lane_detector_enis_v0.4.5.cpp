@@ -130,15 +130,7 @@ int main(int argc, char **argv) {
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    cap.set(CV_CAP_PROP_SATURATION, 0.125); //change the frame value
+ //   cap.set(CV_CAP_PROP_SATURATION, 0.125); //change the frame value
     
     
     
@@ -303,14 +295,14 @@ int main(int argc, char **argv) {
         frameNum++;
 
 
-//             bool bSuccess = cap.read(inputImg);
+         //    bool bSuccess = cap.read(inputImg);
 
 
 
 
 
 Mat inputImg1;
-inRange(inputImg,Scalar(50,100,50), Scalar(150,250,100),inputImg1);
+inRange(inputImg,Scalar(50,50,50), Scalar(200,200,200),inputImg1);
 imshow("Input1", inputImg1);
 
 
@@ -321,9 +313,6 @@ imshow("Input1", inputImg1);
 
 
         imshow("Input", inputImg);
-        
-        
-        
         
         
         
@@ -438,7 +427,7 @@ imshow("Input1", inputImg1);
         HoughLinesP(grad, lines1P, 2, CV_PI / 180, 2, 2, 2);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
-            //           circle(gradgray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                       circle(gradgray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             alldetectedpoints.push_back(Point2f(l[0], l[1]));
         }
 
