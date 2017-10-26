@@ -41,6 +41,8 @@ Warning--entry type for "cv_bridge" isn't style-file defined
 --line 231 of file ./bib/literature.bib
 Warning--entry type for "OpenCV_Mat" isn't style-file defined
 --line 240 of file ./bib/literature.bib
+Warning--entry type for "threshold" isn't style-file defined
+--line 250 of file ./bib/literature.bib
 Warning--I didn't find a database entry for "Richtlinien"
 Warning--I didn't find a database entry for "OpenCV"
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
@@ -65,45 +67,46 @@ Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep 
 while executing---line 1056 of file gerunsrt.bst
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
 while executing---line 1056 of file gerunsrt.bst
-You've used 24 entries,
+Warning--empty publisher in Bachelorthesis_Nicolas
+You've used 27 entries,
             2016 wiz_defined-function locations,
-            601 strings with 6628 characters,
-and the built_in function-call counts, 3588 in all, are:
-= -- 303
-> -- 98
+            614 strings with 7035 characters,
+and the built_in function-call counts, 4069 in all, are:
+= -- 345
+> -- 114
 < -- 0
-+ -- 48
-- -- 24
-* -- 194
-:= -- 468
-add.period$ -- 29
-call.type$ -- 24
++ -- 55
+- -- 28
+* -- 223
+:= -- 536
+add.period$ -- 34
+call.type$ -- 27
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 185
-empty$ -- 504
-format.name$ -- 24
-if$ -- 912
+cite$ -- 28
+duplicate$ -- 213
+empty$ -- 563
+format.name$ -- 28
+if$ -- 1030
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 10
-newline$ -- 80
-num.names$ -- 22
-pop$ -- 153
+int.to.str$ -- 27
+missing$ -- 14
+newline$ -- 91
+num.names$ -- 25
+pop$ -- 169
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 145
+skip$ -- 162
 stack$ -- 0
 substring$ -- 21
-swap$ -- 67
+swap$ -- 75
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 23
-width$ -- 26
-write$ -- 179
+warning$ -- 1
+while$ -- 26
+width$ -- 29
+write$ -- 204
 (There were 11 error messages)

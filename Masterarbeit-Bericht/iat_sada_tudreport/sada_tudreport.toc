@@ -34,6 +34,8 @@
 \contentsline {subsection}{\numberline {3.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}{40}{subsection.3.4.5}
 \contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}{41}{subsection.3.4.6}
 \contentsline {chapter}{\numberline {4}Evaulation and Discussion}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Average Computing Time}{43}{section.4.1}
+\contentsline {section}{\numberline {4.2}Test Driving}{43}{section.4.2}
 \contentsline {chapter}{\numberline {5}Related Works}{45}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusion}{47}{chapter.6}
 \contentsline {chapter}{Literaturverzeichnis}{49}{section*.36}

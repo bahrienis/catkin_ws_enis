@@ -92,4 +92,17 @@
 \bibitem{OpenCV_Mat}
 {\sc team~opencv~dev}: {\em Mat The Basic Image Container}, October 2017.
 
+\bibitem{threshold}
+{\sc Team, OpenCV~Dev}: {\em Basic Thresholding Operations}, October 2017.
+
+\bibitem{Review_of_Lane_Detection}
+{\sc Kumar, Ammu~M} \btxandlong{}\ {\sc Philomina Simon}: {\em REVIEW OF LANE
+  DETECTION AND TRACKING ALGORITHMS IN ADVANCED DRIVER ASSISTANCE SYSTEM}.
+\newblock Proc.IEEE Intell. Veh. Symp., 4, Juni 2008.
+
+\bibitem{Bachelorthesis_Nicolas}
+{\sc Sepulveda, Nicolas~Acero}: {\em Fahrbahnerkennung und automatisierte
+  Fahrbahnführung anhand einer Farbkamera mit einem Modellfahrzeug}.
+\newblock 2016.
+
 \end{thebibliography}
