@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  26 OCT 2017 22:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  27 OCT 2017 15:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1850,13 +1850,13 @@ LaTeX Warning: Reference `Standard_Hough_Line_Transformation_fig' on page 16 un
 defined on input line 398.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 424.
+(babel)             in language  on input line 422.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 424.
+(babel)             in language  on input line 422.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 424.
+(babel)             in language  on input line 422.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 424.
+(babel)             in language  on input line 422.
 [16 <./Bilder/Standard_Hough_Line_Transformation.png>]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 429.
@@ -1868,13 +1868,13 @@ LaTeX Warning: Reference `Standard_Hough_Transformation2' on page 17 undefined
 on input line 444.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 462.
+(babel)             in language  on input line 458.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 462.
+(babel)             in language  on input line 458.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 462.
+(babel)             in language  on input line 458.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 462.
+(babel)             in language  on input line 458.
 [17]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 471.
@@ -1887,63 +1887,65 @@ File: ./Bilder/k-nearest-neighbors.png Graphic file (type png)
 Package pdftex.def Info: ./Bilder/k-nearest-neighbors.png used on input line 47
 7.
 (pdftex.def)             Requested size: 364.19667pt x 165.74103pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 487.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 487.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 487.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 487.
  [18 <./Bilder/k-nearest-neighbors.png>]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 546.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 546.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 550.
+(babel)             in language  on input line 549.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 550.
+(babel)             in language  on input line 549.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 550.
+(babel)             in language  on input line 549.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 550.
-
-[19]
-<./Bilder/Curve_Fitting_Polynomial.png, id=328, 506.89375pt x 209.78375pt>
+(babel)             in language  on input line 549.
+ [19]
+<./Bilder/Curve_Fitting_Polynomial.png, id=327, 506.89375pt x 209.78375pt>
 File: ./Bilder/Curve_Fitting_Polynomial.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting_Polynomial.png>
 Package pdftex.def Info: ./Bilder/Curve_Fitting_Polynomial.png used on input li
-ne 554.
+ne 553.
 (pdftex.def)             Requested size: 364.19667pt x 150.73047pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 596.
+(babel)             in language  on input line 572.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 596.
+(babel)             in language  on input line 572.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 596.
+(babel)             in language  on input line 572.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 596.
+(babel)             in language  on input line 572.
  [20 <./Bilder/Curve_Fitting_Polynomial.png>]
-Overfull \hbox (12.73688pt too wide) detected at line 622
+Overfull \hbox (12.73688pt too wide) detected at line 621
  $\OML/mdbch/m/it/11.5 M \OT1/mdbch/m/n/11.5 = []  \OML/mdbch/m/it/11.5 M[] \OT
 1/mdbch/m/n/11.5 = []$ 
  []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 666.
+(babel)             in language  on input line 662.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 666.
+(babel)             in language  on input line 662.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 666.
+(babel)             in language  on input line 662.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 666.
+(babel)             in language  on input line 662.
 [21] <./Bilder/Curve_Fitting.png, id=344, 572.1375pt x 385.44pt>
 File: ./Bilder/Curve_Fitting.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting.png>
-Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 676.
+Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 675.
 (pdftex.def)             Requested size: 364.19667pt x 245.35745pt.
 ) (./inc/Implementation.tex
 Package babel Info: Redefining ngerman shorthand "|
@@ -2059,95 +2061,92 @@ File: ./Bilder/Response_Time2.png Graphic file (type png)
 Package pdftex.def Info: ./Bilder/Response_Time2.png used on input line 113.
 (pdftex.def)             Requested size: 364.19667pt x 228.12634pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 127.
+(babel)             in language  on input line 125.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 127.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(babel)             in language  on input line 125.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 131.
+(babel)             in language  on input line 129.
  [27 <./Bilder/Response_Time2.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 131.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 133.
+(babel)             in language  on input line 131.
 
 
-LaTeX Warning: Citation `OpenCV' on page 28 undefined on input line 140.
+LaTeX Warning: Citation `OpenCV' on page 28 undefined on input line 138.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 143.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 148.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 150.
+(babel)             in language  on input line 148.
 [28] <./Bilder/Presprocessing_Figure.png, id=395, 699.61375pt x 262.9825pt>
 File: ./Bilder/Presprocessing_Figure.png Graphic file (type png)
 
 <use ./Bilder/Presprocessing_Figure.png>
 Package pdftex.def Info: ./Bilder/Presprocessing_Figure.png used on input line 
-174.
+172.
 (pdftex.def)             Requested size: 455.24411pt x 171.1292pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 182.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 182.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 182.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 184.
+(babel)             in language  on input line 182.
  [29 <./Bilder/Presprocessing_Figure.png>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 226.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 226.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 226.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 226.
  [30]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 260.
+(babel)             in language  on input line 258.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 260.
+(babel)             in language  on input line 258.
  <./Bilder/Case1_BlockDiagram.png, id=411, 750.805pt x 538.01pt>
 File: ./Bilder/Case1_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case1_BlockDiagram.png>
-Package pdftex.def Info: ./Bilder/Case1_BlockDiagram.png used on input line 268
+Package pdftex.def Info: ./Bilder/Case1_BlockDiagram.png used on input line 266
 .
 (pdftex.def)             Requested size: 455.24411pt x 326.22359pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 277.
+(babel)             in language  on input line 275.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 277.
+(babel)             in language  on input line 275.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 277.
+(babel)             in language  on input line 275.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 277.
+(babel)             in language  on input line 275.
  [31 <./Bilder/Case1_BlockDiagram.png>]
 <./Bilder/Case1_withoutCropped.png, id=420, 644.4075pt x 559.08875pt>
 File: ./Bilder/Case1_withoutCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withoutCropped.png>
 Package pdftex.def Info: ./Bilder/Case1_withoutCropped.png used on input line 2
-85.
+83.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--285
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 [][]|\T1/5ch/m/n/9.2 Hough Trans-for-ma-ti-on wi-thout Crop-ping
  []
 
@@ -2155,24 +2154,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 285--285
 File: ./Bilder/Case1_withCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withCropped.png>
-Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 287.
+Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 285.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 293.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 293.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 293.
+(babel)             in language  on input line 291.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 293.
+(babel)             in language  on input line 291.
  [32 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
 <./Bilder/Case1_Straight_Standard_Hough.png, id=432, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_Straight_Standard_Hough.png Graphic file (type png)
 
 <use ./Bilder/Case1_Straight_Standard_Hough.png>
 Package pdftex.def Info: ./Bilder/Case1_Straight_Standard_Hough.png used on inp
-ut line 298.
+ut line 296.
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
 
 <./Bilder/Case1_Standard_Hough_Straight_2Parts.png, id=433, 641.39626pt x 531.9
@@ -2181,7 +2180,7 @@ File: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png Graphic file (type png)
 
  <use ./Bilder/Case1_Standard_Hough_Straight_2Parts.png>
 Package pdftex.def Info: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png used
- on input line 300.
+ on input line 298.
 (pdftex.def)             Requested size: 204.85846pt x 169.91478pt.
 
 <./Bilder/Case1_HoughPoints_Original.png, id=434, 642.4pt x 559.08875pt>
@@ -2189,7 +2188,7 @@ File: ./Bilder/Case1_HoughPoints_Original.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Original.png>
 Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Original.png used on input 
-line 312.
+line 310.
 (pdftex.def)             Requested size: 204.85846pt x 178.28928pt.
 
 <./Bilder/Case1_HoughPoints_Sobel.png, id=435, 640.3925pt x 534.99875pt>
@@ -2197,99 +2196,99 @@ File: ./Bilder/Case1_HoughPoints_Sobel.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Sobel.png>
 Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Sobel.png used on input lin
-e 314.
+e 312.
 (pdftex.def)             Requested size: 204.85846pt x 171.13779pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 316.
+(babel)             in language  on input line 314.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 316.
+(babel)             in language  on input line 314.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 316.
+(babel)             in language  on input line 314.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 316.
+(babel)             in language  on input line 314.
  [33 <./Bilder/Case1_Straight_Standard_Hough.png> <./Bilder/Case1_Standard_Houg
 h_Straight_2Parts.png>]
 
-Package caption Warning: \label without proper reference on input line 328.
+Package caption Warning: \label without proper reference on input line 326.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:Case1_Rectangles' on page 34 undefined on input l
-ine 323.
+ine 321.
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 322.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 322.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 322.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 324.
+(babel)             in language  on input line 322.
 [34 <./Bilder/Case1_HoughPoints_Original.png> <./Bilder/Case1_HoughPoints_Sobel
 .png>] <./Bilder/Case1_Rectangles.png, id=455, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_Rectangles.png Graphic file (type png)
 
 <use ./Bilder/Case1_Rectangles.png>
-Package pdftex.def Info: ./Bilder/Case1_Rectangles.png used on input line 328.
+Package pdftex.def Info: ./Bilder/Case1_Rectangles.png used on input line 326.
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
 
-Package caption Warning: \label without proper reference on input line 342.
+Package caption Warning: \label without proper reference on input line 340.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `fig:Case1_CurveFittingwithoutIPM.png' on page 35 unde
-fined on input line 337.
+fined on input line 335.
 
 <./Bilder/Case1_CurveFittingwithoutIPM.png, id=457, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_CurveFittingwithoutIPM.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFittingwithoutIPM.png>
 Package pdftex.def Info: ./Bilder/Case1_CurveFittingwithoutIPM.png used on inpu
-t line 342.
+t line 340.
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 345.
+(babel)             in language  on input line 343.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 345.
+(babel)             in language  on input line 343.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 345.
+(babel)             in language  on input line 343.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 345.
+(babel)             in language  on input line 343.
  [35 <./Bilder/Case1_Rectangles.png>]
 <./Bilder/Case1_CurveFitting.png, id=464, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_CurveFitting.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFitting.png>
-Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 352
+Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 350
 .
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 359.
  [36 <./Bilder/Case1_CurveFittingwithoutIPM.png> <./Bilder/Case1_CurveFitting.p
 ng>]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 359.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 361.
+(babel)             in language  on input line 359.
 
 <./Bilder/Case2_BlockDiagram.png, id=471, 747.79375pt x 545.03625pt>
 File: ./Bilder/Case2_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case2_BlockDiagram.png>
-Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 365
+Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 363
 .
 (pdftex.def)             Requested size: 455.24411pt x 331.8063pt.
 
@@ -2297,98 +2296,98 @@ Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 365
 File: ./Bilder/Case2_InputImg.png Graphic file (type png)
 
 <use ./Bilder/Case2_InputImg.png>
-Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 376.
+Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 374.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
 <./Bilder/Case2_IPM.png, id=476, 643.40375pt x 557.08125pt>
 File: ./Bilder/Case2_IPM.png Graphic file (type png)
 
 <use ./Bilder/Case2_IPM.png>
-Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 378.
+Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 376.
 (pdftex.def)             Requested size: 204.85846pt x 177.3686pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 381.
+(babel)             in language  on input line 379.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 381.
+(babel)             in language  on input line 379.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 381.
+(babel)             in language  on input line 379.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 381.
+(babel)             in language  on input line 379.
  [37 <./Bilder/Case2_BlockDiagram.png>]
 <./Bilder/Case2_Standard_Hough_Transformation.png, id=486, 642.4pt x 272.01625p
 t>
 File: ./Bilder/Case2_Standard_Hough_Transformation.png Graphic file (type png)
  <use ./Bilder/Case2_Standard_Hough_Transformation.png>
 Package pdftex.def Info: ./Bilder/Case2_Standard_Hough_Transformation.png used 
-on input line 388.
+on input line 386.
 (pdftex.def)             Requested size: 204.85846pt x 86.74397pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 397.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 397.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 397.
+(babel)             in language  on input line 395.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 397.
+(babel)             in language  on input line 395.
  [38 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
 ndard_Hough_Transformation.png>]
 <./Bilder/Case2_OutputImage.png, id=495, 642.4pt x 558.085pt>
 File: ./Bilder/Case2_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case2_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 410.
+Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 408.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 415.
+(babel)             in language  on input line 413.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 415.
+(babel)             in language  on input line 413.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 418.
+(babel)             in language  on input line 416.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 418.
+(babel)             in language  on input line 416.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 418.
+(babel)             in language  on input line 416.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 418.
+(babel)             in language  on input line 416.
  [39 <./Bilder/Case2_OutputImage.png>]
 <./Bilder/Case3_OutputImage.png, id=507, 643.40375pt x 558.085pt>
 File: ./Bilder/Case3_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case3_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 425.
+Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 423.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.68819pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 429.
+(babel)             in language  on input line 427.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 429.
+(babel)             in language  on input line 427.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 430.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 430.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 430.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 430.
  [40 <./Bilder/Case3_OutputImage.png>]
 <./Bilder/Case4_OutputImage.png, id=516, 365.365pt x 318.18875pt>
 File: ./Bilder/Case4_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case4_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 435.
+Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 433.
 
 (pdftex.def)             Requested size: 204.85846pt x 178.4078pt.
 ) (./inc/Evaluation_and_Discussion.tex
@@ -2912,6 +2911,34 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
 (scrreprt)              by `\normalfont \scshape ' on input line 104.
 
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 109.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 109.
+
 ) (./inc/Anhang.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 8.
@@ -2959,10 +2986,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 135.
  ) 
 Here is how much of TeX's memory you used:
- 17161 strings out of 493029
- 269414 string characters out of 6136235
+ 17163 strings out of 493029
+ 269475 string characters out of 6136235
  455409 words of memory out of 5000000
- 19995 multiletter control sequences out of 15000+600000
+ 19996 multiletter control sequences out of 15000+600000
  133688 words of font info for 123 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
  70i,13n,108p,1336b,724s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2981,10 +3008,10 @@ public/mathdesign/mdbch/md-chr7m.pfb></usr/share/texlive/texmf-dist/fonts/type1
 e1/public/mathdesign/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/mathdesign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/txfonts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (61 pages, 14778652 bytes).
+Output written on sada_tudreport.pdf (61 pages, 14779743 bytes).
 PDF statistics:
- 780 PDF objects out of 1000 (max. 8388607)
- 643 compressed objects within 7 object streams
- 184 named destinations out of 1000 (max. 500000)
+ 782 PDF objects out of 1000 (max. 8388607)
+ 645 compressed objects within 7 object streams
+ 185 named destinations out of 1000 (max. 500000)
  517 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -105,4 +105,9 @@
   Fahrbahnführung anhand einer Farbkamera mit einem Modellfahrzeug}.
 \newblock 2016.
 
+\bibitem{An_Efficient_Lane_Detection}
+{\sc Heechul~Jung, Junggon~Min} \btxandlong{}\ {\sc Junmo Kim}: {\em An
+  Efficient Lane Detection Algorithm For Lane Departure Detection}.
+\newblock IEEE Intelligent Vehicles Symposium (IV), June 2013.
+
 \end{thebibliography}

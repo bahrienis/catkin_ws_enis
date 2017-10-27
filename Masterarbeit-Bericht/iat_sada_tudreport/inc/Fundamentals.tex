@@ -397,7 +397,7 @@ In this equation, \textit{$ \rho $} is the length of a normal from the origin to
  
  In the left side of Figure \ref{Standard_Hough_Line_Transformation_fig}, a line is shown in an Image (Cartesian) space and on the right side of same Figure, the same line is shown in its transformed state in the Hough space. A point in the Image (Cartesian) space is transformed into a sinusoidal curve in the Hough space. A line can be defined as a set of points, so a line is transformed into a set of sinusoids intersecting at a point in the Hough space. In this case, detecting points in the Hough space also means detecting the lines in the Cartesian space. After detecting points in the Hough Space, the points must be inversely transformed in order to get the corresponding lines in the Cartesian space.
  
-\emph{\color{red}Although Hough transform (HT) has been widely used in curve detection, it has two major drawbacks: First, for each nonzero pixel in the image, the parameters for the existing curve and redundant ones are both accumulated during the voting procedure. Second, the accumulator array (or Hough space) is predefined in a heuristic way. The more accuracy needed, the higher parameter resolution should be defined. These two needs usually result in a large storage requirement and low speed for real applications. Therefore, RHT was brought up to tackle this problem.}
+Standard Hough Line Transformation is widely used technique in curve detection. Despite this, it does have two important downsides. Firstly, for each nonzero pixel in an image, the parameters for both the existing curve as well as the redundant ones are obtained during the 'voting procedure'. Secondly, the more accuracy that is needed, the higher the parameter resolution must be defined. As a result, there is often a large storage requirement and low speed for real applications. Probabilistic Hough Transformation was derived in order to counter these problems. 
 
 In this master's thesis, in order to detect the Hough lines, the function of \textit{cv2.HoughLines()} in OpenCV was used. The function is:
 
@@ -433,7 +433,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 
 
 
-\emph{\color{red}The basic idea of Hough transform (HT) is to implement a voting procedure for all potential curves in the image, and at the termination of the algorithm, curves that do exist in the image will have relatively high voting scores. Randomized Hough transform (RHT) is different from HT in that it tries to avoid conducting the computationally expensive voting process for every nonzero pixel in the image by taking advantage of the geometric properties of analytical curves, and thus improve the time efficiency and reduce the storage requirement of the original algorithm.}
+Essentially, the point of the Hough Transformation is to implement a 'voting procedure' for all potential curves in the image. Curves that actually found in the image will then have relatively high 'voting scores' when the algorithm terminates. Probabilistic Hough Transformation differs Standard Hough Line Transformation by trying to avoid a computationally expensive 'voting process' for every nonzero pixel in the image. It does this by taking advantage of the geometric properties of analytical curves, which allows it to improve efficiency as well as reduce the storage requirement of the original algorithm.
 
   \begin{center}
   
@@ -478,7 +478,7 @@ K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. The non-pa
   \caption{K-Nearest-Neighbors Algorithm\cite{k_nearest_neighbors_wikipedia}}
 \end{figure}
 
-\emph{\color{red}By using the training dataset directly, KNN makes predictions. By searching the entire training set for the K most similar instances (the neighbors) and summarizing the output variable for those K instances, predictions are made for a new instance (x). {For regression this might be the mean output variable, in classification this might be the mode (or most common) class value.} Distance measure methods are used for the determining which of the K instances in the training dataset are the nearest to a new input. There are so many different distance measure methods. Some of them are :}
+KNN makes predictions through the direct use of the training dataset. Predictions are made for a new instance (x) by searching the entire training set for the K most similar instances (the neighbors) and summarizing the output variable for those K instances. For regression this could be the mean output variable. In classification, this could be the most common (mode) class value. In order to determine which of the K instances in the training dataset are the closest to a new input, various distance measure methods are used. There are many different distance measure methods, but some important ones are:
 
 \begin{itemize}
 
@@ -545,8 +545,7 @@ The parameters of the function will be described in detail.\cite{k_nearest_neigh
 %
 \section{Curve Fitting}\label{sec:Curve Fitting}
 
-\emph{\color{red}Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting produces mostly mathematical equations that can be used to find points anywhere along
-the curve.\cite{Curve_Fitting}} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression, second order as quadratic regression, and third order as cubic regression.
+Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting results in the production of mostly mathematical equations which can be used to locate points anywhere along the curve.\cite{Curve_Fitting} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression, second order as quadratic regression, and third order as cubic regression.
 
 
 \begin{figure}[H]
@@ -560,7 +559,7 @@ In this master's thesis, curve fitting is used for getting the best mathematical
 
 There are so many different methods for curve fitting. One of the most famous methods is the least squares method, which is also the method utilized in this master's thesis. Next, how a polynomial curve fitting is generated using the least squares method will be described.
 
-\emph{\color{blue}A data set can be mostly expressed the relationship between variable with an equation which is mostly representated with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :}
+A data set mainly expresses the relationship between variables with an equation which is generally represented with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :
 
 \begin{center}
 y = $ a_{k}x^{k} + ... + a_{1}x + a_{0} + \epsilon $ 

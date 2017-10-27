@@ -68,45 +68,45 @@ while executing---line 1056 of file gerunsrt.bst
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
 while executing---line 1056 of file gerunsrt.bst
 Warning--empty publisher in Bachelorthesis_Nicolas
-You've used 27 entries,
+You've used 28 entries,
             2016 wiz_defined-function locations,
-            614 strings with 7035 characters,
-and the built_in function-call counts, 4069 in all, are:
-= -- 345
-> -- 114
+            620 strings with 7238 characters,
+and the built_in function-call counts, 4245 in all, are:
+= -- 361
+> -- 122
 < -- 0
-+ -- 55
-- -- 28
-* -- 223
-:= -- 536
-add.period$ -- 34
-call.type$ -- 27
++ -- 58
+- -- 30
+* -- 235
+:= -- 564
+add.period$ -- 36
+call.type$ -- 28
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 213
-empty$ -- 563
-format.name$ -- 28
-if$ -- 1030
+cite$ -- 29
+duplicate$ -- 223
+empty$ -- 580
+format.name$ -- 30
+if$ -- 1072
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 14
-newline$ -- 91
-num.names$ -- 25
-pop$ -- 169
+int.to.str$ -- 28
+missing$ -- 16
+newline$ -- 95
+num.names$ -- 26
+pop$ -- 172
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 162
+skip$ -- 169
 stack$ -- 0
 substring$ -- 21
-swap$ -- 75
+swap$ -- 78
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 26
-width$ -- 29
-write$ -- 204
+while$ -- 27
+width$ -- 30
+write$ -- 213
 (There were 11 error messages)

@@ -97,15 +97,15 @@ to detect most if not all lanes, including when there are curves.
 
 \section{Response Time of the System}\label{sec:Response Time of the System}
 
-\emph{\color{blue}Before lane detection project has started, an experiment was done with the system. Aim of this experiment is to measure the response time of the all system. For measuring it, camera has to detect something and then the software must set an I/O pin on the main board. In other words, if the camera detects something, how long does it take to get a response from the main board.}
+Before the lane detection project was started, it was necessary to conduct an experiment with the system. The aim of this experiment was to measure the response time of the entire system. In order to measure it, the camera had to detect something and then the software had to set an I/O pin on the main board. The amount of time this process took was in fact the response time being searched for.
 
-\emph{\color{blue}For this experiment, a camera, a power supply, A LED and an oscilloscope are needed. A circuit with a power supply and a LED was designed. The LED was placed in a small box with a camera, and a probe of an oscilloscope was connected to the LED and the other probe of it was connected to an I/O Pin on the mainboard which can be setted by software.}
+For this experiment, a camera, a power supply, an LED, and an oscilloscope were needed. A circuit with a power supply and an LED were designed. The LED was placed in a small box with a camera, and one probe of an oscilloscope was connected to the LED while its other probe was connected to an I/O Pin on the mainboard, which could be set with software.
 
-\emph{\color{blue}Before the results were measured, the frequency of the camera was setted to 10 Frame per Second(FPS) and the power supply was setted to 3.28 Hz. square wave. It means, the LED must be blinked nearly every 305 ms.}
+Before the results were measured, the frequency of the camera was set to 10 Frames per Second(FPS) and the power supply was set to 3.28 Hz. square wave. This means that the LED is supposed to blink approximately every 305 ms.
 
-\emph{\color{blue}After the supply was turned off, the LED started to blink. For this experiment, a small firmware was written, which can detect red color, which was lighted by the red color LED.}
+After the supply was turned off, the LED started to blink. For this experiment, a small firmware able to detect the color red was written in order to detect when the red LED lit up.
 
-\emph{\color{blue}In a box, the LED and a camera were placed together then the box was closed with that inside of the box was totally dark. When the red LED lights, the camera detects it and the firmware sets an I/O pin on the main board. For this experiment, two different cameras were used and the results were so similar.}
+The LED and a camera were placed together in a box and the box was closed, and so the inside of the box was totally dark. When the red LED lit up, the camera detected it and the firmware set an I/O pin on the main board. For this experiment, two different cameras were used and the results were very similar.
 
 
 \begin{figure}[H]
@@ -115,10 +115,8 @@ to detect most if not all lanes, including when there are curves.
 \end{figure}
 
 
-\emph{\color{blue}As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system is 156 ms. and the minimum response time of the system is 63 ms. and the average time is 106.6 ms.}
-
-
-
+As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system was 156 ms., the minimum
+response time of the system was 63 ms., and the average time was 106.6 ms.
 
 
 
