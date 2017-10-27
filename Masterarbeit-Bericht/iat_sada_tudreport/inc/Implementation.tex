@@ -125,7 +125,7 @@ response time of the system was 63 ms., and the average time was 106.6 ms.
 \section{Software}\label{sec:Software}
 
 
-In this chapter, the software algorithms defined in this master's thesis will be focused on. With the aid of program flow charts and explanations of all their steps, the algorithms will themselves be better explained. In order to find the best solution, five different source code versions(?variants/?methods) were generated. For all these source codes, the computing times were calculated and compared in terms of which solution can detect the lanes better. In the following pages, there are detailed explanations of the versions utilized (?variants/?methods). The development environment and the software utilized in this master's thesis will be also described.
+In this chapter, the software algorithms defined in this master's thesis will be focused on. With the aid of program flow charts and explanations of all their steps, the algorithms will themselves be better explained. In order to find the best solution, five different source code versions were generated. For all these source codes, the computing times were calculated and compared in terms of which solution can detect the lanes better. In the following pages, there are detailed explanations of the versions utilized methods. The development environment and the software utilized in this master's thesis will be also described.
 
 %
 \subsection{Development Environment and Related Softwares}
@@ -138,6 +138,8 @@ The version \textit{Kinetic} of ROS was used for implementation of this master's
 For using prepaid image processing functions, an open-source computer vision and machine learning software library called OpenCV was used. According to the OpenCV website\cite{OpenCV}, there are more than 2500 optimized algorithms in the OpenCV library and OpenCV has a user community of more than 47 thousand people.
 
 ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV can be programmed with Python or C++ programming languages. In this master's thesis, C++ was used.
+
+\emph{\color{blue}For testing the detection, monitor can't be carried always with the model car so to see if the algorithm can detect the lanes good, the outputs of the software must be seen so the model car must be connected with a PC remotely. For that, there is a software used which can connect two different computers which are runned by Linux operating system. As the first step, a wireless network must be created in one of these computers and the other computer must be connected to this wireless network. Then the IP address of the model car must be found out or a static IP address must be given to the model car. As the last step, 'Remmina Remote Desktop Client' must be used in the PC and there must be written IP address of the model car(Server). After that, the car and the PC are connected to each other. In this software, the quality of screen sharing and the speed can be adjusted.  }
 
 %
 \subsection{Preprocessing}\label{sec:Preprocessing}
@@ -180,7 +182,7 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 
 After the frame from Camera via ROS-Topic was received, the color frame had to be converted to a grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, the grayscale format of the input image is needed. Converting a frame from BGR format to grayscale format has some advantages, the main advantage being the processing time. Normally color frame matrix content has three or four channels, but grayscale frame matrix content has just one channel, so grayscale frame matrix size is much smaller compared to color frame matrix size. Because of this, the image processing time is much more less for the grayscale format compared to BGR format. In order to convert the BGR formatted frame to a grayscale formatted frame, the \textit{cvtColor} function from OpenCV is used.
 
-For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. \emph{\color{blue}For the finding the lightest and the darkest pixels, the following function in OpenCV was used. This function will be explained in detail.}\citep{addWeighted}
+For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. \emph{\color{blue}For the finding the lightest and the darkest pixels, the following function in OpenCV was used. This function will be explained in detail.}\cite{addWeighted}
 
 
 \begin{center}
@@ -255,7 +257,7 @@ After the threshold filter, an edge detection filter must be applied. In this ma
 This preprocessing part is common for all cases but after this process, the cases diverge. 
  
 %
-\subsection{Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM (v0.9.2)}\label{sec:Case 1}
+\subsection{Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 1}
 
 The algorithms and their orders which was used in this method, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Method 1 is shown.
 
@@ -356,7 +358,7 @@ After using the Hough Points as input, three different mathematical equations ar
 
 %
 
-\subsection{Method 2 : IPM + Hough Transformation + KNN + Curve Fitting(v0.4.2)}\label{sec:Case 2}
+\subsection{Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 2}
 
 \begin{figure}[H]
  \centering
@@ -410,7 +412,7 @@ After using the Hough Points as input, three different mathematical equations ar
 \end{figure} 
 
 
-\subsection{Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting(v0.5.1)}\label{sec:Case 3}
+\subsection{Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}\label{sec:Case 3}
 
 This method is a composite method of the Method 1 in Section \ref{sec:Case 1} and Method 2 in Section \ref{sec:Case 2}. As in Method 2, at the beginning of this method, the preprocessing part is applied, and then Inverse Perspective Mapping for all pixels is implemented. After that, for 200x640 pixels, the Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until this point, the implementation is completely identical to Method 2. In Method 2, however, at the point in the process where the k-nearest neighbours (KNN) method is used, the rectangle method used in Method 1 in Section \ref{sec:Case 1} is applied. There is, however, a difference between the rectangle method utilized here and the rectangle method from Method 1. In Method 1, the size of rectangles decreased progressively. However, in this method, the size of the rectangles is always the same because the Inverse Perspective Method(IPM) is used at the beginning. As a result, the lanes are shown from the top of track. The size of the rectangles in the middle lane is bigger than the size of the rectangles in the left and right lanes, however. Because of the dashed lines, it was necessary to use larger rectangles in the middle lane.
 
@@ -424,7 +426,7 @@ The last step of this method is as in the others: to publish the equations of th
   \caption{Output Image}
 \end{figure}
 
-\subsection{Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting(v0.7.1)}\label{sec:Case 4}
+\subsection{Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 4}
 
 This method is very similar to Method 2. There is just one difference between Method 2 in \ref{sec:Case 2} and this method. The only difference is resizing the frame at the beginning. The frame comes from the camera with a 640x480 pixel resolution, but this frame is resized from a 640x480 pixel resolution to a 320x240 pixel resolution. In order to do this, a 'resize' function from OpenCV is used because the smallest resolution able to be obtained from the camera is 640x480 pixels. Due to the resizing, it was sometimes necessary to use different parameters than in Method 2 in order to detect lanes optimally (efficiently and accurately). Results of this method are shown in Figure \ref{fig:Case4_OutputImage}.
 
@@ -434,4 +436,9 @@ This method is very similar to Method 2. There is just one difference between Me
   \caption{Output Image(320x240 pixels resolution)}
 \end{figure}
 
+
+
+
+
+\subsection{Method 5 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 5}
 %
