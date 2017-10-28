@@ -62,9 +62,9 @@ void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, s
         if (x_coord_vect.size() > 5) {
 
             detectDirection(x_coord_vect, direction_detected, direction);
-            if (direction_detected) {
-                cout << "direction for " << name << " is " << direction << endl;
-            }
+  //          if (direction_detected) {
+  //              cout << "direction for " << name << " is " << direction << endl;
+  //          }
         }
         std::vector<float> query;
         query.push_back(current_x);
@@ -99,7 +99,7 @@ void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, s
 
             x_coord_vect.push_back(nextPointX);
             y_coord_vect.push_back(nextPointY);
-            cout << "Point in " << name << ": [" << nextPointX << "," << nextPointY << "]" << endl;
+   //         cout << "Point in " << name << ": [" << nextPointX << "," << nextPointY << "]" << endl;
             if (name == "left")
                 circle(inputImg, Point(nextPointX, nextPointY), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             else if (name == "mid")
@@ -275,7 +275,7 @@ int main(int argc, char **argv) {
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
-//          std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+          std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame52.jpg";
       //   std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame1470.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
@@ -284,18 +284,18 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
- /*       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
         }
-*/
+
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
 
-             bool bSuccess = cap.read(inputImg);
+//             bool bSuccess = cap.read(inputImg);
 
 
 
@@ -469,9 +469,9 @@ clock_t end_PHT = clock();
             }
         }
 
-        cout << "Right Line starting point: " << Point(x_coord_RightLine, max_y_forRightLine) << endl;
-        cout << "Middle Line starting point: " << Point(x_coord_MiddleLine, max_y_forMiddleLine) << endl;
-        cout << "Left Line starting point: " << Point(x_coord_LeftLine, max_y_forLeftLine) << endl;
+//        cout << "Right Line starting point: " << Point(x_coord_RightLine, max_y_forRightLine) << endl;
+//        cout << "Middle Line starting point: " << Point(x_coord_MiddleLine, max_y_forMiddleLine) << endl;
+ //       cout << "Left Line starting point: " << Point(x_coord_LeftLine, max_y_forLeftLine) << endl;
 
         
         
@@ -575,7 +575,7 @@ clock_t end_FSP = clock();
         
         double IPM_elapsed_secs = double(end_IPM - begin) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * IPM_elapsed_secs);
-        cout << 1000 * IPM_elapsed_secs << endl;
+        cout << "IPM : " << 1000 * IPM_elapsed_secs << endl;
         
         
         
@@ -583,48 +583,48 @@ clock_t end_FSP = clock();
 
         double pre_elapsed_secs = double(end_pre - end_IPM) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * pre_elapsed_secs);
-        cout << 1000 * pre_elapsed_secs << endl;
+        cout << "Pre : " << 1000 * pre_elapsed_secs << endl;
         
         
 
         double SHT_elapsed_secs = double(end_SHT - end_pre) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * SHT_elapsed_secs);
-        cout << 1000 * SHT_elapsed_secs << endl;
+        cout << "SHT : " << 1000 * SHT_elapsed_secs << endl;
         
         
         
 
         double FLC_elapsed_secs = double(end_FLC - end_SHT) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * FLC_elapsed_secs);
-        cout << 1000 * FLC_elapsed_secs << endl;
+        cout << "FLC : " << 1000 * FLC_elapsed_secs << endl;
         
         
         
 
         double PHT_elapsed_secs = double(end_PHT - end_FLC) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * PHT_elapsed_secs);
-        cout << 1000 * PHT_elapsed_secs << endl;
+        cout << "PHT : " << 1000 * PHT_elapsed_secs << endl;
         
         
         
 
         double FSP_elapsed_secs = double(end_FSP - end_PHT) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * FSP_elapsed_secs);
-        cout << 1000 * FSP_elapsed_secs << endl;
+        cout << "FSP : " << 1000 * FSP_elapsed_secs << endl;
         
         
         
         
           double KNN_elapsed_secs = double(end_KNN - end_FSP) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * KNN_elapsed_secs);
-        cout << 1000 * KNN_elapsed_secs << endl;
+        cout << "KNN : " << 1000 * KNN_elapsed_secs << endl;
         
         
         
         
           double CF_elapsed_secs = double(end_CF - end_KNN) / CLOCKS_PER_SEC;
         printf("%.2f (ms)\r", 1000 * CF_elapsed_secs);
-        cout << 1000 * CF_elapsed_secs << endl;
+        cout << "CF : " << 1000 * CF_elapsed_secs << endl;
         
         
         
@@ -707,13 +707,13 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
                 a[i] = a[i] - B[i][j] * a[j];
         a[i] = a[i] / B[i][i];
     }
-    cout << "\nThe values of the cofficients are as follows:\n";
-    for (i = 0; i < n; i++)
-        cout << "x´" << i << "=" << a[i] << endl;
-    cout << "\nHence the fitted Polynomial is given by:\ny=";
-    for (i = 0; i < n; i++)
-        cout << " + (" << a[i] << ")" << "x´" << i;
-    cout << "\n";
+ //   cout << "\nThe values of the cofficients are as follows:\n";
+ //   for (i = 0; i < n; i++)
+ //       cout << "x´" << i << "=" << a[i] << endl;
+ //   cout << "\nHence the fitted Polynomial is given by:\ny=";
+//    for (i = 0; i < n; i++)
+ //       cout << " + (" << a[i] << ")" << "x´" << i;
+ //   cout << "\n";
 
 
     int p, r;

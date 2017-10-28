@@ -8,6 +8,9 @@
 {\sc Braunschweig, Technische~Universität}: {\em Carolo-Cup Regulations 2017},
   October 2016.
 
+\bibitem{Camera_Calibration}
+{\sc Allevato, Adam}: {\em How to Calibrate a Monocular Camera}, April 2017.
+
 \bibitem{IPM}
 {\sc Lin, Chien-Chuan} \btxandlong{}\ {\sc Ming-Shi Wang}: {\em A Vision Based
   Top-View Transformation Model for a Vehicle Parking Assistant}.
@@ -109,5 +112,10 @@
 {\sc Heechul~Jung, Junggon~Min} \btxandlong{}\ {\sc Junmo Kim}: {\em An
   Efficient Lane Detection Algorithm For Lane Departure Detection}.
 \newblock IEEE Intelligent Vehicles Symposium (IV), June 2013.
+
+\bibitem{A_Fast_and_Robust_Approach}
+{\sc Christian~Lipski, Björn~Scholz, Kai Berger Christian Linz Timo~Stich}:
+  {\em A Fast and Robust Approach to Lane Marking Detection and Lane Tracking}.
+\newblock IEEE Southwest Symposium on, 2008.
 
 \end{thebibliography}

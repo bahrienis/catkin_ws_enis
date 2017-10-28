@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2017.9.8)  6 OCT 2017 15:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  28 OCT 2017 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -26,7 +26,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.5 \usepackage[T1]{
-                    fontenc}	% Fï¿½r Silbentrennung bei Wï¿½rten mit Sonderz...
+                    fontenc}	% Für Silbentrennung bei Wörten mit Sonderzeich...
 
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -50,7 +50,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.8 \usepackage[english,main=ngerman]{
+l.8 \usepackage[english,main=english]{
                                       babel}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -123,7 +123,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.23 \usepackage{
-                 float}			% Fï¿½r Parameter [H] bei Flieï¿½objekten
+                 float}			% Für Parameter [H] bei Fließobjekten
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -160,7 +160,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.27 \usepackage{
-                 subfig}			% Fï¿½r Unterabbildungen
+                 subfig}			% Für Unterabbildungen
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -196,7 +196,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.30 \usepackage{
-                 bibgerm}		% Fï¿½r deutsche Literaturverwaltung
+                 bibgerm}		% Für deutsche Literaturverwaltung
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -208,8 +208,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.34 \usepackage{
-                 upgreek}		% Fï¿½r nicht-kursive kleine griechischen Buchstaben
-
+                 upgreek}		% Für nicht-kursive kleine griechischen Buchstaben
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -221,7 +220,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.36 \usepackage{
-                 multirow}		% Fï¿½r mehrzeilige Felder in Tabellen
+                 multirow}		% Für mehrzeilige Felder in Tabellen
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -233,7 +232,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.38 \usepackage{
-                 textcomp}		% Fï¿½r Sonderzeichen im normalen Text
+                 textcomp}		% Für Sonderzeichen im normalen Text
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -245,7 +244,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.40 \usepackage[ngerman]{
-                          varioref}		% Fï¿½r vref
+                          varioref}		% Für vref
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -257,7 +256,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.41 \usepackage{
-                 color}			% Fï¿½r farbigen Text
+                 color}			% Für farbigen Text
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -269,7 +268,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.42 \usepackage{
-                 placeins}		% Fï¿½r \FloatBarrier
+                 placeins}		% Für \FloatBarrier
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -293,7 +292,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.44 \usepackage{
-                 icomma}			% Damit nach Dezimalkommas kein Abstand eingefï¿½...
+                 icomma}			% Damit nach Dezimalkommas kein Abstand eingefügt...
 
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -318,7 +317,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.48 \usepackage{
-                 array}			% Fï¿½r Zellentyp "m{}" in tabular-Umgebungen (Ver...
+                 array}			% Für Zellentyp "m{}" in tabular-Umgebungen (Verti...
 
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
@@ -343,8 +342,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.51 \usepackage{
-                 moreverb}		% Fï¿½r Umgebung "`verbatimtab"' (Verbatim mit T...
-
+                 moreverb}		% Für Umgebung "`verbatimtab"' (Verbatim mit Tabs)
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -369,7 +367,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.59 \usepackage{
-                 hyperref}	% Fï¿½r Verlinkungen im erzeugten pdf
+                 hyperref}	% Für Verlinkungen im erzeugten pdf
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -393,11 +391,11 @@ between \documentclass and \begin{document}.
 
  
 Here is how much of TeX's memory you used:
- 6 strings out of 493030
- 153 string characters out of 6136261
- 53099 words of memory out of 5000000
+ 6 strings out of 493029
+ 153 string characters out of 6136235
+ 53102 words of memory out of 5000000
  3642 multiletter control sequences out of 15000+600000
  3640 words of font info for 14 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  7i,0n,5p,109b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
+!  ==> Fatal error occurred, no output PDF file produced!

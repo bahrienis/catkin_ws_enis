@@ -1,3 +1,4 @@
+
 %
 \chapter{Evaulation and Discussion}
 \label{cha:Evaulation and Discussion}
@@ -7,6 +8,86 @@ In this chapter, the algorithms for each method used in this master's thesis wil
 
 \section{Average Computing Time}\label{sec:Average Computing Time}
 
+\emph{\color{blue}There are totally 5 different methods, which were programmed for the detecting lanes so all methods have different average computig time and their reliability while lane detection are different. For all of methods, the computing times of algorithms and the method will be defined and also how effect  the parameters of the algorithms.}
+
+
+\textbf{Method 1 : }In the following table, there are the computing time for all algorithms and the average computing time. Due to limited space, abbreviations were used in place of the following terms:
+
+
+\begin{itemize}[noitemsep]
+\item\textbf{PRE : }Preprocessing
+\item\textbf{SHT : }Standard Hough Transformation
+\item\textbf{FLL : }Finding the Locations of the Lanes
+\item\textbf{PHT : }Propabilistic Hough Transformation
+\item\textbf{REC : }Rectangle Algorithm
+\item\textbf{CF : }Curve Fitting and changed perspective of the fitted curves from the camera side to the top side 
+\item\textbf{PUB : }Publishing the coefficients of the fitted curves
+\item\textbf{ACT : }Average Computing Time
+\end{itemize}
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c | c | c |}
+    \hline
+  
+  PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
+  17.12 ms. & 1.39 ms. & 5 $\mu$s. & 16.71 ms. & 4.14 ms. & 3.85 ms. & 0 & 0 \\ \hline  
+    
+    
+      \end{tabular}
+  \label{tab:Case1_Times}
+\end{center}
+
+As also seen above Table, the most computing times are 'Proprocessing part' and 'Probabilistic Hough Transformation'. These values can be descreased with the parameters of Probabilistic Hough Transformation or with doing less in the 'Preprocessing part'. But they can occur some problems. For example; in this project, there is a dynamical thresholding filter. A function finds the lightest pixel in the the frame then the threshold value of this filter is changed dynamically according the value of the lightest pixel. So in the threshold filter,  it would be also used a statical value for threshold so the method could work a bit faster but it wouldn't be so reliable in the changing of light conditions. On the other hand, the parameters of the Probabilistic Hough Transformation can be changed, with it, the Probabilistic Hough Transformation process will take less time but it will detect less Hough points on the lanes so if the Probabilistic Hough Transformation detects too less Hough points then the stability of the lane detection will be so bad.
+
+
+
+
+\textbf{Method 2 : }In the Method 1, just for the fitted curves, the Inverse Perspective Method was used. In this method, the IPM algorithm was used at the beginning of the method. In the following table, the computing times for each algorithms and the average computing time for this method are shown. The new abbreviations, which were not used in Method 1 is in the following :
+
+
+\begin{itemize}[noitemsep]
+\item\textbf{IPM : }Inverse Perspective Mapping Algorithm
+\item\textbf{KNN : }K-Nearest Neighbors Algorithm
+\end{itemize}
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
+    \hline
+  
+  IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & KNN 	   & CF 	  & PUB 	& ACT \\ \hline  
+  16.48 ms. & 15.59 ms. & 1.08 ms. & 6 $\mu$s. & 14.92 ms. & 10 $\mu$s. & 2.39 ms. & 4.51 ms. & 0       & 0   \\ \hline  
+    
+    
+      \end{tabular}
+  \label{tab:Case1_Times}
+\end{center}
+
+As seen above Table, the average computing time in Method 2 is much more than Method 1. One of the biggest reason for the higher computing time is IPM. In Method 1, the IPM algorithm was used just for  fitted curves, in Method 2, IPM algorithm used for the all frame. In other words, In Method 2, IPM algorithm are changed much more pixels than in Method 1. So Method 2 has less computing time compare to Method 1. On the other hand, KNN algorithm  is much more faster than Rechtangle algorithm. 
+
+
+
+
+
+\textbf{Method 3 : }This method is so similar to Method 2 but there is just one difference. Instead of the K-Nearest Neighbors Algorithm, the Rectangle Algorithm was used. In the following table, the abbreviations are also same with in Method 2 but instead of KNN, REC was used and meaning of the REC was defined in the Method 1.
+
+
+\begin{center}
+  \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
+    \hline
+  
+  IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & REC 	   & CF 	  & PUB 	& ACT \\ \hline  
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0       & 0   \\ \hline  
+    
+    
+      \end{tabular}
+  \label{tab:Case1_Times}
+\end{center}
+
+As seen from the results, except KNN/REC, the results are so similar. The results also show that the KNN algorithm is faster compare to the Rectangle algorithm. 
+
+\textbf{Method 4 : }This method is the resized version of the Method 2. In this method , the input frame comes with 640x480 pixels resolution but it converted directly at the beginning of the method to the 320x240 pixels resolution. Because of the processing with less pixels, the computing time of this method is less than Method 2 but the reliability of the detecting lanes is a bit less than the Method 2. So this method should be used, if the processor is not enough strong or if more FPS value wanted to be used.
+
+\textbf{Method 5 : }This method is the resized version of the Method 1. In this method, the input size of the frame is also converted directly at the beginning from 640x480 pixels resolution to the 320x240 pixels resolution, so the computing time less than Method 1.
 
 
 \section{Test Driving}\label{sec:Test Driving}

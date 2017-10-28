@@ -49,7 +49,7 @@ As seen in the above command, the number and the size of the checkerboard's squa
 \begin{figure}[H]
  \centering
   \includegraphics[width=0.8\textwidth]{./Bilder/Camera_Calibration_fig.png}\label{Calibration_of_Camera}
-  \caption{Calibration of Camera\ref{Calibration_of_Camera}}
+  \caption{Calibration of Camera\cite{Camera_Calibration}}
 \end{figure}
 
 For this master's thesis, the camera was calibrated and the parameters of the camera matrix can be found in the Table \ref{tab:meinetabelle}
@@ -139,7 +139,7 @@ In this master's thesis, the Sobel Operator was utilized, so it will be describe
 %
 \subsection{Sobel Operator}\label{sec:Sobel Operator}
 
-The Sobel Operator, sometimes called the Sobel filter is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. Approximations of the derivatives for the horizontal changes and for the vertical changes are calculated by the operator by using two 3x3 kernels and convolving them with the original image. If A is defined as the source, if $G_{x}$ is an image which contains the horizontal derivative approximations at each point, and if $G_{y}$ is an imagine which contains the vertical derivative approximations at each point, then the calculations are:
+The Sobel Operator, sometimes called the Sobel filter \emph{\color{blue}or Sobel-Feldmann operator }is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. Approximations of the derivatives for the horizontal changes and for the vertical changes are calculated by the operator by using two 3x3 kernels and convolving them with the original image. If A is defined as the source, if $G_{x}$ is an image which contains the horizontal derivative approximations at each point, and if $G_{y}$ is an imagine which contains the vertical derivative approximations at each point, then the calculations are:
 
 \begin{center}
 
@@ -187,7 +187,7 @@ G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$
 Using this information, we can also calculate the gradient's direction:
 
 \begin{center}
-$\theta = atan(\dfrac{G_{y}}{G_{x}})$
+$\theta = atan\bigg(\dfrac{G_{y}}{G_{x}}\bigg)$
 \end{center}
 
 where, for example, $\theta$ is 0 for a vertical edge which is lighter on the right side.\cite{Sobel_Operator}
@@ -200,6 +200,12 @@ where, for example, $\theta$ is 0 for a vertical edge which is lighter on the ri
   \subfloat[Sobel Operator applied Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Sobel_Operator.png}\label{fig:f2}}
   \caption{Sobel Operator\cite{Sobel_Operator}}
 \end{figure} 
+
+
+\emph{\color{red}The primary advantages of the Sobel operator lie in its simplicity. The Sobel operator provides an approximation to the gradient magnitude. Another advantage of the Sobel operator is, it can detedct edges and their orientations. In this cross operator, the detection of the edges and their orientations is said to be simple due to the approximation of the gradient magnitude.} 
+
+\emph{\color{red}On the other hand, there exist some disadvantages of the Sobel operator. That is, it is sensitive to the noise. The magnitude of the edges will degrade as the level of noise present in image increases. As a result, Sobel operator accuracy suffers as the magnitude of the edges decreases. Overall, the Sobel operator ca not produce accurate edge detection with thin and smooth edge.}
+
 
 
 In this master's thesis, the Sobel Operator function in OpenCV was used. Before the Sobel operator was used, in order to reduce the noise, the 'GaussianBlur' function was used. As can perhaps be inferred from the name, the 'GaussianBlur' function blurs the image using a Gaussian filter. In order to apply the 'GaussianBlur' function, the following command must be run.
@@ -228,7 +234,19 @@ The parameters of the function will be described in detail.\cite{GaussianBlur}
 
 \end{itemize}
 
-After the Gaussian Filter is applied, the picture must be converted from color to grayscale. For that, there is a small function in OpenCV. With the following command, a color picture can be converted easily to grayscale.
+
+Guassian Blur will be explained in the Section \ref{Gaussian_Blue}.
+
+
+
+
+
+
+
+
+
+
+After the Gaussian Blur is applied, the picture must be converted from color to grayscale. For that, there is a small function in OpenCV. With the following command, a color picture can be converted easily to grayscale.
 
  \begin{center}
  
@@ -306,6 +324,12 @@ void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, do
 \item \textbf{dtype : }Optional depth of the output array.
 
  \end{itemize}
+
+
+
+
+
+
  
 %
 \subsection{Canny Edge Detector}\label{sec:Canny Edge Detector}
@@ -337,6 +361,18 @@ Canny edge detector was developed in 1986 and called with the name of its develo
   \caption{Canny Edge Detector\cite{Canny_Edge_Detector}}
 \end{figure} 
 
+
+
+
+\emph{\color{red}With Gaussian filter, any noise present in an image can be removed. The next advantage is enhancing the signal with respect to the noise ratio. This is done by non-maxima suppression method as it results in one pixel wide ridges as the output. The third advantage is better detection of edges especially in noisy state by applying thresholding method. The effectiveness of Canny method is affected by adjustable parameters. Small filters are desirable for detection of small, sharp lines, since it causes fewer instances of blurring. Large filters are desirable for detecting larger, smoother edges. However, it causes higher instances of blurring. }
+
+\emph{\color{red}The main disadvantage of Canny edge detector is that it is time consuming, due to its complex computation. }
+
+
+
+
+
+
 The Canny Edge Detector is also a function in OpenCV. As is the case with the Sobel Operator, before the Canny Edge Detector is used, a filter should be applied (for example, the Gaussian Filter) and the image must be converted to gray scale. With the following command, the Canny Edge Detector can be run in OpenCV.\cite{Canny_Edge_Detector3}
 
  \begin{center}
@@ -364,6 +400,84 @@ void Canny(InputArray image, OutputArray edges, double threshold1, double thresh
 \end{itemize}
  
 %
+
+
+
+
+
+%
+\section{Gaussian Blur}\label{sec:Gaussian Blur}
+
+Gaussian Blur is a non-uniform low pass filter which is used to blur images. For smoothing/bluring the images, there are also some other filters, like Normalized Box Filter, Median Filter, Bilateral Filter, and so but Gaussian Filter is most useful filter although it is not the fastest. This filter is widely used in image processing as one part of the preprocessing stage because it reduces the image noise and detail.
+
+Gaussian blur uses a Gaussian function, which for calculating the transformation to apply to each pixel in the image. The equation of a Gaussian function in one dimension has the form : 
+
+ \begin{center}
+ \scalebox{1.2}{$ G(x) = \dfrac{1}{\sqrt{2\pi}\sigma}e^{-\frac{x^{2}}{2\sigma^{2}}} $} 
+\end{center}
+
+where $ \sigma $ is the standard deviation of the distribution. The equation of a Gaussian function in two dimension is the product of two such Gaussians, one in each dimension : 
+
+ \begin{center}
+\scalebox{1.25}{$ G(x,y) = \frac{1}{2\pi\sigma^{2}}e^{-\frac{x^{2}+y^{2}}{2\sigma^{2}}} $}
+\end{center}
+
+
+
+\begin{figure}[H]
+  \centering
+  \subfloat[1-D Gaussian distribution]{\includegraphics[width=0.5\textwidth]{./Bilder/GaussianBlur_1.png}\label{fig:f1}}
+  \hfill
+  \subfloat[2-D Gaussian distribution]{\includegraphics[width=0.5\textwidth]{./Bilder/GaussianBlur_2.png}\label{fig:GaussianBlur}}
+  \caption{Gaussian distributions with mean (0,0) and $\sigma$=1\cite{GaussianBlur}}
+\end{figure} 
+
+
+
+The Gaussian filter works by using the 2D distribution as a point-spread function. This is achieved by convolving the 2D Gaussian distribution function with the image. A discrete approximation to the Gaussian function needs to be produced. This theoretically requires an infinitely large convolution kernel, as the Gaussian distribution is non-zero everywhere. Fortunatly, the distribution has approached very close to zero at about three standard deviations from the mean. 99\% of the distribution falls within 3 standard deviations. This meas, normally the kernel size can be limited to contain only values within three standard devations of the mean.
+
+The distribution is assumed to have a mean of zero. The continuous Gaussian functions need to be discretized to store it as discrete pixels. An integer valued 5 by 5 convolution kernel approximating a Gaussian with a $ \sigma $ of 1 is shown : 
+
+
+
+
+\begin{center}
+\scalebox{2}{$\frac{1}{273}$}
+\begin{tabular}{ | c | c | c | c | c |} \hline
+  
+  1 & 4  & 7  & 4  & 1  \\ \hline  
+  4 & 16 & 26 & 16 & 4   \\ \hline  
+  7 & 26 & 41 & 26 & 7   \\ \hline 
+  4 & 16 & 26 & 16 & 4   \\ \hline 
+  1 & 4  & 7  & 4  & 1  \\ \hline   
+    
+      \end{tabular}
+  \label{tab:GaussianBlur}
+\end{center}
+
+
+As in the above convolution kernel seen, the kernel coefficients diminish with increasing distance from the kernel's center and central pixels have a higher weighting than those on the periphery. Also, the Gaussian kernel coefficients depends on the value of $\sigma$. On the other hand, if the value of $\sigma$ is larger, it produces a wider peak, it means, it blurrs images greater.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Hough-Transformation}\label{sec:Hough-Transformation}
 %
 In order to isolate features of a particular shape in an image, a method called the Hough Transformation can be utilized. The Hough Transformation which is universally used today was further developed by Richard O. Duda and Peter E. Hart in 1972, although a more rudimentary version had been patented by Paul Hough in 1962.\cite{Hough_Transformation} In computer vision, it is often necessary to detect simple edges like straight lines, curves, and ellipses. As a result, this technique is used often in computer vision and image processing. The Hough Transformation is used mostly after an edge detection algorithm. There are actually variations of the Hough Transformation. In this master's thesis, two variations of the Hough Transformation were used. They are:
@@ -382,7 +496,7 @@ The Standard Hough Line Transformation, which is also called the Linear Hough Tr
 
   \begin{center}
 
-$ \rho = x cos \theta + y sin \theta $
+\scalebox{1.1}{$ \rho = x cos \theta + y sin \theta $}
 
   \end{center}
   
@@ -391,7 +505,7 @@ In this equation, \textit{$ \rho $} is the length of a normal from the origin to
  
  \begin{figure}[H]
  \centering
-  \includegraphics[width=0.8\textwidth]{./Bilder/Standard_Hough_Line_Transformation.png}\label{Standard_Hough_Line_Transformation_fig}
+  \includegraphics[width=0.9\textwidth]{./Bilder/Standard_Hough_Line_Transformation.png}\label{Standard_Hough_Line_Transformation_fig}
   \caption{Standard Hough Line Transformation\cite{Standard_Hough_Transformation}}
 \end{figure}
  
@@ -486,7 +600,7 @@ KNN makes predictions through the direct use of the training dataset. Prediction
 
   \begin{center}
   
-\textbf{Euclidean} $ \sqrt{\sum_{i=1}^k  (x_{i} - y_{i})^2 } $
+\textbf{Euclidean} \scalebox{1.25}{$ \sqrt{\sum_{i=1}^k  (x_{i} - y_{i})^2 } $}
 
   \end{center}
   
@@ -496,7 +610,7 @@ KNN makes predictions through the direct use of the training dataset. Prediction
 
   \begin{center}
   
-\textbf{Manhattan} $\sum_{i=1}^k \begin{vmatrix}x_{i} - y_{i} \end{vmatrix}$
+\textbf{Manhattan} \scalebox{1.25}{$\sum_{i=1}^k \begin{vmatrix}x_{i} - y_{i} \end{vmatrix}$}
 
   \end{center}
   
@@ -505,7 +619,7 @@ KNN makes predictions through the direct use of the training dataset. Prediction
   
   \begin{center}
   
-\textbf{Minkowski} $ (\sum_{i=1}^k (\begin{vmatrix}x_{i} - y_{i} \end{vmatrix})^q)^{1/q}$
+\textbf{Minkowski} \scalebox{1.25}{$ \bigg(\sum_{i=1}^k \Big(\begin{vmatrix}x_{i} - y_{i} \end{vmatrix}\Big)^q\bigg)^\frac{1}{q}$}
 
   \end{center}
 
@@ -550,7 +664,7 @@ Curve fitting is used to find the 'best fit' line or curve for a series of data 
 
 \begin{figure}[H]
  \centering
-  \includegraphics[width=0.8\textwidth]{./Bilder/Curve_Fitting_Polynomial.png}\label{Curve_Fitting_Polynomial}
+  \includegraphics[width=0.9\textwidth]{./Bilder/Curve_Fitting_Polynomial.png}\label{Curve_Fitting_Polynomial}
   \caption{Types of Polynomial Curve Fitting\cite{Curve_Fitting_Polynomial}}
 \end{figure}
 
@@ -562,7 +676,7 @@ There are so many different methods for curve fitting. One of the most famous me
 A data set mainly expresses the relationship between variables with an equation which is generally represented with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :
 
 \begin{center}
-y = $ a_{k}x^{k} + ... + a_{1}x + a_{0} + \epsilon $ 
+\scalebox{1.2}{y = $ a_{k}x^{k} + ... + a_{1}x + a_{0} + \epsilon $}
 \end{center}
 
 The general polynomial regression model with the error $\epsilon$ typically provides an estimate rather than an implicit value of the dataset for any given value of x. A data set which has N data points can be described with the maximum order of the polynomial which is k = N - 1, but the lowest possible order of the polynomial is generally chosen.
@@ -597,7 +711,7 @@ $
 The equations in the stardard form of Ma = b can be solved with many different methods. In this master's thesis, \textit{Cramer's Rule} was used to solve for the polynomial coefficients of curve fitting. With the help of the determinants of the square matrix, M can be solved for in any linear system of equations in order to find the coefficients. Each of the coefficients $a_{k}$ may be determined using the following equation :
 
 \begin{center}
-$a_{k} = \dfrac{det(M_{i})}{det(M)}$
+\scalebox{1.2}{$a_{k} = \dfrac{det(M_{i})}{det(M)}$}
 \end{center}
 
 In order to find the coefficients of polynomial curve fitting, we have to use the equation shown above, so the determinate of $ M_{i} $ must be divided by the determinate of M. Above, the equation Ma = b was shown, so the determinate of the M matrix can be calculated. However, for the determinate of $ M_{i} $ matrix, the M matrix must be modified. To find the $ M_{i} $ matrix, the $ i^{th} $ column must be replaced with the column vector b, which was used in the equation Ma = b. For example, if the $ M_{0} $ matrix is to be determined, the M matrix must be modified like at the following\cite{Curve_Fitting2} :
@@ -661,9 +775,14 @@ In this master's thesis, the $ 2^{nd} $ order polynomial equation is used, so on
 \end{bmatrix}
 \]
 
+\begin{center}
+
 $ a_{0} = \dfrac{det(M_{0})}{det(M)}   \Longrightarrow  a_{0} = \dfrac{ 2671.1962}{11661.2736} = 0.2291$  \vfill 
 $ a_{1} = \dfrac{det(M_{1})}{det(M)} \Longrightarrow  a_{1} = \dfrac{ -1898.4602}{11661.2736} = -0.1628$  \vfill 
 $ a_{2} = \dfrac{det(M_{2})}{det(M)} \Longrightarrow  a_{2} = \dfrac{ 323.7632}{11661.2736} = 0.0278$
+
+
+\end{center}
 
 In this case, the fitted curve function is : \vfill 
 \begin{center}
