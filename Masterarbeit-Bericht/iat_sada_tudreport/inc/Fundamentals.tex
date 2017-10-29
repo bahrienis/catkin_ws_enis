@@ -101,21 +101,21 @@ $  + 1. This means that the coordinate point in the original source image has be
 \section{Edge Detection}\label{sec:Edge Detection}
 %
 
-Edge detectors are essential parts of most computer vision systems. Edge detectors dramatically decrease the amount of data to be processed and extract the useful parts of images. They work by detecting discontinuities in brightness. In this project, the edge detector was used in order to detect the lanes and to exclude unnecessary information from images. There are different methods for edge detection, but they can be grouped into two categories. They are :
+Edge detectors are essential parts of most computer vision systems. Edge detectors dramatically decrease the amount of data to be processed and extract the useful parts of images. They work by detecting discontinuities in brightness. \emph{\color{blue} It is usually done by applying a 2-D filter, which is designed the way it is only sensitive to the large gradinents present in the image, returning zero values for all monotonous regions. There is a big variety of specificly composed operators, each of them showing the best results when used with some particular types of edges. For instance, different orientation of the edges, their geometry, structure, and thickness should correspond with operator characteristics in order for the detection to be reliable. Another problem is the image noise, which in many cases could be confused with local gradient and thus detected as an edge. Because of that, there is no universally efficient operator, for each particular case it should be specifically configured, and some pre-editing must be used in order to achieve the best detection quality.} In this project, the edge detector is used to detect the lanes and to exclude other unnecessary information from images. There are several different methods suitable for lane edge detection, and all of them can be grouped into two categories. They are :
 
-\begin{itemize}
+\begin{enumerate}
 
-\item \textbf{Gradient method : } This method searches for the maximum and minimum in the first derivative of the image and with that, the edges can be found. For this method, the first order derivative filter must be used. For example : Sobel-Operator.
+\item \textbf{Gradient method : } This method searches for the maximum and minimum in the first derivative of the image and with that, the edges can be found. \emph{\color{blue} From the color intensity perspective, any edge has either rise or fall, which gives a local spike after applying derivative operator, hence highlighting the edge location in the image. } For this method, the first order derivative filter must be used. For example : Sobel-Operator, which is described in detail in Section \ref{sec:Sobel Operator}.
  
-\item \textbf{Laplacian method : } This method searches for the zero crossing in the second derivative of the image and with that, the edges can be found. For this method, the second order derivative filter must be used. For example : Laplacian Filter. 
+\item \textbf{Laplacian method : } This method searches for the zero crossing in the second derivative of the image. \emph{\color{blue} This is an alternative for locating local spikes, as the second derivative is equal to zero when the first is at minimum or maximum. } For example : Canny edge detector, which is described in detail in Section \ref{sec:Canny Edge Detector}. 
   
-\end{itemize}
+\end{enumerate}
  
-According to \cite{Machine_Vision},here are three steps of the edge detection algorithm. They are :
+According to \cite{Machine_Vision}, there are three steps of the edge detection algorithm. They are :
 
 \begin{itemize}
 
-\item \textbf{Filtering : } For edge detection, it is required to use a suitable smoothing filter. The filters sharpen the edges and ignore the unnecessary information. It is often utilized to improve the functioning of an edge detector against noise. The more filtering is applied, however, the greater the loss of edge strength.
+\item \textbf{Filtering : } For edge detection, it is required to use a suitable smoothing filter. The filters sharpen the edges and ignore the unnecessary information. It is often utilized to improve the functioning of an edge detector against noise. The more filtering is applied, however, the greater the loss of edge strength. \emph{\color{blue} Most common implementation of a smoothing filter used for image preprocessing is Gaussian blur, which is described in detail in Section \ref{sec:Gaussian Blur}  } 
  
 \item \textbf{Enhancement : } To be able to better detect edges, changes in the intensity in the area surrounding a point must be determined. Pixels in which a significant change in intensity occurs are emphasized by enhancement, which is usually applied by calculating the gradient magnitude.
   
@@ -123,7 +123,7 @@ According to \cite{Machine_Vision},here are three steps of the edge detection al
  
 \end{itemize}
 
-Well known smoothing filters are :
+Well known edge detection filters are :
 
 \begin{itemize}
 
@@ -133,8 +133,7 @@ Well known smoothing filters are :
  \item Prewitt-Operator
  
  \end{itemize}
- 
-In this master's thesis, the Sobel Operator was utilized, so it will be described in more detail.
+
 
 %
 \subsection{Sobel Operator}\label{sec:Sobel Operator}
@@ -364,7 +363,7 @@ Canny edge detector was developed in 1986 and called with the name of its develo
 
 
 
-\emph{\color{red}With Gaussian filter, any noise present in an image can be removed. The next advantage is enhancing the signal with respect to the noise ratio. This is done by non-maxima suppression method as it results in one pixel wide ridges as the output. The third advantage is better detection of edges especially in noisy state by applying thresholding method. The effectiveness of Canny method is affected by adjustable parameters. Small filters are desirable for detection of small, sharp lines, since it causes fewer instances of blurring. Large filters are desirable for detecting larger, smoother edges. However, it causes higher instances of blurring. }
+\emph{\color{red} The main advantage of Canny Edge Detector is enhancing the signal with respect to the noise ratio. This is done by non-maxima suppression method as it results in one pixel wide ridges as the output. The other advantage is better detection of edges especially in noisy state by applying thresholding method. The effectiveness of Canny method is affected by adjustable parameters. Small filters are desirable for detection of small, sharp lines, since it causes fewer instances of blurring. Large filters are desirable for detecting larger, smoother edges. However, it causes higher instances of blurring. }
 
 \emph{\color{red}The main disadvantage of Canny edge detector is that it is time consuming, due to its complex computation. }
 
@@ -402,6 +401,14 @@ void Canny(InputArray image, OutputArray edges, double threshold1, double thresh
 %
 
 
+
+\emph{\color{blue}In this master's thesis the Sobel Operator was utilized. The first reason for using it instead of Canny Edge Detection algorithm is its performance. The latter uses second derivative, which is computationally harder and takes more time (see table ?? for timing comparison). For the purpose of lane detection it is crucial to spend as little computation time per frame as possible, because longer timings may result in substantial delay between the image being captured and the car driving module reacting to a new lane position. }
+
+//insert table with timings for sobel and canny here
+
+\emph{\color{blue}The other reason is that in case of poor light conditions Canny Edge Detector tends to filter out parts of the lane lines, whereas Sobel Operator shows much better results (see picture ??)}
+
+//insert a pic with comparing sobel and canny in poor light conditions 
 
 
 
@@ -502,6 +509,46 @@ The Standard Hough Line Transformation, which is also called the Linear Hough Tr
   
 In this equation, \textit{$ \rho $} is the length of a normal from the origin to the line and \textit{$ \theta $} is the orientation of \textit{r} with respect to the x-axis.
  
+
+ 
+ \emph{\color{blue} Standard Hough Transformation algorithm consists of the following steps: }
+ 
+\begin{algorithm}[h]
+
+ \caption{ HT for detecting lines on the $\theta - \rho$ parameterization}
+\begin{algorithmic}[1]
+        \Procedure{Detect lines}{}\newline
+        \textbf{Input: }Input image I with dimensions $I_{w},I_{h}$, Hough space dimensions $H_{\rho},H_{\theta}$.\newline
+        \textbf{Output:} Detected lines $L=\lbrace(\theta_{1},\rho_{1}),...\rbrace$ 
+        \State{$H(\overline{\rho},\overline{\theta})\longleftarrow$ 0, $\forall \overline{\rho} \in \lbrace$1,...,$H_{\rho}\rbrace$,$\overline{\theta}\in\lbrace$1,...,$H_{\theta}\rbrace$}
+        \For {\textbf{all} $x\in \lbrace$1,...,$I_{w}\rbrace$,$y\in\lbrace$1,...,$I_{h}\rbrace$}
+         \If {$I(x,y)$ \textbf{is edge}}
+         \State{\textbf{increment} $H(\overline{\rho}(\overline{\theta},x,y),\overline{\theta}),\forall\overline{\theta}\in\lbrace1,...H_{\theta}\rbrace$}
+         \EndIf
+         \EndFor
+       \State{$L=\lbrace(\theta(\overline{\theta}),\rho(\overline{\rho}))\vert\overline{\rho}\in\lbrace1,...,H_{\rho}\rbrace\wedge\overline{\theta}\in\lbrace1,...,H_{\theta}\rbrace\wedge$ at $(\overline{\rho},\overline{\theta})$ is a high max. in $H\rbrace$ }
+        
+        \EndProcedure
+ \end{algorithmic}    
+ \end{algorithm}
+ 
+ 
+ \emph{\color{blue} An edge detection algorithm is applied to the image with dimensions $I_{w}, I_{h}$, which provides a binary data used at step 4 to determine whether a pixel belongs to an edge. Steps 3 - 7 convert detected edges to the Hought space. The following function is used to calculate $\overline{\rho}$ for all detected edges that pass through the point $(x,y)$ at angle $\overline{\theta}$: }
+ 
+ 
+ \begin{center}
+ 
+ 
+$ \overline{\rho}(\overline{\theta},x,y) = \Bigg[\dfrac{H_{\rho}\big((y-\dfrac{I_{h}}{2})sin(\dfrac{\pi}{H_{\theta}}\overline{\theta})+(x-\dfrac{I_{w}}{2})cos(\dfrac{\pi}{H_{\theta}}\overline{\theta})\big)}{\sqrt{I^{2}_{w}+I^{2}_{h}}}\Bigg] $ 
+ \end{center}
+ 
+  \emph{\color{blue} At step 8 the local maximum of all accumulated lines is determined, which is then transformed from discretized cordinates $\overline{\rho}$ and $\overline{\theta}$ into $\rho$ and $\theta$ using the following formulas:  } 
+  
+ \begin{center}
+
+$ \rho(\overline{\rho}) = \dfrac{\sqrt{I^{2}_{w} + I^{2}_{h} }}{H_{\rho}} \bigg(\overline{\rho}-\dfrac{H_{\rho}}{2}\bigg)   ,  \qquad              \theta(\overline{\theta})=\dfrac{\pi}{H_{\theta}}\overline{\theta} $
+ 
+ \end{center}
  
  \begin{figure}[H]
  \centering
@@ -547,7 +594,34 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 
 
 
-Essentially, the point of the Hough Transformation is to implement a 'voting procedure' for all potential curves in the image. Curves that actually found in the image will then have relatively high 'voting scores' when the algorithm terminates. Probabilistic Hough Transformation differs Standard Hough Line Transformation by trying to avoid a computationally expensive 'voting process' for every nonzero pixel in the image. It does this by taking advantage of the geometric properties of analytical curves, which allows it to improve efficiency as well as reduce the storage requirement of the original algorithm.
+
+Essentially, the point of the Hough Transformation is to implement a 'voting procedure' for all potential curves in the image. Curves that actually found in the image will then have relatively high 'voting scores' when the algorithm terminates. Probabilistic Hough Transformation differs from Standard Hough Line Transformation by trying to avoid a computationally expensive 'voting process' for every nonzero pixel in the image. It does this by taking advantage of the geometric properties of analytical curves, which allows it to improve efficiency as well as reduce the storage requirement of the original algorithm.
+
+
+ \begin{figure}[H]
+ \centering
+  \includegraphics[width=0.9\textwidth]{./Bilder/Probabilistic_HT.png}\label{Standard_Hough_Line_Transformation_fig}
+  \caption{Standard Hough Line Transformation\cite{Standard_Hough_Transformation}}
+\end{figure}
+
+\emph{\color{blue} Line detection using RHT is similar to standard Hough Transformation but instead of using all edge points of the image some subset is randomly selected, which is then used to determine a single unique parameter space point for every pair of points from the subset (see picture ??).}
+
+\emph{\color{blue}As soon as the amount of points that are mapped to the same parameter in Hough space exceeds a certain threshold, the line is confirmed to be present in the original image, i.e. the line is detected. It is then removed from the input array so that the other lines are detected faster. The algorithm reaches the termination either after all the lines are detected and there is no more input data, or the maximum limit of iterations is reached. Because of this approach, the required computational power and memory consumption are much less compared to standard Hough Transformation.}
+
+
+RHT  algorithm consists of the following steps:
+
+\begin{enumerate}
+
+\item Initialise the set of points K representing the detected edges of the input image
+\item  Randomly selected two points from the set K  
+\item  Apply the mapping into Hough space and determine  the  parameter  point  of  the  straight  line  
+represented by two selected points
+\item  Acumulate parameter points in the Hough space. If  the amount of input points mapping to the same Hough space parameter exceed a given threshold, consider this parameter as a parameter for detected line and remove it from the input data, otherwise go to step 2, if the maximum number of loops is not reached.
+\item  Repeat until all input data is processed.
+\end{enumerate}
+
+The following function from OpenCV library implements aforementioned algorithm:
 
   \begin{center}
   

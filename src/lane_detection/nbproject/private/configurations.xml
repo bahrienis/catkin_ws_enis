@@ -51,11 +51,13 @@
         <in>lane_detector_enis_v0.1.8.cpp</in>
         <in>lane_detector_enis_v0.1.9.cpp</in>
         <in>lane_detector_enis_v0.1.9_IPM.cpp</in>
+        <in>lane_detector_enis_v0.11.1.cpp</in>
         <in>lane_detector_enis_v0.2.0.cpp</in>
         <in>lane_detector_enis_v0.2.1.cpp</in>
         <in>lane_detector_enis_v0.2.2.cpp</in>
         <in>lane_detector_enis_v0.3.1.cpp</in>
         <in>lane_detector_enis_v0.3.2.cpp</in>
+        <in>lane_detector_enis_v0.3.2_time.cpp</in>
         <in>lane_detector_enis_v0.4.1.cpp</in>
         <in>lane_detector_enis_v0.4.2.cpp</in>
         <in>lane_detector_enis_v0.4.3.cpp</in>
@@ -64,12 +66,15 @@
         <in>lane_detector_enis_v0.4.5_time.cpp</in>
         <in>lane_detector_enis_v0.4.6.cpp</in>
         <in>lane_detector_enis_v0.5.1.cpp</in>
+        <in>lane_detector_enis_v0.5.1_time.cpp</in>
         <in>lane_detector_enis_v0.6.1.cpp</in>
         <in>lane_detector_enis_v0.7.1.cpp</in>
         <in>lane_detector_enis_v0.8.1.cpp</in>
         <in>lane_detector_enis_v0.9.1.cpp</in>
         <in>lane_detector_enis_v0.9.2 (copy).cpp</in>
         <in>lane_detector_enis_v0.9.2.cpp</in>
+        <in>lane_detector_enis_v0.9.3.cpp</in>
+        <in>lane_detector_enis_v0.9.4.cpp</in>
         <in>listener.cpp</in>
         <in>main.cpp</in>
         <in>my_publisher.cpp</in>

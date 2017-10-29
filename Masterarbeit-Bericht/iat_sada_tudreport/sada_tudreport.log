@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  29 OCT 2017 00:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  29 OCT 2017 19:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1033,7 +1033,7 @@ Package: bookmark 2011/12/02 v1.24 PDF bookmarks (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/bkm-pdftex.def
 File: bkm-pdftex.def 2011/12/02 v1.24 bookmark driver for pdfTeX (HO)
 \BKM@id=\count158
-)))
+))
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enitkv@toks@=\toks36
@@ -1043,12 +1043,37 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box42
 \enitdp@description=\count159
 )
-(./common/setup.tex
-\longtablewidth=\skip119
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count160
+\c@ALG@rem=\count161
+\c@ALG@nested=\count162
+\ALG@tlm=\skip119
+\ALG@thistlm=\skip120
+\c@ALG@Lnr=\count163
+\c@ALG@blocknr=\count164
+\c@ALG@storecount=\count165
+\c@ALG@tmpcounter=\count166
+\ALG@tmplength=\skip121
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+Package tocbasic Info: setting babel extension for `loa' on input line 95.
+\@float@every@algorithm=\toks38
+\c@algorithm=\count167
+))
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (./common/setup.tex
+\longtablewidth=\skip122
 ) (./common/commonmacros.tex
-\c@theorem=\count160
-\c@definition=\count161
-\c@examplenumber=\count162
+\c@theorem=\count168
+\c@definition=\count169
+\c@examplenumber=\count170
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1071,6 +1096,10 @@ LaTeX Warning: Label `fig:f1' multiply defined.
 
 
 LaTeX Warning: Label `sub@fig:f1' multiply defined.
+
+
+LaTeX Warning: Label `Standard_Hough_Line_Transformation_fig' multiply defined.
+
 
 
 LaTeX Warning: Label `Procedures_of_IPM' multiply defined.
@@ -1120,17 +1149,17 @@ File: t15ch.fd 2008/06/23 Fontinst v1.927 font definitions for T1/5ch.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count163
+\scratchcounter=\count171
 \scratchdimen=\dimen173
 \scratchbox=\box43
-\nofMPsegments=\count164
-\nofMParguments=\count165
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count166
+\nofMPsegments=\count172
+\nofMParguments=\count173
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count174
 \MPscratchDim=\dimen174
-\MPnumerator=\count167
-\makeMPintoPDFobject=\count168
-\everyMPtoPDFconversion=\toks39
+\MPnumerator=\count175
+\makeMPintoPDFobject=\count176
+\everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1181,7 +1210,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\TUD@part@topskip=\skip120
+\TUD@part@topskip=\skip123
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1196,7 +1225,7 @@ Package caption Info: End \AtBeginDocument code.
 
 bibgerm.sty: babel.sty detected
 
-\c@lstlisting=\count169
+\c@lstlisting=\count177
 Package scrhack Info: undefining \float@addtolists on input line 73.
 Package hyperref Info: Link coloring OFF on input line 73.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1205,7 +1234,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count170
+\c@section@level=\count178
 LaTeX Info: Redefining \Ref on input line 513.
 )
 LaTeX Info: Redefining \ref on input line 73.
@@ -1214,29 +1243,29 @@ LaTeX Info: Redefining \nameref on input line 73.
 LaTeX Info: Redefining \Ref on input line 73.
 
 (./common/preface.tex
-\@TUD@tmp@baselineskip=\skip121
-\@TUD@tmp@parwidth=\skip122
-\TUD@titleboxheight=\skip123
-\TUD@titleboxdepth=\skip124
-\TUD@subtitleboxheight=\skip125
-\TUD@subtitleboxdepth=\skip126
-\TUD@logoboxheight=\skip127
-\TUD@logoboxwidth=\skip128
-\TUD@colorbackheight=\skip129
-\TUD@colorbacktitleheight=\skip130
-\TUD@instboxheight=\skip131
-\TUD@instboxdepth=\skip132
-\TUD@instboxwidth=\skip133
-\TUD@instlogoheight=\skip134
-\TUD@instlogowidth=\skip135
-\TUD@sponsorheight=\skip136
+\@TUD@tmp@baselineskip=\skip124
+\@TUD@tmp@parwidth=\skip125
+\TUD@titleboxheight=\skip126
+\TUD@titleboxdepth=\skip127
+\TUD@subtitleboxheight=\skip128
+\TUD@subtitleboxdepth=\skip129
+\TUD@logoboxheight=\skip130
+\TUD@logoboxwidth=\skip131
+\TUD@colorbackheight=\skip132
+\TUD@colorbacktitleheight=\skip133
+\TUD@instboxheight=\skip134
+\TUD@instboxdepth=\skip135
+\TUD@instboxwidth=\skip136
+\TUD@instlogoheight=\skip137
+\TUD@instlogowidth=\skip138
+\TUD@sponsorheight=\skip139
 \TUD@titlebox=\box45
 \TUD@subtitlebox=\box46
 \TUD@logobox=\box47
 \TUD@instbox=\box48
 \TUD@sponsorbox=\box49
-\TUD@tmp@height=\skip137
-\TUD@tmp@depth=\skip138
+\TUD@tmp@height=\skip140
+\TUD@tmp@depth=\skip141
 LaTeX Font Info:    Try loading font information for T1+5fp on input line 3.
 
 (/home/enis/.texmf-var/tex/latex/tex-tudfonts/softmake/frontpage/t15fp.fd
@@ -1332,7 +1361,7 @@ LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
 (Font)              scaled to size 7.52002pt on input line 3.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
 (Font)              scaled to size 6.48601pt on input line 3.
-\@TUD@titlelines=\count171
+\@TUD@titlelines=\count179
 
 
 Package  Warning: Title has more then 3 lines. Fontsize reduced on input line 3
@@ -1355,7 +1384,7 @@ File: common/rtm_mit_schrift.pdf Graphic file (type pdf)
 <use common/rtm_mit_schrift.pdf>
 Package pdftex.def Info: common/rtm_mit_schrift.pdf used on input line 3.
 (pdftex.def)             Requested size: 265.04297pt x 41.7307pt.
-\temp@logoboxwidth=\skip139
+\temp@logoboxwidth=\skip142
 File: common/rtm_mit_schrift.pdf Graphic file (type pdf)
  <use common/rtm_mit_schrift.pdf>
 Package pdftex.def Info: common/rtm_mit_schrift.pdf used on input line 3.
@@ -1515,111 +1544,118 @@ File: ./Bilder/Procedures_of_IPM.png Graphic file (type png)
 Package pdftex.def Info: ./Bilder/Procedures_of_IPM.png used on input line 95.
 (pdftex.def)             Requested size: 455.24411pt x 97.50366pt.
  [9 <./Bilder/Procedures_of_IPM.png>]
-<./Bilder/Sobel_Original.png, id=236, 642.4pt x 481.8pt>
+[10] <./Bilder/Sobel_Original.png, id=245, 642.4pt x 481.8pt>
 File: ./Bilder/Sobel_Original.png Graphic file (type png)
 
 <use ./Bilder/Sobel_Original.png>
-Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 198.
+Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 197.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
 
-<./Bilder/Sobel_Operator.png, id=237, 642.4pt x 481.8pt>
+<./Bilder/Sobel_Operator.png, id=246, 642.4pt x 481.8pt>
 File: ./Bilder/Sobel_Operator.png Graphic file (type png)
 
 <use ./Bilder/Sobel_Operator.png>
-Package pdftex.def Info: ./Bilder/Sobel_Operator.png used on input line 200.
+Package pdftex.def Info: ./Bilder/Sobel_Operator.png used on input line 199.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
- [10]
+ [11 <./Bilder/Sobel_Original.png (PNG copy)> <./Bilder/Sobel_Operator.png>]
 
-LaTeX Warning: Reference `Gaussian_Blue' on page 11 undefined on input line 238
+LaTeX Warning: Reference `Gaussian_Blue' on page 12 undefined on input line 237
 .
 
-[11 <./Bilder/Sobel_Original.png (PNG copy)> <./Bilder/Sobel_Operator.png>]
 [12] [13]
 File: ./Bilder/Sobel_Original.png Graphic file (type png)
  <use ./Bilder/Sobel_Original.png>
-Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 358.
+Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 357.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
 
-<./Bilder/Canny_Edge_Detector.png, id=273, 642.4pt x 481.8pt>
+<./Bilder/Canny_Edge_Detector.png, id=275, 642.4pt x 481.8pt>
 File: ./Bilder/Canny_Edge_Detector.png Graphic file (type png)
 
 <use ./Bilder/Canny_Edge_Detector.png>
-Package pdftex.def Info: ./Bilder/Canny_Edge_Detector.png used on input line 36
-0.
+Package pdftex.def Info: ./Bilder/Canny_Edge_Detector.png used on input line 35
+9.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
- [14 <./Bilder/Canny_Edge_Detector.png (PNG copy)>] <./Bilder/GaussianBlur_1.pn
-g, id=287, 476.78125pt x 329.23pt>
-File: ./Bilder/GaussianBlur_1.png Graphic file (type png)
-
-<use ./Bilder/GaussianBlur_1.png>
-Package pdftex.def Info: ./Bilder/GaussianBlur_1.png used on input line 429.
-(pdftex.def)             Requested size: 227.62206pt x 157.1796pt.
-
-<./Bilder/GaussianBlur_2.png, id=288, 464.73625pt x 320.19624pt>
-File: ./Bilder/GaussianBlur_2.png Graphic file (type png)
-
-<use ./Bilder/GaussianBlur_2.png>
-Package pdftex.def Info: ./Bilder/GaussianBlur_2.png used on input line 431.
-(pdftex.def)             Requested size: 227.62206pt x 156.82423pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
-[16 <./Bilder/GaussianBlur_1.png> <./Bilder/GaussianBlur_2.png>]
-<./Bilder/Standard_Hough_Line_Transformation.png, id=304, 892.33376pt x 387.447
+ [14]
+[15 <./Bilder/Canny_Edge_Detector.png (PNG copy)>]
+<./Bilder/GaussianBlur_1.png, id=297, 476.78125pt x 329.23pt>
+File: ./Bilder/GaussianBlur_1.png Graphic file (type png)
+
+<use ./Bilder/GaussianBlur_1.png>
+Package pdftex.def Info: ./Bilder/GaussianBlur_1.png used on input line 436.
+(pdftex.def)             Requested size: 227.62206pt x 157.1796pt.
+
+<./Bilder/GaussianBlur_2.png, id=298, 464.73625pt x 320.19624pt>
+File: ./Bilder/GaussianBlur_2.png Graphic file (type png)
+
+<use ./Bilder/GaussianBlur_2.png>
+Package pdftex.def Info: ./Bilder/GaussianBlur_2.png used on input line 438.
+(pdftex.def)             Requested size: 227.62206pt x 156.82423pt.
+ [16 <./Bilder/GaussianBlur_1.png> <./Bilder/GaussianBlur_2.png>] [17]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 518.
+
+<./Bilder/Standard_Hough_Line_Transformation.png, id=315, 892.33376pt x 387.447
 5pt>
 File: ./Bilder/Standard_Hough_Line_Transformation.png Graphic file (type png)
  <use ./Bilder/Standard_Hough_Line_Transformation.png>
 Package pdftex.def Info: ./Bilder/Standard_Hough_Line_Transformation.png used o
-n input line 508.
+n input line 555.
 (pdftex.def)             Requested size: 409.71692pt x 177.89694pt.
+ [18]
 
-
-Package caption Warning: \label without proper reference on input line 506.
+Package caption Warning: \label without proper reference on input line 603.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `Standard_Hough_Line_Transformation_fig' on page 17 un
-defined on input line 512.
+LaTeX Warning: Reference `Standard_Hough_Line_Transformation_fig' on page 19 un
+defined on input line 559.
 
-[17 <./Bilder/Standard_Hough_Line_Transformation.png>] [18]
+[19 <./Bilder/Standard_Hough_Line_Transformation.png>]
+<./Bilder/Probabilistic_HT.png, id=333, 842.14626pt x 340.27126pt>
+File: ./Bilder/Probabilistic_HT.png Graphic file (type png)
 
-LaTeX Warning: Reference `Standard_Hough_Transformation2' on page 19 undefined 
-on input line 558.
+<use ./Bilder/Probabilistic_HT.png>
+Package pdftex.def Info: ./Bilder/Probabilistic_HT.png used on input line 603.
+(pdftex.def)             Requested size: 409.71692pt x 165.55057pt.
+ [20 <./Bilder/Probabilistic_HT.png>]
 
-[19] <./Bilder/k-nearest-neighbors.png, id=327, 513.92pt x 233.87375pt>
+LaTeX Warning: Reference `Standard_Hough_Transformation2' on page 21 undefined 
+on input line 632.
+
+[21] <./Bilder/k-nearest-neighbors.png, id=351, 513.92pt x 233.87375pt>
 File: ./Bilder/k-nearest-neighbors.png Graphic file (type png)
 
 <use ./Bilder/k-nearest-neighbors.png>
-Package pdftex.def Info: ./Bilder/k-nearest-neighbors.png used on input line 59
-1.
+Package pdftex.def Info: ./Bilder/k-nearest-neighbors.png used on input line 66
+5.
 (pdftex.def)             Requested size: 364.19667pt x 165.74103pt.
-
-Underfull \vbox (badness 1742) has occurred while \output is active []
-
- [20 <./Bilder/k-nearest-neighbors.png>]
-<./Bilder/Curve_Fitting_Polynomial.png, id=341, 506.89375pt x 209.78375pt>
+ [22 <./Bilder/k-nearest-neighbors.png>]
+[23]
+<./Bilder/Curve_Fitting_Polynomial.png, id=371, 506.89375pt x 209.78375pt>
 File: ./Bilder/Curve_Fitting_Polynomial.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting_Polynomial.png>
 Package pdftex.def Info: ./Bilder/Curve_Fitting_Polynomial.png used on input li
-ne 667.
+ne 741.
 (pdftex.def)             Requested size: 409.71692pt x 169.57178pt.
- [21] [22 <./Bilder/Curve_Fitting_Polynomial.png>]
-Overfull \hbox (12.73688pt too wide) detected at line 735
+ [24 <./Bilder/Curve_Fitting_Polynomial.png>]
+Overfull \hbox (12.73688pt too wide) detected at line 809
  $\OML/mdbch/m/it/11.5 M \OT1/mdbch/m/n/11.5 = []  \OML/mdbch/m/it/11.5 M[] \OT
 1/mdbch/m/n/11.5 = []$ 
  []
 
-[23] <./Bilder/Curve_Fitting.png, id=364, 572.1375pt x 385.44pt>
+[25] <./Bilder/Curve_Fitting.png, id=387, 572.1375pt x 385.44pt>
 File: ./Bilder/Curve_Fitting.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting.png>
-Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 794.
+Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 868.
 (pdftex.def)             Requested size: 364.19667pt x 245.35745pt.
-) (./inc/Implementation.tex [24 <./Bilder/Curve_Fitting.png>]
+) (./inc/Implementation.tex [26 <./Bilder/Curve_Fitting.png>]
 chapter 3.
-<./Bilder/Test_Track.jpg, id=375, 4047.12pt x 3035.34pt>
+<./Bilder/Test_Track.jpg, id=398, 4047.12pt x 3035.34pt>
 File: ./Bilder/Test_Track.jpg Graphic file (type jpg)
 
 <use ./Bilder/Test_Track.jpg>
@@ -1628,14 +1664,14 @@ Package pdftex.def Info: ./Bilder/Test_Track.jpg used on input line 16.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25
+ [27
 
 
 ]
 
 LaTeX Warning: File `./Bilder/Model Auto.jpg' not found on input line 41.
 
-<./Bilder/Model Auto.jpg, id=381, 4047.12pt x 3035.34pt>
+<./Bilder/Model Auto.jpg, id=405, 4047.12pt x 3035.34pt>
 File: ./Bilder/Model Auto.jpg Graphic file (type jpg)
 
 <use ./Bilder/Model Auto.jpg>
@@ -1644,26 +1680,26 @@ Package pdftex.def Info: ./Bilder/Model Auto.jpg used on input line 41.
 
 Underfull \vbox (badness 5741) has occurred while \output is active []
 
- [26 <./Bilder/Test_Track.jpg>] [27 <./Bilder/Model Auto.jpg>]
-<./Bilder/Genius_F100_camera.png, id=392, 540.0175pt x 318.18875pt>
+ [28 <./Bilder/Test_Track.jpg>] [29 <./Bilder/Model Auto.jpg>]
+<./Bilder/Genius_F100_camera.png, id=415, 540.0175pt x 318.18875pt>
 File: ./Bilder/Genius_F100_camera.png Graphic file (type png)
 
 <use ./Bilder/Genius_F100_camera.png>
 Package pdftex.def Info: ./Bilder/Genius_F100_camera.png used on input line 87.
 
 (pdftex.def)             Requested size: 455.24411pt x 268.24289pt.
- [28 <./Bilder/Genius_F100_camera.png>]
-<./Bilder/Response_Time2.png, id=399, 639.38875pt x 400.49625pt>
+ [30 <./Bilder/Genius_F100_camera.png>]
+<./Bilder/Response_Time2.png, id=422, 639.38875pt x 400.49625pt>
 File: ./Bilder/Response_Time2.png Graphic file (type png)
 
 <use ./Bilder/Response_Time2.png>
 Package pdftex.def Info: ./Bilder/Response_Time2.png used on input line 112.
 (pdftex.def)             Requested size: 364.19667pt x 228.12634pt.
- [29 <./Bilder/Response_Time2.png>]
+ [31 <./Bilder/Response_Time2.png>]
 
-LaTeX Warning: Citation `OpenCV' on page 30 undefined on input line 137.
+LaTeX Warning: Citation `OpenCV' on page 32 undefined on input line 137.
 
-[30] <./Bilder/Presprocessing_Figure.png, id=415, 699.61375pt x 262.9825pt>
+[32] <./Bilder/Presprocessing_Figure.png, id=438, 699.61375pt x 262.9825pt>
 File: ./Bilder/Presprocessing_Figure.png Graphic file (type png)
 
 <use ./Bilder/Presprocessing_Figure.png>
@@ -1673,9 +1709,9 @@ Package pdftex.def Info: ./Bilder/Presprocessing_Figure.png used on input line
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-[32 <./Bilder/Presprocessing_Figure.png>]
-<./Bilder/Case1_BlockDiagram.png, id=430, 750.805pt x 538.01pt>
+ [33]
+[34 <./Bilder/Presprocessing_Figure.png>]
+<./Bilder/Case1_BlockDiagram.png, id=455, 750.805pt x 538.01pt>
 File: ./Bilder/Case1_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case1_BlockDiagram.png>
@@ -1685,9 +1721,9 @@ Package pdftex.def Info: ./Bilder/Case1_BlockDiagram.png used on input line 267
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33]
-[34 <./Bilder/Case1_BlockDiagram.png>]
-<./Bilder/Case1_withoutCropped.png, id=446, 644.4075pt x 559.08875pt>
+ [35]
+[36 <./Bilder/Case1_BlockDiagram.png>]
+<./Bilder/Case1_withoutCropped.png, id=470, 644.4075pt x 559.08875pt>
 File: ./Bilder/Case1_withoutCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withoutCropped.png>
@@ -1695,7 +1731,7 @@ Package pdftex.def Info: ./Bilder/Case1_withoutCropped.png used on input line 2
 84.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
-<./Bilder/Case1_withCropped.png, id=447, 642.4pt x 558.085pt>
+<./Bilder/Case1_withCropped.png, id=471, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_withCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withCropped.png>
@@ -1703,7 +1739,7 @@ Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 286.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
-<./Bilder/Case1_Straight_Standard_Hough.png, id=451, 644.4075pt x 558.085pt>
+<./Bilder/Case1_Straight_Standard_Hough.png, id=475, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_Straight_Standard_Hough.png Graphic file (type png)
 
 <use ./Bilder/Case1_Straight_Standard_Hough.png>
@@ -1711,7 +1747,7 @@ Package pdftex.def Info: ./Bilder/Case1_Straight_Standard_Hough.png used on inp
 ut line 297.
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
 
-<./Bilder/Case1_Standard_Hough_Straight_2Parts.png, id=452, 641.39626pt x 531.9
+<./Bilder/Case1_Standard_Hough_Straight_2Parts.png, id=476, 641.39626pt x 531.9
 875pt>
 File: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png Graphic file (type png)
 
@@ -1722,8 +1758,8 @@ Package pdftex.def Info: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png used
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [35 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
-<./Bilder/Case1_HoughPoints_Original.png, id=462, 642.4pt x 559.08875pt>
+ [37 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
+<./Bilder/Case1_HoughPoints_Original.png, id=485, 642.4pt x 559.08875pt>
 File: ./Bilder/Case1_HoughPoints_Original.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Original.png>
@@ -1731,7 +1767,7 @@ Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Original.png used on input
 line 311.
 (pdftex.def)             Requested size: 204.85846pt x 178.28928pt.
 
-<./Bilder/Case1_HoughPoints_Sobel.png, id=463, 640.3925pt x 534.99875pt>
+<./Bilder/Case1_HoughPoints_Sobel.png, id=486, 640.3925pt x 534.99875pt>
 File: ./Bilder/Case1_HoughPoints_Sobel.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Sobel.png>
@@ -1741,22 +1777,22 @@ e 313.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [36 <./Bilder/Case1_Straight_Standard_Hough.png> <./Bilder/Case1_Standard_Houg
+ [38 <./Bilder/Case1_Straight_Standard_Hough.png> <./Bilder/Case1_Standard_Houg
 h_Straight_2Parts.png>]
 
 Package caption Warning: \label without proper reference on input line 327.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:Case1_Rectangles' on page 37 undefined on input l
+LaTeX Warning: Reference `fig:Case1_Rectangles' on page 39 undefined on input l
 ine 322.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37 <./Bilder/Case1_HoughPoints_Original.png> <./Bilder/Case1_HoughPoints_Sobe
+ [39 <./Bilder/Case1_HoughPoints_Original.png> <./Bilder/Case1_HoughPoints_Sobe
 l.png>]
-<./Bilder/Case1_Rectangles.png, id=479, 642.4pt x 558.085pt>
+<./Bilder/Case1_Rectangles.png, id=503, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_Rectangles.png Graphic file (type png)
 
 <use ./Bilder/Case1_Rectangles.png>
@@ -1768,10 +1804,10 @@ Package caption Warning: \label without proper reference on input line 341.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:Case1_CurveFittingwithoutIPM.png' on page 38 unde
+LaTeX Warning: Reference `fig:Case1_CurveFittingwithoutIPM.png' on page 40 unde
 fined on input line 336.
 
-<./Bilder/Case1_CurveFittingwithoutIPM.png, id=481, 642.4pt x 558.085pt>
+<./Bilder/Case1_CurveFittingwithoutIPM.png, id=505, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_CurveFittingwithoutIPM.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFittingwithoutIPM.png>
@@ -1781,17 +1817,17 @@ t line 341.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./Bilder/Case1_Rectangles.png>]
-<./Bilder/Case1_CurveFitting.png, id=488, 644.4075pt x 558.085pt>
+ [40 <./Bilder/Case1_Rectangles.png>]
+<./Bilder/Case1_CurveFitting.png, id=512, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_CurveFitting.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFitting.png>
 Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 351
 .
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
- [39 <./Bilder/Case1_CurveFittingwithoutIPM.png> <./Bilder/Case1_CurveFitting.p
+ [41 <./Bilder/Case1_CurveFittingwithoutIPM.png> <./Bilder/Case1_CurveFitting.p
 ng>]
-<./Bilder/Case2_BlockDiagram.png, id=496, 747.79375pt x 545.03625pt>
+<./Bilder/Case2_BlockDiagram.png, id=519, 747.79375pt x 545.03625pt>
 File: ./Bilder/Case2_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case2_BlockDiagram.png>
@@ -1799,14 +1835,14 @@ Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 364
 .
 (pdftex.def)             Requested size: 455.24411pt x 331.8063pt.
 
-<./Bilder/Case2_InputImg.png, id=500, 644.4075pt x 559.08875pt>
+<./Bilder/Case2_InputImg.png, id=523, 644.4075pt x 559.08875pt>
 File: ./Bilder/Case2_InputImg.png Graphic file (type png)
 
 <use ./Bilder/Case2_InputImg.png>
 Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 375.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
-<./Bilder/Case2_IPM.png, id=501, 643.40375pt x 557.08125pt>
+<./Bilder/Case2_IPM.png, id=524, 643.40375pt x 557.08125pt>
 File: ./Bilder/Case2_IPM.png Graphic file (type png)
 
 <use ./Bilder/Case2_IPM.png>
@@ -1815,8 +1851,8 @@ Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 377.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <./Bilder/Case2_BlockDiagram.png>]
-<./Bilder/Case2_Standard_Hough_Transformation.png, id=511, 642.4pt x 272.01625p
+ [42 <./Bilder/Case2_BlockDiagram.png>]
+<./Bilder/Case2_Standard_Hough_Transformation.png, id=534, 642.4pt x 272.01625p
 t>
 File: ./Bilder/Case2_Standard_Hough_Transformation.png Graphic file (type png)
  <use ./Bilder/Case2_Standard_Hough_Transformation.png>
@@ -1826,9 +1862,9 @@ on input line 387.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
+ [43 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
 ndard_Hough_Transformation.png>]
-<./Bilder/Case2_OutputImage.png, id=520, 642.4pt x 558.085pt>
+<./Bilder/Case2_OutputImage.png, id=543, 642.4pt x 558.085pt>
 File: ./Bilder/Case2_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case2_OutputImage.png>
@@ -1838,8 +1874,8 @@ Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 409.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <./Bilder/Case2_OutputImage.png>]
-<./Bilder/Case3_OutputImage.png, id=531, 643.40375pt x 558.085pt>
+ [44 <./Bilder/Case2_OutputImage.png>]
+<./Bilder/Case3_OutputImage.png, id=554, 643.40375pt x 558.085pt>
 File: ./Bilder/Case3_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case3_OutputImage.png>
@@ -1849,8 +1885,8 @@ Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 424.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43 <./Bilder/Case3_OutputImage.png>]
-<./Bilder/Case4_OutputImage.png, id=540, 365.365pt x 318.18875pt>
+ [45 <./Bilder/Case3_OutputImage.png>]
+<./Bilder/Case4_OutputImage.png, id=564, 365.365pt x 318.18875pt>
 File: ./Bilder/Case4_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case4_OutputImage.png>
@@ -1858,9 +1894,9 @@ Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 434.
 
 (pdftex.def)             Requested size: 204.85846pt x 178.4078pt.
 ) (./inc/Evaluation_and_Discussion.tex
-[44 <./Bilder/Case4_OutputImage.png>]
+[46 <./Bilder/Case4_OutputImage.png>]
 chapter 4.
-[45
+[47
 
 
 ]
@@ -1868,17 +1904,17 @@ Overfull \hbox (31.47368pt too wide) in paragraph at lines 54--63
  [] 
  []
 
-[46]) (./inc/Related_Works.tex [47] [48
+[48]) (./inc/Related_Works.tex [49] [50
 
 
 ]
 chapter 5.
-) (./inc/Conclusion.tex [49] [50
+) (./inc/Conclusion.tex [51] [52
 
 
 ]
 chapter 6.
-) [51] [52
+) [53] [54
 
 
 ] (./sada_tudreport.bbl
@@ -2176,7 +2212,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
 (scrreprt)              by `\normalfont \scshape ' on input line 80.
 
-[53
+[55
 
 
 ]
@@ -2334,11 +2370,11 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
 (scrreprt)              by `\normalfont \scshape ' on input line 117.
 
-) (./inc/Anhang.tex [54]
+) (./inc/Anhang.tex [56]
 chapter A.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
- [55
+ [57
 
 
 ]
@@ -2356,13 +2392,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 17411 strings out of 493029
- 273618 string characters out of 6136235
- 458654 words of memory out of 5000000
- 20232 multiletter control sequences out of 15000+600000
+ 17976 strings out of 493029
+ 282150 string characters out of 6136235
+ 468265 words of memory out of 5000000
+ 20774 multiletter control sequences out of 15000+600000
  134958 words of font info for 127 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 70i,13n,108p,1336b,693s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,108p,1414b,693s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{/usr/share/t
 exlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</home/enis/.texmf-var/fonts/type
 1/softmake/charter/5chb8a.pfb></home/enis/.texmf-var/fonts/type1/softmake/chart
@@ -2378,10 +2414,10 @@ public/mathdesign/mdbch/md-chr7m.pfb></usr/share/texlive/texmf-dist/fonts/type1
 e1/public/mathdesign/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/mathdesign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/txfonts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (65 pages, 14824829 bytes).
+Output written on sada_tudreport.pdf (67 pages, 14921909 bytes).
 PDF statistics:
- 820 PDF objects out of 1000 (max. 8388607)
- 676 compressed objects within 7 object streams
- 196 named destinations out of 1000 (max. 500000)
- 543 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 846 PDF objects out of 1000 (max. 8388607)
+ 698 compressed objects within 7 object streams
+ 207 named destinations out of 1000 (max. 500000)
+ 548 words of extra memory for PDF output out of 10000 (max. 10000000)
 

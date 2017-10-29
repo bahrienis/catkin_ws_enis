@@ -14,32 +14,32 @@
 \contentsline {section}{\numberline {2.3}Edge Detection}{9}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Sobel Operator}{10}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Canny Edge Detector}{13}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}Gaussian Blur}{15}{section.2.4}
-\contentsline {section}{\numberline {2.5}Hough-Transformation}{16}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Standard Hough Line Transformation}{17}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Probabilistic Hough-Transformation}{18}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}K-Nearest Neighbors Algorithm}{19}{section.2.6}
-\contentsline {section}{\numberline {2.7}Curve Fitting}{21}{section.2.7}
-\contentsline {chapter}{\numberline {3}Implementation}{25}{chapter.3}
-\contentsline {section}{\numberline {3.1}Test Track}{25}{section.3.1}
-\contentsline {section}{\numberline {3.2}Hardware}{26}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Model Auto}{26}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Microcontroller and Main Board}{27}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Camera}{27}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}Response Time of the System}{29}{section.3.3}
-\contentsline {section}{\numberline {3.4}Software}{30}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Development Environment and Related Softwares}{30}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Preprocessing}{31}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}{33}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}{40}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}{43}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{44}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Method 5 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{44}{subsection.3.4.7}
-\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{45}{chapter.4}
-\contentsline {section}{\numberline {4.1}Average Computing Time}{45}{section.4.1}
-\contentsline {section}{\numberline {4.2}Test Driving}{47}{section.4.2}
-\contentsline {chapter}{\numberline {5}Related Works}{49}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{51}{chapter.6}
-\contentsline {chapter}{Bibliography}{53}{section*.37}
-\contentsline {chapter}{\numberline {A}Appendix}{55}{appendix.A}
-\contentsline {section}{\numberline {A.1}Default Values of Parameters}{55}{section.A.1}
+\contentsline {section}{\numberline {2.4}Gaussian Blur}{16}{section.2.4}
+\contentsline {section}{\numberline {2.5}Hough-Transformation}{17}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Standard Hough Line Transformation}{18}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Probabilistic Hough-Transformation}{20}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}K-Nearest Neighbors Algorithm}{22}{section.2.6}
+\contentsline {section}{\numberline {2.7}Curve Fitting}{23}{section.2.7}
+\contentsline {chapter}{\numberline {3}Implementation}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test Track}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hardware}{28}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Model Auto}{28}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Microcontroller and Main Board}{29}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Camera}{29}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}Response Time of the System}{31}{section.3.3}
+\contentsline {section}{\numberline {3.4}Software}{32}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Development Environment and Related Softwares}{32}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Preprocessing}{33}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}{35}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}{42}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}{45}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{46}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}Method 5 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{46}{subsection.3.4.7}
+\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Average Computing Time}{47}{section.4.1}
+\contentsline {section}{\numberline {4.2}Test Driving}{49}{section.4.2}
+\contentsline {chapter}{\numberline {5}Related Works}{51}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{53}{chapter.6}
+\contentsline {chapter}{Bibliography}{55}{section*.38}
+\contentsline {chapter}{\numberline {A}Appendix}{57}{appendix.A}
+\contentsline {section}{\numberline {A.1}Default Values of Parameters}{57}{section.A.1}
