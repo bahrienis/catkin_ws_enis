@@ -23,6 +23,7 @@
       <df name="src">
         <in>IPM.cpp</in>
         <in>IPM.h</in>
+        <in>Sobel_Canny.cpp</in>
         <in>cubic_spline.cpp</in>
         <in>example.cpp</in>
         <in>lane_detector_enis.cpp</in>
@@ -52,6 +53,7 @@
         <in>lane_detector_enis_v0.1.9.cpp</in>
         <in>lane_detector_enis_v0.1.9_IPM.cpp</in>
         <in>lane_detector_enis_v0.11.1.cpp</in>
+        <in>lane_detector_enis_v0.12.1.cpp</in>
         <in>lane_detector_enis_v0.2.0.cpp</in>
         <in>lane_detector_enis_v0.2.1.cpp</in>
         <in>lane_detector_enis_v0.2.2.cpp</in>
@@ -69,12 +71,14 @@
         <in>lane_detector_enis_v0.5.1_time.cpp</in>
         <in>lane_detector_enis_v0.6.1.cpp</in>
         <in>lane_detector_enis_v0.7.1.cpp</in>
+        <in>lane_detector_enis_v0.7.1_time.cpp</in>
         <in>lane_detector_enis_v0.8.1.cpp</in>
         <in>lane_detector_enis_v0.9.1.cpp</in>
         <in>lane_detector_enis_v0.9.2 (copy).cpp</in>
         <in>lane_detector_enis_v0.9.2.cpp</in>
         <in>lane_detector_enis_v0.9.3.cpp</in>
         <in>lane_detector_enis_v0.9.4.cpp</in>
+        <in>lane_detector_enis_v0.9.4_time.cpp</in>
         <in>listener.cpp</in>
         <in>main.cpp</in>
         <in>my_publisher.cpp</in>

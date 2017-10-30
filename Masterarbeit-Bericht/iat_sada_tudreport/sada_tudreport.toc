@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {2.5.1}Standard Hough Line Transformation}{18}{subsection.2.5.1}
 \contentsline {subsection}{\numberline {2.5.2}Probabilistic Hough-Transformation}{20}{subsection.2.5.2}
 \contentsline {section}{\numberline {2.6}K-Nearest Neighbors Algorithm}{22}{section.2.6}
-\contentsline {section}{\numberline {2.7}Curve Fitting}{23}{section.2.7}
+\contentsline {section}{\numberline {2.7}Curve Fitting}{24}{section.2.7}
 \contentsline {chapter}{\numberline {3}Implementation}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}Test Track}{27}{section.3.1}
 \contentsline {section}{\numberline {3.2}Hardware}{28}{section.3.2}
@@ -33,13 +33,13 @@
 \contentsline {subsection}{\numberline {3.4.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}{35}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}{42}{subsection.3.4.4}
 \contentsline {subsection}{\numberline {3.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}{45}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{46}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Method 5 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{46}{subsection.3.4.7}
-\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{47}{chapter.4}
-\contentsline {section}{\numberline {4.1}Average Computing Time}{47}{section.4.1}
-\contentsline {section}{\numberline {4.2}Test Driving}{49}{section.4.2}
-\contentsline {chapter}{\numberline {5}Related Works}{51}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{53}{chapter.6}
-\contentsline {chapter}{Bibliography}{55}{section*.38}
-\contentsline {chapter}{\numberline {A}Appendix}{57}{appendix.A}
-\contentsline {section}{\numberline {A.1}Default Values of Parameters}{57}{section.A.1}
+\contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{46}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}Method 5 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{46}{subsection.3.4.7}
+\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{49}{chapter.4}
+\contentsline {section}{\numberline {4.1}Average Computing Time}{49}{section.4.1}
+\contentsline {section}{\numberline {4.2}Test Driving}{51}{section.4.2}
+\contentsline {chapter}{\numberline {5}Related Works}{53}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{55}{chapter.6}
+\contentsline {chapter}{Bibliography}{57}{section*.39}
+\contentsline {chapter}{\numberline {A}Appendix}{59}{appendix.A}
+\contentsline {section}{\numberline {A.1}Default Values of Parameters}{59}{section.A.1}

@@ -8,7 +8,7 @@ In the Software section in \ref{sec:Software}, all methods programmed and utiliz
 %
 \section{Test Track}\label{sec:Test Track}
 
-As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. \emph{\color{blue}In Figure \ref{fig:Test_Track}, the test track used in the testing of this master's thesis is shown.}
+As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. In Figure \ref{fig:Test_Track}, the test track used in the testing of this master's thesis is shown.
 
 
 \begin{figure}[H]
@@ -23,17 +23,14 @@ As previously mentioned, the medium-term goal of this master thesis is attending
 %
 \section{Hardware}\label{sec:Hardware}
 
-\emph{\color{blue}While working on a software project, it is important to write an efficient software, it is also important to choose the right hardware. In this project, the model auto was already prepared for a project course at the Technical University of Darmstadt but for this project, the camera must be modified, otherwise this project wouldn't be reliable while lane detection. In this chapter, the hardware part of this project and modifies from the model auto will be described.} 
+While working on a software project, though it is of course important to write an efficient software, it is also important to choose the right hardware. In this project, the model automobile was already prepared for a project course at the Technical University of Darmstadt. However, for this project, it was necessary to use another camera for lane detection, as the original was not sufficient for this purpose. In this chapter, the hardware component of this project and the changes made to the model automobile will be described.
 
 
 %
 \subsection{Model Auto}\label{sec:Model Auto}
 
 
-During the course of this master's thesis, a model automobile was being used which was prepared for the Projectseminar 
-Echtzeitsysteme at Technical University of Darmstadt. The chassis, steering mechanism, power train, and engine control 
-were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is 
-approximately 1 m/s and the minimum steering radius is around 90 cm. 
+During the course of this master's thesis, a model automobile which was prepared for the Projectseminar Echtzeitsysteme at Technical University of Darmstadt was used. The chassis, steering mechanism, power train, and engine control were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is approximately 1 m/s and the minimum steering radius is around 90 cm. 
 
 \begin{figure}[H]
 	\centering
@@ -138,7 +135,7 @@ For using prepaid image processing functions, an open-source computer vision and
 
 ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV can be programmed with Python or C++ programming languages. In this master's thesis, C++ was used.
 
-\emph{\color{blue}For testing the detection, monitor can't be carried always with the model car so to see if the algorithm can detect the lanes good, the outputs of the software must be seen so the model car must be connected with a PC remotely. For that, there is a software used which can connect two different computers which are runned by Linux operating system. As the first step, a wireless network must be created in one of these computers and the other computer must be connected to this wireless network. Then the IP address of the model car must be found out or a static IP address must be given to the model car. As the last step, 'Remmina Remote Desktop Client' must be used in the PC and there must be written IP address of the model car(Server). After that, the car and the PC are connected to each other. In this software, the quality of screen sharing and the speed can be adjusted.  }
+\emph{\color{blue}Because the monitor cannot always be connected to a PC via a cable for practical reasons,  model automobile so to see if the algorithm can detect the lanes good, the outputs of the software must be seen so the model automobile must be connected to a PC remotely. In order to test the lane detection, For that, there is a software used which can connect two different computers which are run by the Linux operating system. As the first step, a wireless network must be created in one of these computers and the other computer must be connected to this wireless network. Then the IP address of the model car must be found out or a static IP address must be given to the model automobile. As the last step, 'Remmina Remote Desktop Client' must be used in the PC and the IP address of the model car (Server) must be written. After that, the car and the PC are connected to each other. In this software, the quality of screen sharing and the speed can be adjusted.  }  
 
 %
 \subsection{Preprocessing}\label{sec:Preprocessing}
@@ -425,9 +422,15 @@ The last step of this method is as in the others: to publish the equations of th
   \caption{Output Image}
 \end{figure}
 
-\subsection{Method 4 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 4}
 
-This method is very similar to Method 2. There is just one difference between Method 2 in \ref{sec:Case 2} and this method. The only difference is resizing the frame at the beginning. The frame comes from the camera with a 640x480 pixel resolution, but this frame is resized from a 640x480 pixel resolution to a 320x240 pixel resolution. In order to do this, a 'resize' function from OpenCV is used because the smallest resolution able to be obtained from the camera is 640x480 pixels. Due to the resizing, it was sometimes necessary to use different parameters than in Method 2 in order to detect lanes optimally (efficiently and accurately). Results of this method are shown in Figure \ref{fig:Case4_OutputImage}.
+
+
+
+\subsection{Method 4 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 4}
+
+
+\emph{\color{blue}Until now, 3 different methods for lane detection were presented. These methods can be also used after the frames are resized. This method is so similar to Method 1 in the Section \ref{sec:Case 1}. The only difference between these two methods is, in the Method 1, the resolution of the frame is 640x480 pixels and in this method, the resolution of the frame is 4 times less than Method 1. In other words, the resolution of the frame in this method is 320x240 pixels. For decreasing the resolution of the frame, the width and height values in pixel must be sent to the camera before it is started. To decrease the resolution of the frame causes some advantages and disadvantages. These will be explained in the Chapter 4. The output frame of this method is shown in Figure \ref{fig:Case4_OutputImage}.}
+
 
 \begin{figure}[H]
   \centering
@@ -438,6 +441,22 @@ This method is very similar to Method 2. There is just one difference between Me
 
 
 
+\subsection{Method 5 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 5}
 
-\subsection{Method 5 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 5}
+\emph{\color{blue}This method is so similar to Method 2, which was described in the Section \ref{sec:Case 2}. In this method also the resolution of the frame is converted from 640x480 pixels to 320x240 pixels. In Chapter 4, the effects of the decreasing the resolution of the frame will be described.The output frame of this method is shown in Figure \ref{fig:Case5_OutputImage}.}
+
+
+\begin{figure}[H]
+  \centering
+  \subfloat{\includegraphics[width=0.45\textwidth]{./Bilder/Case5_OutputImage.png}\label{fig:Case5_OutputImage}}
+  \caption{Output Image(320x240 pixels resolution)}
+\end{figure}
+
+
+
+
+
+
 %
+
+

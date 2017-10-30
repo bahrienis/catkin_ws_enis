@@ -275,7 +275,7 @@ int main(int argc, char **argv) {
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
-          std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame52.jpg";
+          std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
       //   std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame1470.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
@@ -507,7 +507,7 @@ clock_t end_FSP = clock();
         
         
         
- clock_t end_KNN = clock();       
+    
         
  
  
@@ -517,7 +517,7 @@ clock_t end_FSP = clock();
                     step, kdtree, numOfPoints, dWidth, dHeight, gradgray);
         }
 
-
+ clock_t end_KNN = clock();   
 
         curvefitting(0, x_rightLine.size(), y_rightLine, x_rightLine, gradgray, "blue");
 //        curvefittingWithLowPass(0, x_rightLine.size(), y_rightLine, x_rightLine, 
@@ -534,7 +534,7 @@ clock_t end_FSP = clock();
         
         
         
-         clock_t end_CF = clock();   
+clock_t end_CF = clock();   
          
          
          

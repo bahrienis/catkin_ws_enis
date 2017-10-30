@@ -207,6 +207,18 @@ int main(int argc, char **argv) {
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
     cap.set(CV_CAP_PROP_FPS, 30); //change the frame value
+    
+    
+    
+        cap.set(CV_CAP_PROP_FRAME_WIDTH, 320); //change the frame value
+    
+        cap.set(CV_CAP_PROP_FRAME_HEIGHT, 240); //change the frame value
+    
+    
+    
+    
+    
+    
 
     if (!cap.isOpened()) //if not success, exit program
     {
@@ -335,20 +347,20 @@ int main(int argc, char **argv) {
 
 
 
-             if (sayi >= 294) {
+ /*            if (sayi >= 294) {
                  sayi = 0;
              }
 
              std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
              sayi++;
              cout << "frame : " << sayi << endl;
-         
+ */        
 
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
- //       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame38.jpg";
+ //       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -356,7 +368,7 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
-        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+/*        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
@@ -365,19 +377,19 @@ int main(int argc, char **argv) {
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
+*/
+
+                bool bSuccess = cap.read(inputImg);
 
 
-        //        bool bSuccess = cap.read(inputImg);
 
 
 
-
-
-           Size size(widthofframe,heightofframe);
+ /*          Size size(widthofframe,heightofframe);
         
    resize(inputImg,inputImg,size);//resize image     
 
-
+*/
 
 
         /*
@@ -525,8 +537,8 @@ int main(int argc, char **argv) {
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
             //            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
-            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-            circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
+//            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+//            circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
             //           circle(gradcolor, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //           circle(gradcolor, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
@@ -717,7 +729,7 @@ int main(int argc, char **argv) {
         cout << "time : " << 1000 * elapsed_secs << endl;
         
 
-        waitKey(1000);
+        waitKey(1);
         
         
         

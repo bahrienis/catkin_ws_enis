@@ -715,7 +715,7 @@ int main(int argc, char **argv) {
         cout << "time : " << 1000 * elapsed_secs << endl;
         
 
-        waitKey(1000);
+        waitKey(1);
         
         
         
