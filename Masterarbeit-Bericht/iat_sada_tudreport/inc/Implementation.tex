@@ -1,14 +1,14 @@
 %
 \chapter{Implementation}\label{cha:Implementation}
 %
-In this chapter, the implementation part of this master's thesis will be described. The test track, which was implemented before by another student; the hardware part of the model automobile, which was used in this master's thesis; and finally, the software part which was programmed for detecting the lanes will all be  explained in detail.
+In this chapter, the implementation part of this master's thesis will be described. The test track, which was built before by another student; the hardware part of the model automobile, which was used in this master's thesis; and finally, the software part which was programmed for detecting the lanes will all be  explained in detail.
 
-In the Software section in \ref{sec:Software}, all methods programmed and utilized during this master's thesis will be descriebed. In order to better demonstrate the process, pictures of each step, as well as block diagrams of each method, will be shown.
+In the Software section in \ref{sec:Software}, all methods programmed and utilized during this master's thesis will be described. In order to better demonstrate the process, pictures of each step, as well as block diagrams of each method, will be shown.
 
 %
 \section{Test Track}\label{sec:Test Track}
 
-As previously mentioned, the medium-term goal of this master thesis is attending the Carola-Cup at Braunschweig University, so the test truck was prepared according to the Carola-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test truck, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carola-Cup, so with this, the test track can be tested in the worst case scenario. In the Carola-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. In Figure \ref{fig:Test_Track}, the test track used in the testing of this master's thesis is shown.
+As previously mentioned, the medium-term goal of this master thesis is attending the Carolo-Cup at Braunschweig University, so the test track was prepared according to the Carolo-Cup criteria by Nicolas Acero Sepulveda, who also did his bachelor's thesis with this model automobile. For this test track, two black PVC floor carpets were used and on these floor carpets, the lanes of the track were made by using white electrical tape. The straight part of the track was made on one of these PVC floor carpets and the curved part of track was made on the second PVC floor carpet. The straight part of the track is approximately 2 meters long and the curve radius of the curved part of test track is approximately 1 meter. This curve is the tightest curve at Carolo-Cup, so with this, the test track can be tested in the worst case scenario. In the Carolo-Cup competition, the track is much larger; however, for the purposes of this master thesis, a larger test track in not needed. In Figure \ref{fig:Test_Track}, the test track used in the testing of this master's thesis is shown.
 
 
 \begin{figure}[H]
@@ -30,7 +30,7 @@ While working on a software project, though it is of course important to write a
 \subsection{Model Auto}\label{sec:Model Auto}
 
 
-During the course of this master's thesis, a model automobile which was prepared for the Projectseminar Echtzeitsysteme at Technical University of Darmstadt was used. The chassis, steering mechanism, power train, and engine control were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is approximately 1 m/s and the minimum steering radius is around 90 cm. 
+During the course of this master's thesis, a model automobile which was prepared for the Projectseminar Echtzeitsysteme at Technical University of Darmstadt was used. The chassis, steering mechanism, power train, and engine control were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is approximately \emph{\color{green}1 m/s} and the minimum steering radius is around 90 cm. 
 
 \begin{figure}[H]
 	\centering
@@ -48,8 +48,7 @@ and receiving the measurements from ultrasonic sensors and hall effect sensors. 
 MB96300 series from Fujitsu company.
 
 The main board on the model car is from PD10BI-MT ThinMini-ITX series from MiTAC company. This main board communicates 
-with the microcontroller over via UART interface through USB connection. On this main board, there is an Intel 
-Quadcore-Processor and an Intel HD Graphics card. Furthermore, there is an 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as a power supply.
+with the microcontroller over an UART interface through USB connection. On this main board, there is an  \emph{\color{green}Intel Quadcore-Processor} and an Intel HD Graphics card. Furthermore, there is an 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as a power supply.
 %
 
 \subsection{Camera}\label{sec:Camera}
@@ -68,11 +67,11 @@ a 512x424 pixel resolution. This camera also has a color camera with resolution 
 84.1x53.8 degrees. The FPS value is 30 Hz at a 1920x1080 pixel resolution. This camera had two main disadvantages for 
 this master's thesis. The first disadvantage is the FOV value of camera. This value is better than the value of Logitech 
 C270 camera but it is still not enough for curve lane detection. The second main disadvantage is the location of the 
-color camera. The color camera of this camera is not in the middle of camera, but rather, on the right. This is a 
+color camera. The color camera of this camera is not in the middle of camera, but on the right. This is a 
 disadvantage for us because when there are curves going left as opposed to right, the camera is unable to see the 
-left and even perhaps the middle lane of the truck. Thus, this is problematic for lane detection.
+left and even perhaps the middle lane of the track. Thus, this is problematic for lane detection.
 
-Due to these reasons, I had to choose a camera which has a sufficiently high FOV value. After doing research, I decided 
+Due to these reasons, it was necessary to select a camera which has a sufficiently high FOV value. After doing research, I decided 
 that the Genius Widecam F100 camera is the best choice for this master's thesis because this camera has a FOV value of 
 120 degrees and it can also be used with the Linux Operating System. The resolution of this camera is 1920x1080 pixels 
 and the FOV value is 120 degrees. The FPS is 30 Hz at a 1920x1080 pixel resolution. With this camera, it is possible 
@@ -95,13 +94,13 @@ to detect most if not all lanes, including when there are curves.
 
 Before the lane detection project was started, it was necessary to conduct an experiment with the system. The aim of this experiment was to measure the response time of the entire system. In order to measure it, the camera had to detect something and then the software had to set an I/O pin on the main board. The amount of time this process took was in fact the response time being searched for.
 
-For this experiment, a camera, a power supply, an LED, and an oscilloscope were needed. A circuit with a power supply and an LED were designed. The LED was placed in a small box with a camera, and one probe of an oscilloscope was connected to the LED while its other probe was connected to an I/O Pin on the mainboard, which could be set with software.
+For this experiment, a camera, a function generator, an LED, and an oscilloscope were needed. A circuit with a power supply and an LED were designed. The LED was placed in a small box with a camera, and one probe of an oscilloscope was connected to the LED while its other probe was connected to an I/O Pin on the mainboard, which could be set with software.
 
-Before the results were measured, the frequency of the camera was set to 10 Frames per Second(FPS) and the power supply was set to 3.28 Hz. square wave. This means that the LED is supposed to blink approximately every 305 ms.
+Before the results were measured, the frequency of the camera was set to 10 Frames per Second(FPS) and the power supply was set to 3.28 Hz square wave. This means that the LED is supposed to blink approximately every 305 ms.
 
-After the supply was turned off, the LED started to blink. For this experiment, a small firmware able to detect the color red was written in order to detect when the red LED lit up.
+After the supply was turned on, the LED started to blink. For this experiment, a small firmware able to detect the color red was written in order to detect when the red LED lit up.
 
-The LED and a camera were placed together in a box and the box was closed, and so the inside of the box was totally dark. When the red LED lit up, the camera detected it and the firmware set an I/O pin on the main board. For this experiment, two different cameras were used and the results were very similar.
+The LED and a camera were placed together in a box and the box was closed, and so the inside of the box was totally dark. When the red LED lit up, the camera detected it and the firmware set an I/O pin on the main board. For this experiment,  \emph{\color{green}two different cameras were used and the results were very similar.}
 
 
 \begin{figure}[H]
@@ -111,8 +110,8 @@ The LED and a camera were placed together in a box and the box was closed, and s
 \end{figure}
 
 
-As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system was 156 ms., the minimum
-response time of the system was 63 ms., and the average time was 106.6 ms.
+\emph{\color{green}As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system was 156 ms., the minimum
+response time of the system was 63 ms., and the average time was 106.6 ms.}
 
 
 
@@ -131,7 +130,7 @@ As also mentioned at subsection \ref{sec:Microcontroller and Main Board}, in thi
 
 The version \textit{Kinetic} of ROS was used for implementation of this master's thesis. ROS is the abbreviation of \textbf{R}obotic \textbf{O}perating \textbf{S}ystem, which is a robotics middleware (i.e. collection of software frameworks for robot software development). On the ROS wiki page\cite{ROS}, ROS is defined as an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.
 
-For using prepaid image processing functions, an open-source computer vision and machine learning software library called OpenCV was used. According to the OpenCV website\cite{OpenCV}, there are more than 2500 optimized algorithms in the OpenCV library and OpenCV has a user community of more than 47 thousand people.
+For using prepaid image processing functions, an open-source computer vision and machine learning software library called OpenCV was used. According to the OpenCV website\cite{OpenCV_About}, there are more than 2500 optimized algorithms in the OpenCV library and OpenCV has a user community of more than 47 thousand people.
 
 ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV can be programmed with Python or C++ programming languages. In this master's thesis, C++ was used.
 
@@ -226,24 +225,6 @@ double threshold(InputArray src, OutputArray dst, double thresh, double maxval, 
 \item \textbf{type : }Thresholding type, which can be THRESH\_BINARY, THRESH\_BINARY\_INV, THRESH\_TRUNC, THRESH\_TOZERO and THRESH\_TOZERO\_INV.
 
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

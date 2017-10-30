@@ -3,16 +3,18 @@
 %
 In this chapter, the fundamentals of lane detection will be explained. All methods, which are used in this thesis, will be theoretically focused and the use of their functions in software will be also explained. Also, some advantages and disadvantages of methods will be discussed.
 %
-\section{Properties of Truck at Carola-Cup}\label{sec:Properties of Truck at Carolo-Cup}
+\section{Properties of Track at Carola-Cup}\label{sec:Properties of Truck at Carolo-Cup}
 %
-The Carolo-Cup is an annual competition at the Technical University of Braunschweig which are attended by students. Every year the truck and some properties of the competition are changing. For example, in the competitions until 2017 there was no traffic sign, but starting in 2017 there are also some traffic signs, speed limit zones, blocked areas and crosswalks for pedestrian. Because of this, in the competitions until 2017, there was only one way to understand who had the right of way. If there is a stop line on the road in front of an intersection, it means the car has to wait until the intersection is free. In the competitions starting from 2017, the intersections are in different parts: They are 'Intersections with stop lines', 'Intersections with give-way lines', 'Intersections with priority to right', 'Enforced crossing direction - give-way condition', 'Enforced crossing direction - right of way condition'. Except 'Intersections with priority to right', they all have traffic signs stating who has priority. If there is a no traffic sign, it means the right side always has priority.\cite{Carolo_Cup}
+The Carolo-Cup is an annual competition at the Technical University of Braunschweig which are attended by students. Every year the track and some properties of the competition are changing. For example, in the competitions until 2017 there was no traffic sign, but starting in 2017 there are also some traffic signs, speed limit zones, blocked areas and crosswalks for pedestrian. Because of this, in the competitions until 2017, there was only one way to understand who had the right of way. If there is a stop line on the road in front of an intersection, it means the car has to wait until the intersection is free. In the competitions starting from 2017, there are different types of intersections: They are 'Intersections with stop lines', 'Intersections with give-way lines', 'Intersections with priority to right', 'Enforced crossing direction - give-way condition', 'Enforced crossing direction - right of way condition'. Except 'Intersections with priority to right', they all have traffic signs stating who has priority. If there is a no traffic sign, it means the right side always has priority.\cite{Carolo_Cup}
+
+
 
 \begin{figure}[H]
-	\centering
-	\hspace*{0cm}   
-	\includegraphics[width=120mm,scale=1]{./Bilder/Intersections.png}
-	\caption{Left: Markings for sharp turns at Carolo-Cup.
+ \centering
+  \includegraphics[width=0.75\textwidth]{./Bilder/Intersections.png}
+  \caption{Left: Markings for sharp turns at Carolo-Cup.
 Right: Intersections with stop lines at Carolo-Cup\cite{Carolo_Cup}}
+  \label{fig:Intersections}
 \end{figure}
 
 
@@ -20,7 +22,7 @@ Right: Intersections with stop lines at Carolo-Cup\cite{Carolo_Cup}}
 %
 \section{Inverse Perspective Mapping}\label{sec:Inverse Perspective Mapping}
 %
-Inverse Perspective Mapping(IPM) is an algorithm which is able to obtain accurate bird's-eye view images from the sequential of forward looking cameras. With the IPM algorithm, each image pixel is remapped, and a new array of pixels is created where the lines in perspective are transformed into straight lines and objects are distorted. IPM is one of the most used methods in lane detection. In lane detection, IPM ensures that the lanes are shown vertical and parallel to each other. On the other hand, because of the re-mapping of pixels, IPM is a computationally expensive method. Because of this reason, in some cases in this master's thesis, rather than remapping all pixels of the images, only the pixels relevant to the lane and accordingly, the fitted curve, were remapped. Thanks to this, in some cases, a lot of computing time was saved.
+Inverse Perspective Mapping(IPM) is an algorithm which is able to obtain accurate bird's-eye view images from forward looking cameras. With the IPM algorithm, each image pixel is remapped, and a new array of pixels is created where the lines in perspective are transformed into straight lines and objects are distorted. IPM is one of the most used methods in lane detection. In lane detection, IPM ensures that the lanes are shown vertical and parallel to each other. On the other hand, because of the re-mapping of pixels, IPM is a computationally expensive method. Because of this reason, in some cases in this master's thesis, rather than remapping all pixels of the images, only the pixels relevant to the lane and accordingly, the fitted curve, were remapped. Thanks to this, in some cases, a lot of computing time was saved.
 
 In order to use the IPM method, the intrinsic and extrinsic parameters of camera are necessary to process images for coordinate transformation and calibration.
 
@@ -48,52 +50,62 @@ As seen in the above command, the number and the size of the checkerboard's squa
 
 \begin{figure}[H]
  \centering
-  \includegraphics[width=0.8\textwidth]{./Bilder/Camera_Calibration_fig.png}\label{Calibration_of_Camera}
+  \includegraphics[width=0.8\textwidth]{./Bilder/Camera_Calibration_fig.png}
   \caption{Calibration of Camera\cite{Camera_Calibration}}
+  \label{Calibration_of_Camera}
 \end{figure}
 
-For this master's thesis, the camera was calibrated and the parameters of the camera matrix can be found in the Table \ref{tab:meinetabelle}
 
 
-\item \textbf{Extrinsic Parameters :} Extrinsic parameters are dependent on the camera position. The parameters are H and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. These values must be measured because they have to be used for Inverse Perspective Mapping. The extrinsic parameters of the camera can be found in the Table \ref{tab:meinetabelle}. 
+For this master's thesis, the camera was calibrated and the parameters of the camera matrix can be found in the Table \ref{tab:parameters}
+
+
+\item \textbf{Extrinsic Parameters :} Extrinsic parameters are dependent on the camera position. The parameters are H and $\theta$. H is the distance between the camera and ground. $\theta$ is the camera tilt angle. These values must be measured because they have to be used for Inverse Perspective Mapping. The extrinsic parameters of the camera can be found in the Table \ref{tab:parameters}. 
  
 \end{itemize}
   
+  
+
+
 \begin{figure}[H]
 \centering
-  \includegraphics[width=0.8\textwidth]{./Bilder/Related_positions_of_the_camera.png}\label{Procedures_of_IPM_fig}
+  \includegraphics[width=0.8\textwidth]{./Bilder/Related_positions_of_the_camera.png}
   \caption{Related Positions of the Camera \cite{IPM}}
+  \label{fig:Procedures_of_IPM1}
 \end{figure}
 
- As seen at Figure \ref{Procedures_of_IPM_fig}, the camera on the car has field of view 2(FOV2) at the real position of the camera but in this case, the view is not a bird's-eye view, so if the same FOV is to be observed from a bird's-eye view, IPM will virtually change the position to Virtual Position 2 of the camera. In this case, although the camera is at its real position, it will appear as though it is at Virtual Position 2. For that, the image coordinates must also be changed. Below, the steps of IPM calculations from the paper of \cite{IPM} will be detailed.
- 
-In the formula, the original image coordinates will be defined as (x,y), the destination image coordinates will be defined as ($x^*$,$y^*$), the distance between the ground and the camera will be defined as H, the focal length of camera will be defined as f, and the tilt angle of camera will be defined as $\theta$.
+ As seen at Figure \ref{fig:Procedures_of_IPM1}, the camera on the car has field of view 2 (FOV2) at the real position of the camera but in this case, the view is not a bird's-eye view, so if the same field of view is to be observed from a bird's-eye view, IPM will virtually change the position to Virtual Position 2 of the camera. In this case, although the camera is at its real position, it will appear as though it is at Virtual Position 2. Sometimes, however, obtaining the view from Position 2 is not desirable, because if the field of view is very large, then Position 2 is also very high. In this project, if the lanes observed from a position high above the ground, the lanes will appear small, and thus lane detection becomes more difficult and less accurate. To solve this problem, the upper portion of the image can be cropped, so the camera will have a smaller field of view. In this case, although the camera is at its real position, it will appear as though it is at Virtual Position 1.
+  
+In order to apply IPM algorithm, the image coordinates must also be changed. Below, the steps of IPM calculations from the paper of \cite{IPM} will be detailed.
+
+
+In order to calculate the destination image coordinates (x*,y*), the input image coordinates (x,y), the height of the camera from the ground (H), the focal length of the camera (f), and the tilt angle of the camera ($\theta$) are all necessary and are used in the following formula:
  
 \begin{center}
- $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ ;
- $y^* = H \frac{y sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ 
+\scalebox{1.15}{ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ ;
+ $y^* = H \frac{y sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$}
 \end{center}
 
 In this equation, the transformed component values of $x^*$ and $y^*$ may be less than or equal to zero. Because of 
-this reason, a constant d is defined as $
+this reason, a constant d is defined as \emph{\color{green}$
 \begin{vmatrix}
 H(sin \theta + cos \theta)/(f sin \theta - cos \theta) 
 \end{vmatrix}
-$  + 1. This means that the coordinate point in the original source image has been mapped into the point of the destination image coordinate system. Below there is the proposed equation :
+$  + 1}. This means that \emph{\color{green}the} coordinate point in the original source image has been mapped into the point of the destination image coordinate system. Below there is the proposed equation :
  
  \begin{center}
- $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
+\scalebox{1.15}{ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
  $y^* = H \frac{y sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
  where d = 
  $\begin{vmatrix}
  \frac{H(sin \theta + f cos \theta)}{f sin \theta - cos \theta}
- \end{vmatrix}$ + 1
+ \end{vmatrix}$ + 1}
 \end{center}
 
 \begin{figure}[H]
  \centering
   \includegraphics[width=1\textwidth]{./Bilder/Procedures_of_IPM.png}\label{Procedures_of_IPM}
-  \caption{Procedures of IPM}
+  \caption{Procedures of IPM\cite{IPM}}
 \end{figure}
 
 
@@ -115,7 +127,7 @@ According to \cite{Machine_Vision}, there are three steps of the edge detection 
 
 \begin{itemize}
 
-\item \textbf{Filtering : } For edge detection, it is required to use a suitable smoothing filter. The filters sharpen the edges and ignore the unnecessary information. It is often utilized to improve the functioning of an edge detector against noise. The more filtering is applied, however, the greater the loss of edge strength. The most common implementation of a smoothing filter used for image preprocessing is Gaussian blur, which is described in detail in Section \ref{sec:Gaussian Blur}   
+\item \textbf{Filtering : } For edge detection, it is required to use a suitable smoothing filter. The filters sharpen the edges and ignore unnecessary information. It is often utilized to improve the functioning of an edge detector against noise. The more filtering is applied, however, the greater the loss of edge strength. The most common implementation of a smoothing filter used for image preprocessing is Gaussian blur, which is described in detail in Section \ref{sec:Gaussian Blur}   
  
 \item \textbf{Enhancement : } To be able to better detect edges, changes in the intensity in the area surrounding a point must be determined. Pixels in which a significant change in intensity occurs are emphasized by enhancement, which is usually applied by calculating the gradient magnitude.
   
@@ -152,7 +164,7 @@ $  G_{x} =
   \begin{bmatrix}
 	+1 & +2 & +1 \\
 	0 & 0 & 0 \\
-	+1 & -2 & -1 \\
+	-1 & -2 & -1 \\
   \end{bmatrix} * A		$
 
 \end{center}
@@ -180,7 +192,7 @@ $
 The x-coordinate is defined here as increasing in the 'right'-direction, and the y-coordinate is defined as increasing in the 'down'-direction. At each point in the image, the resulting gradient approximations can be combined to give the gradient magnitude, using:
 
 \begin{center}
-G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$
+\emph{\color{green}G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$}
 \end{center}
 
 Using this information, we can also calculate the gradient's direction:
@@ -201,9 +213,7 @@ where, for example, $\theta$ is 0 for a vertical edge which is lighter on the ri
 \end{figure} 
 
 
-\emph{\color{red}The primary advantages of the Sobel operator lie in its simplicity. The Sobel operator provides an approximation to the gradient magnitude. Another advantage of the Sobel operator is, it can detedct edges and their orientations. In this cross operator, the detection of the edges and their orientations is said to be simple due to the approximation of the gradient magnitude.} 
-
-\emph{\color{red}On the other hand, there exist some disadvantages of the Sobel operator. That is, it is sensitive to the noise. The magnitude of the edges will degrade as the level of noise present in image increases. As a result, Sobel operator accuracy suffers as the magnitude of the edges decreases. Overall, the Sobel operator ca not produce accurate edge detection with thin and smooth edge.}
+The Sobel operator's main advantages are due to its simplicity. One is that the Sobel operator provides an approximation of the gradient magnitude. Another advantage of the Sobel operator is that it can detect edges and their orientations. In this cross operator, the detection of the edges and their orientations is considered to be simple because of the approximation of the gradient magnitude. The Sobel operator does have some disadvantages, however. For example, it is sensitive to noise. The magnitude of the edges degrades as the level of noise present in image increases. As the magnitude of the edges degrades, the accuracy of the Sobel operator also diminishes. Overall, the Sobel operator cannot accurately detect edges when edges are thin or smooth.
 
 
 
@@ -211,7 +221,7 @@ In this master's thesis, the Sobel Operator function in OpenCV was used. Before 
 
  \begin{center}
   
-void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER$\_$DEFAULT )
+\emph{\color{green}void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER$\_$DEFAULT )}
 
   \end{center}
 
@@ -234,15 +244,7 @@ The parameters of the function will be described in detail.\cite{GaussianBlur}
 \end{itemize}
 
 
-Guassian Blur will be explained in the Section \ref{Gaussian_Blue}.
-
-
-
-
-
-
-
-
+Guassian Blur will be explained in the Section \ref{sec:Gaussian Blur}.
 
 
 After the Gaussian Blur is applied, the picture must be converted from color to grayscale. For that, there is a small function in OpenCV. With the following command, a color picture can be converted easily to grayscale.
@@ -259,7 +261,7 @@ void cvtColor(InputArray src, OutputArray dst, int code, int dstCn=0 )
 
 \item \textbf{src : }Input image
  
-\item \textbf{dst : }Output image which is the same size and depth with input image.
+\item \textbf{dst : }Output image which is the same size and depth as the input image.
 
 \item \textbf{code : }Color space conversion code(here used CV$ \_ $BGR2GRAY).
 
@@ -282,7 +284,7 @@ void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksiz
 
 \item \textbf{src : }Input image.
 
-\item \textbf{dst : }Output image which is in the same size and depth with input image.
+\item \textbf{dst : }Output image which is in the same size and depth as the input image.
 
 \item \textbf{ddepth : }The depth of the output image.
 
@@ -290,7 +292,7 @@ void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksiz
 
 \item \textbf{yorder : }Order of the derivative y.
 
-\item \textbf{ksize : }Size of the extended Sobel kernel; it must be 1, 3, 5, or 7.
+\item \textbf{ksize : }\emph{\color{green}Size of the extended Sobel kernel; it must be 1, 3, 5, or 7.}
 
 \item \textbf{scale,delta and borderType : }Optional values. In this project, the default values were used.
 
@@ -333,10 +335,10 @@ void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, do
 %
 \subsection{Canny Edge Detector}\label{sec:Canny Edge Detector}
 
-Canny edge detector was developed in 1986 and called with the name of its developer John F. Canny. Canny edge detector is also so popular edge detector like Sobel operator. Canny edge detector is a multi-stage algorithm and it can be analyzed in 5 different stages.\cite{Canny_Edge_Detector2}
+Another popular edge detector is the Canny Edge Detector, which was developed in 1986 and was named after its developer, John F. Canny. The Canny Edge Detector is a multi-stage algorithm and it can be analyzed in five different stages.\cite{Canny_Edge_Detector2}
 
 \begin{enumerate}
-\item \textbf{Noise Reduction : } To get so stabile lane detection results, we have to reduce/remove all noise from frames. Lane detection without filtering out the noise can cause false detection. Gaussian filter is used for removing noise in the frames. Gaussian filter blurs images and removes detail and noise. The size of Gaussian filter kernel must be (2k+1)x(2k+1). It is important to choose the size of Gaussien filter because if the size of kernel is larger, detector's sensitivity to noise is lower but on the other hand, with the increase in size of the Gaussian filter kernel, the localization error in the edge detection will also increase slightly. \cite{Canny_Edge_Detector}
+\item \textbf{Noise Reduction : } To get stable lane detection results, we have to reduce/remove all noise from frames. Lane detection without filtering out the noise can cause false detection. Gaussian filter is used for removing noise in the frames. Gaussian filter blurs images and removes detail and noise. The size of Gaussian filter kernel must be (2k+1)x(2k+1). It is important to choose the size of Gaussien filter because if the size of kernel is larger, detector's sensitivity to noise is lower but on the other hand, with the increase in size of the Gaussian filter kernel, the localization error in the edge detection will also increase slightly. \cite{Canny_Edge_Detector}
 
 
 
@@ -347,7 +349,7 @@ Canny edge detector was developed in 1986 and called with the name of its develo
 \item \textbf{Double Thresholding : } The edge pixels remaining after applying non-maximum suppression provide a more accurate depiction of real edges in an image. Despite this, there are still some remaining edge pixels resulting from noise and color variation. Therefore, it is necessary to filter out edge pixels with a weak gradient value while preserving edge pixels with a high gradient value. In order to do this, high and low threshold values must be selected. Edge pixels are marked as strong edge pixels when gradient values are higher than the high threshold value. They are marked as weak edge pixels when gradient values are lower than the high threshold value and higher than the low threshold value. They are suppressed when their values are lower than the low threshold value. The two threshold values are determined empirically and are dependent on the content of a given image.
 
 
-\item \textbf{Hysteresis Thresholding : } Hysteresis Thresholding is the last part of Canny Edge Detector. Until this step, strong edge pixels are extracted from the true edges but there are also some weak edge pixels, some of them are extracted from true edges and some of them are extracted from some noise. So the weak edge pixels which are extracted from true edge, should be strong edge pixels and the weak edge pixels which are extracted from noises must be removed. If there is a weak edge pixel, 8 neighbour pixels of that weak edge pixel is checked and if at least, one pixel of these neighbour pixels is a strong edge pixel then, this weak edge pixels stay as edges in the end picture. 
+\item \textbf{Hysteresis Thresholding : } Hysteresis Thresholding is the last part of Canny Edge Detector. Until this step, strong edge pixels are extracted from the true edges but there are also some weak edge pixels, some of them are extracted from true edges and some of them are extracted from some noise. So the weak edge pixels which are extracted from true edge, should be strong edge pixels and the weak edge pixels which are extracted from noises must be removed. If there is a weak edge pixel, eight neighbor pixels of that weak edge pixel are checked, and if at least one of these neighbor pixels is a strong edge pixel, these weak edge pixels remain as edges in the final image. 
 
 \end{enumerate}
 
@@ -362,17 +364,12 @@ Canny edge detector was developed in 1986 and called with the name of its develo
 
 
 
-
-\emph{\color{red} The main advantage of Canny Edge Detector is enhancing the signal with respect to the noise ratio. This is done by non-maxima suppression method as it results in one pixel wide ridges as the output. The other advantage is better detection of edges especially in noisy state by applying thresholding method. The effectiveness of Canny method is affected by adjustable parameters. Small filters are desirable for detection of small, sharp lines, since it causes fewer instances of blurring. Large filters are desirable for detecting larger, smoother edges. However, it causes higher instances of blurring. }
-
-\emph{\color{red}The main disadvantage of Canny edge detector is that it is time consuming, due to its complex computation. }
+The main advantage of Canny Edge Detector is enhancement of the signal with respect to the noise ratio. This is done via the non-maxima suppression method, as it results in one pixel wide ridges as the output. The other advantage is better detection of edges, especially in a noisy state, by applying the thresholding method. The effectiveness of the Canny method is affected by adjustable parameters. Small filters are desirable for the detection of small, sharp lines, since they cause fewer instances of blurring. Large filters are desirable for detecting larger, smoother edges. However, they also cause higher instances of blurring. 
+The main disadvantage of the Canny edge detector is that it is time consuming, due to its complex computation.
 
 
 
-
-
-
-The Canny Edge Detector is also a function in OpenCV. As is the case with the Sobel Operator, before the Canny Edge Detector is used, a filter should be applied (for example, the Gaussian Filter) and the image must be converted to gray scale. With the following command, the Canny Edge Detector can be run in OpenCV.\cite{Canny_Edge_Detector3}
+\emph{\color{green}The Canny Edge Detector is also a function in OpenCV. As is the case with the Sobel Operator, before the Canny Edge Detector is used, a filter should be applied (for example, the Gaussian Filter) and the image must be converted to gray scale. With the following command, the Canny Edge Detector can be run in OpenCV.\cite{Canny_Edge_Detector3}}
 
  \begin{center}
  
@@ -415,18 +412,18 @@ void Canny(InputArray image, OutputArray edges, double threshold1, double thresh
 %
 \section{Gaussian Blur}\label{sec:Gaussian Blur}
 
-Gaussian Blur is a non-uniform low pass filter which is used to blur images. For smoothing/bluring the images, there are also some other filters, like Normalized Box Filter, Median Filter, Bilateral Filter, and so but Gaussian Filter is most useful filter although it is not the fastest. This filter is widely used in image processing as one part of the preprocessing stage because it reduces the image noise and detail.
+The Gaussian Blur is a non-uniform low pass filter which is used to blur images. For smoothing/blurring the images, there are also some other filters, like Normalized Box Filter, Median Filter, Bilateral Filter, as well as others, but the Gaussian Blur is the most useful one, although it is not the fastest. This filter is widely used in image processing as one part of the preprocessing stage because it reduces image noise and detail.
 
-Gaussian blur uses a Gaussian function, which for calculating the transformation to apply to each pixel in the image. The equation of a Gaussian function in one dimension has the form : 
+The Gaussian Blur uses a Gaussian function in order to calculate the transformation to apply to each pixel in the image. The equation of a Gaussian function in one dimension has the following form: 
 
  \begin{center}
  \scalebox{1.2}{$ G(x) = \dfrac{1}{\sqrt{2\pi}\sigma}e^{-\frac{x^{2}}{2\sigma^{2}}} $} 
 \end{center}
 
-where $ \sigma $ is the standard deviation of the distribution. The equation of a Gaussian function in two dimension is the product of two such Gaussians, one in each dimension : 
+where $ \sigma $ is the standard deviation of the distribution. The equation of a Gaussian function in two dimensions is the product of two such Gaussians, one in each dimension: 
 
  \begin{center}
-\scalebox{1.25}{$ G(x,y) = \frac{1}{2\pi\sigma^{2}}e^{-\frac{x^{2}+y^{2}}{2\sigma^{2}}} $}
+\emph{\color{green}\scalebox{1.25}{$ G(x,y) = \frac{1}{2\pi\sigma^{2}}e^{-\frac{x^{2}+y^{2}}{2\sigma^{2}}} $}}
 \end{center}
 
 
@@ -441,7 +438,7 @@ where $ \sigma $ is the standard deviation of the distribution. The equation of 
 
 
 
-The Gaussian filter works by using the 2D distribution as a point-spread function. This is achieved by convolving the 2D Gaussian distribution function with the image. A discrete approximation to the Gaussian function needs to be produced. This theoretically requires an infinitely large convolution kernel, as the Gaussian distribution is non-zero everywhere. Fortunatly, the distribution has approached very close to zero at about three standard deviations from the mean. 99\% of the distribution falls within 3 standard deviations. This meas, normally the kernel size can be limited to contain only values within three standard devations of the mean.
+\emph{\color{green}The Gaussian filter works by using the 2D distribution as a point-spread function. This is achieved by convolving the 2D Gaussian distribution function with the image. A discrete approximation to the Gaussian function needs to be produced. This theoretically requires an infinitely large convolution kernel, as the Gaussian distribution is non-zero everywhere. Fortunatly, the distribution has approached very close to zero at about three standard deviations from the mean. 99\% of the distribution falls within three standard deviations. This means that normally, the kernel size can be limited to contain only values within three standard devations of the mean.}
 
 The distribution is assumed to have a mean of zero. The continuous Gaussian functions need to be discretized to store it as discrete pixels. An integer valued 5 by 5 convolution kernel approximating a Gaussian with a $ \sigma $ of 1 is shown : 
 
@@ -463,7 +460,7 @@ The distribution is assumed to have a mean of zero. The continuous Gaussian func
 \end{center}
 
 
-As in the above convolution kernel seen, the kernel coefficients diminish with increasing distance from the kernel's center and central pixels have a higher weighting than those on the periphery. Also, the Gaussian kernel coefficients depends on the value of $\sigma$. On the other hand, if the value of $\sigma$ is larger, it produces a wider peak, it means, it blurrs images greater.
+As seen in the convolution kernel shown above, the kernel coefficients diminish with increasing distance from the kernel's center and the central pixels have a higher weighting than those on the periphery. Also, the Gaussian kernel coefficients depend on the value of $\sigma$. If the value of $\sigma$ is larger, it produces a wider peak, meaning that the images are blurred more.
 
 
 
@@ -507,11 +504,11 @@ The Standard Hough Line Transformation, which is also called the Linear Hough Tr
 
   \end{center}
   
-In this equation, \textit{$ \rho $} is the length of a normal from the origin to the line and \textit{$ \theta $} is the orientation of \textit{r} with respect to the x-axis.
+\emph{\color{green}In this equation, \textit{$ \rho $} is the length of a normal from the origin to the line and \textit{$ \theta $} is the orientation of \textit{r} with respect to the x-axis.}
  
 
  
-Standard Hough Transformation algorithm consists of the following steps: 
+\emph{\color{green}Standard Hough Transformation algorithm consists of the following steps:}
  
 \begin{algorithm}[h]
 
@@ -526,7 +523,7 @@ Standard Hough Transformation algorithm consists of the following steps:
          \State{\textbf{increment} $H(\overline{\rho}(\overline{\theta},x,y),\overline{\theta}),\forall\overline{\theta}\in\lbrace1,...H_{\theta}\rbrace$}
          \EndIf
          \EndFor
-       \State{$L=\lbrace(\theta(\overline{\theta}),\rho(\overline{\rho}))\vert\overline{\rho}\in\lbrace1,...,H_{\rho}\rbrace\wedge\overline{\theta}\in\lbrace1,...,H_{\theta}\rbrace\wedge$ at $(\overline{\rho},\overline{\theta})$ is a high max. in $H\rbrace$ }
+	      \State{$L=\lbrace(\theta(\overline{\theta}),\rho(\overline{\rho}))\vert\overline{\rho}\in\lbrace1,...,H_{\rho}\rbrace\wedge\overline{\theta}\in\lbrace1,...,H_{\theta}\rbrace\wedge$ at $(\overline{\rho},\overline{\theta})$  \emph{\color{green}is a high max. in $H\rbrace$ }}
         
         \EndProcedure
  \end{algorithmic}    
@@ -539,7 +536,7 @@ An edge detection algorithm is applied to the image with dimensions $I_{w}, I_{h
  \begin{center}
  
  
-$ \overline{\rho}(\overline{\theta},x,y) = \Bigg[\dfrac{H_{\rho}\big((y-\dfrac{I_{h}}{2})sin(\dfrac{\pi}{H_{\theta}}\overline{\theta})+(x-\dfrac{I_{w}}{2})cos(\dfrac{\pi}{H_{\theta}}\overline{\theta})\big)}{\sqrt{I^{2}_{w}+I^{2}_{h}}}\Bigg] $ 
+ \emph{\color{green}$ \overline{\rho}(\overline{\theta},x,y) = \Bigg[\dfrac{H_{\rho}\big((y-\dfrac{I_{h}}{2})sin(\dfrac{\pi}{H_{\theta}}\overline{\theta})+(x-\dfrac{I_{w}}{2})cos(\dfrac{\pi}{H_{\theta}}\overline{\theta})\big)}{\sqrt{I^{2}_{w}+I^{2}_{h}}}\Bigg] $ }
  \end{center}
  
 In Step 8, the local maximum of all accumulated lines is determined, which is then transformed from discretized coordinates $\overline{\rho}$ and $\overline{\theta}$ into $\rho$ and $\theta$ using the following formulas:   
@@ -552,13 +549,14 @@ $ \rho(\overline{\rho}) = \dfrac{\sqrt{I^{2}_{w} + I^{2}_{h} }}{H_{\rho}} \bigg(
  
  \begin{figure}[H]
  \centering
-  \includegraphics[width=0.9\textwidth]{./Bilder/Standard_Hough_Line_Transformation.png}\label{Standard_Hough_Line_Transformation_fig}
+  \includegraphics[width=0.9\textwidth]{./Bilder/Standard_Hough_Line_Transformation.png}
   \caption{Standard Hough Line Transformation\cite{Standard_Hough_Transformation}}
+  \label{Standard_Hough_Line_Transformation_fig}
 \end{figure}
  
  In the left side of Figure \ref{Standard_Hough_Line_Transformation_fig}, a line is shown in an Image (Cartesian) space and on the right side of same Figure, the same line is shown in its transformed state in the Hough space. A point in the Image (Cartesian) space is transformed into a sinusoidal curve in the Hough space. A line can be defined as a set of points, so a line is transformed into a set of sinusoids intersecting at a point in the Hough space. In this case, detecting points in the Hough space also means detecting the lines in the Cartesian space. After detecting points in the Hough Space, the points must be inversely transformed in order to get the corresponding lines in the Cartesian space.
  
-Standard Hough Line Transformation is widely used technique in curve detection. Despite this, it does have two important downsides. Firstly, for each nonzero pixel in an image, the parameters for both the existing curve as well as the redundant ones are obtained during the 'voting procedure'. Secondly, the more accuracy that is needed, the higher the parameter resolution must be defined. As a result, there is often a large storage requirement and low speed for real applications. Probabilistic Hough Transformation was derived in order to counter these problems. 
+\emph{\color{green}Standard Hough Line Transformation is widely used technique in curve detection. Despite this, it does have two important downsides. Firstly, for each nonzero pixel in an image, the parameters for both the existing curve as well as the redundant ones are obtained during the 'voting procedure'. Secondly, the more accuracy that is needed, the higher the parameter resolution must be defined. As a result, there is often a large storage requirement and low speed for real applications. Probabilistic Hough Transformation was derived in order to counter these problems. }
 
 In this master's thesis, in order to detect the Hough lines, the function of \textit{cv2.HoughLines()} in OpenCV was used. The function is:
 
@@ -578,7 +576,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 
 \item \textbf{$ \rho $ : }The resolution of the parameter $ \rho $ in pixels. In this master's thesis, \textbf{1 pixel} was used.
 
-\item \textbf{$ \theta $ : }The resolution of the parameter $ \theta $ in radians. In this master's thesis, \textbf{180 degree}(CV$ \_ $PI) was used.
+\emph{\color{green}\item \textbf{$ \theta $ : }The resolution of the parameter $ \theta $ in radians. In this master's thesis, \textbf{180 degree}(CV$ \_ $PI) was used.}
 
 \item \textbf{threshold : }The minimum number of intersections to 'detect' a line.
 
@@ -590,7 +588,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 \subsection{Probabilistic Hough-Transformation}\label{sec:Probabilistic Hough-Transformation}
 %
 
-Probabilistic Hough Transformation, also called Randomized Hough Transformation, is a variant of the Standard Hough Transformation. Hough Transformation is computationally expensive. Probabilistic Hough Transformation is an optimization of Standard Hough Transformation which does not analyze all points in the image. Instead, it looks at only a random subset of points sufficient for line detection. In order to apply Probabilistic Hough Transformation, the threshold must be decreased. Probabilistic Hough Transformation is commonly used to detect curves (straight line, circle, elipse,etc.) 
+\emph{\color{green}Probabilistic Hough Transformation, also called Randomized Hough Transformation, is a variant of the Standard Hough Transformation. Hough Transformation is computationally expensive. Probabilistic Hough Transformation is an optimization of Standard Hough Transformation which does not analyze all points in the image. Instead, it looks at only a random subset of points sufficient for line detection. In order to apply Probabilistic Hough Transformation, the threshold must be decreased. Probabilistic Hough Transformation is commonly used to detect curves (straight line, circle, elipse,etc.) }
 
 
 
@@ -600,11 +598,12 @@ Essentially, the point of the Hough Transformation is to implement a 'voting pro
 
  \begin{figure}[H]
  \centering
-  \includegraphics[width=0.9\textwidth]{./Bilder/Probabilistic_HT.png}\label{Probabilistic_HT_fig}
+  \includegraphics[width=0.9\textwidth]{./Bilder/Probabilistic_HT.png}
   \caption{Probabilistic Hough Transformation}
+  \label{Probabilistic_HT_fig}
 \end{figure}
 
-Line detection using Probabilistic Hough Transformation is similar to standard Hough Transformation, but instead of using all edge points of the image, some subset is randomly selected, which is then used to determine a single unique parameter space point for every pair of points from the subset (see picture \ref{Probabilistic_HT_fig}).
+Line detection using Probabilistic Hough Transformation is similar to standard Hough Transformation, but instead of using all edge points of the image, some subset is randomly selected, which is then used to determine a single unique parameter space point for every pair of points from the subset (see Figure \ref{Probabilistic_HT_fig}).
 
 As soon as the amount of points that are mapped to the same parameter in Hough space exceeds a certain threshold, the line is confirmed to be present in the original image, i.e. the line is detected. It is then removed from the input array so that the other lines are detected faster. The algorithm terminates either after all the lines are detected and there is no more input data, or the maximum limit of iterations is reached. Because of this approach, the required computational power and memory consumption are much less when compared with Standard Hough Transformation.
 
@@ -614,9 +613,8 @@ Probabilistic Hough Transformation algorithm consists of the following steps:
 \begin{enumerate}
 
 \item Initialise the set of points K representing the detected edges of the input image
-\item  Randomly selected two points from the set K  
-\item  Apply the mapping into Hough space and determine  the  parameter  point  of  the  straight  line  
-represented by two selected points
+\item  Randomly select two points from the set K  
+\item  Apply the mapping into Hough space and determine the parameter point of the straight line represented by two selected points
 \item  Acumulate parameter points in the Hough space. If  the amount of input points mapping to the same Hough space parameter exceed a given threshold, consider this parameter as a parameter for detected line and remove it from the input data, otherwise go to step 2, if the maximum number of loops is not reached.
 \item  Repeat until all input data is processed.
 \end{enumerate}
@@ -629,7 +627,7 @@ $HoughLinesP(dst, lines, \rho, \theta, threshold, minLinLength, maxLineGap )  $
 
   \end{center}
 
-The parameters of the function will be described in detail.\ref{Standard_Hough_Transformation2}
+The parameters of the function will be described in detail.\cite{Standard_Hough_Transformation2}
  
 \begin{itemize}
 
@@ -658,7 +656,7 @@ In this master's thesis, all lanes were detected with Probabilistic Hough Transf
 %
 \section{K-Nearest Neighbors Algorithm}\label{sec:K-Nearest Neighbors Algorithm}
 %
-K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. The non-parametric technique means that it doesn't make any assumptions on the underlaying data distribution. In the definition of KNN, the term 'lazy learning algorithm' is used. It means it doesn't use the data training points to do any generalization. In other words, there is no explicit training phase or it is very minimal.  It also means that the training phase is pretty fast. Most of the lazy algorithms - especially KNN - make decisions based on the entire training data set. On the other hand, KNN is one of the top 10 data mining algorithms\cite{k_nearest_neighbors}.
+K-Nearest Neighbor(KNN) is an non-parametric lazy learning algorithm. The non-parametric technique means that it doesn't make any assumptions on the underlaying data distribution. In the definition of KNN, the term 'lazy learning algorithm' is used. It means it doesn't use the data training points to do any generalization. In other words, there is no explicit training phase or it is very minimal.  It also means that the training phase is pretty fast. Most of the lazy algorithms -- especially KNN -- make decisions based on the entire training data set. On the other hand, KNN is one of the top 10 data mining algorithms\cite{k_nearest_neighbors}.
 
 \begin{figure}[H]
  \centering
@@ -699,7 +697,7 @@ KNN makes predictions through the direct use of the training dataset. Prediction
 
 \end{itemize}
 
-There are also some other distance measure methods like Tanimoto, Jaccard, Mahalanobis, cosine distance and so on. It must be decided which distance measure method should be used according the properties of the dataset. For example, if the input variables are similar in type (e.g. all measured widths and heights), the Euclidean distance measure method is good. However, if the input variables are not similar in type (such as age, gender, height, etc.), the Manhattan distance measure method is better than the Euclidean measure distance method.
+There are also some other distance measure methods like Tanimoto, Jaccard, Mahalanobis, and cosine distance. It must be decided which distance measure method should be used according the properties of the dataset. For example, if the input variables are similar in type (e.g. all measured widths and heights), the Euclidean distance measure method is good. However, if the input variables are not similar in type (such as age, gender, height, etc.), the Manhattan distance measure method is better than the Euclidean measure distance method.
 
 
 
@@ -733,7 +731,7 @@ The parameters of the function will be described in detail.\cite{k_nearest_neigh
 %
 \section{Curve Fitting}\label{sec:Curve Fitting}
 
-Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting results in the production of mostly mathematical equations which can be used to locate points anywhere along the curve.\cite{Curve_Fitting} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression, second order as quadratic regression, and third order as cubic regression.
+Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting results in the production of mostly mathematical equations which can be used to locate points anywhere along the curve.\cite{Curve_Fitting} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression; second order, quadratic regression; and third order, cubic regression.
 
 
 \begin{figure}[H]
@@ -745,7 +743,7 @@ Curve fitting is used to find the 'best fit' line or curve for a series of data 
 
 In this master's thesis, curve fitting is used for getting the best mathematical descriptions of lanes. Curve fitting uses the Hough points which appear on the lanes as input, and give a mathematical equation as output. First order polynomial curve fitting is more suitable for defining straight lines and second order polynomial curve fitting is more suitable for defining curves. There are both straight and curved lanes, so first order polynomial curve fitting is not sufficient for our project. Accordingly, in this master's thesis, second order polynimal curve fitting is used.
 
-There are so many different methods for curve fitting. One of the most famous methods is the least squares method, which is also the method utilized in this master's thesis. Next, how a polynomial curve fitting is generated using the least squares method will be described.
+There are many different methods for curve fitting. One of the most famous methods is the least squares method, which is also the method utilized in this master's thesis. Next, how a polynomial curve fitting is generated using the least squares method will be described.
 
 A data set mainly expresses the relationship between variables with an equation which is generally represented with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :
 
@@ -785,7 +783,7 @@ $
 The equations in the stardard form of Ma = b can be solved with many different methods. In this master's thesis, \textit{Cramer's Rule} was used to solve for the polynomial coefficients of curve fitting. With the help of the determinants of the square matrix, M can be solved for in any linear system of equations in order to find the coefficients. Each of the coefficients $a_{k}$ may be determined using the following equation :
 
 \begin{center}
-\scalebox{1.2}{$a_{k} = \dfrac{det(M_{i})}{det(M)}$}
+\emph{\color{green}\scalebox{1.2}{$a_{k} = \dfrac{det(M_{i})}{det(M)}$}}
 \end{center}
 
 In order to find the coefficients of polynomial curve fitting, we have to use the equation shown above, so the determinate of $ M_{i} $ must be divided by the determinate of M. Above, the equation Ma = b was shown, so the determinate of the M matrix can be calculated. However, for the determinate of $ M_{i} $ matrix, the M matrix must be modified. To find the $ M_{i} $ matrix, the $ i^{th} $ column must be replaced with the column vector b, which was used in the equation Ma = b. For example, if the $ M_{0} $ matrix is to be determined, the M matrix must be modified like at the following\cite{Curve_Fitting2} :
