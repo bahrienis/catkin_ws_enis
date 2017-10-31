@@ -1,17 +1,24 @@
 
 %
-\chapter{Evaulation and Discussion}
-\label{cha:Evaulation and Discussion}
+\chapter{Evaluation and Discussion}
+\label{cha:Evaluation and Discussion}
 
-In this chapter, the algorithms for each method used in this master's thesis will be evaluated. In addition, the parameters and their effects on computing time and the reliability of lane detection will be observed. The methods will be also compared with each other, with the aim of finding the most efficient and reliable method. In another section of this chapter, the average computation times for each of the algorithms as well as for the total lane detection process in each method will be also measured. At the end of this chapter, the problems which can occur during lane detection will also be defined.
+In this chapter, the algorithms for each method used in this master's thesis will be evaluated.
+In addition, the parameters and their effects on computing time and the reliability of lane
+detection will be observed. The methods will be also compared with each other, with the aim
+of finding the most efficient and reliable method. In another section of this chapter, the average
+computation times for each of the algorithms as well as for the total lane detection process in
+each method will also be measured. At the end of this chapter, the problems which can occur
+during lane detection will also be defined.
+
 %
 
 \section{Average Computing Time}\label{sec:Average Computing Time}
 
-\emph{\color{blue}There are totally 5 different methods, which were programmed for the detecting lanes so all methods have different average computig time and their reliability while lane detection are different. For all of methods, the computing times of algorithms and the method will be defined and also how effect  the parameters of the algorithms.}
+In total, five different methods for lane detection were implemented. Each method has a different average computing time as well as a different level of reliability in terms of lane detection. In this chapter, all of the methods, including their respective algorithms, will be described. The computing times of said algorithms, as well as how changing the parameters of the algorithms affects their computing times, will also be discussed.
 
 
-\textbf{Method 1 : }In the following table, there are the computing times for all algorithms and the average computing time. Due to limited space, abbreviations were used in place of the following terms:
+In the following table, the computing times for all algorithms, as well as their average computing times, are displayed. Due to limited space, abbreviations were used in place of the following terms:
 
 
 \begin{itemize}[noitemsep]
@@ -25,26 +32,31 @@ In this chapter, the algorithms for each method used in this master's thesis wil
 \item\textbf{ACT : }Average Computing Time
 \end{itemize}
 
-\begin{center}
+
+\begin{table}[ht]
+\caption{Computing Times of Method 1} 
+\centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c |}
     \hline
   
   PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
-  17.12 ms. & 1.39 ms. & 5 $\mu$s. & 16.71 ms. & 4.14 ms. & 3.85 ms. & 0 & 0 \\ \hline  
+  17.12 ms & 1.39 ms & 5 $\mu$s & 16.71 ms & 4.14 ms & 3.85 ms & 0 & 0 \\ \hline  
     
     
       \end{tabular}
-  \label{tab:Case1_Times}
-\end{center}
+      \label{tab:Case1_Times}
+      \end{table}
 
-As also seen above Table, the most computing times are 'Proprocessing part' and 'Probabilistic Hough Transformation'. These values can be descreased with the parameters of Probabilistic Hough Transformation or with doing less in the 'Preprocessing part'. But they can occur some problems. For example; in this project, there is a dynamical thresholding filter. A function finds the lightest pixel in the the frame then the threshold value of this filter is changed dynamically according the value of the lightest pixel. So in the threshold filter,  it would be also used a statical value for threshold so the method could work a bit faster but it wouldn't be so reliable in the changing of light conditions. On the other hand, the parameters of the Probabilistic Hough Transformation can be changed, with it, the Probabilistic Hough Transformation process will take less time but it will detect less Hough points on the lanes so if the Probabilistic Hough Transformation detects too less Hough points then the stability of the lane detection will be so bad.
+
+As also shown in the table above, the longest computing times belong to 'Preprocessing part' and 'Probabilistic Hough Transformation'. These values can be decreased by changing the parameters of Probabilistic Hough Transformation or by removing some steps in the 'Preprocessing part'. In both cases, however, doing so can also result in undesirable effects. For example, in this project, there is a dynamic thresholding filter utilized during the 'Preprocessing part'. A function finds the lightest pixel in the the frame and then the threshold value of this filter is changed dynamically according the value of the lightest pixel. Using such a filter results in a faster computing time, but it would also result in less reliability in changing light conditions. With regard to changing the parameters of the Probabilistic Hough Transformation, though it is possible to reduce its computing time, fewer Hough Points on the lanes will be detected. If too few Hough Points are detected, then the stability of lane detection will also suffer.
 
 The advantage of this method is, it is the fastest method, which gets the frames with 640x480 pixels resolution, but the disadvantage of this method is, it is hard to detect the lanes, which are far away from the camera. Because the lanes, which are far away from the camera, look smaller compare to the lanes which are close to the camera.
 
 
 
 
-\textbf{Method 2 : }In the Method 1, the Inverse Perspective Method was used just for the fitted curves. But in this method, the IPM algorithm was used at the beginning of the method. In the following table, the computing times for each algorithms and the average computing time for this method are shown. The new abbreviations, which were not used in Method 1 is in the following :
+\textbf{Method 2 : }In the Method 1, the Inverse Perspective Method was used only for the fitted curves.
+But in this method, the IPM algorithm was used at the beginning. In the following table, the computing times for each algorithm, as well as the average computing time for this method, are shown. Terms used in Method 2, which were not used in Method 1, and their respective abbreviations are as follows:
 
 
 \begin{itemize}[noitemsep]
@@ -52,28 +64,34 @@ The advantage of this method is, it is the fastest method, which gets the frames
 \item\textbf{KNN : }K-Nearest Neighbors Algorithm
 \end{itemize}
 
-\begin{center}
+
+\begin{table}[ht]
+\caption{Computing Times of Method 2} 
+\centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
     \hline
   
   IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & KNN 	   & CF 	  & PUB 	& ACT \\ \hline  
   16.48 ms. & 15.59 ms. & 1.08 ms. & 6 $\mu$s. & 14.92 ms. & 10 $\mu$s. & 2.39 ms. & 4.51 ms. & 0       & 0   \\ \hline  
     
-    
       \end{tabular}
   \label{tab:Case2_Times}
-\end{center}
+\end{table}
 
-As seen above Table, the average computing time in Method 2 is much more than Method 1. One of the biggest reason for the higher computing time is IPM. In Method 1, the IPM algorithm was used for less pixels, which are just relevant to fitted curves, but in Method 2, IPM algorithm was used for the all frame. In other words, In Method 2, IPM algorithm are used for much more pixels than in Method 1. So Method 2 has more computing time compare to Method 1. On the other hand, the difference between Method 1 and Method 2 is KNN and the rectangle algorithm. KNN algorithm, which was used in the Method 2 is much more faster than Rectangle algorithm, which is used in the Method 1. 
+As shown in the table above, the average computing time in Method 2 is much higher than in Method 1. One of the biggest reasons for the higher computing time is IPM. In Method 1, the IPM algorithm was used only for the pixels relevant to the fitted curves, but in Method 2, the IPM algorithm was used for the entire frame. In other words, in Method 2, the IPM algorithm is used for many more pixels than in Method 1, resulting in a higher computing time. Another difference between Method 1 and Method 2 is the use of the KNN and the rectangle algorithms, respectively. The KNN algorithm used in the Method 2 is much faster than Rectangle algorithm used in the Method 1.
 
-The main advantage of this method is, thanks to the IPM algorithm, there is no perspective effect. In the other words, the size of the lanes is not going to smaller, if they are going to further away from the camera. The main disadvantage of this method is the computing time. Because of the IPM algorithm, the computing time is higher than Method 1.
-
-
-
-\textbf{Method 3 : }This method is so similar to Method 2 but there is just one difference. Instead of the K-Nearest Neighbors Algorithm, the Rectangle Algorithm was used. In the following table, the abbreviations are also same with in Method 2 but instead of KNN, REC was used and meaning of the REC was defined in the Method 1.
+The main advantage of this method is that, thanks to the IPM algorithm, there is no perspective
+effect. In the other words, the size of the lanes does not appear smaller even if they are further away from the camera. The main disadvantage of this method is the computing time. Because of the IPM algorithm, the computing time is higher than in Method 1.
 
 
-\begin{center}
+
+\textbf{Method 3 : }This method is identical to Method 2, except for one difference. Instead of the
+K-Nearest Neighbors Algorithm, the Rectangle Algorithm is used. As a result, the terms and their respective abbreviations used in the following table are also identical to those used in Method 2, with the exception of REC (previously defined in Method 1), which replaces KNN:
+
+
+\begin{table}[ht]
+\caption{Computing Times of Method 3} 
+\centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
     \hline
   
@@ -83,15 +101,18 @@ The main advantage of this method is, thanks to the IPM algorithm, there is no p
     
       \end{tabular}
   \label{tab:Case3_Times}
-\end{center}
+\end{table}
 
-With this method, the KNN algorithm and Rectangle algorithm can be compared to each other. As seen from the results, except KNN/REC, the results are so similar. The results also show that the KNN algorithm is faster compare to the Rectangle algorithm. The main advantage of this method occurs again from the IPM algorithm but the main disadvantage of this method is again because of IPM. High computing time of the IPM algorithm is the biggest disadvantage of this method.
+With this method, the KNN algorithm and Rectangle algorithm can be compared to each other, because with the exception of when the algorithms are utilized in their respective methods, the results are quite similar. The results show that the KNN algorithm is faster when compared to the Rectangle algorithm. The main advantage of this method is again due to the IPM algorithm, but its high computing time is also the biggest disadvantage of this method.
 
-\textbf{Method 4 : }The resolution of the frame from the camera is discreased in this method. The processes in this method is nearly totally same with in Method 1 but the resolution/size of the frame is 4 time worse/smaller. Because of the less pixels in the frames, the computing time is much less compare to Method 1.
+\textbf{Method 4 : }The resolution of the frame from the camera is decreased in this method. The
+process in this method is nearly identical to the process in Method 1, but the resolution of the frame is four times smaller. Due to the presence of fewer pixels in the frames, the computing time is much less when compared to Method 1.
 
 
 
-\begin{center}
+\begin{table}[ht]
+\caption{Computing Times of Method 4} 
+\centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c |}
     \hline
   
@@ -101,21 +122,20 @@ With this method, the KNN algorithm and Rectangle algorithm can be compared to e
     
       \end{tabular}
   \label{tab:Case4_Times}
-\end{center}
+\end{table}
 
-The computing time is the biggest advantage of this method but there are also some disadvantages to discrease the resolution of the frames. The size of the lanes is also smaller in this method compare to Method 1 so the reliability of the lane detection is a bit worse and more sensitive to the changing light conditions.
+The computing time is the biggest advantage of this method, but there are also some disadvantages of decreasing the resolution of the frames. The size of the lanes is also smaller in this method when compared to Method 1, so the reliability of the lane detection is a bit worse and is also more sensitive to the changing light conditions.
 
-This method should be used, if the FPS value of the camera wanted to be get higher. Because of the less computing time, the FPS value can be higher. This method is also useful, if the processor is not enough strong for high computing effort.
-
-
-
-\textbf{Method 5 : }This is also one of the methods, whose resolution of the frame is decreased. The resolution of the frames in this method is also 4 times worse compare to Method 2.
+This method should be used if a higher FPS value of the camera is desired. Because of the lower computing time, it is possible to raise the FPS value. This method is also useful if the processor is not powerful enough for a high computing effort.
 
 
- the resized version of the Method 2. In this method, the input size of the frame is also converted directly at the beginning from 640x480 pixels resolution to the 320x240 pixels resolution, so the computing time less than Method 2.
+
+\textbf{Method 5 : }This is also a method in which the resolution of the frames is decreased. In this method, the input size of the frame is converted directly at the beginning from a 640x480 pixel resolution to a 320x240 pixel resolution, resulting in a resolution that is four times less when compared with Method 2. As a result, the computing time is also less than in Method 2.
 
 
-\begin{center}
+\begin{table}[ht]
+\caption{Computing Times of Method 5} 
+\centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
     \hline
   
@@ -125,7 +145,7 @@ This method should be used, if the FPS value of the camera wanted to be get high
     
       \end{tabular}
   \label{tab:Case5_Times}
-\end{center}
+\end{table}
 
 
 

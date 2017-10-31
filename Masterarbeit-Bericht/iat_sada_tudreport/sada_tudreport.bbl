@@ -21,8 +21,8 @@
 {\sc Ramesh~Jain, Rangachar~Kasturi, Brian G.~Schunck}: {\em Machine Vision}.
 \newblock McGraw-Hill, 1995.
 
-\bibitem{Sobel_Operator}
-{\sc Wikipedia}: {\em Sobel operator}, October 2017.
+\bibitem{SobelOperatorandCannyEdgeDetector}
+{\sc Kim, Daniel}: {\em Sobel Operator and Canny Edge Detector}, 2013.
 
 \bibitem{GaussianBlur}
 {\sc Team, OpenCV~Dev}: {\em Image Filtering}, October 2017.
@@ -85,6 +85,9 @@
 
 \bibitem{Curve_Fitting_Plot}
 {\sc MyCurveFit}: {\em MyCurveFit}, 2017.
+
+\bibitem{PD10BIMT}
+{\sc Corporation, MiTAC Computing~Technology}: {\em About}, 2016.
 
 \bibitem{ROS}
 {\sc Dirk, Thomas}: {\em What is ROS}, May 2014.

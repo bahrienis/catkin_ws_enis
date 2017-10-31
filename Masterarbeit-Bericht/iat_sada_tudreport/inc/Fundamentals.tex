@@ -79,7 +79,7 @@ For this master's thesis, the camera was calibrated and the parameters of the ca
 In order to apply IPM algorithm, the image coordinates must also be changed. Below, the steps of IPM calculations from the paper of \cite{IPM} will be detailed.
 
 
-In order to calculate the destination image coordinates (x*,y*), the input image coordinates (x,y), the height of the camera from the ground (H), the focal length of the camera (f), and the tilt angle of the camera ($\theta$) are all necessary and are used in the following formula:
+In order to calculate the destination image coordinates (x*,y*), the input image coordinates (x,y), the height of the camera from the ground (H), the focal length of the camera (f), and the tilt angle of the camera ($\theta$) are all necessary and are used in the following formula \emph{\color{red}according to the paper of \cite{IPM}}:
  
 \begin{center}
 \scalebox{1.15}{ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ ;
@@ -87,7 +87,7 @@ In order to calculate the destination image coordinates (x*,y*), the input image
 \end{center}
 
 In this equation, the transformed component values of $x^*$ and $y^*$ may be less than or equal to zero. Because of 
-this reason, a constant d is defined as \emph{\color{green}$
+this reason, a constant d is defined \emph{\color{red}according to the paper of \cite{IPM}} as \emph{\color{green}$
 \begin{vmatrix}
 H(sin \theta + cos \theta)/(f sin \theta - cos \theta) 
 \end{vmatrix}
@@ -150,7 +150,7 @@ Well known edge detection filters are :
 %
 \subsection{Sobel Operator}\label{sec:Sobel Operator}
 
-The Sobel Operator, sometimes called the Sobel filter or Sobel-Feldmann operator is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. Approximations of the derivatives for the horizontal changes and for the vertical changes are calculated by the operator by using two 3x3 kernels and convolving them with the original image. If A is defined as the source, if $G_{x}$ is an image which contains the horizontal derivative approximations at each point, and if $G_{y}$ is an imagine which contains the vertical derivative approximations at each point, then the calculations are:
+The Sobel Operator, sometimes called the Sobel filter or Sobel-Feldmann operator is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. Approximations of the derivatives for the horizontal changes and for the vertical changes are calculated by the operator by using two 3x3 kernels and convolving them with the original image. If A is defined as the source, if $G_{x}$ is an image which contains the horizontal derivative approximations at each point, and if $G_{y}$ is an imagine which contains the vertical derivative approximations at each point, then the calculations are \emph{\color{red}according to \cite{SobelOperatorandCannyEdgeDetector}}:
 
 \begin{center}
 
@@ -169,9 +169,9 @@ $  G_{x} =
 
 \end{center}
 
-where * here denotes the 2-dimensional signal processing convolution operation.
+\emph{\color{blue}where * here denotes the 2-dimensional signal processing convolution operation.}
 
-Since the Sobel kernels can be decomposed as the products of an averaging and a differentiation kernel, they compute the gradient with smoothing. For example, \textbf{$G_{x}$}  can be written as
+\emph{\color{blue}Since the Sobel kernels can be decomposed as the products of an averaging and a differentiation kernel, they compute the gradient with smoothing. For example, \textbf{$G_{x}$}  can be written as:}
 
 \begin{center}
 $  \begin{bmatrix}
@@ -189,19 +189,19 @@ $
 \end{center}
 
 
-The x-coordinate is defined here as increasing in the 'right'-direction, and the y-coordinate is defined as increasing in the 'down'-direction. At each point in the image, the resulting gradient approximations can be combined to give the gradient magnitude, using:
+\emph{\color{blue}The x-coordinate is defined here as increasing in the 'right'-direction, and the y-coordinate is defined as increasing in the 'down'-direction. At each point in the image, the resulting gradient approximations can be combined to give the gradient magnitude, using\cite{SobelOperatorandCannyEdgeDetector}}:
 
 \begin{center}
 \emph{\color{green}G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$}
 \end{center}
 
-Using this information, we can also calculate the gradient's direction:
+Using this information, we can also calculate the gradient's direction\cite{SobelOperatorandCannyEdgeDetector}:
 
 \begin{center}
 $\theta = atan\bigg(\dfrac{G_{y}}{G_{x}}\bigg)$
 \end{center}
 
-where, for example, $\theta$ is 0 for a vertical edge which is lighter on the right side.\cite{Sobel_Operator}
+where, for example, $\theta$ is 0 for a vertical edge which is lighter on the right side.
 
 
 \begin{figure}[H]
@@ -209,7 +209,7 @@ where, for example, $\theta$ is 0 for a vertical edge which is lighter on the ri
   \subfloat[Original Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Sobel_Original.png}\label{fig:f1}}
   \hfill
   \subfloat[Sobel Operator applied Image]{\includegraphics[width=0.4\textwidth]{./Bilder/Sobel_Operator.png}\label{fig:f2}}
-  \caption{Sobel Operator\cite{Sobel_Operator}}
+  \caption{Sobel Operator\cite{SobelOperatorandCannyEdgeDetector}}
 \end{figure} 
 
 
@@ -221,7 +221,7 @@ In this master's thesis, the Sobel Operator function in OpenCV was used. Before 
 
  \begin{center}
   
-\emph{\color{green}void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER$\_$DEFAULT )}
+\texttt{ void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER$\_$DEFAULT )}
 
   \end{center}
 
@@ -251,7 +251,7 @@ After the Gaussian Blur is applied, the picture must be converted from color to 
 
  \begin{center}
  
-void cvtColor(InputArray src, OutputArray dst, int code, int dstCn=0 )
+\texttt{void cvtColor(InputArray src, OutputArray dst, int code, int dstCn=0 )}
 
  \end{center}
  

@@ -28,18 +28,18 @@
 \contentsline {subsection}{\numberline {3.2.3}Camera}{29}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Response Time of the System}{31}{section.3.3}
 \contentsline {section}{\numberline {3.4}Software}{32}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Development Environment and Related Softwares}{32}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.1}Development Environment and Related Software}{32}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Preprocessing}{33}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}{35}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}{42}{subsection.3.4.4}
 \contentsline {subsection}{\numberline {3.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}{45}{subsection.3.4.5}
 \contentsline {subsection}{\numberline {3.4.6}Method 4 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{46}{subsection.3.4.6}
 \contentsline {subsection}{\numberline {3.4.7}Method 5 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{46}{subsection.3.4.7}
-\contentsline {chapter}{\numberline {4}Evaulation and Discussion}{49}{chapter.4}
+\contentsline {chapter}{\numberline {4}Evaluation and Discussion}{49}{chapter.4}
 \contentsline {section}{\numberline {4.1}Average Computing Time}{49}{section.4.1}
 \contentsline {section}{\numberline {4.2}Test Driving}{51}{section.4.2}
 \contentsline {chapter}{\numberline {5}Related Works}{53}{chapter.5}
 \contentsline {chapter}{\numberline {6}Conclusion}{55}{chapter.6}
-\contentsline {chapter}{Bibliography}{57}{section*.39}
+\contentsline {chapter}{Bibliography}{57}{section*.44}
 \contentsline {chapter}{\numberline {A}Appendix}{59}{appendix.A}
 \contentsline {section}{\numberline {A.1}Default Values of Parameters}{59}{section.A.1}
