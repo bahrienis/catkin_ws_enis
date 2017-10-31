@@ -47,8 +47,8 @@ In this model automobile, there is a microcontroller and a main board. The micro
 and receiving the measurements from ultrasonic sensors and hall effect sensors. The 16-bit microcontroller is from 
 MB96300 series from Fujitsu company.
 
-The main board on the model car is from PD10BI-MT ThinMini-ITX series from MiTAC company. This main board communicates 
-with the microcontroller over an UART interface through USB connection. On this main board \emph{\color{red}according to the website of the MiTAC company\cite{PD10BIMT}}, there is an  \emph{\color{red}Intel Celeron J1900 Quad core processor with integrated graphics}. Furthermore, there is an 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as a power supply.
+The main board on the model car is from PD10BI-MT ThinMini-ITX series from the MiTAC company. This main board communicates 
+with the microcontroller over an UART interface through USB connection. On this main board, according to the website of the MiTAC company\cite{PD10BIMT}, there is an Intel Celeron J1900 Quad core processor with integrated graphics. Furthermore, there is an 8 GB DDR3-1600 RAM and 1Gbit/s Ethernet, VGA, HDMI, USB 2.0/3.0, SATA ports and an Intel Dual Band Wireless AC 7260 Network adapter, which is connected to two external WLAN antennas. A 60 GB Kingston SSD-Harddisk is connected over an integrated PCI-Express Port. A 3200 mAh Li-Fe battery is used as a power supply.
 %
 
 \subsection{Camera}\label{sec:Camera}
@@ -100,18 +100,19 @@ Before the results were measured, the frequency of the camera was set to 10 Fram
 
 After the supply was turned on, the LED started to blink. For this experiment, a small firmware able to detect the color red was written in order to detect when the red LED lit up.
 
-The LED and a camera were placed together in a box and the box was closed, and so the inside of the box was totally dark. When the red LED lit up, the camera detected it and the firmware set an I/O pin on the main board. For this experiment,  \emph{\color{green}two different cameras were used and the results were very similar.}
+The LED and a camera were placed together in a box and the box was closed, and so the inside of the box was totally dark. When the red LED lit up, the camera detected it and the firmware set an I/O pin on the main board. For this experiment, two different cameras (Logitech Webcam C270 model and Logitech Webcam C905 model) were used and the results were very similar.
 
 
 \begin{figure}[H]
  \centering
-  \includegraphics[width=0.8\textwidth]{./Bilder/Response_Time2.png}		 \caption{Response Time of the System}
+  \includegraphics[width=0.8\textwidth]{./Bilder/Response_Time2.png}		 \caption{Response Time of the System} 
   \label{fig:Response_Time_of_the_System}
 \end{figure}
 
 
-\emph{\color{green}As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system was 156 ms., the minimum
-response time of the system was 63 ms., and the average time was 106.6 ms.}
+As in Figure \ref{sec:Response Time of the System} seen, the maximum response time of the system was 156 ms, the minimum response time of the system was 63 ms, and the average time was 106.6 ms.
+
+This Figure shows that the frames are steadily sent by the camera. In addition, if the LED lights up and is immediatly followed by new frame, then the light is detected. If the LED goes dim and is followed by a new frame, then the response time of the system is minimum, which is measured at 63 ms. On the other hand, if the frame comes and then immediately the LED changes its status (on/off), the new status of the LED is not detected until the new frame is received. The FPS value of the camera is ten, which means that the system must wait nearly 100 ms for the new frame and after that, the response time of the system must taken into account, so the maximum response time of this total system is around 156 ms. This means that the FPS value of the camera is important for response time of the entire system. Because it is desirable to increase the FPS value of the camera, decreasing the computing times of lane detection methods is also desirable, as this would allow for an increase in the FPS value.
 
 
 
@@ -128,20 +129,22 @@ In this chapter, the software algorithms defined in this master's thesis will be
 
 As also mentioned at subsection \ref{sec:Microcontroller and Main Board}, in this project the previously introduced main board was utilized. One of the compact and fast versions of the Linux 16.04 operating system, \textit{Lubuntu} was installed in this main board.
 
-The version \textit{Kinetic} of ROS was used for implementation of this master's thesis. ROS is the abbreviation of \textbf{R}obotic \textbf{O}perating \textbf{S}ystem, which is a robotics middleware (i.e. collection of software \emph{\color{green}frameworks} for robot software development). On the ROS wiki page\cite{ROS}, ROS is defined as an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.
+The version \textit{Kinetic} of ROS was used for implementation of this master's thesis. ROS is the abbreviation of \textbf{R}obotic \textbf{O}perating \textbf{S}ystem, which is a flexible framework for writing robot software (i.e. collection of tools and libraries for robot software development). On the ROS wiki page\cite{ROS}, ROS is defined as an open-source, meta-operating system for your robot. It provides the services you would expect from an operating system, including hardware abstraction, low-level device control, implementation of commonly-used functionality, message-passing between processes, and package management. It also provides tools and libraries for obtaining, building, writing, and running code across multiple computers.
 
 For using prepaid image processing functions, an open-source computer vision and machine learning software library called OpenCV was used. According to the OpenCV website\cite{OpenCV_About}, there are more than 2500 optimized algorithms in the OpenCV library and OpenCV has a user community of more than 47 thousand people.
 
 ROS can be programmed with Python, C++ or Lisp programming languages and OpenCV can be programmed with Python or C++ programming languages. In this master's thesis, C++ was used.
 
-\emph{\color{blue}Because the monitor cannot always be connected to a PC via a cable for practical reasons,  model automobile so to see if the algorithm can detect the lanes good, the outputs of the software must be seen so the model automobile must be connected to a PC remotely. In order to test the lane detection, For that, there is a software used which can connect two different computers which are run by the Linux operating system. As the first step, a wireless network must be created in one of these computers and the other computer must be connected to this wireless network. Then the IP address of the model car must be found out or a static IP address must be given to the model automobile. As the last step, 'Remmina Remote Desktop Client' must be used in the PC and the IP address of the model car (Server) must be written. After that, the car and the PC are connected to each other. In this software, the quality of screen sharing and the speed can be adjusted.  }  
+Because the monitor cannot always be connected to a PC via a cable for practical reasons, in order to see if the algorithm can detect the lanes, the on-board PC must be connected to a PC remotely. For that, there is a software used which can connect two different computers which are run by the Linux operating system. As the first step, a wireless network must be created in one of these computers and the other computer must be connected to this wireless network. Then the IP address of the model car must be determined or a static IP address must be given to the model automobile. As the last step, 'Remmina Remote Desktop Client' must be used in the PC and the IP address of the model automobile (Server) must be given. After that, the model automobile and the PC are connected to each other. In this software, the quality of screen sharing and the speed can be adjusted.  
 
 %
 \subsection{Preprocessing}\label{sec:Preprocessing}
 
 There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods were defined, and in this chapter, these methods will be explained in detail.
 
-In all of these methods, some processes are common, and this is called the preprocessing phase. At the beginning, the frames are obtained from the camera via ROS-Topic. ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
+In all of these methods, some processes are common, and this is called the preprocessing part. In Figure \ref{fig:Block_Diagram_of_the_Preprocessing_Part}, the steps of the preprocessing part are shown.
+
+At the beginning, the frames are obtained from the camera via ROS-Topic. ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
 
 Mat is a class which has two parts. The parts are a matrix header and a pointer to the matrix containing the pixel values. The matrix header contains information like the size of matrix, storing method, etc. It always has a fixed size but the size of matrix is variable from image to image.
 
@@ -177,12 +180,12 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 
 After the frame from Camera via ROS-Topic is received, the color frame has to be converted to a grayscale frame. For detection lanes, Hough Transformation is used and for Hough Transformation, the grayscale format of the input image is needed. Converting a frame from BGR format to grayscale format has some advantages, the main advantage being the processing time. Normally color frame matrix content has three or four channels, but grayscale frame matrix content has just one channel, so grayscale frame matrix size is much smaller compared to color frame matrix size. Because of this, the image processing time is much less for the grayscale format compared to BGR format. In order to convert the BGR formatted frame to a grayscale formatted frame, the \textit{cvtColor} function from OpenCV is used.
 
-For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. \emph{\color{blue}In order to find the lightest and the darkest pixels, the following function in OpenCV was used. This function will be explained in detail.}\cite{addWeighted}
+For stable lane detection, the light conditions must be considered. Because of this, after converting the frame with BGR format to grayscale format, the lightest and darkest pixels have to be searched for. In order to find the lightest and the darkest pixels, the following function in OpenCV was used. This function will be explained in detail.\cite{addWeighted}
 
 
 \begin{center}
 
-void minMaxLoc(InputArray src, double* minVal, double* maxVal=0, Point* minLoc=0, Point* maxLoc=0, InputArray mask=noArray())
+\texttt{void minMaxLoc(InputArray src, double* minVal, double* maxVal=0, Point* minLoc=0, Point* maxLoc=0, InputArray mask=noArray())}
 
 \end{center}
 
@@ -203,12 +206,12 @@ void minMaxLoc(InputArray src, double* minVal, double* maxVal=0, Point* minLoc=0
 \end{itemize}
 
 
-After finding the lightest and darkest pixels, it is possible to estimate the lighting conditions. These values are then used in the next step. After this processing, a filter is applied to all frames, transforming images into binary images by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value; otherwise, it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamic parameter, the lanes are more able to be more clearly detected and noise can be cancelled more successfully. \emph{\color{blue}For this thresholding operation, the following function in OpenCV was used. This function will be explained in detail.}\cite{threshold}
+After finding the lightest and darkest pixels, it is possible to estimate the lighting conditions. These values are then used in the next step. After this processing, a filter is applied to all frames, transforming images into binary images by transforming each pixel according to whether it is inside or outside a specified range. The user chooses a threshold value to process. If a pixel is greater than this value, it is assigned an 'inside' value; otherwise, it is assigned an 'outside' value. Depending on the lightest and darkest pixel values, the threshold value changes. Through this dynamic parameter, the lanes are more able to be more clearly detected and noise can be cancelled more successfully. For this thresholding operation, the following function in OpenCV was used. This function will be explained in detail\cite{threshold}.
 
 
 \begin{center}
 
-double threshold(InputArray src, OutputArray dst, double thresh, double maxval, int type)
+\texttt{double threshold(InputArray src, OutputArray dst, double thresh, double maxval, int type)}
 
 \end{center}
 

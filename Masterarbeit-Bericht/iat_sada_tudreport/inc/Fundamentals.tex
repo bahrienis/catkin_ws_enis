@@ -79,7 +79,7 @@ For this master's thesis, the camera was calibrated and the parameters of the ca
 In order to apply IPM algorithm, the image coordinates must also be changed. Below, the steps of IPM calculations from the paper of \cite{IPM} will be detailed.
 
 
-In order to calculate the destination image coordinates (x*,y*), the input image coordinates (x,y), the height of the camera from the ground (H), the focal length of the camera (f), and the tilt angle of the camera ($\theta$) are all necessary and are used in the following formula \emph{\color{red}according to the paper of \cite{IPM}}:
+In order to calculate the destination image coordinates (x*,y*), the input image coordinates (x,y), the height of the camera from the ground (H), the focal length of the camera (f), and the tilt angle of the camera ($\theta$) are all necessary and are used in the following formula\cite{IPM}:
  
 \begin{center}
 \scalebox{1.15}{ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ ;
@@ -87,11 +87,15 @@ In order to calculate the destination image coordinates (x*,y*), the input image
 \end{center}
 
 In this equation, the transformed component values of $x^*$ and $y^*$ may be less than or equal to zero. Because of 
-this reason, a constant d is defined \emph{\color{red}according to the paper of \cite{IPM}} as \emph{\color{green}$
-\begin{vmatrix}
-H(sin \theta + cos \theta)/(f sin \theta - cos \theta) 
-\end{vmatrix}
-$  + 1}. This means that \emph{\color{green}the} coordinate point in the original source image has been mapped into the point of the destination image coordinate system. Below there is the proposed equation :
+this reason, a constant d is defined as\cite{IPM} :
+ \begin{center}
+\scalebox{1.15}{d = 
+ $\begin{vmatrix}
+ \frac{H(sin \theta + f cos \theta)}{f sin \theta - cos \theta}
+ \end{vmatrix}$ + 1}
+\end{center}
+
+\emph{\color{green}This means that the coordinate point in the original source image has been mapped into the point of the destination image coordinate system. Below there is the proposed equation :}
  
  \begin{center}
 \scalebox{1.15}{ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
@@ -150,7 +154,7 @@ Well known edge detection filters are :
 %
 \subsection{Sobel Operator}\label{sec:Sobel Operator}
 
-The Sobel Operator, sometimes called the Sobel filter or Sobel-Feldmann operator is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. Approximations of the derivatives for the horizontal changes and for the vertical changes are calculated by the operator by using two 3x3 kernels and convolving them with the original image. If A is defined as the source, if $G_{x}$ is an image which contains the horizontal derivative approximations at each point, and if $G_{y}$ is an imagine which contains the vertical derivative approximations at each point, then the calculations are \emph{\color{red}according to \cite{SobelOperatorandCannyEdgeDetector}}:
+The Sobel Operator, sometimes called the Sobel filter or Sobel-Feldmann operator is one of the most used edge detectors in image processing and computer vision. The Sobel Operator uses vertical and horizontal masks. These masks used are odd-numbered square matrices and they are generally 3x3 matrices. Approximations of the derivatives for the horizontal changes and for the vertical changes are calculated by the operator by using two 3x3 kernels and convolving them with the original image. If A is defined as the source, if $G_{x}$ is an image which contains the horizontal derivative approximations at each point, and if $G_{y}$ is an imagine which contains the vertical derivative approximations at each point, then the calculations are\cite{SobelOperatorandCannyEdgeDetector}:
 
 \begin{center}
 
@@ -274,7 +278,7 @@ Before the Sobel operator is used, the Gaussian Filter must be applied and the i
 
  \begin{center}
 
-void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksize=3, double scale=1, double delta=0, int borderType=BORDER$\_$DEFAULT )
+\texttt{void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksize=3, double scale=1, double delta=0, int borderType=BORDER$\_$DEFAULT )}
 
  \end{center}
  
@@ -302,7 +306,7 @@ The last step of the application of the Sobel operator is approximating the grad
 
  \begin{center}
  
-void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, double gamma, OutputArray dst, int dtype=-1)
+\texttt{void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, double gamma, OutputArray dst, int dtype=-1)}
  
   \end{center}
   
@@ -373,7 +377,7 @@ The main disadvantage of the Canny edge detector is that it is time consuming, d
 
  \begin{center}
  
-void Canny(InputArray image, OutputArray edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)
+\texttt{void Canny(InputArray image, OutputArray edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)}
 
  \end{center}
  
@@ -399,13 +403,8 @@ void Canny(InputArray image, OutputArray edges, double threshold1, double thresh
 
 
 
-\emph{\color{blue}In this master's thesis the Sobel Operator was utilized. The first reason for using this algorithm rather than the Canny Edge Detection algorithm is its performance. The latter uses the second derivative, which is computationally harder and takes more time (see table ?? for timing comparison). For the purpose of lane detection, it is crucial to spend as little computation time per frame as possible, because longer durations may result in substantial delay between the image capture and the car driving module's reaction to a new lane position. }
+In this master's thesis the Sobel Operator was utilized. The first reason for using this algorithm rather than the Canny Edge Detection algorithm is its performance. The latter uses the second derivative, which is more computationally expensive and therefore takes more time. For the purpose of lane detection, it is crucial to spend as little computation time per frame as possible, because longer durations may result in a substantial delay between the image capture and the car driving module's reaction to a new lane position. 
 
-//insert table with timings for sobel and canny here
-
-\emph{\color{blue}The other reason is that in case of poor lighting conditions, the Canny Edge Detector tends to filter out parts of the lane lines, whereas the Sobel Operator shows much better results (see picture ??)}
-
-//insert a pic with comparing sobel and canny in poor light conditions 
 
 
 
@@ -562,7 +561,7 @@ In this master's thesis, in order to detect the Hough lines, the function of \te
 
   \begin{center}
   
-$HoughLines(dst, lines, \rho, \theta, threshold, srn, stn )  $
+\texttt{$HoughLines(dst, lines, \rho, \theta, threshold, srn, stn )  $}
 
   \end{center}
 
@@ -623,7 +622,7 @@ The following function from OpenCV library implements aforementioned algorithm:
 
   \begin{center}
   
-$HoughLinesP(dst, lines, \rho, \theta, threshold, minLinLength, maxLineGap )  $
+\texttt{$HoughLinesP(dst, lines, \rho, \theta, threshold, minLinLength, maxLineGap )  $}
 
   \end{center}
 
@@ -707,7 +706,7 @@ K-Nearest Neighbors Algorithm is also a function in OpenCV. The following comman
 
 \begin{center}
 
-void flann::Index$\_$<T>::knnSearch(const vector<T>$\&$ query, vector<int>$\&$ indices, vector<float>$\&$ dists, int knn, const SearchParams$\&$ params)
+\texttt{void flann::Index$\_$<T>::knnSearch(const vector<T>$\&$ query, vector<int>$\&$ indices, vector<float>$\&$ dists, int knn, const SearchParams$\&$ params)}
 
 \end{center}
 
@@ -731,7 +730,7 @@ The parameters of the function will be described in detail.\cite{k_nearest_neigh
 %
 \section{Curve Fitting}\label{sec:Curve Fitting}
 
-Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting results in the production of mostly mathematical equations which can be used to locate points anywhere along the curve.\cite{Curve_Fitting} They are several different types of curve fitting. Some of them are: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression; second order, quadratic regression; and third order, cubic regression.
+Curve fitting is used to find the 'best fit' line or curve for a series of data points. Curve fitting results in the production of mostly mathematical equations which can be used to locate points anywhere along the curve. They are several different types of curve fitting. Some of them are\cite{Curve_Fitting}: linear, exponential, polynomial, exponential, power, logarithmic, etc. In this master thesis, polynomial curve fitting was used. Polynomial curve fitting differs from order of the polynomial. Polynomial curve fittings are called different names depending on their orders. First order polynomial curve fittings are called linear regression; second order, quadratic regression; and third order, cubic regression.
 
 
 \begin{figure}[H]
@@ -741,9 +740,25 @@ Curve fitting is used to find the 'best fit' line or curve for a series of data 
 \end{figure}
 
 
-In this master's thesis, curve fitting is used for getting the best mathematical descriptions of lanes. Curve fitting uses the Hough points which appear on the lanes as input, and give a mathematical equation as output. First order polynomial curve fitting is more suitable for defining straight lines and second order polynomial curve fitting is more suitable for defining curves. There are both straight and curved lanes, so first order polynomial curve fitting is not sufficient for our project. Accordingly, in this master's thesis, second order polynimal curve fitting is used.
+In this master's thesis, curve fitting is used for getting the best mathematical descriptions of lanes. Curve fitting uses the Hough points which appear on the lanes as input, and give a mathematical equation as output. First order polynomial curve fitting is more suitable for defining straight lines and second order polynomial curve fitting is more suitable for defining curves. There are both straight and curved lanes, so first order polynomial curve fitting is not sufficient for our project. Accordingly, in this master's thesis, second order polynomial curve fitting is used.
 
-There are many different methods for curve fitting. One of the most famous methods is the least squares method, which is also the method utilized in this master's thesis. Next, how a polynomial curve fitting is generated using the least squares method will be described.
+There are many different methods for curve fitting. One of the most famous methods is the least squares method, which is also the method utilized in this master's thesis. Another method which can be used instead of least squares algorithm is the interpolation algorithm. As in the curve fitting method, there are different types of interpolation. Some of them are: linear interpolation, polynomial interpolation, and cubic-spline interpolation. In the interpolation method, the data points are connected to each other. If it is linear interpolation, the data points are connected to each other with a straight line, but if it is cubic-spline interpolation, the data points are connected to each other with a third-degree polynomial. Curve fitting and interpolation each have their own advantages and disadvantages. For example, in curve fitting, the fitted curve does not always pass through the original data points, but in interpolation, the generated curve always does so. On the other hand, if the data set is very large, curve fitting can give the 'best fit' even in low-order polynomials. In this master's thesis, because there are so many data points from the lanes, the curve fitting method is more suitable when compared with interpolation. In addition, if there is noise that occurs far away from the lanes, because of the large size of the data set, this noise is ignored and does not change the fitted curve. In Figure \ref{Interpolation and Curve Fitting to Random Numbers}, there is a fitted curve and interpolation for a small data set. 
+
+
+
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=0.8\textwidth]{./Bilder/CurveFittingvsInterpolation.png}
+  \caption{Interpolation and Curve Fitting to Random Numbers\cite{Interpolation_and_CurveFitting}}
+  \label{Interpolation and Curve Fitting to Random Numbers}
+\end{figure}
+
+
+
+
+
+
+Next, how a polynomial curve fitting is generated using the least squares method will be described.
 
 A data set mainly expresses the relationship between variables with an equation which is generally represented with a $k^{th}$ order polynomial. The general description of $ k^{th} $ is :
 

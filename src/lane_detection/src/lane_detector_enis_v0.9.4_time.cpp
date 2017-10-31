@@ -126,8 +126,8 @@ vector<Point> rectangle(Mat inputImg, Point Startpoint, vector<Point> houghpoint
     double dividebyy = 0;
 
     if (whichlane == "middle") {
-        dividebyx1 = 5;
-        dividebyx2 = 5;
+        dividebyx1 = 4;
+        dividebyx2 = 4;
         dividebyy = 2;
     } else {
         dividebyx1 = 8;
@@ -291,7 +291,7 @@ int main(int argc, char **argv) {
         Mat outputImg1;
         Mat outputImg2;
         Mat cdst1;
-        Mat grad;
+        Mat grad, grad2;
         Mat outputImg3;
         int scale = 1;
         int delta = 0;
@@ -308,9 +308,9 @@ int main(int argc, char **argv) {
 
 
 
-		int firstpicsize = 100;
-        int secondpicsize = 150;
-        int thirdpicsize = 230;
+		int firstpicsize = heightofframe/4.8;	//100;
+        int secondpicsize = heightofframe/3.2;	//150;
+        int thirdpicsize = heightofframe-(firstpicsize+secondpicsize);
 
 
         vector<int> redlines;
@@ -335,20 +335,20 @@ int main(int argc, char **argv) {
 
 
 
-/*             if (sayi >= 294) {
+ /*            if (sayi >= 294) {
                  sayi = 0;
              }
 
              std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
              sayi++;
              cout << "frame : " << sayi << endl;
- */        
-
+         
+*/
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame38.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -516,21 +516,35 @@ clock_t end_SHT = clock();
 
 
 
+
+
+
+        Rect Rec2(0, firstpicsize, 640, thirdpicsize+secondpicsize);
+        //        line(inputImg, Point(0,99),Point(640,99),Scalar(0,255,0),1,CV_AA);
+        //   rectangle(inputImg, Rec1, Scalar(255), 1, 8, 0);
+        //    rectangle(inputImg, Point(0, 0),Point(640, 99), Scalar(255), 1, 8, 0);
+
+
+        grad2 = grad(Rec2);
+        
+        
+        
+
         //1. Bild         
 
         vector<Vec4i> lines1P;
-        HoughLinesP(grad, lines1P, 2, CV_PI / 180, 2, 2, 2);
+        HoughLinesP(grad2, lines1P, 2, CV_PI / 180, 2, 2, 2);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
             //            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
-            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-            circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
+            circle(inputImg, Point(l[0], l[1]+firstpicsize), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+            circle(inputImg, Point(l[2], l[3]+firstpicsize), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
             //           circle(gradcolor, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //           circle(gradcolor, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
 
-            houghpoints.push_back(Point(l[0], l[1]));
-            houghpoints.push_back(Point(l[2], l[3]));
+            houghpoints.push_back(Point(l[0], l[1]+firstpicsize));
+            houghpoints.push_back(Point(l[2], l[3]+firstpicsize));
 
 
         }
@@ -741,10 +755,10 @@ clock_t end_CF = clock();
 
 
 
-//       imshow("Input Image", inputImg);
- //       imshow("Input Image IPM", inputImgIPM);
-//        imshow("Sobel", grad);
-//        imshow("Sobel color", gradcolor);
+       imshow("Input Image", inputImg);
+//        imshow("Input Image IPM", inputImgIPM);
+        imshow("Sobel", grad);
+        imshow("Sobel color", gradcolor);
 
 
 

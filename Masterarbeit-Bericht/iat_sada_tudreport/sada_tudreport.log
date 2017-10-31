@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  31 OCT 2017 14:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  1 NOV 2017 00:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1389,85 +1389,71 @@ ap} </home/enis/.texmf-var/tex/latex/tuddesign/logo/tud_logo.pdf> <./common/rtm
 _mit_schrift.pdf>] [0
 
 ] (./common/SADA_Aufgabenstellung.tex
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 36.
 
-LaTeX Warning: Citation `Richtlinien' on page i undefined on input line 2.
-
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 4.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-<./common/IAT_rtm.pdf, id=28, 91.53557pt x 43.78036pt>
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 42.
+
+(/home/enis/.texmf-var/tex/latex/tex-tudfonts/softmake/charter/ts15ch.fd
+File: ts15ch.fd 2008/06/23 Fontinst v1.927 font definitions for TS1/5ch.
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+
+]
+<./common/IAT_rtm.pdf, id=34, 91.53557pt x 43.78036pt>
 File: ./common/IAT_rtm.pdf Graphic file (type pdf)
 
 <use ./common/IAT_rtm.pdf>
-Package pdftex.def Info: ./common/IAT_rtm.pdf used on input line 37.
+Package pdftex.def Info: ./common/IAT_rtm.pdf used on input line 85.
 (pdftex.def)             Requested size: 85.35826pt x 40.82753pt.
 
-Overfull \hbox (2.32098pt too wide) in paragraph at lines 25--39
+Overfull \hbox (2.32098pt too wide) in paragraph at lines 73--87
 []$[]$ $[]$ 
  []
 
-) [1
-
-
-
- <./common/IAT_rtm.pdf>] [2
-
-
-] (./common/SADA_Erklaerung.tex
+) [2 <./common/IAT_rtm.pdf>] (./common/SADA_Erklaerung.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--3
 
  []
 
-) [3] (./common/SADA_Abstract.tex
-
-LaTeX Warning: Citation `Richtlinien' on page iv undefined on input line 4.
+) [3
 
 
-LaTeX Warning: Citation `Richtlinien' on page iv undefined on input line 20.
+] [4
 
-) [4
+
 
 ] (./sada_tudreport.toc [5
-
-
 
 
 ])
 \tf@toc=\write4
 \openout4 = `sada_tudreport.toc'.
 
- [6] (./inc/Symbole.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 27--50
-
- []
-
-[7
-
-
-
-] [8
-
-
-]) (./inc/Introduction.tex
+ [6]) (./inc/Introduction.tex
 chapter 1.
 [1
+
+
+
 
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-
-LaTeX Warning: Reference `cha:Evaulation and Discussion' on page 3 undefined on
- input line 48.
-
-) (./inc/Fundamentals.tex [3] [4
+ [2])
+(./inc/Fundamentals.tex [3] [4
 
 
 ]
 chapter 2.
-<./Bilder/Intersections.png, id=187, 521.95pt x 477.785pt>
+<./Bilder/Intersections.png, id=168, 521.95pt x 477.785pt>
 File: ./Bilder/Intersections.png Graphic file (type png)
 
 <use ./Bilder/Intersections.png>
@@ -1477,11 +1463,6 @@ Package pdftex.def Info: ./Bilder/Intersections.png used on input line 14.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-LaTeX Font Info:    Try loading font information for TS1+5ch on input line 31.
-
-(/home/enis/.texmf-var/tex/latex/tex-tudfonts/softmake/charter/ts15ch.fd
-File: ts15ch.fd 2008/06/23 Fontinst v1.927 font definitions for TS1/5ch.
-)
 [6 <./Bilder/Intersections.png>]
 
 LaTeX Warning: Reference `Camera_Calibration' on page 7 undefined on input line
@@ -1494,7 +1475,7 @@ MS/mdbch/m/n/11.5 ^^@$\T1/5ch/m/it/11 size 8x6 $-\OMS/mdbch/m/n/11.5 ^^@$\T1/5c
 h/m/it/11 square 0.108 image:=/usb$[]$cam/image$[]$raw
  []
 
-<./Bilder/Camera_Calibration_fig.png, id=202, 772.8875pt x 560.0925pt>
+<./Bilder/Camera_Calibration_fig.png, id=186, 772.8875pt x 560.0925pt>
 File: ./Bilder/Camera_Calibration_fig.png Graphic file (type png)
 
 <use ./Bilder/Camera_Calibration_fig.png>
@@ -1505,122 +1486,141 @@ Package pdftex.def Info: ./Bilder/Camera_Calibration_fig.png used on input line
 Underfull \vbox (badness 8094) has occurred while \output is active []
 
  [7 <./Bilder/Camera_Calibration_fig.png>]
-<./Bilder/Related_positions_of_the_camera.png, id=215, 450.68375pt x 307.1475pt
+<./Bilder/Related_positions_of_the_camera.png, id=202, 450.68375pt x 307.1475pt
 >
 File: ./Bilder/Related_positions_of_the_camera.png Graphic file (type png)
  <use ./Bilder/Related_positions_of_the_camera.png>
 Package pdftex.def Info: ./Bilder/Related_positions_of_the_camera.png used on i
 nput line 72.
 (pdftex.def)             Requested size: 364.19667pt x 248.21632pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [8 <./Bilder/Related_positions_of_the_camera.png>]
-<./Bilder/Procedures_of_IPM.png, id=228, 665.48625pt x 142.5325pt>
+<./Bilder/Procedures_of_IPM.png, id=216, 665.48625pt x 142.5325pt>
 File: ./Bilder/Procedures_of_IPM.png Graphic file (type png)
 
 <use ./Bilder/Procedures_of_IPM.png>
-Package pdftex.def Info: ./Bilder/Procedures_of_IPM.png used on input line 107.
+Package pdftex.def Info: ./Bilder/Procedures_of_IPM.png used on input line 111.
 
 (pdftex.def)             Requested size: 455.24411pt x 97.50366pt.
  [9 <./Bilder/Procedures_of_IPM.png>]
 [10]
 LaTeX Font Info:    Font shape `T1/5ch/b/it' in size <11> not available
-(Font)              Font shape `T1/5ch/b/sl' tried instead on input line 174.
- <./Bilder/Sobel_Original.png, id=253, 642.4pt x 481.8pt>
+(Font)              Font shape `T1/5ch/b/sl' tried instead on input line 178.
+ <./Bilder/Sobel_Original.png, id=239, 642.4pt x 481.8pt>
 File: ./Bilder/Sobel_Original.png Graphic file (type png)
 
 <use ./Bilder/Sobel_Original.png>
-Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 209.
+Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 213.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
 
-<./Bilder/Sobel_Operator.png, id=254, 642.4pt x 481.8pt>
+<./Bilder/Sobel_Operator.png, id=240, 642.4pt x 481.8pt>
 File: ./Bilder/Sobel_Operator.png Graphic file (type png)
 
 <use ./Bilder/Sobel_Operator.png>
-Package pdftex.def Info: ./Bilder/Sobel_Operator.png used on input line 211.
+Package pdftex.def Info: ./Bilder/Sobel_Operator.png used on input line 215.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
  [11 <./Bilder/Sobel_Original.png (PNG copy)> <./Bilder/Sobel_Operator.png>] [1
 2] [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
 File: ./Bilder/Sobel_Original.png Graphic file (type png)
- <use ./Bilder/Sobel_Original.png>
-Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 359.
+
+<use ./Bilder/Sobel_Original.png>
+Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 363.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
 
-<./Bilder/Canny_Edge_Detector.png, id=281, 642.4pt x 481.8pt>
+<./Bilder/Canny_Edge_Detector.png, id=279, 642.4pt x 481.8pt>
 File: ./Bilder/Canny_Edge_Detector.png Graphic file (type png)
 
 <use ./Bilder/Canny_Edge_Detector.png>
 Package pdftex.def Info: ./Bilder/Canny_Edge_Detector.png used on input line 36
-1.
+5.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-[15 <./Bilder/Canny_Edge_Detector.png (PNG copy)>]
-<./Bilder/GaussianBlur_1.png, id=305, 476.78125pt x 329.23pt>
+ [15 <./Bilder/Canny_Edge_Detector.png (PNG copy)>] <./Bilder/GaussianBlur_1.pn
+g, id=292, 476.78125pt x 329.23pt>
 File: ./Bilder/GaussianBlur_1.png Graphic file (type png)
 
 <use ./Bilder/GaussianBlur_1.png>
-Package pdftex.def Info: ./Bilder/GaussianBlur_1.png used on input line 433.
+Package pdftex.def Info: ./Bilder/GaussianBlur_1.png used on input line 432.
 (pdftex.def)             Requested size: 227.62206pt x 157.1796pt.
 
-<./Bilder/GaussianBlur_2.png, id=306, 464.73625pt x 320.19624pt>
+<./Bilder/GaussianBlur_2.png, id=293, 464.73625pt x 320.19624pt>
 File: ./Bilder/GaussianBlur_2.png Graphic file (type png)
 
 <use ./Bilder/GaussianBlur_2.png>
-Package pdftex.def Info: ./Bilder/GaussianBlur_2.png used on input line 435.
+Package pdftex.def Info: ./Bilder/GaussianBlur_2.png used on input line 434.
 (pdftex.def)             Requested size: 227.62206pt x 156.82423pt.
  [16 <./Bilder/GaussianBlur_1.png> <./Bilder/GaussianBlur_2.png>] [17]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 515.
+put line 514.
 
-<./Bilder/Standard_Hough_Line_Transformation.png, id=323, 892.33376pt x 387.447
+<./Bilder/Standard_Hough_Line_Transformation.png, id=311, 892.33376pt x 387.447
 5pt>
 File: ./Bilder/Standard_Hough_Line_Transformation.png Graphic file (type png)
  <use ./Bilder/Standard_Hough_Line_Transformation.png>
 Package pdftex.def Info: ./Bilder/Standard_Hough_Line_Transformation.png used o
-n input line 552.
+n input line 551.
 (pdftex.def)             Requested size: 409.71692pt x 177.89694pt.
  [18] [19 <./Bilder/Standard_Hough_Line_Transformation.png>]
-<./Bilder/Probabilistic_HT.png, id=340, 842.14626pt x 340.27126pt>
+<./Bilder/Probabilistic_HT.png, id=328, 842.14626pt x 340.27126pt>
 File: ./Bilder/Probabilistic_HT.png Graphic file (type png)
 
 <use ./Bilder/Probabilistic_HT.png>
-Package pdftex.def Info: ./Bilder/Probabilistic_HT.png used on input line 601.
+Package pdftex.def Info: ./Bilder/Probabilistic_HT.png used on input line 600.
 (pdftex.def)             Requested size: 409.71692pt x 165.55057pt.
  [20 <./Bilder/Probabilistic_HT.png>]
-[21] <./Bilder/k-nearest-neighbors.png, id=360, 513.92pt x 233.87375pt>
+[21] <./Bilder/k-nearest-neighbors.png, id=347, 513.92pt x 233.87375pt>
 File: ./Bilder/k-nearest-neighbors.png Graphic file (type png)
 
 <use ./Bilder/k-nearest-neighbors.png>
 Package pdftex.def Info: ./Bilder/k-nearest-neighbors.png used on input line 66
-3.
+2.
 (pdftex.def)             Requested size: 364.19667pt x 165.74103pt.
  [22 <./Bilder/k-nearest-neighbors.png>]
 Underfull \vbox (badness 2302) has occurred while \output is active []
 
  [23]
-<./Bilder/Curve_Fitting_Polynomial.png, id=380, 506.89375pt x 209.78375pt>
+<./Bilder/Curve_Fitting_Polynomial.png, id=368, 506.89375pt x 209.78375pt>
 File: ./Bilder/Curve_Fitting_Polynomial.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting_Polynomial.png>
 Package pdftex.def Info: ./Bilder/Curve_Fitting_Polynomial.png used on input li
-ne 739.
+ne 738.
 (pdftex.def)             Requested size: 409.71692pt x 169.57178pt.
+
+Underfull \vbox (badness 3439) has occurred while \output is active []
+
  [24 <./Bilder/Curve_Fitting_Polynomial.png>]
-Overfull \hbox (12.73688pt too wide) detected at line 807
+<./Bilder/CurveFittingvsInterpolation.png, id=379, 615.29875pt x 494.84875pt>
+File: ./Bilder/CurveFittingvsInterpolation.png Graphic file (type png)
+
+<use ./Bilder/CurveFittingvsInterpolation.png>
+Package pdftex.def Info: ./Bilder/CurveFittingvsInterpolation.png used on input
+ line 751.
+(pdftex.def)             Requested size: 364.19667pt x 292.90964pt.
+ [25 <./Bilder/CurveFittingvsInterpolation.png>]
+Overfull \hbox (12.73688pt too wide) detected at line 822
  $\OML/mdbch/m/it/11.5 M \OT1/mdbch/m/n/11.5 = []  \OML/mdbch/m/it/11.5 M[] \OT
 1/mdbch/m/n/11.5 = []$ 
  []
 
-[25] <./Bilder/Curve_Fitting.png, id=396, 572.1375pt x 385.44pt>
+[26] <./Bilder/Curve_Fitting.png, id=394, 572.1375pt x 385.44pt>
 File: ./Bilder/Curve_Fitting.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting.png>
-Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 866.
+Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 881.
 (pdftex.def)             Requested size: 364.19667pt x 245.35745pt.
-) (./inc/Implementation.tex [26 <./Bilder/Curve_Fitting.png>]
+) (./inc/Related_Works.tex [27 <./Bilder/Curve_Fitting.png>] [28
+
+
+]
 chapter 3.
-<./Bilder/Test_Track.jpg, id=407, 4047.12pt x 3035.34pt>
+[29]) (./inc/Implementation.tex [30]
+chapter 4.
+<./Bilder/Test_Track.jpg, id=426, 4047.12pt x 3035.34pt>
 File: ./Bilder/Test_Track.jpg Graphic file (type jpg)
 
 <use ./Bilder/Test_Track.jpg>
@@ -1629,248 +1629,242 @@ Package pdftex.def Info: ./Bilder/Test_Track.jpg used on input line 16.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27
+ [31
 
 
 ]
 
 LaTeX Warning: File `./Bilder/Model Auto.jpg' not found on input line 38.
 
-<./Bilder/Model Auto.jpg, id=414, 4047.12pt x 3035.34pt>
+<./Bilder/Model Auto.jpg, id=432, 4047.12pt x 3035.34pt>
 File: ./Bilder/Model Auto.jpg Graphic file (type jpg)
 
 <use ./Bilder/Model Auto.jpg>
 Package pdftex.def Info: ./Bilder/Model Auto.jpg used on input line 38.
 (pdftex.def)             Requested size: 4047.11017pt x 3035.33263pt.
- [28 <./Bilder/Test_Track.jpg>] [29 <./Bilder/Model Auto.jpg>]
-<./Bilder/Genius_F100_camera.png, id=426, 540.0175pt x 318.18875pt>
+ [32 <./Bilder/Test_Track.jpg>] [33 <./Bilder/Model Auto.jpg>]
+<./Bilder/Genius_F100_camera.png, id=444, 540.0175pt x 318.18875pt>
 File: ./Bilder/Genius_F100_camera.png Graphic file (type png)
 
 <use ./Bilder/Genius_F100_camera.png>
 Package pdftex.def Info: ./Bilder/Genius_F100_camera.png used on input line 83.
 
 (pdftex.def)             Requested size: 455.24411pt x 268.24289pt.
- [30 <./Bilder/Genius_F100_camera.png>]
-<./Bilder/Response_Time2.png, id=433, 639.38875pt x 400.49625pt>
+ [34 <./Bilder/Genius_F100_camera.png>]
+<./Bilder/Response_Time2.png, id=452, 639.38875pt x 400.49625pt>
 File: ./Bilder/Response_Time2.png Graphic file (type png)
 
 <use ./Bilder/Response_Time2.png>
 Package pdftex.def Info: ./Bilder/Response_Time2.png used on input line 108.
 (pdftex.def)             Requested size: 364.19667pt x 228.12634pt.
- [31 <./Bilder/Response_Time2.png>]
-Underfull \vbox (badness 3907) has occurred while \output is active []
 
- [32]
-<./Bilder/Presprocessing_Figure.png, id=452, 699.61375pt x 262.9825pt>
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [35 <./Bilder/Response_Time2.png>] [36]
+Underfull \vbox (badness 4899) has occurred while \output is active []
+
+ [37]
+<./Bilder/Presprocessing_Figure.png, id=478, 699.61375pt x 262.9825pt>
 File: ./Bilder/Presprocessing_Figure.png Graphic file (type png)
 
 <use ./Bilder/Presprocessing_Figure.png>
 Package pdftex.def Info: ./Bilder/Presprocessing_Figure.png used on input line 
-169.
+172.
 (pdftex.def)             Requested size: 455.24411pt x 171.1292pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-[34 <./Bilder/Presprocessing_Figure.png>]
-<./Bilder/Case1_BlockDiagram.png, id=468, 750.805pt x 538.01pt>
+ [38 <./Bilder/Presprocessing_Figure.png>] <./Bilder/Case1_BlockDiagram.png, id
+=487, 750.805pt x 538.01pt>
 File: ./Bilder/Case1_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case1_BlockDiagram.png>
-Package pdftex.def Info: ./Bilder/Case1_BlockDiagram.png used on input line 245
+Package pdftex.def Info: ./Bilder/Case1_BlockDiagram.png used on input line 248
 .
 (pdftex.def)             Requested size: 455.24411pt x 326.22359pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 4084) has occurred while \output is active []
 
- [35]
-[36 <./Bilder/Case1_BlockDiagram.png>]
-<./Bilder/Case1_withoutCropped.png, id=483, 644.4075pt x 559.08875pt>
+ [39]
+[40 <./Bilder/Case1_BlockDiagram.png>]
+<./Bilder/Case1_withoutCropped.png, id=502, 644.4075pt x 559.08875pt>
 File: ./Bilder/Case1_withoutCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withoutCropped.png>
 Package pdftex.def Info: ./Bilder/Case1_withoutCropped.png used on input line 2
-62.
+65.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
-<./Bilder/Case1_withCropped.png, id=484, 642.4pt x 558.085pt>
+<./Bilder/Case1_withCropped.png, id=503, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_withCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withCropped.png>
-Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 264.
+Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 267.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
-<./Bilder/Case1_Straight_Standard_Hough.png, id=488, 644.4075pt x 558.085pt>
+<./Bilder/Case1_Straight_Standard_Hough.png, id=507, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_Straight_Standard_Hough.png Graphic file (type png)
 
 <use ./Bilder/Case1_Straight_Standard_Hough.png>
 Package pdftex.def Info: ./Bilder/Case1_Straight_Standard_Hough.png used on inp
-ut line 275.
+ut line 278.
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
 
-<./Bilder/Case1_Standard_Hough_Straight_2Parts.png, id=489, 641.39626pt x 531.9
+<./Bilder/Case1_Standard_Hough_Straight_2Parts.png, id=508, 641.39626pt x 531.9
 875pt>
 File: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png Graphic file (type png)
 
  <use ./Bilder/Case1_Standard_Hough_Straight_2Parts.png>
 Package pdftex.def Info: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png used
- on input line 277.
+ on input line 280.
 (pdftex.def)             Requested size: 204.85846pt x 169.91478pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [37 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
-<./Bilder/Case1_HoughPoints_Original.png, id=498, 642.4pt x 559.08875pt>
+ [41 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
+<./Bilder/Case1_HoughPoints_Original.png, id=518, 642.4pt x 559.08875pt>
 File: ./Bilder/Case1_HoughPoints_Original.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Original.png>
 Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Original.png used on input 
-line 289.
+line 292.
 (pdftex.def)             Requested size: 204.85846pt x 178.28928pt.
 
-<./Bilder/Case1_HoughPoints_Sobel.png, id=499, 640.3925pt x 534.99875pt>
+<./Bilder/Case1_HoughPoints_Sobel.png, id=519, 640.3925pt x 534.99875pt>
 File: ./Bilder/Case1_HoughPoints_Sobel.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Sobel.png>
 Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Sobel.png used on input lin
-e 291.
+e 294.
 (pdftex.def)             Requested size: 204.85846pt x 171.13779pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./Bilder/Case1_Straight_Standard_Hough.png> <./Bilder/Case1_Standard_Houg
+ [42 <./Bilder/Case1_Straight_Standard_Hough.png> <./Bilder/Case1_Standard_Houg
 h_Straight_2Parts.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./Bilder/Case1_HoughPoints_Original.png> <./Bilder/Case1_HoughPoints_Sobe
+ [43 <./Bilder/Case1_HoughPoints_Original.png> <./Bilder/Case1_HoughPoints_Sobe
 l.png>]
-<./Bilder/Case1_Rectangles.png, id=516, 642.4pt x 558.085pt>
+<./Bilder/Case1_Rectangles.png, id=535, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_Rectangles.png Graphic file (type png)
 
 <use ./Bilder/Case1_Rectangles.png>
-Package pdftex.def Info: ./Bilder/Case1_Rectangles.png used on input line 305.
+Package pdftex.def Info: ./Bilder/Case1_Rectangles.png used on input line 308.
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
-<./Bilder/Case1_CurveFittingwithoutIPM.png, id=518, 642.4pt x 558.085pt>
+<./Bilder/Case1_CurveFittingwithoutIPM.png, id=537, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_CurveFittingwithoutIPM.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFittingwithoutIPM.png>
 Package pdftex.def Info: ./Bilder/Case1_CurveFittingwithoutIPM.png used on inpu
-t line 320.
+t line 323.
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [40 <./Bilder/Case1_Rectangles.png>]
-<./Bilder/Case1_CurveFitting.png, id=525, 644.4075pt x 558.085pt>
+ [44 <./Bilder/Case1_Rectangles.png>]
+<./Bilder/Case1_CurveFitting.png, id=544, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_CurveFitting.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFitting.png>
-Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 331
+Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 334
 .
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
- [41 <./Bilder/Case1_CurveFittingwithoutIPM.png> <./Bilder/Case1_CurveFitting.p
+ [45 <./Bilder/Case1_CurveFittingwithoutIPM.png> <./Bilder/Case1_CurveFitting.p
 ng>]
-<./Bilder/Case2_BlockDiagram.png, id=532, 747.79375pt x 545.03625pt>
+<./Bilder/Case2_BlockDiagram.png, id=551, 747.79375pt x 545.03625pt>
 File: ./Bilder/Case2_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case2_BlockDiagram.png>
-Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 344
+Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 347
 .
 (pdftex.def)             Requested size: 455.24411pt x 331.8063pt.
 
-<./Bilder/Case2_InputImg.png, id=536, 644.4075pt x 559.08875pt>
+<./Bilder/Case2_InputImg.png, id=555, 644.4075pt x 559.08875pt>
 File: ./Bilder/Case2_InputImg.png Graphic file (type png)
 
 <use ./Bilder/Case2_InputImg.png>
-Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 356.
+Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 359.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
-<./Bilder/Case2_IPM.png, id=537, 643.40375pt x 557.08125pt>
+<./Bilder/Case2_IPM.png, id=556, 643.40375pt x 557.08125pt>
 File: ./Bilder/Case2_IPM.png Graphic file (type png)
 
 <use ./Bilder/Case2_IPM.png>
-Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 358.
+Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 361.
 (pdftex.def)             Requested size: 204.85846pt x 177.3686pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [42 <./Bilder/Case2_BlockDiagram.png>]
-<./Bilder/Case2_Standard_Hough_Transformation.png, id=547, 642.4pt x 272.01625p
+ [46 <./Bilder/Case2_BlockDiagram.png>]
+<./Bilder/Case2_Standard_Hough_Transformation.png, id=566, 642.4pt x 272.01625p
 t>
 File: ./Bilder/Case2_Standard_Hough_Transformation.png Graphic file (type png)
  <use ./Bilder/Case2_Standard_Hough_Transformation.png>
 Package pdftex.def Info: ./Bilder/Case2_Standard_Hough_Transformation.png used 
-on input line 368.
+on input line 371.
 (pdftex.def)             Requested size: 204.85846pt x 86.74397pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [43 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
+ [47 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
 ndard_Hough_Transformation.png>]
-<./Bilder/Case2_OutputImage.png, id=556, 642.4pt x 558.085pt>
+<./Bilder/Case2_OutputImage.png, id=576, 642.4pt x 558.085pt>
 File: ./Bilder/Case2_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case2_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 390.
+Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 393.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./Bilder/Case2_OutputImage.png>]
-<./Bilder/Case3_OutputImage.png, id=567, 643.40375pt x 558.085pt>
+ [48 <./Bilder/Case2_OutputImage.png>]
+<./Bilder/Case3_OutputImage.png, id=587, 643.40375pt x 558.085pt>
 File: ./Bilder/Case3_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case3_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 405.
+Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 408.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.68819pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45 <./Bilder/Case3_OutputImage.png>]
-<./Bilder/Case4_OutputImage.png, id=577, 365.365pt x 315.1775pt>
+ [49 <./Bilder/Case3_OutputImage.png>]
+<./Bilder/Case4_OutputImage.png, id=597, 365.365pt x 315.1775pt>
 File: ./Bilder/Case4_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case4_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 420.
+Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 423.
 
 (pdftex.def)             Requested size: 204.85846pt x 176.71942pt.
 
-<./Bilder/Case5_OutputImage.png, id=581, 365.365pt x 318.18875pt>
+<./Bilder/Case5_OutputImage.png, id=601, 365.365pt x 318.18875pt>
 File: ./Bilder/Case5_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case5_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case5_OutputImage.png used on input line 435.
+Package pdftex.def Info: ./Bilder/Case5_OutputImage.png used on input line 438.
 
 (pdftex.def)             Requested size: 204.85846pt x 178.4078pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./Bilder/Case4_OutputImage.png>]) (./inc/Evaluation_and_Discussion.tex [4
-7 <./Bilder/Case5_OutputImage.png>] [48
-
-
-]
-chapter 4.
-[49]
-Overfull \hbox (31.47368pt too wide) in paragraph at lines 71--79
- [][] 
- []
-
-[50]) (./inc/Related_Works.tex [51] [52
+ [50 <./Bilder/Case4_OutputImage.png>]) (./inc/Evaluation_and_Discussion.tex [5
+1 <./Bilder/Case5_OutputImage.png>] [52
 
 
 ]
 chapter 5.
-[53]) (./inc/Conclusion.tex [54]
+[53]
+Overfull \hbox (7.00969pt too wide) in paragraph at lines 71--79
+ [][] 
+ []
+
+[54]) (./inc/Conclusion.tex [55] [56
+
+
+]
 chapter 6.
-) [55
-
-
-] [56
+) [57] [58
 
 
 ] (./sada_tudreport.bbl
@@ -2168,10 +2162,6 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
 (scrreprt)              by `\normalfont \scshape ' on input line 80.
 
-[57
-
-
-]
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              You should note, that in 1994 font command `\sc' has
@@ -2184,8 +2174,12 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 87.
+(scrreprt)              by `\normalfont \scshape ' on input line 84.
 
+[59
+
+
+]
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              You should note, that in 1994 font command `\sc' has
@@ -2296,7 +2290,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 108.
+(scrreprt)              by `\normalfont \scshape ' on input line 111.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2310,7 +2304,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 113.
+(scrreprt)              by `\normalfont \scshape ' on input line 111.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2324,7 +2318,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 118.
+(scrreprt)              by `\normalfont \scshape ' on input line 116.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2338,7 +2332,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 118.
+(scrreprt)              by `\normalfont \scshape ' on input line 121.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2352,13 +2346,27 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 123.
+(scrreprt)              by `\normalfont \scshape ' on input line 121.
 
-) (./inc/Anhang.tex [58]
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 126.
+
+) (./inc/Anhang.tex [60]
 chapter A.
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
- [59
+ [61
 
 
 ]
@@ -2376,13 +2384,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 18003 strings out of 493029
- 282636 string characters out of 6136235
- 467265 words of memory out of 5000000
- 20789 multiletter control sequences out of 15000+600000
- 139602 words of font info for 132 fonts, out of 8000000 for 9000
+ 17954 strings out of 493029
+ 282101 string characters out of 6136235
+ 468265 words of memory out of 5000000
+ 20759 multiletter control sequences out of 15000+600000
+ 127366 words of font info for 103 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 70i,13n,108p,1416b,693s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,108p,1653b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</home/enis/.texmf-var/fonts/type
 1/softmake/charter/5chb8a.pfb></home/enis/.texmf-var/fonts/type1/softmake/chart
@@ -2392,17 +2400,15 @@ f-var/fonts/type1/softmake/frontpage/5fpm8a.pfb></home/enis/.texmf-var/fonts/ty
 pe1/softmake/frontpage/5fpr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/bi
 tstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/bitstrea/c
 harter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesign
-/mdbch/md-chb7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesig
-n/mdbch/md-chr7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesi
-gn/mdbch/md-chr7t.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdes
-ign/mdbch/md-chr7v.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathde
-sign/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathd
-esign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
-onts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (69 pages, 15101179 bytes).
+/mdbch/md-chr7t.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesig
+n/mdbch/md-chr7v.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesi
+gn/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdes
+ign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfon
+ts/t1xtt.pfb>
+Output written on sada_tudreport.pdf (69 pages, 15130114 bytes).
 PDF statistics:
- 881 PDF objects out of 1000 (max. 8388607)
- 728 compressed objects within 8 object streams
+ 875 PDF objects out of 1000 (max. 8388607)
+ 722 compressed objects within 8 object streams
  215 named destinations out of 1000 (max. 500000)
- 553 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 550 words of extra memory for PDF output out of 10000 (max. 10000000)
 
