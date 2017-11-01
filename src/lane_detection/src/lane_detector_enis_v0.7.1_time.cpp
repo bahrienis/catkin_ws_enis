@@ -121,12 +121,26 @@ int main(int argc, char **argv) {
 
     //SetUP ROS.
     ros::init(argc, argv, "lane_detector_enis");
+    
+    
+    
+        int widthofframe = 640;
+    int heightofframe = 480;
+    
+    
 
     //CV_CAP_ANY == 0 yazınca 2. kamera açılır.
 
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
     cap.set(CV_CAP_PROP_FPS, 30); //change the frame value
+    
+    
+    cap.set(CV_CAP_PROP_FRAME_WIDTH, widthofframe);
+    cap.set(CV_CAP_PROP_FRAME_HEIGHT, heightofframe);
+    
+    
+    
 
     if (!cap.isOpened()) //if not success, exit program
     {
@@ -228,9 +242,9 @@ int main(int argc, char **argv) {
 
 
 
-        int firstpicsize = 100;
-        int secondpicsize = 150;
-        int thirdpicsize = 230;
+        int firstpicsize = heightofframe/4.8;
+        int secondpicsize = heightofframe/3.2;
+        int thirdpicsize = heightofframe - (firstpicsize + secondpicsize);
 
 
         clock_t begin = clock();
@@ -624,7 +638,7 @@ void curvefitting(int numofpointsoffirstlane2, int numofpointsoffirstlane1,
 */
 
     int p, r;
-    for (p = 0; p < heightofframe; p++) {
+    for (p = 0; p < heightofframe - 1; p++) {
         r = a[0] + a[1] * p + a[2] * p * p;
         if (r >= 0 && r <= widthofframe) {
             if (color == "red")

@@ -201,12 +201,30 @@ int main(int argc, char **argv) {
 
     //SetUP ROS.
     ros::init(argc, argv, "lane_detector_enis");
+    
+    
+     int sayi = 0;
+    int widthofframe = 640;
+    int heightofframe = 480;
+    
+    
+    
 
     //CV_CAP_ANY == 0 yazınca 2. kamera açılır.
 
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
     cap.set(CV_CAP_PROP_FPS, 30); //change the frame value
+    
+    
+    
+        cap.set(CV_CAP_PROP_FRAME_WIDTH, widthofframe);
+        cap.set(CV_CAP_PROP_FRAME_HEIGHT, heightofframe);
+    
+    
+    
+    
+    
 
     if (!cap.isOpened()) //if not success, exit program
     {
@@ -223,9 +241,7 @@ int main(int argc, char **argv) {
     // namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
 
 
-    int sayi = 0;
-    int widthofframe = 640;
-    int heightofframe = 480;
+   
 
 
 
@@ -348,7 +364,7 @@ int main(int argc, char **argv) {
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame38.jpg";
+//        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame39.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -356,18 +372,18 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
-        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+ /*       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
         }
-
+*/
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
 
-        //        bool bSuccess = cap.read(inputImg);
+                bool bSuccess = cap.read(inputImg);
 
 
 
