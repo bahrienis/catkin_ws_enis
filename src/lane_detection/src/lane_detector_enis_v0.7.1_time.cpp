@@ -494,8 +494,8 @@ clock_t end_FSP = clock();
    clock_t end_CF = clock();  
    
    
-        imshow("Hough", outputImg4gray);
-        imshow("Sobel", gradgray);
+ //       imshow("Hough", outputImg4gray);
+ //       imshow("Sobel", gradgray);
 
 
 
