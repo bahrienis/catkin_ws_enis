@@ -204,8 +204,8 @@ int main(int argc, char **argv) {
     
     
      int sayi = 0;
-    int widthofframe = 320;
-    int heightofframe = 240;
+    int widthofframe = 640;
+    int heightofframe = 480;
     
     
     
@@ -364,7 +364,7 @@ int main(int argc, char **argv) {
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-//        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame39.jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame39.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -372,18 +372,18 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
- /*       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
         }
-*/
+
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
 
-                bool bSuccess = cap.read(inputImg);
+       //         bool bSuccess = cap.read(inputImg);
 
 
 
