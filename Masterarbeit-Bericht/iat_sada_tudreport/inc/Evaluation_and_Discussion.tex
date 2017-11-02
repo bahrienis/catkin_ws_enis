@@ -40,7 +40,7 @@ In the following table, the computing times for all algorithms, as well as their
     \hline
   
   PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
-  20.15 ms & 0.81 ms & 2 $\mu$s & 26.42 ms & 0.83 ms & 4.54 ms & 19 $\mu$s& 52.77 ms \\ \hline  
+  20.15 ms & 0.81 ms & 2 $\mu$s & 23.42 ms & 0.83 ms & 4.54 ms & 19 $\mu$s& 49.77 ms \\ \hline  
     
     
       \end{tabular}
@@ -48,7 +48,7 @@ In the following table, the computing times for all algorithms, as well as their
       \end{table}
 
 
-As also shown in the table above, the longest computing times belong to 'Preprocessing part' and 'Probabilistic Hough Transformation'. These values can be decreased by changing the parameters of Probabilistic Hough Transformation or by removing some steps in the 'Preprocessing part'. In both cases, however, doing so can also result in undesirable effects. For example, in this project, there is a dynamic thresholding filter utilized during the 'Preprocessing part'. A function finds the lightest pixel in the the frame and then the threshold value of this filter is changed dynamically according the value of the lightest pixel. Using such a filter results in a faster computing time, but it would also result in less reliability in changing light conditions. With regard to changing the parameters of the Probabilistic Hough Transformation, though it is possible to reduce its computing time, fewer Hough Points on the lanes will be detected. If too few Hough Points are detected, then the stability of lane detection will also suffer.
+As also shown in Table \ref{tab:Case1_Times}, the longest computing times belong to 'Preprocessing phase' and 'Probabilistic Hough Transformation'. These values can be decreased by changing the parameters of Probabilistic Hough Transformation or by removing some steps in the 'Preprocessing phase'. In both cases, however, doing so can also result in undesirable effects. For example, in this project, there is a dynamic thresholding filter utilized during the 'Preprocessing phase'. A function finds the lightest pixel in the the frame and then the threshold value of this filter is changed dynamically according the value of the lightest pixel. Using such a filter results in a faster computing time, but it would also result in less reliability in changing light conditions. With regard to changing the parameters of the Probabilistic Hough Transformation, though it is possible to reduce its computing time, fewer Hough Points on the lanes will be detected. If too few Hough Points are detected, then the stability of lane detection will also suffer.
 
 The advantage of this method is, it is the fastest method, which gets the frames with 640x480 pixels resolution, but the disadvantage of this method is, it is hard to detect the lanes, which are far away from the camera. Because the lanes, which are far away from the camera, look smaller compare to the lanes which are close to the camera.
 
@@ -114,7 +114,7 @@ effect. In the other words, the size of the lanes does not appear smaller even i
 
 
 
-\textbf{Method 2(b) : }This is also a method in which the resolution of the frames is decreased. In this method, the input size of the frame is converted directly at the beginning from a 640x480 pixel resolution to a 320x240 pixel resolution, resulting in a resolution that is four times less when compared with Method 2. As a result, the computing time is also less than in Method 2.
+\textbf{Method 2(b) : }This is also a method in which the resolution of the frames is decreased. In this method, the input resolution of the frame is 320x240 pixels directly at the beginning resulting in a resolution that is four times less when compared with Method 2. As a result, the computing time is also less than in Method 2.
 
 
 \begin{table}[ht]

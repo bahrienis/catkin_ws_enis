@@ -21,7 +21,7 @@
 \contentsline {chapter}{\numberline {4}Implementation}{31}{chapter.4}
 \contentsline {section}{\numberline {4.1}Test Track}{31}{section.4.1}
 \contentsline {section}{\numberline {4.2}Hardware}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Model Auto}{32}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Model Automobile}{32}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Microcontroller and Main Board}{33}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Camera}{33}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}Response Time of the System}{35}{section.4.3}

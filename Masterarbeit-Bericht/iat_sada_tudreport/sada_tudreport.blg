@@ -47,14 +47,15 @@ Warning--entry type for "OpenCV_Mat" isn't style-file defined
 --line 267 of file ./bib/literature.bib
 Warning--entry type for "threshold" isn't style-file defined
 --line 278 of file ./bib/literature.bib
-Repeated entry---line 341 of file ./bib/literature.bib
+Repeated entry---line 345 of file ./bib/literature.bib
  :  @online{GaussianBlur
  :                      ,
 I'm skipping whatever remains of this entry
 Warning--entry type for "OpenCV_About" isn't style-file defined
---line 351 of file ./bib/literature.bib
+--line 355 of file ./bib/literature.bib
 Warning--entry type for "PD10BIMT" isn't style-file defined
---line 359 of file ./bib/literature.bib
+--line 363 of file ./bib/literature.bib
+Warning--I didn't find a database entry for "equationCurve_Fitting2"
 Name 1 in "Radovan Josth, Marketa Dubska, Adam Herout, and Jiri Havel" has a comma at the end for entry Standard_Hough
 while executing---line 1056 of file gerunsrt.bst
 Warning--empty year in Standard_Hough
@@ -80,41 +81,40 @@ Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep 
 while executing---line 1056 of file gerunsrt.bst
 Too many commas in name 1 of "Xindong Wu, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, Angus Ng, Bing Liu, Philip S. Yu, Zhi-Hua Zhou, Michael Steinbach, David J. Hand, Dan Steinberg" for entry k_nearest_neighbors
 while executing---line 1056 of file gerunsrt.bst
-Warning--empty publisher in Bachelorthesis_Nicolas
 Too many commas in name 1 of "Christian Lipski, Björn Scholz, Kai Berger, Christian Linz, Timo Stich" for entry A_Fast_and_Robust_Approach
 while executing---line 1056 of file gerunsrt.bst
 Too many commas in name 1 of "Christian Lipski, Björn Scholz, Kai Berger, Christian Linz, Timo Stich" for entry A_Fast_and_Robust_Approach
 while executing---line 1056 of file gerunsrt.bst
 You've used 34 entries,
             2016 wiz_defined-function locations,
-            669 strings with 10024 characters,
-and the built_in function-call counts, 5404 in all, are:
-= -- 511
+            673 strings with 10118 characters,
+and the built_in function-call counts, 5399 in all, are:
+= -- 516
 > -- 150
 < -- 0
 + -- 71
 - -- 37
-* -- 279
-:= -- 760
+* -- 278
+:= -- 767
 add.period$ -- 68
 call.type$ -- 34
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 270
-empty$ -- 697
+cite$ -- 35
+duplicate$ -- 267
+empty$ -- 690
 format.name$ -- 37
 if$ -- 1370
 int.to.chr$ -- 0
 int.to.str$ -- 34
-missing$ -- 20
+missing$ -- 18
 newline$ -- 139
 num.names$ -- 32
-pop$ -- 185
+pop$ -- 180
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 180
+skip$ -- 181
 stack$ -- 0
 substring$ -- 21
 swap$ -- 95
@@ -122,8 +122,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 2
+warning$ -- 1
 while$ -- 33
 width$ -- 36
-write$ -- 306
+write$ -- 308
 (There were 15 error messages)

@@ -27,10 +27,10 @@ While working on a software project, though it is of course important to write a
 
 
 %
-\subsection{Model Auto}\label{sec:Model Auto}
+\subsection{Model Automobile}\label{sec:Model Auto}
 
 
-During the course of this master's thesis, a model automobile which was prepared for the Projectseminar Echtzeitsysteme at Technical University of Darmstadt was used. The chassis, steering mechanism, power train, and engine control were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is approximately \emph{\color{green}1 m/s} and the minimum steering radius is around 90 cm. 
+During the course of this master's thesis, a model automobile which was prepared for the Projectseminar Echtzeitsysteme at Technical University of Darmstadt was used. The chassis, steering mechanism, power train, and engine control were derived from the model-building of a Japanese company, Tamiya. The maximum velocity of the model automobile is approximately\cite{Bachelorthesis_Nicolas} 1 m/s and the minimum steering radius is around\cite{Bachelorthesis_Nicolas} 90 cm. 
 
 \begin{figure}[H]
 	\centering
@@ -142,7 +142,7 @@ Because the monitor cannot always be connected to a PC via a cable for practical
 
 There are many different possibilities for lane detection algorithms. Of course, each has its own advantages and disadvantages. In this master's thesis, some methods were defined, and in this chapter, these methods will be explained in detail.
 
-In all of these methods, some processes are common, and this is called the preprocessing part. In Figure \ref{fig:Block_Diagram_of_the_Preprocessing_Part}, the steps of the preprocessing part are shown.
+In all of these methods, some processes are common, and this is called the preprocessing phase. In Figure \ref{fig:Block_Diagram_of_the_Preprocessing_Part}, the steps of the preprocessing part are shown.
 
 At the beginning, the frames are obtained from the camera via ROS-Topic. ROS uses different image formats than OpenCV, which uses the image format Matrix(Mat). The frame obtained via ROS-Topic must be converted from the ROS image data type to a Mat object. In order to convert the frame, a ROS-Package \textit{cvbridge}\cite{cv_bridge} was used. cvbridge converts the ROS image format to a Mat Object, which is the OpenCV Image Format. 
 
@@ -170,7 +170,7 @@ There are also another color formats, which have some advantages\cite{OpenCV_Mat
 \begin{figure}[H]
  \centering
   \includegraphics[width=1\textwidth]{./Bilder/Presprocessing_Figure.png}	
-  \caption{Block Diagram of the Preprocessing Part}
+  \caption{Block Diagram of the Preprocessing Phase}
   \label{fig:Block_Diagram_of_the_Preprocessing_Part}
 \end{figure}
 
@@ -394,7 +394,7 @@ This method is very similar to Method 1 in Section \ref{sec:Case 1}. The only di
 
 \textbf{Step 5 : }We have already found out which pixel columns the lanes lie between. The Hough Points must now be grouped according to lanes. If the camera can see all three lanes, then there must also be three different groups of Hough Points. However, if there is a curve, the camera can see just the right and middle lane, so the Hough Points must be grouped into two groups in this case. For each lane, the starting points of the lanes must be found. For that, all Hough Points in a group must be compared with each other. The Hough Points which are the closest to the bottom of the frame are the starting points.
 
-\emph{\color{green}\textbf{Step 6 : }The next step of this method is the k-nearest neighbors algorithm (KNN). KNN is a learning algorithm. Here KNN is used instead of the rectangle method used in Method 1. The KNN algorithm divides the frames into some equal-sized pieces. The nearest neighbor points are found in each piece. This process begins from the starting points of the lanes which were found in Step 5. The KNN functions are used from OpenCV. There are some parameters in these functions. For example, we can set the number of neighbor points to be found. The parameters must be set optimally, meaning the project must work fast and efficiently.}
+\textbf{Step 6 : }The next step of this method is the k-nearest neighbors algorithm (KNN). KNN is a learning algorithm. Here KNN is used instead of the rectangle method used in Method 1. The KNN algorithm divides the frames into some equal-sized pieces. The nearest neighbor points are found in each piece. This process begins from the starting points of the lanes which were found in Step 5. The KNN functions are used from OpenCV. There are some parameters in these functions. For example, we can set the number of neighbor points to be found. The parameters must be set optimally, meaning the project must work fast and efficiently.
 
 \textbf{Step 7 : }After finding the points from KNN in Step 6, which are to be used as the input values of the curve fitting function, then the function of the curve fitting is applied. The advantage of the KNN algorithm is that it does not return so many Hough Points, which are the input values of the curve fitting, when compared to rectangle method. So here, the curve fitting function produces the mathematical equations of the lane much faster when compared to Method 1.
 

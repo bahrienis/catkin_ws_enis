@@ -95,7 +95,7 @@ this reason, a constant d is defined as\cite{IPM} :
  \end{vmatrix}$ + 1}
 \end{center}
 
-\emph{\color{green}This means that the coordinate point in the original source image has been mapped into the point of the destination image coordinate system. Below there is the proposed equation :}
+This means that the coordinate point in the original source image has been mapped into the point of the destination image coordinate system. Below there is the proposed equation\cite{IPM} :
  
  \begin{center}
 \scalebox{1.15}{ $x^* = H \frac{x sin \theta + f cos \theta}{-y cos \theta + f sin \theta}$ + d ,
@@ -173,9 +173,9 @@ $  G_{x} =
 
 \end{center}
 
-\emph{\color{blue}where * here denotes the 2-dimensional signal processing convolution operation.}
+where * here denotes the 2-dimensional signal processing convolution operation.
 
-\emph{\color{blue}Since the Sobel kernels can be decomposed as the products of an averaging and a differentiation kernel, they compute the gradient with smoothing. For example, \textbf{$G_{x}$}  can be written as:}
+Since the Sobel kernels can be decomposed as the products of an averaging and a differentiation kernel, they compute the gradient with smoothing. For example, \textbf{$G_{x}$}  can be written as:
 
 \begin{center}
 $  \begin{bmatrix}
@@ -193,10 +193,10 @@ $
 \end{center}
 
 
-\emph{\color{blue}The x-coordinate is defined here as increasing in the 'right'-direction, and the y-coordinate is defined as increasing in the 'down'-direction. At each point in the image, the resulting gradient approximations can be combined to give the gradient magnitude, using\cite{SobelOperatorandCannyEdgeDetector}}:
+The x-coordinate is defined here as increasing in the 'right'-direction, and the y-coordinate is defined as increasing in the 'down'-direction. At each point in the image, the resulting gradient approximations can be combined to give the gradient magnitude, using\cite{SobelOperatorandCannyEdgeDetector}:
 
 \begin{center}
-\emph{\color{green}G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$}
+G = $\sqrt{ G_{x}^{2} + G_{y}^{2} }$
 \end{center}
 
 Using this information, we can also calculate the gradient's direction\cite{SobelOperatorandCannyEdgeDetector}:
@@ -255,7 +255,7 @@ After the Gaussian Blur is applied, the picture must be converted from color to 
 
  \begin{center}
  
-\texttt{void cvtColor(cv::Mat src, cv::Mat dst, int code, int dstCn=0 )}
+\texttt{ void cvtColor(cv::Mat src, cv::Mat dst, int code, int dstCn=0 )}
 
  \end{center}
  
@@ -278,7 +278,7 @@ Before the Sobel operator is used, the Gaussian Filter must be applied and the i
 
  \begin{center}
 
-\texttt{void Sobel(cv::Mat src, cv::Mat dst, int ddepth, int dx, int dy, int ksize=3, double scale=1, double delta=0, int borderType=BORDER$\_$DEFAULT )}
+\texttt{ void Sobel(cv::Mat src, cv::Mat dst, int ddepth, int dx, int dy, int ksize=3, double scale=1, double delta=0, int borderType=BORDER$\_$DEFAULT )}
 
  \end{center}
  
@@ -296,9 +296,9 @@ Before the Sobel operator is used, the Gaussian Filter must be applied and the i
 
 \item \textbf{yorder : }Order of the derivative y.
 
-\item \textbf{ksize : }\emph{\color{green}Size of the extended Sobel kernel; it must be 1, 3, 5, or 7.}
+\item \textbf{ksize : }Size of the extended Sobel kernel; it must be 1, 3, 5, or 7.
 
-\item \textbf{scale,delta and borderType : }Optional values. In this project, the default values were used.
+\item \textbf{scale, delta and borderType : }Optional values. In this project, the default values were used.
 
   \end{itemize}
 
@@ -306,7 +306,7 @@ The last step of the application of the Sobel operator is approximating the grad
 
  \begin{center}
  
-\texttt{void addWeighted(cv::Mat src1, double alpha, cv::Mat src2, double beta, double gamma, cv::Mat dst, int dtype=-1)}
+\texttt{ void addWeighted(cv::Mat src1, double alpha, cv::Mat src2, double beta, double gamma, cv::Mat dst, int dtype=-1)}
  
   \end{center}
   
@@ -373,11 +373,11 @@ The main disadvantage of the Canny edge detector is that it is time consuming, d
 
 
 
-\emph{\color{green}The Canny Edge Detector is also a function in OpenCV. As is the case with the Sobel Operator, before the Canny Edge Detector is used, a filter should be applied (for example, the Gaussian Filter) and the image must be converted to gray scale. With the following command, the Canny Edge Detector can be run in OpenCV.\cite{Canny_Edge_Detector3}}
+The Canny Edge Detector is also a function in OpenCV. As is the case with the Sobel Operator, before the Canny Edge Detector is used, a filter should be applied (for example, the Gaussian Filter) and the image must be converted to gray scale. With the following command, the Canny Edge Detector can be run in OpenCV.\cite{Canny_Edge_Detector3}
 
  \begin{center}
  
-\texttt{void Canny(cv::Mat image, cv::Mat edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)}
+\texttt{ void Canny(cv::Mat image, cv::Mat edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)}
 
  \end{center}
  
@@ -413,16 +413,16 @@ In this master's thesis the Sobel Operator was utilized. The first reason for us
 
 The Gaussian Blur is a non-uniform low pass filter which is used to blur images. For smoothing/blurring the images, there are also some other filters, like Normalized Box Filter, Median Filter, Bilateral Filter, as well as others, but the Gaussian Blur is the most useful one, although it is not the fastest. This filter is widely used in image processing as one part of the preprocessing stage because it reduces image noise and detail.
 
-The Gaussian Blur uses a Gaussian function in order to calculate the transformation to apply to each pixel in the image. The equation of a Gaussian function in one dimension has the following form: 
+The Gaussian Blur uses a Gaussian function in order to calculate the transformation to apply to each pixel in the image. The equation of a Gaussian function in one dimension has the following form\cite{GaussianBlur}: 
 
  \begin{center}
  \scalebox{1.2}{$ G(x) = \dfrac{1}{\sqrt{2\pi}\sigma}e^{-\frac{x^{2}}{2\sigma^{2}}} $} 
 \end{center}
 
-where $ \sigma $ is the standard deviation of the distribution. The equation of a Gaussian function in two dimensions is the product of two such Gaussians, one in each dimension: 
+where $ \sigma $ is the standard deviation of the distribution. The equation of a Gaussian function in two dimensions is the product of two such Gaussians, one in each dimension\cite{GaussianBlur}: 
 
  \begin{center}
-\emph{\color{green}\scalebox{1.25}{$ G(x,y) = \frac{1}{2\pi\sigma^{2}}e^{-\frac{x^{2}+y^{2}}{2\sigma^{2}}} $}}
+\scalebox{1.25}{$ G(x,y) = \frac{1}{2\pi\sigma^{2}}e^{-\frac{x^{2}+y^{2}}{2\sigma^{2}}} $}
 \end{center}
 
 
@@ -437,9 +437,9 @@ where $ \sigma $ is the standard deviation of the distribution. The equation of 
 
 
 
-\emph{\color{green}The Gaussian filter works by using the 2D distribution as a point-spread function. This is achieved by convolving the 2D Gaussian distribution function with the image. A discrete approximation to the Gaussian function needs to be produced. This theoretically requires an infinitely large convolution kernel, as the Gaussian distribution is non-zero everywhere. Fortunatly, the distribution has approached very close to zero at about three standard deviations from the mean. 99\% of the distribution falls within three standard deviations. This means that normally, the kernel size can be limited to contain only values within three standard devations of the mean.}
+The Gaussian filter works by using the 2D distribution as a point-spread function. This is achieved by convolving the 2D Gaussian distribution function with the image. A discrete approximation to the Gaussian function needs to be produced. This theoretically requires an infinitely large convolution kernel, as the Gaussian distribution is non-zero everywhere. Fortunatly, the distribution has approached very close to zero at about three standard deviations from the mean. 99\% of the distribution falls within three standard deviations. This means that normally, the kernel size can be limited to contain only values within three standard devations of the mean.
 
-The distribution is assumed to have a mean of zero. The continuous Gaussian functions need to be discretized to store it as discrete pixels. An integer valued 5 by 5 convolution kernel approximating a Gaussian with a $ \sigma $ of 1 is shown : 
+The distribution is assumed to have a mean of zero. The continuous Gaussian functions need to be discretized to store it as discrete pixels. An integer valued 5 by 5 convolution kernel approximating a Gaussian with a $ \sigma $ of 1 is shown\cite{GaussianBlur} : 
 
 
 
@@ -495,7 +495,7 @@ In order to isolate features of a particular shape in an image, a method called 
 %
 \subsection{Standard Hough Line Transformation}\label{sec:Standard Hough Line Transformation}
 %
-The Standard Hough Line Transformation, which is also called the Linear Hough Transformation, is used mostly for detecting straight lines. There are many different formulas to represent a line segment analytically. A convenient formula for representing a line in an Image(Cartesian) space is :
+The Standard Hough Line Transformation, which is also called the Linear Hough Transformation, is used mostly for detecting straight lines. There are many different formulas to represent a line segment analytically. A convenient formula for representing a line in an Image(Cartesian) space is:
 
   \begin{center}
 
@@ -555,13 +555,13 @@ $ \rho(\overline{\rho}) = \dfrac{\sqrt{I^{2}_{w} + I^{2}_{h} }}{H_{\rho}} \bigg(
  
  In the left side of Figure \ref{Standard_Hough_Line_Transformation_fig}, a line is shown in an Image (Cartesian) space and on the right side of same Figure, the same line is shown in its transformed state in the Hough space. A point in the Image (Cartesian) space is transformed into a sinusoidal curve in the Hough space. A line can be defined as a set of points, so a line is transformed into a set of sinusoids intersecting at a point in the Hough space. In this case, detecting points in the Hough space also means detecting the lines in the Cartesian space. After detecting points in the Hough Space, the points must be inversely transformed in order to get the corresponding lines in the Cartesian space.
  
-\emph{\color{green}Standard Hough Line Transformation is widely used technique in curve detection. Despite this, it does have two important downsides. Firstly, for each nonzero pixel in an image, the parameters for both the existing curve as well as the redundant ones are obtained during the 'voting procedure'. Secondly, the more accuracy that is needed, the higher the parameter resolution must be defined. As a result, there is often a large storage requirement and low speed for real applications. Probabilistic Hough Transformation was derived in order to counter these problems. }
+Standard Hough Line Transformation is widely used technique in curve detection. Despite this, it does have two important downsides. Firstly, for each nonzero pixel in an image, the parameters for both the existing curve as well as the redundant ones are obtained during the 'voting procedure'. Secondly, the more accuracy that is needed, the higher the parameter resolution must be defined. As a result, there is often a large storage requirement and low speed for real applications. Probabilistic Hough Transformation was derived in order to counter these problems. 
 
 In this master's thesis, in order to detect the Hough lines, the function of \textit{cv2.HoughLines()} in OpenCV was used. The function is:
 
   \begin{center}
   
-\texttt{void HoughLines(cv::Mat image, cv::Mat lines, double $\rho$, double $\theta$, int threshold, double srn=0, double stn=0)}
+\texttt{ void HoughLines(cv::Mat image, cv::Mat lines, double $\rho$, double $\theta$, int threshold, double srn=0, double stn=0)}
 
   \end{center}
 
@@ -575,7 +575,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 
 \item \textbf{$ \rho $ : }The resolution of the parameter $ \rho $ in pixels. In this master's thesis, \textbf{1 pixel} was used.
 
-\emph{\color{green}\item \textbf{$ \theta $ : }The resolution of the parameter $ \theta $ in radians. In this master's thesis, \textbf{180 degree}(CV$ \_ $PI) was used.}
+\item \textbf{$ \theta $ : }The resolution of the parameter $ \theta $ in radians. In this master's thesis, \textbf{180 degree}(CV$ \_ $PI) was used.
 
 \item \textbf{threshold : }The minimum number of intersections to 'detect' a line.
 
@@ -587,7 +587,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
 \subsection{Probabilistic Hough-Transformation}\label{sec:Probabilistic Hough-Transformation}
 %
 
-\emph{\color{green}Probabilistic Hough Transformation, also called Randomized Hough Transformation, is a variant of the Standard Hough Transformation. Hough Transformation is computationally expensive. Probabilistic Hough Transformation is an optimization of Standard Hough Transformation which does not analyze all points in the image. Instead, it looks at only a random subset of points sufficient for line detection. In order to apply Probabilistic Hough Transformation, the threshold must be decreased. Probabilistic Hough Transformation is commonly used to detect curves (straight line, circle, elipse,etc.) }
+Probabilistic Hough Transformation, also called Randomized Hough Transformation, is a variant of the Standard Hough Transformation. Hough Transformation is computationally expensive. Probabilistic Hough Transformation is an optimization of Standard Hough Transformation which does not analyze all points in the image. Instead, it looks at only a random subset of points sufficient for line detection. In order to apply Probabilistic Hough Transformation, the threshold must be decreased. Probabilistic Hough Transformation is commonly used to detect curves (straight line, circle, elipse,etc.) 
 
 
 
@@ -795,10 +795,10 @@ $$\sum_{i=1}^{N} x_{i}^{k}$$ & $$\sum_{i=1}^{N} x_{i}^{k+1}$$ & $\dots$ & $$\sum
 $ 
 \end{center}
 
-The equations in the stardard form of Ma = b can be solved with many different methods. In this master's thesis, \textit{Cramer's Rule} was used to solve for the polynomial coefficients of curve fitting. With the help of the determinants of the square matrix, M can be solved for in any linear system of equations in order to find the coefficients. Each of the coefficients $a_{k}$ may be determined using the following equation :
+The equations in the stardard form of Ma = b can be solved with many different methods. In this master's thesis, \textit{Cramer's Rule} was used to solve for the polynomial coefficients of curve fitting. With the help of the determinants of the square matrix, M can be solved for in any linear system of equations in order to find the coefficients. Each of the coefficients $a_{k}$ may be determined using the following equation\cite{Curve_Fitting2}:
 
 \begin{center}
-\emph{\color{green}\scalebox{1.2}{$a_{k} = \dfrac{det(M_{i})}{det(M)}$}}
+\scalebox{1.2}{$a_{k} = \dfrac{det(M_{i})}{det(M)}$}
 \end{center}
 
 In order to find the coefficients of polynomial curve fitting, we have to use the equation shown above, so the determinate of $ M_{i} $ must be divided by the determinate of M. Above, the equation Ma = b was shown, so the determinate of the M matrix can be calculated. However, for the determinate of $ M_{i} $ matrix, the M matrix must be modified. To find the $ M_{i} $ matrix, the $ i^{th} $ column must be replaced with the column vector b, which was used in the equation Ma = b. For example, if the $ M_{0} $ matrix is to be determined, the M matrix must be modified like at the following\cite{Curve_Fitting2} :
