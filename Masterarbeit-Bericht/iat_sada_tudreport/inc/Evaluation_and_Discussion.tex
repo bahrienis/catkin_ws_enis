@@ -40,7 +40,7 @@ In the following table, the computing times for all algorithms, as well as their
     \hline
   
   PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
-  17.12 ms & 1.39 ms & 5 $\mu$s & 16.71 ms & 4.14 ms & 3.85 ms & 0 & 0 \\ \hline  
+  20.15 ms & 0.81 ms & 2 $\mu$s & 26.42 ms & 0.83 ms & 4.54 ms & 19 $\mu$s& 52.77 ms \\ \hline  
     
     
       \end{tabular}
@@ -61,13 +61,13 @@ process in this method is nearly identical to the process in Method 1, but the r
 
 
 \begin{table}[ht]
-\caption{Computing Times of Method 4} 
+\caption{Computing Times of Method 1(b)} 
 \centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c |}
     \hline
   
   PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
-  0   &  0  &  0  &  0  &  0  &  0 &  0  &  0 \\ \hline  
+  5.26 ms   &  0.34 ms  &  1 $\mu$s  &  11.60 ms  &  0.28 ms  &  3.49 ms &  17 $\mu$s  &  20.99 ms \\ \hline  
     
     
       \end{tabular}
@@ -101,7 +101,7 @@ But in this method, the IPM algorithm was used at the beginning. In the followin
     \hline
   
   IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & KNN 	   & CF 	  & PUB 	& ACT \\ \hline  
-  16.48 ms & 15.59 ms & 1.08 ms & 6 $\mu$s & 14.92 ms & 10 $\mu$s & 2.39 ms & 4.51 ms & 0       & 0   \\ \hline  
+  15.73 ms & 15.85 ms & 1.16 ms & 5 $\mu$s & 17.51 ms & 11 $\mu$s & 3.02 ms & 3.96 ms & 20 $\mu$s       & 57.27 ms   \\ \hline  
     
       \end{tabular}
   \label{tab:Case2_Times}
@@ -118,13 +118,13 @@ effect. In the other words, the size of the lanes does not appear smaller even i
 
 
 \begin{table}[ht]
-\caption{Computing Times of Method 5} 
+\caption{Computing Times of Method 2(b)} 
 \centering 
   \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
     \hline
   
   IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & KNN 	   & CF 	  & PUB 	& ACT \\ \hline  
-  0   &  0  &  0  &  0  &  0  &  0 &  0  &  0  & 0 & 0\\ \hline  
+  4.61 ms   &  3.66 ms  &  0.21 ms  &  2 $\mu$s  &  5.43 ms  &  6 $\mu$s &  1.95 ms  &  2.09 ms & 17 $\mu$s & 17.99 ms\\ \hline  
     
     
       \end{tabular}
@@ -148,7 +148,7 @@ K-Nearest Neighbors Algorithm, the Rectangle Algorithm is used. As a result, the
     \hline
   
   IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & REC 	   & CF 	  & PUB 	& ACT \\ \hline  
-  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0       & 0   \\ \hline  
+  19.36 ms & 18.57 ms & 1.35 ms & 5 $\mu$s & 17.33 ms & 17 $\mu$s & 3.50 ms & 5.12 ms & 20 $\mu$s       & 65.27 ms   \\ \hline  
     
     
       \end{tabular}

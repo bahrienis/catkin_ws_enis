@@ -37,22 +37,30 @@
 
 \bibitem{GaussianBlur}
 {\sc Team, OpenCV~Dev}: {\em Image Filtering}.
-\newblock url =
-  {https://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=gaussianblur$\#$gaussianblur},
-  October 2017.
+\newblock url = {https://docs.opencv.org/2.4/modules/imgproc/doc/
+  filtering.html?highlight=gaussianblurgaussianblur}, October 2017.
 
 \bibitem{addWeighted}
-{\sc Team, OpenCV~Dev}: {\em Operations on Arrays}, October 2017.
+{\sc Team, OpenCV~Dev}: {\em Operations on Arrays}.
+\newblock url =
+  {https://docs.opencv.org/2.4/modules/core/doc/operations$\_$on$\_$arrays.htmloperations-on-arrays},
+  October 2017.
 
 \bibitem{Canny_Edge_Detector2}
-{\sc Technology~Delhi, Indian~Institute~of}: {\em Canny Edge Detector}, March
+{\sc Technology~Delhi, Indian~Institute~of}: {\em Canny Edge Detector}.
+\newblock url = {http://www.cse.iitd.ernet.in/pkalra/col783/canny.pdf}, March
   2009.
 
 \bibitem{Canny_Edge_Detector}
-{\sc Wikipedia}: {\em Canny Edge Detector}, May 2017.
+{\sc Wikipedia}: {\em Canny Edge Detector}.
+\newblock url = {https://en.wikipedia.org/wiki/Canny$\_$edge$\_$detector}, May
+  2017.
 
 \bibitem{Canny_Edge_Detector3}
-{\sc Team, OpenCV~Dev}: {\em Canny Edge Detector}, October 2017.
+{\sc Team, OpenCV~Dev}: {\em Canny Edge Detector}.
+\newblock url =
+  {https://docs.opencv.org/2.4/modules/imgproc/doc/feature$\_$detection.html?highlight=canny},
+  October 2017.
 
 \bibitem{Hough_Transformation}
 {\sc Duda, Richard~O.} \btxandlong{}\ {\sc Peter~E. Hart}: {\em Use of the
@@ -68,10 +76,16 @@
   Brno, Czech Republic.
 
 \bibitem{Standard_Hough_Transformation}
-{\sc Sharma, Nabin}: {\em Linear Hough Transform Using Python}, December 2012.
+{\sc Sharma, Nabin}: {\em Linear Hough Transform Using Python}.
+\newblock url =
+  {https://nabinsharma.wordpress.com/2012/12/26/linear-hough-transform-using-python/},
+  December 2012.
 
 \bibitem{Standard_Hough_Transformation2}
-{\sc Team, Opencv~Dev}: {\em Hough Line Transform}, October 2017.
+{\sc Team, Opencv~Dev}: {\em Hough Line Transform}.
+\newblock url =
+  {https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough$\_$lines/hough$\_$lines.html},
+  October 2017.
 
 \bibitem{k_nearest_neighbors}
 {\sc Xindong~Wu, Vipin~Kumar, J. Ross Quinlan Joydeep Ghosh Qiang Yang Hiroshi
@@ -81,7 +95,10 @@
 \newblock Springer-Verlag London Limited 2007, 2007.
 
 \bibitem{k_nearest_neighbors_wikipedia}
-{\sc Wikipedia}: {\em k-nearest neighbors algorithm}, August 2017.
+{\sc Wikipedia}: {\em k-nearest neighbors algorithm}.
+\newblock url =
+  {https://en.wikipedia.org/wiki/K-nearest$\_$neighbors$\_$algorithm}, August
+  2017.
 
 \bibitem{k_nearest_neighbors_adv_disadv}
 {\sc Sadegh Bafandeh~Imandoust, Mohammad~Bolandraftar}: {\em Application of
@@ -91,24 +108,35 @@
   Applications, 3:605--610, October 2013.
 
 \bibitem{k_nearest_neighbors_OpenCV}
-{\sc Team, OpenCV~Dev}: {\em Fast Approximate Nearest Neighbor Search}, October
-  2017.
+{\sc Team, OpenCV~Dev}: {\em Fast Approximate Nearest Neighbor Search}.
+\newblock url =
+  {https://docs.opencv.org/2.4/modules/flann/doc/flann$\_$fast$\_$
+  approximate$\_$nearest$\_$neighbor$\_$search.html}, October 2017.
 
 \bibitem{Curve_Fitting}
 {\em The KaleidaGraph Guide to Curve Fitting}.
+\newblock url = {http://www.synergy.com/Tools/curvefitting.pdf}.
 
 \bibitem{Curve_Fitting_Polynomial}
-{\sc Frost, Jim}: {\em Curve Fitting with Linear and Nonlinear Regression},
+{\sc Frost, Jim}: {\em Curve Fitting with Linear and Nonlinear Regression}.
+\newblock url =
+  {http://blog.minitab.com/blog/adventures-in-statistics-2/curve-fitting-with-linear-and-nonlinear-regression},
   August 2013.
 
 \bibitem{Interpolation_and_CurveFitting}
-{\sc Wickert, M.}: {\em Interpolation and Curve Fitting}, Juli 2000.
+{\sc Wickert, M.}: {\em Interpolation and Curve Fitting}.
+\newblock url =
+  {http://www.eas.uccs.edu/~mwickert/ece1010/lecture$\_$notes/1010n6a.PDF},
+  Juli 2000.
 
 \bibitem{Curve_Fitting2}
 {\em FITTING OF A POLYNOMIAL USING LEAST SQUARES METHOD}.
+\newblock url =
+  {https://neutrium.net/mathematics/least-squares-fitting-of-a-polynomial/}.
 
 \bibitem{Curve_Fitting_Plot}
-{\sc MyCurveFit}: {\em MyCurveFit}, 2017.
+{\sc MyCurveFit}: {\em MyCurveFit}.
+\newblock url = {https://mycurvefit.com/}, 2017.
 
 \bibitem{Review_of_Lane_Detection}
 {\sc Kumar, Ammu~M} \btxandlong{}\ {\sc Philomina Simon}: {\em REVIEW OF LANE
@@ -131,22 +159,32 @@
 \newblock IEEE Southwest Symposium on, 2008.
 
 \bibitem{PD10BIMT}
-{\sc Corporation, MiTAC Computing~Technology}: {\em About}, 2016.
+{\sc Corporation, MiTAC Computing~Technology}: {\em About}.
+\newblock url = {http://client.mitac.com/products-embedded-board-PD10BI.html},
+  2016.
 
 \bibitem{ROS}
 {\sc Dirk, Thomas}: {\em What is ROS}.
 \newblock url = {http://wiki.ros.org/ROS/Introduction}, May 2014.
 
 \bibitem{OpenCV_About}
-{\sc team, OpenCV}: {\em About}, 2017.
+{\sc team, OpenCV}: {\em About}.
+\newblock url = {https://opencv.org/about.html}, 2017.
 
 \bibitem{cv_bridge}
-{\sc Wiki, ROS}: {\em cv bridge ROS Wiki}, December 2013.
+{\sc Wiki, ROS}: {\em cv bridge ROS Wiki}.
+\newblock url = {wiki.ros.org/cv$\_$bridge}, December 2013.
 
 \bibitem{OpenCV_Mat}
-{\sc team~opencv~dev}: {\em Mat The Basic Image Container}, October 2017.
+{\sc team~opencv~dev}: {\em Mat The Basic Image Container}.
+\newblock url =
+  {http://docs.opencv.org/2.4/doc/tutorials/core/mat$\_$the$\_$basic$\_$image
+  $\_$container/mat$\_$the$\_$basic$\_$image$\_$container.html}, October 2017.
 
 \bibitem{threshold}
-{\sc Team, OpenCV~Dev}: {\em Basic Thresholding Operations}, October 2017.
+{\sc Team, OpenCV~Dev}: {\em Basic Thresholding Operations}.
+\newblock url =
+  {https://docs.opencv.org/2.4/doc/tutorials/imgproc/threshold/threshold.html},
+  October 2017.
 
 \end{thebibliography}

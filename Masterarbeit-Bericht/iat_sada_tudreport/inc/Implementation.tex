@@ -367,7 +367,7 @@ This method is very similar to Method 1 in Section \ref{sec:Case 1}. The only di
 
 \textbf{Step 1 : }As previously mentioned, the preprocessing part is common for all methods. So in this method, the preprocessing part was also the first step.
 
-\textbf{Step 2 : }In this method, the frames taken from the camera,\emph{\color{green}then the upper 100 pixels of the frame is cropped, otherwise, the lanes will be seem so far away from the bird's-eye perspective and it means, the lanes will be seem smaller.(More info in the Section \ref{sec:Inverse Perspective Mapping}) then the cropped frames} are converted from the camera perspective to the bird's-eye view perspective. In Section \ref{sec:Case 1} (Method 1), only the curve fitting pixels were converted from the camera perspective to the top of the track perspective. The time needed to convert 640x380 pixels (243200 pixels in total) is a bit more when compared to Method 1. The original frame, which can be seen in Figure \ref{fig:Case2_InputImg}, is converted to the frame which can be seen in Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.
+\textbf{Step 2 : }In this method, the frames are taken by the camera, then the upper 100 pixels of the frame are cropped, otherwise, the lanes appear far away from the bird's-eye perspective and thus appear smaller (more info in the Section \ref{sec:Inverse Perspective Mapping}). Then the cropped frames are converted from the camera perspective to the bird's-eye view perspective. In Section \ref{sec:Case 1} (Method 1), only the curve fitting pixels were converted from the camera perspective to the top of the track perspective. The time needed to convert 640x380 pixels (243200 pixels in total) is a bit more when compared to Method 1. The original frame, which can be seen in Figure \ref{fig:Case2_InputImg}, is converted to the frame which can be seen in Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.
 
  
 \begin{figure}[H]
@@ -379,7 +379,7 @@ This method is very similar to Method 1 in Section \ref{sec:Case 1}. The only di
 \end{figure} 
 
 
-\textbf{Step 3 : }In Method 1, \emph{\color{green}just for the lower 230 pixels, the Standard Hough Transformation is applied} . In this methood, it sufficient to apply the Standard Hough Line Transformation to only the last 200 pixels of the frame, because these 200 pixels are able to cover all lanes in the frame. In Figure \ref{fig:Case2_Standard_Hough_Transformation}, all lanes can be distinguished thanks to the Hough lines. 
+\textbf{Step 3 : }In Method 1, the Standard Hough Transformation is applied to only the lower 230 pixels. In this methood, it sufficient to apply the Standard Hough Line Transformation to only the last 200 pixels of the frame, because these 200 pixels are able to cover all lanes in the frame. In Figure \ref{fig:Case2_Standard_Hough_Transformation}, all lanes can be distinguished thanks to the Hough lines. 
 
 
 \begin{figure}[H]

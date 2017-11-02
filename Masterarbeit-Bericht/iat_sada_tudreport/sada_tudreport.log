@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  2 NOV 2017 02:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  2 NOV 2017 08:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1829,11 +1829,25 @@ Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 440.
 ]
 chapter 5.
 [53]
-Overfull \hbox (7.00969pt too wide) in paragraph at lines 100--108
+Overfull \hbox (37.36269pt too wide) in paragraph at lines 100--108
  [][] 
  []
 
-[54] [55]) (./inc/Conclusion.tex [56]
+[54]
+Overfull \hbox (12.8987pt too wide) in paragraph at lines 123--132
+ [][] 
+ []
+
+
+Overfull \hbox (37.36269pt too wide) in paragraph at lines 147--156
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1199) has occurred while \output is active []
+
+ [55])
+(./inc/Conclusion.tex [56]
 chapter 6.
 ) [57
 
@@ -1982,11 +1996,9 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              by `\normalfont \scshape ' on input line 39.
 
 
-Overfull \hbox (276.15944pt too wide) in paragraph at lines 39--43
+Overfull \hbox (22.65694pt too wide) in paragraph at lines 39--42
 []\T1/5ch/m/sc/11 Team, OpenCV Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Im-age Fil-t
-er-ing\T1/5ch/m/n/11 .  url = https://docs.opencv.org/2.4/modules/imgproc/doc/f
-iltering.html?highlight=gaussianblur$\OT1/mdbch/m/n/11.5 #$\T1/5ch/m/n/11 gauss
-ianblur,
+er-ing\T1/5ch/m/n/11 .  url = https://docs.opencv.org/2.4/modules/imgproc/doc/
  []
 
 
@@ -2001,7 +2013,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 45.
+(scrreprt)              by `\normalfont \scshape ' on input line 44.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--48
+[]\T1/5ch/m/sc/11 Team, OpenCV Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Op-er-a-tion
+s on Ar-rays\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--48
+\T1/5ch/m/n/11 https://docs.opencv.org/2.4/modules/core/doc/operations$[]$on$[]
+$arrays.htmloperations-
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2015,21 +2039,13 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 48.
+(scrreprt)              by `\normalfont \scshape ' on input line 50.
 
 
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 52.
+Underfull \hbox (badness 10000) in paragraph at lines 50--53
+[]\T1/5ch/m/sc/11 Technology Delhi, In-dian In-sti-tute of\T1/5ch/m/n/11 : \T1/
+5ch/m/it/11 Canny Edge De-tec-tor\T1/5ch/m/n/11 .  url =
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2046,18 +2062,11 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              by `\normalfont \scshape ' on input line 55.
 
 
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 58.
+Overfull \hbox (8.83664pt too wide) in paragraph at lines 55--58
+[]\T1/5ch/m/sc/11 Wikipedia\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Canny Edge De-tec-t
+or\T1/5ch/m/n/11 .  url = https://en.wikipedia.org/wiki/Canny$[]$edge$[]$detect
+or,
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2071,7 +2080,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 58.
+(scrreprt)              by `\normalfont \scshape ' on input line 60.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
+[]\T1/5ch/m/sc/11 Team, OpenCV Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Canny Edge D
+e-tec-tor\T1/5ch/m/n/11 .  url =
+ []
+
+
+Overfull \hbox (22.94415pt too wide) in paragraph at lines 60--64
+\T1/5ch/m/n/11 https://docs.opencv.org/2.4/modules/imgproc/doc/feature$[]$detec
+tion.html?highlight=canny,
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2085,7 +2106,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 64.
+(scrreprt)              by `\normalfont \scshape ' on input line 66.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2099,7 +2120,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 64.
+(scrreprt)              by `\normalfont \scshape ' on input line 66.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2113,7 +2134,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 71.
+(scrreprt)              by `\normalfont \scshape ' on input line 72.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2127,26 +2148,9 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 74.
+(scrreprt)              by `\normalfont \scshape ' on input line 72.
 
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 77.
-
-
-Underfull \vbox (badness 1292) has occurred while \output is active []
-
- [59
+[59
 
 
 
@@ -2164,7 +2168,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 84.
+(scrreprt)              by `\normalfont \scshape ' on input line 79.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--83
+[]\T1/5ch/m/sc/11 Sharma, Nabin\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Lin-ear Hough T
+rans-form Us-ing Python\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--83
+\T1/5ch/m/n/11 https://nabinsharma.wordpress.com/2012/12/26/linear-hough-transf
+orm-using-
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2178,7 +2194,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 87.
+(scrreprt)              by `\normalfont \scshape ' on input line 85.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
+[]\T1/5ch/m/sc/11 Team, Opencv Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Hough Line T
+rans-form\T1/5ch/m/n/11 .  url =
+ []
+
+
+Overfull \hbox (21.15114pt too wide) in paragraph at lines 85--89
+\T1/5ch/m/n/11 https://docs.opencv.org/2.4/doc/tutorials/imgproc/imgtrans/hough
+$[]$lines/hough$[]$lines.html,
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2192,7 +2220,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 94.
+(scrreprt)              by `\normalfont \scshape ' on input line 91.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2206,7 +2234,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 101.
+(scrreprt)              by `\normalfont \scshape ' on input line 98.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2220,7 +2248,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 105.
+(scrreprt)              by `\normalfont \scshape ' on input line 104.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2237,18 +2265,22 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              by `\normalfont \scshape ' on input line 111.
 
 
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 114.
+Underfull \hbox (badness 10000) in paragraph at lines 111--115
+[]\T1/5ch/m/sc/11 Team, OpenCV Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Fast Ap-prox
+-i-mate Near-est Neigh-bor Search\T1/5ch/m/n/11 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--115
+\T1/5ch/m/n/11 url = https://docs.opencv.org/2.4/modules/flann/doc/flann$[]$fas
+t$[]$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--119
+[]\T1/5ch/m/it/11 The Kalei-da-Graph Guide to Curve Fit-ting\T1/5ch/m/n/11 .  u
+rl =
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2262,7 +2294,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 114.
+(scrreprt)              by `\normalfont \scshape ' on input line 121.
+
+
+Underfull \hbox (badness 7291) in paragraph at lines 121--125
+[]\T1/5ch/m/sc/11 Frost, Jim\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Curve Fit-ting wit
+h Lin-ear and Non-lin-ear Re-gres-sion\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--125
+\T1/5ch/m/n/11 http://blog.minitab.com/blog/adventures-in-statistics-2/curve-fi
+tting-with-linear-and-
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2276,7 +2320,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 119.
+(scrreprt)              by `\normalfont \scshape ' on input line 127.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--131
+[]\T1/5ch/m/sc/11 Wickert, M.\T1/5ch/m/n/11 : \T1/5ch/m/it/11 In-ter-po-la-tion
+ and Curve Fit-ting\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--136
+[]\T1/5ch/m/it/11 FITTING OF A POLY-NO-MIAL US-ING LEAST SQUARES METHOD\T1/5ch/
+m/n/11 .  url =
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2290,7 +2346,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 124.
+(scrreprt)              by `\normalfont \scshape ' on input line 138.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2304,7 +2360,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 124.
+(scrreprt)              by `\normalfont \scshape ' on input line 142.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2318,63 +2374,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 129.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 134.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 137.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 141.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 144.
+(scrreprt)              by `\normalfont \scshape ' on input line 142.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2402,16 +2402,162 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 150.
+(scrreprt)              by `\normalfont \scshape ' on input line 152.
 
-) (./inc/Anhang.tex [60]
-chapter A.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
- [61
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 152.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 157.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 162.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--165
+[]\T1/5ch/m/sc/11 Corporation, Mi-TAC Com-put-ing Tech-nol-ogy\T1/5ch/m/n/11 : 
+\T1/5ch/m/it/11 About\T1/5ch/m/n/11 .  url =
+ []
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 167.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 171.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 175.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 179.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--183
+[]\T1/5ch/m/sc/11 team opencv dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Mat The Ba-si
+c Im-age Con-tainer\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--183
+\T1/5ch/m/n/11 http://docs.opencv.org/2.4/doc/tutorials/core/mat$[]$the$[]$basi
+c$[]$image
+ []
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 185.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--189
+[]\T1/5ch/m/sc/11 Team, OpenCV Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Ba-sic Thres
+h-old-ing Op-er-a-tions\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--189
+\T1/5ch/m/n/11 https://docs.opencv.org/2.4/doc/tutorials/imgproc/threshold/thre
+shold.html, Oc-to-
+ []
+
+) (./inc/Anhang.tex [61] [62
 
 
 ]
+chapter A.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
+ [63]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
  (./sada_tudreport.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
@@ -2426,8 +2572,8 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 17948 strings out of 493029
- 281785 string characters out of 6136235
+ 17950 strings out of 493029
+ 281799 string characters out of 6136235
  468179 words of memory out of 5000000
  20754 multiletter control sequences out of 15000+600000
  126964 words of font info for 102 fonts, out of 8000000 for 9000
@@ -2447,10 +2593,10 @@ n/mdbch/md-chr7v.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesi
 gn/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdes
 ign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfon
 ts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (69 pages, 15064833 bytes).
+Output written on sada_tudreport.pdf (71 pages, 15066895 bytes).
 PDF statistics:
- 883 PDF objects out of 1000 (max. 8388607)
- 731 compressed objects within 8 object streams
- 215 named destinations out of 1000 (max. 500000)
+ 895 PDF objects out of 1000 (max. 8388607)
+ 741 compressed objects within 8 object streams
+ 217 named destinations out of 1000 (max. 500000)
  545 words of extra memory for PDF output out of 10000 (max. 10000000)
 
