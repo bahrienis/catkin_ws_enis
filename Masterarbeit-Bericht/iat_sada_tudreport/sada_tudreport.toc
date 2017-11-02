@@ -29,14 +29,14 @@
 \contentsline {subsection}{\numberline {4.4.1}Development Environment and Related Software}{36}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Preprocessing}{37}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}{39}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}{46}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}{49}{subsection.4.4.5}
-\contentsline {subsection}{\numberline {4.4.6}Method 4 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{50}{subsection.4.4.6}
-\contentsline {subsection}{\numberline {4.4.7}Method 5 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{50}{subsection.4.4.7}
+\contentsline {subsection}{\numberline {4.4.4}Method 1(b) : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}{46}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}{47}{subsection.4.4.5}
+\contentsline {subsection}{\numberline {4.4.6}Method 2(b) : Resize + IPM + Hough Transformation + KNN + Curve Fitting}{50}{subsection.4.4.6}
+\contentsline {subsection}{\numberline {4.4.7}Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}{50}{subsection.4.4.7}
 \contentsline {chapter}{\numberline {5}Evaluation and Discussion}{53}{chapter.5}
 \contentsline {section}{\numberline {5.1}Average Computing Time}{53}{section.5.1}
-\contentsline {section}{\numberline {5.2}Test Driving}{55}{section.5.2}
+\contentsline {section}{\numberline {5.2}Lane Detection Quality}{56}{section.5.2}
 \contentsline {chapter}{\numberline {6}Conclusion}{57}{chapter.6}
-\contentsline {chapter}{Bibliography}{59}{section*.42}
+\contentsline {chapter}{Bibliography}{59}{section*.41}
 \contentsline {chapter}{\numberline {A}Appendix}{61}{appendix.A}
 \contentsline {section}{\numberline {A.1}Default Values of Parameters}{61}{section.A.1}

@@ -329,6 +329,10 @@ int main(int argc, char **argv) {
         int thirdpicsize = heightofframe-(firstpicsize+secondpicsize);
 
 
+
+	
+
+
         vector<int> redlines;
         vector<Point> houghpoints;
         int rightLaneIndex = 0;
@@ -364,7 +368,7 @@ int main(int argc, char **argv) {
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame39.jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -372,7 +376,7 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
-       inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
         if (inputImg.empty()) {
             cout << "can not open " << filename << endl;
             return -1;
@@ -383,7 +387,7 @@ int main(int argc, char **argv) {
         frameNum++;
 
 
-       //         bool bSuccess = cap.read(inputImg);
+//                bool bSuccess = cap.read(inputImg);
 
 
 
@@ -549,12 +553,12 @@ clock_t end_SHT = clock();
         //1. Bild         
 
         vector<Vec4i> lines1P;
-        HoughLinesP(grad2, lines1P, 2, CV_PI / 180, 2, 2, 2);
+        HoughLinesP(grad2, lines1P, 2, CV_PI / 180, 0, 0, 0);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
             //            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
-            circle(inputImg, Point(l[0], l[1]+firstpicsize), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-            circle(inputImg, Point(l[2], l[3]+firstpicsize), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
+            circle(inputImg, Point(l[0], l[1]+firstpicsize), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+            circle(inputImg, Point(l[2], l[3]+firstpicsize), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             //           circle(gradcolor, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             //   circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             //           circle(gradcolor, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
@@ -565,7 +569,7 @@ clock_t end_SHT = clock();
 
         }
 
-
+  imshow("Input Image", inputImg);
 
 
 
@@ -771,7 +775,7 @@ clock_t end_CF = clock();
 
 
 
-       imshow("Input Image", inputImg);
+   //    imshow("Input Image", inputImg);
 //        imshow("Input Image IPM", inputImgIPM);
         imshow("Sobel", grad);
         imshow("Sobel color", gradcolor);

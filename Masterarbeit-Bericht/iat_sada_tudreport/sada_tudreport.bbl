@@ -2,14 +2,22 @@
 
 \bibitem{Statis}
 {\sc Kraski, Gerhard}: {\em More traffic accidents but fewer fatalities than
-  ever before in 2016}, Juli 2017.
+  ever before in 2016}.
+\newblock url =
+  {https://www.destatis.de/EN/PressServices/Press/pr/2017/07/PE17$\_$230$\_$46241.html},
+  Juli 2017.
 
 \bibitem{Carolo_Cup}
-{\sc Braunschweig, Technische~Universität}: {\em Carolo-Cup Regulations 2017},
+{\sc Braunschweig, Technische~Universität}: {\em Carolo-Cup Regulations 2017}.
+\newblock url =
+  {https://wiki.ifr.ing.tu-bs.de/carolocup/system/files/Regelwerk$\_$2017$\_$20161016$\_$en$\_$0.pdf},
   October 2016.
 
 \bibitem{Camera_Calibration}
-{\sc Allevato, Adam}: {\em How to Calibrate a Monocular Camera}, April 2017.
+{\sc Allevato, Adam}: {\em How to Calibrate a Monocular Camera}.
+\newblock url =
+  {http://wiki.ros.org/camera$\_$calibration/Tutorials/MonocularCalibration},
+  April 2017.
 
 \bibitem{IPM}
 {\sc Lin, Chien-Chuan} \btxandlong{}\ {\sc Ming-Shi Wang}: {\em A Vision Based
@@ -22,10 +30,16 @@
 \newblock McGraw-Hill, 1995.
 
 \bibitem{SobelOperatorandCannyEdgeDetector}
-{\sc Kim, Daniel}: {\em Sobel Operator and Canny Edge Detector}, 2013.
+{\sc Kim, Daniel}: {\em Sobel Operator and Canny Edge Detector}.
+\newblock url =
+  {http://www.egr.msu.edu/classes/ece480/capstone/fall13/group04/docs/danapp.pdf},
+  2013.
 
 \bibitem{GaussianBlur}
-{\sc Team, OpenCV~Dev}: {\em Image Filtering}, October 2017.
+{\sc Team, OpenCV~Dev}: {\em Image Filtering}.
+\newblock url =
+  {https://docs.opencv.org/2.4/modules/imgproc/doc/filtering.html?highlight=gaussianblur$\#$gaussianblur},
+  October 2017.
 
 \bibitem{addWeighted}
 {\sc Team, OpenCV~Dev}: {\em Operations on Arrays}, October 2017.
@@ -45,6 +59,13 @@
   Hough Transformation To Detect Lines and Curves in Pictures}.
 \newblock Stanford Research Institute, Menlo Park, California, 15, January
   1972.
+
+\bibitem{Standard_Hough}
+{\sc Radovan~Josth, Marketa~Dubska, Adam~Herout} \btxandlong{}\ {\sc Jiri
+  Havel}: {\em Real-Time Line Detection Using Accelerated High-Resolution Hough
+  Transform}.
+\newblock Brno University of Technology, Faculty of Information Technology
+  Brno, Czech Republic.
 
 \bibitem{Standard_Hough_Transformation}
 {\sc Sharma, Nabin}: {\em Linear Hough Transform Using Python}, December 2012.
@@ -89,24 +110,6 @@
 \bibitem{Curve_Fitting_Plot}
 {\sc MyCurveFit}: {\em MyCurveFit}, 2017.
 
-\bibitem{PD10BIMT}
-{\sc Corporation, MiTAC Computing~Technology}: {\em About}, 2016.
-
-\bibitem{ROS}
-{\sc Dirk, Thomas}: {\em What is ROS}, May 2014.
-
-\bibitem{OpenCV_About}
-{\sc team, OpenCV}: {\em About}, 2017.
-
-\bibitem{cv_bridge}
-{\sc Wiki, ROS}: {\em cv bridge ROS Wiki}, December 2013.
-
-\bibitem{OpenCV_Mat}
-{\sc team~opencv~dev}: {\em Mat The Basic Image Container}, October 2017.
-
-\bibitem{threshold}
-{\sc Team, OpenCV~Dev}: {\em Basic Thresholding Operations}, October 2017.
-
 \bibitem{Review_of_Lane_Detection}
 {\sc Kumar, Ammu~M} \btxandlong{}\ {\sc Philomina Simon}: {\em REVIEW OF LANE
   DETECTION AND TRACKING ALGORITHMS IN ADVANCED DRIVER ASSISTANCE SYSTEM}.
@@ -126,5 +129,24 @@
 {\sc Christian~Lipski, Björn~Scholz, Kai Berger Christian Linz Timo~Stich}:
   {\em A Fast and Robust Approach to Lane Marking Detection and Lane Tracking}.
 \newblock IEEE Southwest Symposium on, 2008.
+
+\bibitem{PD10BIMT}
+{\sc Corporation, MiTAC Computing~Technology}: {\em About}, 2016.
+
+\bibitem{ROS}
+{\sc Dirk, Thomas}: {\em What is ROS}.
+\newblock url = {http://wiki.ros.org/ROS/Introduction}, May 2014.
+
+\bibitem{OpenCV_About}
+{\sc team, OpenCV}: {\em About}, 2017.
+
+\bibitem{cv_bridge}
+{\sc Wiki, ROS}: {\em cv bridge ROS Wiki}, December 2013.
+
+\bibitem{OpenCV_Mat}
+{\sc team~opencv~dev}: {\em Mat The Basic Image Container}, October 2017.
+
+\bibitem{threshold}
+{\sc Team, OpenCV~Dev}: {\em Basic Thresholding Operations}, October 2017.
 
 \end{thebibliography}

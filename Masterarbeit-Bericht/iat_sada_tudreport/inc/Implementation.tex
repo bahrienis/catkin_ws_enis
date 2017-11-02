@@ -239,7 +239,7 @@ This preprocessing part is common for all cases but after this process, the case
 %
 \subsection{Method 1 : Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 1}
 
-\emph{\color{green}The algorithms and their orders which was used in this method, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Method 1 is shown.}
+The algorithms and their orders which was used in this method, will be explained step by step. At Figure \ref{fig:Case1_BlockDiagram}, the block diagram of Method 1 is shown.
 
 
 
@@ -251,56 +251,63 @@ This preprocessing part is common for all cases but after this process, the case
 
 
 
-\textbf{Step 1 : }As with all methods, the first step is preprocessing part. When the preprocessing part is over, the lanes must be detected. 
+\textbf{Step 1 : }As with all methods, the first step is the preprocessing phase. When the preprocessing phase is over, it must be determined which pixel columns the lanes lie between. 
 
-\textbf{Step 2 : }Secondly, the positions of the lanes should be found. In order to find the positions of the lanes, the Standard Hough Transformation is used. But the Standard Hough Transformation should not utilize the entire frame; rather, the frame is cropped. There is an advantage to cropping the frame, which will be explained in detail.
+\textbf{Step 2 : }Secondly, the positions of the lanes should be found. In order to find the positions of the lanes, the Standard Hough Line Transformation is used. But the Standard Hough Line Transformation should not utilize the entire frame; rather, the frame is cropped. There is an advantage to cropping the frame, which will be explained in detail.
 
 
-The frames obtained from the camera are at a resolution of 640x480 pixels, which is the default value. The resolution of the camera can be increased by adjusting its settings, but it is not possible to decrease it this way. In order to decrease the resolution of the camera, there is another technique that can be used. This technique is used with another method, and will be explained there. With this method, the minimum resolution the camera allows is used. There are some reasons for this, the most important being that if the resolution is increased, there are more pixels, and thus the computing time increases as well. High computing time is of course undesirable.
+In this project, the Standard Hough Line Transformation is used differently than usual. Normally, the Standard Hough Line Transformation detects the straight lines but here, it checks if there are two edges in the same pixel column of the frame. In other words, if there is a lane, there are two edges of the lane in the frame so if there is a lane, there are also Hough Transformation lines. For the Standard Hough Line Transformation, the function of OpenCV is used. As previously explained in Section \ref{sec:Standard Hough Line Transformation}, in order to use this function in OpenCV, some parameters must be set. One of these parameters was the 'threshold', which decides the minimum number of the points to detect a line. In a lane, there are two edges, so the Standard Hough lines must be drawn if two points in the same vertical are detected. These two points are only searched for vertically, so another parameter in the Standard Hough Line Transformation function from OpenCV is used for the angle, which has to check the points in that angle. Because only vertical edges are checked, this angle value, named '$\theta$', is set to 'CV$\_$PI(180 degree)'.
+
+
  
-The original height of the frame was 640 pixels, but as previously mentioned, the frame was cropped. As seen in Figure \ref{fig:Case1_withoutCropped}, when there is a curve, the camera also detects points that do not belong to the track. When the frame is not cropped, the detection of irrelevant points would result in the undesired production of red Standard Hough Transformation lines. As a result, the upper 100 pixels of the frame height were removed and only the lower 540 pixels were used. As seen at Figure \ref{fig:Case1_withCropped}, the red lines are shown only in the last 540 pixels of frame height and do not cover the irrelevant parts of the frame. If there is a lane, the red lines are very close each other, but if there is no lane, there is a distance of at least 50 pixels between the red lines. In Figure \ref{fig:Case1_withCropped}, there are three different groups of red lines. In each group, there is a lane. Thanks to the Standard Hough Line Transformation, we know which lanes are between which pixel columns.
+The frames obtained from the camera are at a resolution of 640x480 pixels, which is the default value. The resolution of the camera can be increased and decreased by adjusting its settings.
+The original height of the frame was 640 pixels in this method, but as previously mentioned, the frame was cropped. As seen in Figure \ref{fig:Case1_withoutCropped}, the camera detects the edges that do not belong to the track. When the frame is not cropped, the detection of irrelevant edges would result in the undesired production of Standard Hough Transformation lines (shown in red).  Thus, the Hough Transformation is only used for the lower 230 pixels, if more than 230 pixels are used for generating the Standard Hough Transformation lines. 
+
+As seen in  Figure \ref{fig:Case1_withCropped},  the red lines are shown only in the last 230 pixels of frame height and do not cover the irrelevant parts of the frame. If there is a lane, the red lines are very close to each other, but if there is no lane, there is a distance of at least 50 pixels between the red lines. In Figure \ref{fig:Case1_withCropped}, there are two different groups of red lines. In each group, there is a lane. Thanks to the Standard Hough Line Transformation, it is known which lanes are between which pixel columns. The group of Standard Hough Transformation lines on the right indicates the right lane and the group of Standard Hough Transformation lines on the left indicates the middle lane. 
 
 \begin{figure}[H]
   \centering
-  \subfloat[Hough Transformation without Cropping Image]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_withoutCropped.png}\label{fig:Case1_withoutCropped}}
+  \subfloat[Standard Hough Transformation without Cropping Image]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_withoutCropped.png}\label{fig:Case1_withoutCropped}}
   \hfill
-  \subfloat[Hough Transformation with Cropping Image at Curve Lane]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_withCropped.png}\label{fig:Case1_withCropped}}
+  \subfloat[Standard Hough Transformation with Cropping Image]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_withCropped.png}\label{fig:Case1_withCropped}}
   \caption{Detecting Lane Positions}
 \end{figure}
 
 
-But here there is also another problem. If a curve is to be detected, everything in this step works as it should (see Figure \ref{fig:Case1_withCropped}), but if a straight lane is to be detected, a problem occurs. As seen in Figure \ref{fig:Case1_Straight_Standard_Hough}, the beginning of the middle lane can be grouped with the left lane. In other words, there are again three different groups for three different lanes but each group of red lines fails to separate the lanes clearly from each other. As a result, the correct starting points of the middle and left lanes are not able to be found. In order for the lanes to be detected clearly, the frame must be divided into two horizontal rows.
+As previously explained, the positions of the two lanes (right and middle) were detected. However, even if more than the lower 230 pixels of the frame are used, the positions of the all lanes can be detected (if all three lanes can be seen in the frame), but in this case, another problem occurs. As seen in Figure \ref{fig:Case1_StandardHough_Curve}, the Standard Hough Transformation is implemented for the lower 380 pixels of the frame. As shown in the same Figure, if there is a curve, everything works fine and the positions of the all lanes can be detected. However, if there is a straight lane like in Figure \ref{fig:Case1_StandardHough_geradeaus}, the position of the lanes can not be detected correctly.  The beginning of the middle lane is grouped with the left lane, so it causes lane detection problems. In other words, there are again three different groups for three different lanes but each group of red lines fails to separate the lanes clearly from each other. As a result, the correct starting points of the middle and left lanes are not able to be found. In order for the lanes to be detected clearly, the Standard Hough Line Transformation must be used for only the lower 240 pixels of the frame. At the end of this step, the positions of the middle and right lanes are detected.
 
-As previously mentioned, 100 pixels were already cropped from the top of the image in order to detect the positions of the lanes clearly and now, the rest of the frame must be divided into two rows. Based on the experimental results, the top row is 150 pixels high and the bottom row is 230 pixels high. As a result, the lanes can be grouped into two small frames and in each small frame, the starting points of lanes must be found. As seen in Figure \ref{fig:Case1_Standard_Hough_Straight_2Parts}, when the frame is divided into two pieces, the lanes can be grouped separately.
+
+
 
 \begin{figure}[H]
   \centering
-  \subfloat[Hough Transformation with Cropping Image at Straight Lane in 1 piece]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_Straight_Standard_Hough.png}\label{fig:Case1_Straight_Standard_Hough}}
+  \subfloat[Standard Hough Transformation in the Curve Lane]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_StandardHough_Curve.png}\label{fig:Case1_StandardHough_Curve}}
   \hfill
-  \subfloat[Hough Transformation with Cropping Image at Straight Lane in 2 pieces]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_Standard_Hough_Straight_2Parts.png}\label{fig:Case1_Standard_Hough_Straight_2Parts}}
-  \caption{Standard Hough Transformation in Straight Lanes}
+  \subfloat[Standard Hough Transformation in the Straight Lane]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_StandardHough_geradeaus.png}\label{fig:Case1_StandardHough_geradeaus}}
+  \caption{Standard Hough Transformation Detection Problem}
 \end{figure} 
 
 
-\emph{\color{green}\textbf{Step 3 : }After the lanes are grouped separately in two different small frames, the heights of which are 230 and 150 pixels, the points (pixels) on the lanes must be found in the two small frames. For that, we have to use Probabilistic Hough Transformation. The Probabilistic Hough Transformation is a bit different than Standard Hough Line Transformation because Standard Hough Transformation is more} suitable for straight lanes. However, if there is a curve, the Standard Hough Transformation is not able to detect lanes very well. As previously mentioned, a line can be represented as y = mx+c or in parametric form, as $\rho$ = x $\cos \theta$ + y$ \sin \theta$ where  $\rho$ is the perpendicular distance from origin to the line, and $\theta$ is the angle formed by this perpendicular line and horizontal axis measured in counter-clockwise. However, is different in the case of the Probabilistic Hough Transformation. A line is represented by two or more points. If the Probabilistic Hough Transformation finds at least two points from the same line, it represents the two end points of these lines.
+{Step 3 : }After the positions of the middle and right lanes are detected, the Probabilistic Hough Transformation must be implemented. Probabilistic Hough Transformation finds the pixels, which are on the edges of the lanes. The Probabilistic Hough
+Transformation is a bit different than Standard Hough Line Transformation because Standard Hough Transformation is more suitable for straight lanes. However, if there is a curve, the Standard Hough Transformation is not able to detect lanes very well. As previously mentioned in Section \ref{sec:Standard Hough Line Transformation}, a line can be represented as y = mx+c, or in parametric form, as $\rho$ = x cos $\theta$ + y sin $\theta$, where $\rho$ is the perpendicular distance from origin to the line, and $\theta$ is the angle formed by this perpendicular line and the horizontal axis measured counter-clockwise. However, the process differs in the case of the Probabilistic Hough Transformation. A line is represented by two or more points. If the Probabilistic Hough Transformation finds at least two points from the same line, it represents the two end points of these lines.
 
-In this master's thesis, the Probabilistic Hough lines are not drawn because just the points (pixels) which are detected in the lanes with the Probabilistic Hough Transformation are needed. 
+In this project, the function for the Probabilistic Hough Transformation from OpenCV is used. It detects lines, but all lanes consist of small lines, even if they are curved. In this project, these small lines on the lanes are detected. These small lines have start and end points, so instead of the drawing these small lines, the start and end points of these small lines are shown. All of these points (pixels) are on the lanes. As previously explained in Section \ref{sec:Probabilistic Hough-Transformation}, the parameters must be set for Probabilistic Hough Transformation. Here, the value '$\rho$' is the resolution in pixels. In this project, this value is set as two and it means that for every two pixels, lines are searched for.  Another value in this function is '$\theta$', which is the resolution in radians. In the Standard Hough Transformation, this value is chosen as 180 degrees, which means only vertical lines can be detected. However, in the Probabilistic Hough Transformation, this value is set as one pixel, which is the minimum value that can be chosen. The 'threshold' value decides the minimum number of points in the same line in order to detect a line. This value used in this project is two because it is enough to detect a line if there are only start and end points in a line. Another parameter in this function is 'minLinLength', which is the minimum length of the line. In this project, Probabilistic Hough Transformation is used to detect small lines in the lanes, so this value must be very small. In this project, two is selected as this value, because if there are two pixels next to each other in the same lane, these pixels must be detected. The last parameter of the Probabilistic Hough Transformation function is 'maxLineGap', which allows for the detection of lines which are farther away from each other than the value selected for this parameter. In order to detect a large number of Hough Points, which is needed for stable line detection, the value selected is two, meaning that the Hough Points farther than two pixels away from each other are detected. All of these parameters can be changed and affect the computing time. 
 
 
 \begin{figure}[H]
   \centering
-  \subfloat[Original Image with Probabilistic Hough Transformation]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_HoughPoints_Original.png}\label{fig:Case1_HoughPoints_Original}}
+  \subfloat[Original Image with Probabilistic Hough Transformation without Cropping]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_HoughPoints_Original.png}\label{fig:Case1_HoughPoints_Original}}
   \hfill
-  \subfloat[A Image with Sobel Operator and Probabilistic Hough Transformation]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_HoughPoints_Sobel.png}\label{fig:Case1_HoughPoints_Sobel}}
+  \subfloat[Original Image with Probabilistic Hough Transformation with Cropping]{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_HoughPoints_Sobel.png}\label{fig:Case1_HoughPoints_Sobel}}
   \caption{Probabilistic Hough Transformation Points}
 \end{figure} 
  
-In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPoints_Sobel}, the Probabilistic Hough Transformation Points (green pixels) are shown. The Probabilistic Hough Transformation detected a large number of pixels. By changing the parameters of the Probabilistic Hough Transformation found in OpenCV, fewer Hough Points on the lanes are detected, but detecting too few Hough points can also cause some problems for detecting the lanes. On the other hand, detecting a large number of Hough Points results in more computing time, which is undesirable. So in this case, the parameters of Probabilistic Hough Transformation function in OpenCV must be optimized. Thanks to optimization, the best solution (less computing time and good lane detection) is found.
+In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPoints_Sobel}, the Probabilistic Hough Transformation Points (green pixels) are shown. The Probabilistic Hough Transformation detected a large number of pixels. By changing the parameters of the Probabilistic Hough Transformation found in OpenCV, fewer Hough Points on the lanes are detected, but detecting too few Hough points can also cause some problems for lane detection. On the other hand, detecting a large number of Hough Points results in more computing time, which is undesirable. So in this case, the parameters of Probabilistic Hough Transformation function in OpenCV must be optimized. Thanks to optimization, the best solution (less computing time and good lane detection) is found.  As previously mentioned, detecting a larger number of Hough Points increases the computing time. Due to this reason, the Probabilistic Hough Transformation is not used in the entire frame. As seen in Figure \ref{fig:Case1_HoughPoints_Original}, in the upper pixels of the frame, there are many Probabilistic Hough Points which are not relevant to the lane, so the upper 100 pixels of the frame are cropped before the Probabilistic Hough Transformation is implemented. In Figure \ref{fig:Case1_HoughPoints_Sobel}, the Probabilistic Hough Points are just on the lines. When the upper 100 pixels are cropped, the algorithm is much faster when compared to leaving using the entire frame.
 
-\emph{\color{green}\textbf{Step 4 : }It is now known in which pixel columns the lanes lie (Step 2), and the points (pixels) \emph{\color{green}on the lanes are also shown thanks} to the Probabilistic Hough Transformation (Step 3), and after these two steps, the starting points (pixels) of the lanes can be found. In order to do that, the Hough Points for each group of Hough lines that were found in Step 2 are compared with each other, and then the last pixels in the columns should be found. If the camera can see three lanes, then the different starting points for the three different lanes must be found. This means that this process must be done for all lanes which can be seen in the frame.}
+\textbf{Step 4 : }It is now known in which pixel columns the middle and right lanes lie (Step 2), and the points (pixels) on the lanes are also shown thanks to Probabilistic Hough Transformation (Step 3), and after these two steps, the starting points (pixels) of the lanes can be found. In order to do that, the Hough Points for each group of Hough lines found in Step 2 are compared with each other, and then the lowest pixels in the columns should be found. If the camera can see three lanes, then the different starting points for the three different lanes must be found. This means that this process must be done for all lanes which can be seen in the frame. As seen in Step 2, the position of the left lane is not detected, although the camera is able to see the left lane. Because the left lane is not seen in the lower 230 pixels, the position of the left lane is not detected. In this case, the Hough Points, which lie to the left of the middle lane, are compared with each other and then the lower pixel is found. It is the starting point (pixel) of the left lane.
 
 
-\textbf{Step 5 : }The next step in this method is getting the Hough Points which are relevant to the lanes. Now, for each lane, the Hough Points must be also grouped. For getting the Hough Points which are relevant to the lanes, what I term the 'rectangle method' is to be used. In the rectangle method, a rectangle is drawn for each lane at the starting point found in Step 4, and the coordinates of all of the Hough Points in that rectangle are saved in a vector. The highest Hough Point in the rectangle must then be found. From that point, another rectangle must be drawn, but the sizes of the rectangles are becoming progressively smaller, because the objects seem smaller the further away they are from the camera. The sizes of the rectangles are also similar but there is an exception with regard to the middle lane. The middle lane has dashed lines so the rectangles in the middle lane must be bigger than in the left and right lanes. As seen in Figure \ref{fig:Case1_Rectangles} (rectangles shown in blue), with this method, the noise and the Hough Points which are not relevant to the lanes are removed.
+\textbf{Step 5 : }The next step in this method is getting the Hough Points which are relevant to the lanes. Now, for each lane, the Hough Points must also be grouped. In order to get the Hough Points relevant to the lanes,  the 'rectangle method' is used. In the ectangle method, a rectangle is drawn for each lane at the starting point found in Step 4, and the coordinates of all of the Hough Points in that rectangle are saved in a vector. The highest Hough Points in the rectangle must then be found. From that point, another rectangle must be drawn, but the sizes of the rectangles become progressively smaller, because the objects seem smaller the further away they are from the camera. The sizes of the rectangles are also similar for left and right lanes, but there is an exception with regard to the middle lane. The middle lane has dashed lines, so the rectangles in the middle lane must be bigger than in the left and right lanes. As seen in Figure \ref{fig:Case1_Rectangles} (rectangles shown in blue), with this method, the noise and the Hough Points not relevant to the lanes are removed. For the 'rectangle method', a function is defined in the source code. The inputs of this function are: the input image, in which also the Probabilistic Hough Transformation was used; the starting point of the lane; the vector of the Hough Points; and the lane for which this function is used must also be defined. In which lane the rectangles are to be drawn must also be known, because as previously mentioned, due to the dashed lines in the middle lane, the size of the rectangles in the middle lane is bigger when compared to the rectangles in the left and right lanes.
 
 
 \begin{figure}[H]
@@ -313,22 +320,11 @@ In Figure \ref{fig:Case1_HoughPoints_Original} and Figure \ref{fig:Case1_HoughPo
 
 \textbf{Step 6 : }The next step of this method is curve fitting. Curve Fitting is an algorithm which gives a mathematical description and this mathematical description provides the best fit for a series of data points. But in this master's thesis, the curve fitting to be performed is modified. In this curve fitting, the coordinates of Hough Points are used but the x and y coordinates of these Hough Points are swapped, because the y-axes of these coordinates have more range than the x-axes. As a result, this swap raises the stability of the curve fitting.
 
-After using the Hough Points as input, three different mathematical equations are produced. One of these equations is for the left lane, another is for the middle lane, and the last equation is for the right lane. In order to produce these equations, naturally, only the relevant Hough points are used. For example, for left lane curve equation, only the Hough Points from the left lane were used.
+After using the Hough Points as input, three different mathematical equations are produced. One of these equations is for the left lane, another is for the middle lane, and the last equation is for the right lane. In order to produce these equations, naturally, only the relevant Hough points are used. For example, for left lane curve equation, only the Hough Points from the left lane are used. For  the curve fitting, a function is implemented in the source code. One of the inputs is the input image. Another input of the function is the vector of the Hough points which are relevant for that lane. In other words, if the curve fitting function is used for the right lane, then the Hough points relevant to right lane must be used. These points are grouped in Step 5 with the rectangle method.  If  it is desired for the fitted curves to be shown in the frame, in order to differentiate the fitted curves from each other, colors can be chosen. As a result, the color value is also another input in this function. Available colors of fitted curves are red, green, and blue. Other colors can also be used. The last input value of this function is 'IPM'. In order to track the lanes, the equations of the fitted curves must be given from the bird's-eye perspective so the Inverse Perspective Mapping (IPM) algorithm must be applied. For IPM, a function from OpenCV, which is called 'findHomography', was used. Thanks to this function, all Probabilistic Hough Points on the lanes can be converted to the bird's-eye perspective. It is also possible to convert all pixels from the camera perspective to bird's-eye perspective, but in that case, it is also necessary to convert 640x480 pixels, which means 307200 pixels in total. Because this is computationally expensive, only the Hough Points relevant to the lanes are converted. Much fewer pixels are converted when compared to converting all pixels in the frame. The IPM algorithm is very computationally expensive in and of itself, so converting fewer pixels makes this method more efficient. As a result, the inputs of the fitted curves are the transformed Hough Points, which are converted from the camera perspective to the bird's-eye perspective.The output equations of the fitted curves are therefore also for the bird's-eye view.
  
-\emph{\color{green}\textbf{Step 7 : }The next step of this method is plotting the fitted curves produced by the curve fitting function. We start from first pixel and continue to the 480th pixel vertically and the output values of the equation for each pixel in the column are found. For each lane, the fitted curves are plotted in different color. In Figure \ref{fig:Case1_CurveFittingwithoutIPM.png}, the fitted curve can be seen.}
+\textbf{Step 7 : }The next step of this method is plotting the fitted curves produced by the curve fitting function. In this case, the fitted curve starts from the first pixel and continues to the 480th pixel vertically and the output values of the equation for each pixel in the column are found. For each line, the fitted curves are plotted in different colors. To be sure if the lanes are correctly detected, the input image is also transformed and the fitted curves are plotted in Figure \ref{fig:Case1_CurveFitting}.
 
-
-\begin{figure}[H]
- \centering
-  \includegraphics[width=0.45\textwidth]{./Bilder/Case1_CurveFittingwithoutIPM.png}
-	\caption{Fitted Curve}
-	\label{fig:Case1_CurveFittingwithoutIPM.png}
-\end{figure}
-
-
- 
-\emph{\color{green}\textbf{Step 8 : }Until this step, the fitted curves were plotted from the camera view, but at the end of the project, the fitted curves of the lanes need to be able to be seen from a bird's-eye view. As a result, the perspective of lanes must be changed from the camera side to the top of the track side. This step can be termed 'Inverse Perspective Mapping(IPM)'. For IPM, a function from OpenCV, which is called 'findHomography', was used. Thanks this function, all fitted curve points can be converted to the perspective of the top of the track side. It was also possible to convert all pixels from the camera perspective to the top of the track perspective, but in that case, it would have been necessary to convert 640x480 pixels, which means 307200 pixels in total. In this case, it is only necessary to convert 480 pixels for each lane, and so 1440 pixels in total. As a result, this method is more efficient than converting all pixels.}
- 	 		 	
+		 	
 \begin{figure}[H]
   \centering
   \subfloat{\includegraphics[width=0.45\textwidth]{./Bilder/Case1_CurveFitting.png}\label{fig:Case1_CurveFitting}}
@@ -336,9 +332,29 @@ After using the Hough Points as input, three different mathematical equations ar
 \end{figure} 
 
 
-\textbf{Step 9 : }The last step of this method is publishing the coefficients of the equations of the fitted curves from the bird's-eye view. In order to activate the automobile for autonomous driving, only the equations of the fitted curves are needed. For this step, a ROS Topic must be created. The frequency of the rostopics can be adjusted.
+\textbf{Step 8 : }The last step of this method is publishing the coefficients of the equations of the fitted curves from the bird's-eye view. In order to activate the automobile for autonomous driving, only the equations of the fitted curves are needed. For this step, a ROS Topic must be created. The frequency of the rostopics can be adjusted.
 
 %
+
+
+
+\subsection{Method 1(b) : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 4}
+
+
+This method is very similar to Method 1 in Section \ref{sec:Case 1}. The only difference between these two methods is that in the Method 1, the resolution of the frame is 640x480 pixels and in this method, the resolution of the frame is four times smaller, with a resolution of 320x240 pixels. In order to reduce the resolution of the frame, the width and height values in pixels must be sent to the camera before it is started. While reducing the resolution of the frame has some advantages, it also has some disadvantages. These will be explained in the Chapter \ref{cha:Evaluation and Discussion}. The output frame of this method is shown in Figure \ref{fig:Case4_OutputImage}.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{./Bilder/Case4_OutputImage.png}
+  \caption{Output Image(320x240 pixels resolution)}
+  \label{fig:Case4_OutputImage}
+\end{figure}
+
+
+
+
+
 
 \subsection{Method 2 : IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 2}
 
@@ -349,9 +365,9 @@ After using the Hough Points as input, three different mathematical equations ar
 	\label{fig:Case2_BlockDiagram}
 \end{figure}
 
-\emph{\color{green}\textbf{Step 1 : }As previously mentioned, the preprocessing part is common for all methods. So in this method, the preprocessing part was also the first step.}
+\textbf{Step 1 : }As previously mentioned, the preprocessing part is common for all methods. So in this method, the preprocessing part was also the first step.
 
-\emph{\color{green}\textbf{Step 2 : }In this method, the frames taken from the camera, are converted directly from the camera perspective to the bird's-eye view perspective. In Section \ref{sec:Case 1} (Method 1), only the curve fitting pixels were converted from the camera perspective to the top of the track perspective. The time needed to convert 640x480 pixels (307200 pixels in total) is a bit more when compared to Method 1. The original frame, which can be seen in Figure \ref{fig:Case2_InputImg}, is converted to the frame which can be seen in Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.}
+\textbf{Step 2 : }In this method, the frames taken from the camera,\emph{\color{green}then the upper 100 pixels of the frame is cropped, otherwise, the lanes will be seem so far away from the bird's-eye perspective and it means, the lanes will be seem smaller.(More info in the Section \ref{sec:Inverse Perspective Mapping}) then the cropped frames} are converted from the camera perspective to the bird's-eye view perspective. In Section \ref{sec:Case 1} (Method 1), only the curve fitting pixels were converted from the camera perspective to the top of the track perspective. The time needed to convert 640x380 pixels (243200 pixels in total) is a bit more when compared to Method 1. The original frame, which can be seen in Figure \ref{fig:Case2_InputImg}, is converted to the frame which can be seen in Figure \ref{fig:Case2_IPM} by OpenCV 'findHomography' function.
 
  
 \begin{figure}[H]
@@ -363,7 +379,7 @@ After using the Hough Points as input, three different mathematical equations ar
 \end{figure} 
 
 
-\textbf{Step 3 : }The next step of this method is finding the vertical pixels which the lanes lie between. In Method 1(Section \ref{sec:Case 1}, the first 100 pixels from the top of the frame were cropped and then rest of the frame was divided into two pieces. This was necessary because otherwise, the straight lanes would have caused a problem in the grouping of the lanes. In this method, it is not necessary \emph{\color{green}to crop the frame.} In Method 1, except for the first 100 pixels of the frame, it was necessary to apply the Standard Hough Line Transformation for 380x640 pixels. In this methood, it sufficient to apply the Standard Hough Line Transformation to only the last 200 pixels of the frame, because these 200 pixels are able to cover all lanes in the frame. In Figure \ref{fig:Case2_Standard_Hough_Transformation}, all lanes can be distinguished thanks to the Hough lines. 
+\textbf{Step 3 : }In Method 1, \emph{\color{green}just for the lower 230 pixels, the Standard Hough Transformation is applied} . In this methood, it sufficient to apply the Standard Hough Line Transformation to only the last 200 pixels of the frame, because these 200 pixels are able to cover all lanes in the frame. In Figure \ref{fig:Case2_Standard_Hough_Transformation}, all lanes can be distinguished thanks to the Hough lines. 
 
 
 \begin{figure}[H]
@@ -395,6 +411,22 @@ After using the Hough Points as input, three different mathematical equations ar
 \end{figure} 
 
 
+
+\subsection{Method 2(b) : Resize + IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 5}
+
+This method is very similar to Method 2, which was described in Section \ref{sec:Case 2}. In the Method 2, the resolution of the frame is 640x480 pixels and in this method, the resolution of the frame is 320x240 pixels. In Chapter \ref{cha:Evaluation and Discussion}, the effects of the reducing the resolution of the frame will be described. The output frame of this method is shown in Figure \ref{fig:Case5_OutputImage}.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{./Bilder/Case5_OutputImage.png}
+  \caption{Output Image(320x240 pixels resolution)}
+  \label{fig:Case5_OutputImage}
+\end{figure}
+
+
+
+
 \subsection{Method 3 : IPM + Hough Transformation + Rectangle Method + Curve Fitting}\label{sec:Case 3}
 
 This method is a composite method of the Method 1 in Section \ref{sec:Case 1} and Method 2 in Section \ref{sec:Case 2}. As in Method 2, at the beginning of this method, the preprocessing part is applied, and then Inverse Perspective Mapping for all pixels is implemented. After that, for 200x640 pixels, the Standard Hough Transformation is used and then for all pixels Probabilistic Hough Transformation is implemented. Until this point, the implementation is completely identical to Method 2. In Method 2, however, at the point in the process where the k-nearest neighbours (KNN) method is used, the rectangle method used in Method 1 in Section \ref{sec:Case 1} is applied. There is, however, a difference between the rectangle method utilized here and the rectangle method from Method 1. In Method 1, the size of rectangles decreased progressively. However, in this method, the size of the rectangles is always the same because the Inverse Perspective Method(IPM) is used at the beginning. As a result, the lanes are shown from the top of track. The size of the rectangles in the middle lane is bigger than the size of the rectangles in the left and right lanes, however. Because of the dashed lines, it was necessary to use larger rectangles in the middle lane.
@@ -412,33 +444,8 @@ The last step of this method is as in the others: to publish the equations of th
 
 
 
-\subsection{Method 4 : Resize + Hough Transformation + Rectangle Method + Curve Fitting + IPM}\label{sec:Case 4}
 
 
-Three different methods for lane detection have been presented thus far. These methods can be also used after the frames are resized. This method is very similar to Method 1 in Section \ref{sec:Case 1}. The only difference between these two methods is that in the Method 1, the resolution of the frame is 640x480 pixels and in this method, the resolution of the frame is four times smaller, with a resolution of 320x240 pixels. In order to reduce the resolution of the frame, the width and height values in pixels must be sent to the camera before it is started. While reducing the resolution of the frame has some advantages, it also has some disadvantages. These will be explained in the Chapter \ref{cha:Evaluation and Discussion}. The output frame of this method is shown in Figure \ref{fig:Case4_OutputImage}.
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\textwidth]{./Bilder/Case4_OutputImage.png}
-  \caption{Output Image(320x240 pixels resolution)}
-  \label{fig:Case4_OutputImage}
-\end{figure}
-
-
-
-
-\subsection{Method 5 : Resize + IPM + Hough Transformation + KNN + Curve Fitting}\label{sec:Case 5}
-
-This method is very similar to Method 2, which was described in Section \ref{sec:Case 2}. In this method, the resolution of the frame is also converted from 640x480 pixels to 320x240 pixels. In Chapter \ref{cha:Evaluation and Discussion}, the effects of the reducing the resolution of the frame will be described. The output frame of this method is shown in Figure \ref{fig:Case5_OutputImage}.
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.45\textwidth]{./Bilder/Case5_OutputImage.png}
-  \caption{Output Image(320x240 pixels resolution)}
-  \label{fig:Case5_OutputImage}
-\end{figure}
 
 
 

@@ -225,7 +225,7 @@ In this master's thesis, the Sobel Operator function in OpenCV was used. Before 
 
  \begin{center}
   
-\texttt{ void GaussianBlur(InputArray src, OutputArray dst, Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER$\_$DEFAULT )}
+\texttt{ void GaussianBlur(cv::Mat src, cv::Mat dst, cv::Size ksize, double sigmaX, double sigmaY=0, int borderType=BORDER$\_$DEFAULT )}
 
   \end{center}
 
@@ -255,7 +255,7 @@ After the Gaussian Blur is applied, the picture must be converted from color to 
 
  \begin{center}
  
-\texttt{void cvtColor(InputArray src, OutputArray dst, int code, int dstCn=0 )}
+\texttt{void cvtColor(cv::Mat src, cv::Mat dst, int code, int dstCn=0 )}
 
  \end{center}
  
@@ -278,7 +278,7 @@ Before the Sobel operator is used, the Gaussian Filter must be applied and the i
 
  \begin{center}
 
-\texttt{void Sobel(InputArray src, OutputArray dst, int ddepth, int dx, int dy, int ksize=3, double scale=1, double delta=0, int borderType=BORDER$\_$DEFAULT )}
+\texttt{void Sobel(cv::Mat src, cv::Mat dst, int ddepth, int dx, int dy, int ksize=3, double scale=1, double delta=0, int borderType=BORDER$\_$DEFAULT )}
 
  \end{center}
  
@@ -306,7 +306,7 @@ The last step of the application of the Sobel operator is approximating the grad
 
  \begin{center}
  
-\texttt{void addWeighted(InputArray src1, double alpha, InputArray src2, double beta, double gamma, OutputArray dst, int dtype=-1)}
+\texttt{void addWeighted(cv::Mat src1, double alpha, cv::Mat src2, double beta, double gamma, cv::Mat dst, int dtype=-1)}
  
   \end{center}
   
@@ -377,7 +377,7 @@ The main disadvantage of the Canny edge detector is that it is time consuming, d
 
  \begin{center}
  
-\texttt{void Canny(InputArray image, OutputArray edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)}
+\texttt{void Canny(cv::Mat image, cv::Mat edges, double threshold1, double threshold2, int apertureSize=3, bool L2gradient=false)}
 
  \end{center}
  
@@ -503,11 +503,11 @@ The Standard Hough Line Transformation, which is also called the Linear Hough Tr
 
   \end{center}
   
-\emph{\color{green}In this equation, \textit{$ \rho $} is the length of a normal from the origin to the line and \textit{$ \theta $} is the orientation of \textit{r} with respect to the x-axis.}
+In this equation, \textit{$ \rho $} is the length of a normal from the origin to the line and \textit{$ \theta $} is the angle between this normal and the x-axis.
  
 
  
-\emph{\color{green}Standard Hough Transformation algorithm consists of the following steps:}
+Standard Hough Transformation algorithm consists of the following steps\cite{Standard_Hough}:
  
 \begin{algorithm}[h]
 
@@ -522,23 +522,23 @@ The Standard Hough Line Transformation, which is also called the Linear Hough Tr
          \State{\textbf{increment} $H(\overline{\rho}(\overline{\theta},x,y),\overline{\theta}),\forall\overline{\theta}\in\lbrace1,...H_{\theta}\rbrace$}
          \EndIf
          \EndFor
-	      \State{$L=\lbrace(\theta(\overline{\theta}),\rho(\overline{\rho}))\vert\overline{\rho}\in\lbrace1,...,H_{\rho}\rbrace\wedge\overline{\theta}\in\lbrace1,...,H_{\theta}\rbrace\wedge$ at $(\overline{\rho},\overline{\theta})$  \emph{\color{green}is a high max. in $H\rbrace$ }}
+	      \State{$L=\lbrace(\theta(\overline{\theta}),\rho(\overline{\rho}))\vert\overline{\rho}\in\lbrace1,...,H_{\rho}\rbrace\wedge\overline{\theta}\in\lbrace1,...,H_{\theta}\rbrace\wedge$ at $(\overline{\rho},\overline{\theta})$  is a high max. in $H\rbrace$ }
         
         \EndProcedure
  \end{algorithmic}    
  \end{algorithm}
  
  
-An edge detection algorithm is applied to the image with dimensions $I_{w}, I_{h}$, which provides the binary data used in Step 4 to determine whether or not a pixel belongs to an edge. Steps 3 - 7 convert detected edges to the Hough space. The following function is used to calculate $\overline{\rho}$ for all detected edges that pass through the point $(x,y)$ at angle $\overline{\theta}$: 
+An edge detection algorithm is applied to the image with dimensions $I_{w}, I_{h}$, which provides the binary data used in Step 4 to determine whether or not a pixel belongs to an edge. Steps 3 - 7 convert detected edges to the Hough space $H$ and accumulate them. The following function is used to calculate $\overline{\rho}$ for all detected edges that pass through the point $(x,y)$ at angle $\overline{\theta}$\cite{Standard_Hough}: 
  
  
  \begin{center}
  
  
- \emph{\color{green}$ \overline{\rho}(\overline{\theta},x,y) = \Bigg[\dfrac{H_{\rho}\big((y-\dfrac{I_{h}}{2})sin(\dfrac{\pi}{H_{\theta}}\overline{\theta})+(x-\dfrac{I_{w}}{2})cos(\dfrac{\pi}{H_{\theta}}\overline{\theta})\big)}{\sqrt{I^{2}_{w}+I^{2}_{h}}}\Bigg] $ }
+$ \overline{\rho}(\overline{\theta},x,y) = \Bigg[\dfrac{H_{\rho}\big((y-\dfrac{I_{h}}{2})sin(\dfrac{\pi}{H_{\theta}}\overline{\theta})+(x-\dfrac{I_{w}}{2})cos(\dfrac{\pi}{H_{\theta}}\overline{\theta})\big)}{\sqrt{I^{2}_{w}+I^{2}_{h}}}\Bigg] $ 
  \end{center}
  
-In Step 8, the local maximum of all accumulated lines is determined, which is then transformed from discretized coordinates $\overline{\rho}$ and $\overline{\theta}$ into $\rho$ and $\theta$ using the following formulas:   
+In Step 8, the high maximum (the local maximum exceeding a given threshold) of all accumulated lines in Hough space $H$ is determined. It gives $\overline{\rho}$ and $\overline{\theta}$ as detected line parameters in the Hough space. After that Hough coordinates $\overline{\rho}$ and $\overline{\theta}$ are transformed back into $\rho$ and $\theta$ using the following formulas\cite{Standard_Hough}:   
   
  \begin{center}
 
@@ -561,7 +561,7 @@ In this master's thesis, in order to detect the Hough lines, the function of \te
 
   \begin{center}
   
-\texttt{HoughLines(dst, lines, $\rho$, $\theta$, threshold, srn, stn )}
+\texttt{void HoughLines(cv::Mat image, cv::Mat lines, double $\rho$, double $\theta$, int threshold, double srn=0, double stn=0)}
 
   \end{center}
 
@@ -569,7 +569,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
  
 \begin{itemize}
 
-\item \textbf{dst : }Output of the edge detector. It should be a grayscale image (although in fact it is a binary one).
+\item \textbf{image : }Output of the edge detector. It should be a grayscale image (although in fact it is a binary one).
  
 \item \textbf{lines : }A vector that will store the parameters ($ \rho $, $ \theta $) of the detected lines. At the end of the Standard Hough Line Transformation, only the $ \rho $ and $ \theta $ values will be returned, so only straight lines can be drawn in OpenCV.
 
@@ -622,7 +622,7 @@ The following function from OpenCV library implements aforementioned algorithm:
 
   \begin{center}
   
-\texttt{HoughLinesP(dst, lines, $\rho$, $\theta$, threshold, minLinLength, maxLineGap )  }
+\texttt{void HoughLinesP(cv::Mat image, cv::Mat lines, double $\rho$, double $\theta$, int threshold,  double minLinLength=0,  double maxLineGap=0)  }
 
   \end{center}
 
@@ -630,7 +630,7 @@ The parameters of the function will be described in detail.\cite{Standard_Hough_
  
 \begin{itemize}
 
-\item \textbf{dst : }Output of the edge detector. It should be a grayscale image (although in fact it is a binary one).
+\item \textbf{image : }Output of the edge detector. It should be a grayscale image (although in fact it is a binary one).
  
 \item \textbf{lines : }A vector that will store the parameters ($ x_{start} $, $ y_{start} $, $ x_{end} $, $ y_{end} $) of the detected lines.
 
@@ -706,7 +706,7 @@ K-Nearest Neighbors Algorithm is also a function in OpenCV. The following comman
 
 \begin{center}
 
-\texttt{void flann::Index$\_$<T>::knnSearch(const vector<T>$\&$ query, vector<int>$\&$ indices, vector<float>$\&$ dists, int knn, const SearchParams$\&$ params)}
+\texttt{void flann::Index$\_$<T>::knnSearch(vector<T>$\&$ query, vector<int>$\&$ indices, vector<float>$\&$ dists, int knn, SearchParams$\&$ params)}
 
 \end{center}
 

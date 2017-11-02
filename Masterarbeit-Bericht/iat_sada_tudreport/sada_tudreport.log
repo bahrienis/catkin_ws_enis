@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  1 NOV 2017 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  2 NOV 2017 02:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1449,7 +1449,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 chapter 2.
-<./Bilder/Intersections.png, id=168, 521.95pt x 477.785pt>
+<./Bilder/Intersections.png, id=169, 521.95pt x 477.785pt>
 File: ./Bilder/Intersections.png Graphic file (type png)
 
 <use ./Bilder/Intersections.png>
@@ -1471,7 +1471,7 @@ MS/mdbch/m/n/11.5 ^^@$\T1/5ch/m/it/11 size 8x6 $-\OMS/mdbch/m/n/11.5 ^^@$\T1/5c
 h/m/it/11 square 0.108 image:=/usb$[]$cam/image$[]$raw
  []
 
-<./Bilder/Camera_Calibration_fig.png, id=186, 772.8875pt x 560.0925pt>
+<./Bilder/Camera_Calibration_fig.png, id=187, 772.8875pt x 560.0925pt>
 File: ./Bilder/Camera_Calibration_fig.png Graphic file (type png)
 
 <use ./Bilder/Camera_Calibration_fig.png>
@@ -1482,7 +1482,7 @@ Package pdftex.def Info: ./Bilder/Camera_Calibration_fig.png used on input line
 Underfull \vbox (badness 8094) has occurred while \output is active []
 
  [7 <./Bilder/Camera_Calibration_fig.png>]
-<./Bilder/Related_positions_of_the_camera.png, id=202, 450.68375pt x 307.1475pt
+<./Bilder/Related_positions_of_the_camera.png, id=203, 450.68375pt x 307.1475pt
 >
 File: ./Bilder/Related_positions_of_the_camera.png Graphic file (type png)
  <use ./Bilder/Related_positions_of_the_camera.png>
@@ -1493,7 +1493,7 @@ nput line 72.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8 <./Bilder/Related_positions_of_the_camera.png>]
-<./Bilder/Procedures_of_IPM.png, id=216, 665.48625pt x 142.5325pt>
+<./Bilder/Procedures_of_IPM.png, id=217, 665.48625pt x 142.5325pt>
 File: ./Bilder/Procedures_of_IPM.png Graphic file (type png)
 
 <use ./Bilder/Procedures_of_IPM.png>
@@ -1504,14 +1504,14 @@ Package pdftex.def Info: ./Bilder/Procedures_of_IPM.png used on input line 111.
 [10]
 LaTeX Font Info:    Font shape `T1/5ch/b/it' in size <11> not available
 (Font)              Font shape `T1/5ch/b/sl' tried instead on input line 178.
- <./Bilder/Sobel_Original.png, id=239, 642.4pt x 481.8pt>
+ <./Bilder/Sobel_Original.png, id=240, 642.4pt x 481.8pt>
 File: ./Bilder/Sobel_Original.png Graphic file (type png)
 
 <use ./Bilder/Sobel_Original.png>
 Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 213.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
 
-<./Bilder/Sobel_Operator.png, id=240, 642.4pt x 481.8pt>
+<./Bilder/Sobel_Operator.png, id=241, 642.4pt x 481.8pt>
 File: ./Bilder/Sobel_Operator.png Graphic file (type png)
 
 <use ./Bilder/Sobel_Operator.png>
@@ -1528,7 +1528,7 @@ File: ./Bilder/Sobel_Original.png Graphic file (type png)
 Package pdftex.def Info: ./Bilder/Sobel_Original.png used on input line 363.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
 
-<./Bilder/Canny_Edge_Detector.png, id=279, 642.4pt x 481.8pt>
+<./Bilder/Canny_Edge_Detector.png, id=280, 642.4pt x 481.8pt>
 File: ./Bilder/Canny_Edge_Detector.png Graphic file (type png)
 
 <use ./Bilder/Canny_Edge_Detector.png>
@@ -1536,14 +1536,14 @@ Package pdftex.def Info: ./Bilder/Canny_Edge_Detector.png used on input line 36
 5.
 (pdftex.def)             Requested size: 182.09486pt x 136.5719pt.
  [15 <./Bilder/Canny_Edge_Detector.png (PNG copy)>] <./Bilder/GaussianBlur_1.pn
-g, id=292, 476.78125pt x 329.23pt>
+g, id=293, 476.78125pt x 329.23pt>
 File: ./Bilder/GaussianBlur_1.png Graphic file (type png)
 
 <use ./Bilder/GaussianBlur_1.png>
 Package pdftex.def Info: ./Bilder/GaussianBlur_1.png used on input line 432.
 (pdftex.def)             Requested size: 227.62206pt x 157.1796pt.
 
-<./Bilder/GaussianBlur_2.png, id=293, 464.73625pt x 320.19624pt>
+<./Bilder/GaussianBlur_2.png, id=294, 464.73625pt x 320.19624pt>
 File: ./Bilder/GaussianBlur_2.png Graphic file (type png)
 
 <use ./Bilder/GaussianBlur_2.png>
@@ -1553,7 +1553,7 @@ Package pdftex.def Info: ./Bilder/GaussianBlur_2.png used on input line 434.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 514.
 
-<./Bilder/Standard_Hough_Line_Transformation.png, id=311, 892.33376pt x 387.447
+<./Bilder/Standard_Hough_Line_Transformation.png, id=315, 892.33376pt x 387.447
 5pt>
 File: ./Bilder/Standard_Hough_Line_Transformation.png Graphic file (type png)
  <use ./Bilder/Standard_Hough_Line_Transformation.png>
@@ -1561,14 +1561,14 @@ Package pdftex.def Info: ./Bilder/Standard_Hough_Line_Transformation.png used o
 n input line 551.
 (pdftex.def)             Requested size: 409.71692pt x 177.89694pt.
  [18] [19 <./Bilder/Standard_Hough_Line_Transformation.png>]
-<./Bilder/Probabilistic_HT.png, id=328, 842.14626pt x 340.27126pt>
+<./Bilder/Probabilistic_HT.png, id=333, 842.14626pt x 340.27126pt>
 File: ./Bilder/Probabilistic_HT.png Graphic file (type png)
 
 <use ./Bilder/Probabilistic_HT.png>
 Package pdftex.def Info: ./Bilder/Probabilistic_HT.png used on input line 600.
 (pdftex.def)             Requested size: 409.71692pt x 165.55057pt.
  [20 <./Bilder/Probabilistic_HT.png>]
-[21] <./Bilder/k-nearest-neighbors.png, id=347, 513.92pt x 233.87375pt>
+[21] <./Bilder/k-nearest-neighbors.png, id=352, 513.92pt x 233.87375pt>
 File: ./Bilder/k-nearest-neighbors.png Graphic file (type png)
 
 <use ./Bilder/k-nearest-neighbors.png>
@@ -1576,10 +1576,8 @@ Package pdftex.def Info: ./Bilder/k-nearest-neighbors.png used on input line 66
 2.
 (pdftex.def)             Requested size: 364.19667pt x 165.74103pt.
  [22 <./Bilder/k-nearest-neighbors.png>]
-Underfull \vbox (badness 2302) has occurred while \output is active []
-
- [23]
-<./Bilder/Curve_Fitting_Polynomial.png, id=368, 506.89375pt x 209.78375pt>
+[23]
+<./Bilder/Curve_Fitting_Polynomial.png, id=373, 506.89375pt x 209.78375pt>
 File: ./Bilder/Curve_Fitting_Polynomial.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting_Polynomial.png>
@@ -1590,7 +1588,7 @@ ne 738.
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
  [24 <./Bilder/Curve_Fitting_Polynomial.png>]
-<./Bilder/CurveFittingvsInterpolation.png, id=379, 615.29875pt x 494.84875pt>
+<./Bilder/CurveFittingvsInterpolation.png, id=384, 615.29875pt x 494.84875pt>
 File: ./Bilder/CurveFittingvsInterpolation.png Graphic file (type png)
 
 <use ./Bilder/CurveFittingvsInterpolation.png>
@@ -1603,7 +1601,7 @@ Overfull \hbox (12.73688pt too wide) detected at line 822
 1/mdbch/m/n/11.5 = []$ 
  []
 
-[26] <./Bilder/Curve_Fitting.png, id=394, 572.1375pt x 385.44pt>
+[26] <./Bilder/Curve_Fitting.png, id=399, 572.1375pt x 385.44pt>
 File: ./Bilder/Curve_Fitting.png Graphic file (type png)
 
 <use ./Bilder/Curve_Fitting.png>
@@ -1616,7 +1614,7 @@ Package pdftex.def Info: ./Bilder/Curve_Fitting.png used on input line 881.
 chapter 3.
 [29]) (./inc/Implementation.tex [30]
 chapter 4.
-<./Bilder/Test_Track.jpg, id=426, 4047.12pt x 3035.34pt>
+<./Bilder/Test_Track.jpg, id=432, 4047.12pt x 3035.34pt>
 File: ./Bilder/Test_Track.jpg Graphic file (type jpg)
 
 <use ./Bilder/Test_Track.jpg>
@@ -1632,14 +1630,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: File `./Bilder/Model Auto.jpg' not found on input line 38.
 
-<./Bilder/Model Auto.jpg, id=432, 4047.12pt x 3035.34pt>
+<./Bilder/Model Auto.jpg, id=438, 4047.12pt x 3035.34pt>
 File: ./Bilder/Model Auto.jpg Graphic file (type jpg)
 
 <use ./Bilder/Model Auto.jpg>
 Package pdftex.def Info: ./Bilder/Model Auto.jpg used on input line 38.
 (pdftex.def)             Requested size: 4047.11017pt x 3035.33263pt.
  [32 <./Bilder/Test_Track.jpg>] [33 <./Bilder/Model Auto.jpg>]
-<./Bilder/Genius_F100_camera.png, id=444, 540.0175pt x 318.18875pt>
+<./Bilder/Genius_F100_camera.png, id=451, 540.0175pt x 318.18875pt>
 File: ./Bilder/Genius_F100_camera.png Graphic file (type png)
 
 <use ./Bilder/Genius_F100_camera.png>
@@ -1647,7 +1645,7 @@ Package pdftex.def Info: ./Bilder/Genius_F100_camera.png used on input line 83.
 
 (pdftex.def)             Requested size: 455.24411pt x 268.24289pt.
  [34 <./Bilder/Genius_F100_camera.png>]
-<./Bilder/Response_Time2.png, id=452, 639.38875pt x 400.49625pt>
+<./Bilder/Response_Time2.png, id=458, 639.38875pt x 400.49625pt>
 File: ./Bilder/Response_Time2.png Graphic file (type png)
 
 <use ./Bilder/Response_Time2.png>
@@ -1660,7 +1658,7 @@ Underfull \vbox (badness 1038) has occurred while \output is active []
 Underfull \vbox (badness 4899) has occurred while \output is active []
 
  [37]
-<./Bilder/Presprocessing_Figure.png, id=478, 699.61375pt x 262.9825pt>
+<./Bilder/Presprocessing_Figure.png, id=484, 699.61375pt x 262.9825pt>
 File: ./Bilder/Presprocessing_Figure.png Graphic file (type png)
 
 <use ./Bilder/Presprocessing_Figure.png>
@@ -1668,202 +1666,179 @@ Package pdftex.def Info: ./Bilder/Presprocessing_Figure.png used on input line
 172.
 (pdftex.def)             Requested size: 455.24411pt x 171.1292pt.
  [38 <./Bilder/Presprocessing_Figure.png>] <./Bilder/Case1_BlockDiagram.png, id
-=487, 750.805pt x 538.01pt>
+=493, 747.79375pt x 533.995pt>
 File: ./Bilder/Case1_BlockDiagram.png Graphic file (type png)
 
 <use ./Bilder/Case1_BlockDiagram.png>
 Package pdftex.def Info: ./Bilder/Case1_BlockDiagram.png used on input line 248
 .
-(pdftex.def)             Requested size: 455.24411pt x 326.22359pt.
+(pdftex.def)             Requested size: 455.24411pt x 325.08463pt.
 
 Underfull \vbox (badness 4084) has occurred while \output is active []
 
  [39]
-[40 <./Bilder/Case1_BlockDiagram.png>]
-<./Bilder/Case1_withoutCropped.png, id=502, 644.4075pt x 559.08875pt>
+Underfull \vbox (badness 8075) has occurred while \output is active []
+
+ [40 <./Bilder/Case1_BlockDiagram.png>]
+<./Bilder/Case1_withoutCropped.png, id=508, 644.4075pt x 559.08875pt>
 File: ./Bilder/Case1_withoutCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withoutCropped.png>
 Package pdftex.def Info: ./Bilder/Case1_withoutCropped.png used on input line 2
-65.
+70.
 (pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
 
-<./Bilder/Case1_withCropped.png, id=503, 642.4pt x 558.085pt>
+<./Bilder/Case1_withCropped.png, id=509, 643.40375pt x 556.0775pt>
 File: ./Bilder/Case1_withCropped.png Graphic file (type png)
 
 <use ./Bilder/Case1_withCropped.png>
-Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 267.
+Package pdftex.def Info: ./Bilder/Case1_withCropped.png used on input line 272.
 
+(pdftex.def)             Requested size: 204.85846pt x 177.04901pt.
+ [41 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
+<./Bilder/Case1_StandardHough_Curve.png, id=522, 642.4pt x 558.085pt>
+File: ./Bilder/Case1_StandardHough_Curve.png Graphic file (type png)
+
+<use ./Bilder/Case1_StandardHough_Curve.png>
+Package pdftex.def Info: ./Bilder/Case1_StandardHough_Curve.png used on input l
+ine 284.
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
-<./Bilder/Case1_Straight_Standard_Hough.png, id=507, 644.4075pt x 558.085pt>
-File: ./Bilder/Case1_Straight_Standard_Hough.png Graphic file (type png)
+<./Bilder/Case1_StandardHough_geradeaus.png, id=523, 642.4pt x 556.0775pt>
+File: ./Bilder/Case1_StandardHough_geradeaus.png Graphic file (type png)
 
-<use ./Bilder/Case1_Straight_Standard_Hough.png>
-Package pdftex.def Info: ./Bilder/Case1_Straight_Standard_Hough.png used on inp
-ut line 278.
-(pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
-
-<./Bilder/Case1_Standard_Hough_Straight_2Parts.png, id=508, 641.39626pt x 531.9
-875pt>
-File: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png Graphic file (type png)
-
- <use ./Bilder/Case1_Standard_Hough_Straight_2Parts.png>
-Package pdftex.def Info: ./Bilder/Case1_Standard_Hough_Straight_2Parts.png used
- on input line 280.
-(pdftex.def)             Requested size: 204.85846pt x 169.91478pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [41 <./Bilder/Case1_withoutCropped.png> <./Bilder/Case1_withCropped.png>]
-<./Bilder/Case1_HoughPoints_Original.png, id=518, 642.4pt x 559.08875pt>
+<use ./Bilder/Case1_StandardHough_geradeaus.png>
+Package pdftex.def Info: ./Bilder/Case1_StandardHough_geradeaus.png used on inp
+ut line 286.
+(pdftex.def)             Requested size: 204.85846pt x 177.32903pt.
+ [42 <./Bilder/Case1_StandardHough_Curve.png> <./Bilder/Case1_StandardHough_ger
+adeaus.png>]
+<./Bilder/Case1_HoughPoints_Original.png, id=531, 642.4pt x 559.08875pt>
 File: ./Bilder/Case1_HoughPoints_Original.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Original.png>
 Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Original.png used on input 
-line 292.
+line 299.
 (pdftex.def)             Requested size: 204.85846pt x 178.28928pt.
 
-<./Bilder/Case1_HoughPoints_Sobel.png, id=519, 640.3925pt x 534.99875pt>
+<./Bilder/Case1_HoughPoints_Sobel.png, id=532, 641.39626pt x 557.08125pt>
 File: ./Bilder/Case1_HoughPoints_Sobel.png Graphic file (type png)
 
 <use ./Bilder/Case1_HoughPoints_Sobel.png>
 Package pdftex.def Info: ./Bilder/Case1_HoughPoints_Sobel.png used on input lin
-e 294.
-(pdftex.def)             Requested size: 204.85846pt x 171.13779pt.
+e 301.
+(pdftex.def)             Requested size: 204.85846pt x 177.92963pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./Bilder/Case1_Straight_Standard_Hough.png> <./Bilder/Case1_Standard_Houg
-h_Straight_2Parts.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1460) has occurred while \output is active []
 
  [43 <./Bilder/Case1_HoughPoints_Original.png> <./Bilder/Case1_HoughPoints_Sobe
 l.png>]
-<./Bilder/Case1_Rectangles.png, id=535, 642.4pt x 558.085pt>
+<./Bilder/Case1_Rectangles.png, id=545, 642.4pt x 558.085pt>
 File: ./Bilder/Case1_Rectangles.png Graphic file (type png)
 
 <use ./Bilder/Case1_Rectangles.png>
-Package pdftex.def Info: ./Bilder/Case1_Rectangles.png used on input line 308.
-(pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
-
-<./Bilder/Case1_CurveFittingwithoutIPM.png, id=537, 642.4pt x 558.085pt>
-File: ./Bilder/Case1_CurveFittingwithoutIPM.png Graphic file (type png)
-
-<use ./Bilder/Case1_CurveFittingwithoutIPM.png>
-Package pdftex.def Info: ./Bilder/Case1_CurveFittingwithoutIPM.png used on inpu
-t line 323.
+Package pdftex.def Info: ./Bilder/Case1_Rectangles.png used on input line 315.
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44 <./Bilder/Case1_Rectangles.png>]
-<./Bilder/Case1_CurveFitting.png, id=544, 644.4075pt x 558.085pt>
+ [44]
+Underfull \vbox (badness 1112) has occurred while \output is active []
+
+ [45 <./Bilder/Case1_Rectangles.png>]
+<./Bilder/Case1_CurveFitting.png, id=556, 644.4075pt x 558.085pt>
 File: ./Bilder/Case1_CurveFitting.png Graphic file (type png)
 
 <use ./Bilder/Case1_CurveFitting.png>
-Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 334
+Package pdftex.def Info: ./Bilder/Case1_CurveFitting.png used on input line 330
 .
 (pdftex.def)             Requested size: 204.85846pt x 177.41568pt.
- [45 <./Bilder/Case1_CurveFittingwithoutIPM.png> <./Bilder/Case1_CurveFitting.p
-ng>]
-<./Bilder/Case2_BlockDiagram.png, id=551, 747.79375pt x 545.03625pt>
-File: ./Bilder/Case2_BlockDiagram.png Graphic file (type png)
 
-<use ./Bilder/Case2_BlockDiagram.png>
-Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 347
-.
-(pdftex.def)             Requested size: 455.24411pt x 331.8063pt.
+<./Bilder/Case4_OutputImage.png, id=560, 365.365pt x 315.1775pt>
+File: ./Bilder/Case4_OutputImage.png Graphic file (type png)
 
-<./Bilder/Case2_InputImg.png, id=555, 644.4075pt x 559.08875pt>
-File: ./Bilder/Case2_InputImg.png Graphic file (type png)
+<use ./Bilder/Case4_OutputImage.png>
+Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 349.
 
-<use ./Bilder/Case2_InputImg.png>
-Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 359.
-(pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
-
-<./Bilder/Case2_IPM.png, id=556, 643.40375pt x 557.08125pt>
-File: ./Bilder/Case2_IPM.png Graphic file (type png)
-
-<use ./Bilder/Case2_IPM.png>
-Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 361.
-(pdftex.def)             Requested size: 204.85846pt x 177.3686pt.
+(pdftex.def)             Requested size: 204.85846pt x 176.71942pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./Bilder/Case2_BlockDiagram.png>]
-<./Bilder/Case2_Standard_Hough_Transformation.png, id=566, 642.4pt x 272.01625p
+ [46 <./Bilder/Case1_CurveFitting.png>]
+<./Bilder/Case2_BlockDiagram.png, id=568, 750.805pt x 557.08125pt>
+File: ./Bilder/Case2_BlockDiagram.png Graphic file (type png)
+
+<use ./Bilder/Case2_BlockDiagram.png>
+Package pdftex.def Info: ./Bilder/Case2_BlockDiagram.png used on input line 363
+.
+(pdftex.def)             Requested size: 455.24411pt x 337.78748pt.
+ [47 <./Bilder/Case4_OutputImage.png> <./Bilder/Case2_BlockDiagram.png>]
+<./Bilder/Case2_InputImg.png, id=579, 644.4075pt x 559.08875pt>
+File: ./Bilder/Case2_InputImg.png Graphic file (type png)
+
+<use ./Bilder/Case2_InputImg.png>
+Package pdftex.def Info: ./Bilder/Case2_InputImg.png used on input line 375.
+(pdftex.def)             Requested size: 204.85846pt x 177.73477pt.
+
+<./Bilder/Case2_IPM.png, id=580, 643.40375pt x 557.08125pt>
+File: ./Bilder/Case2_IPM.png Graphic file (type png)
+
+<use ./Bilder/Case2_IPM.png>
+Package pdftex.def Info: ./Bilder/Case2_IPM.png used on input line 377.
+(pdftex.def)             Requested size: 204.85846pt x 177.3686pt.
+
+<./Bilder/Case2_Standard_Hough_Transformation.png, id=582, 642.4pt x 272.01625p
 t>
 File: ./Bilder/Case2_Standard_Hough_Transformation.png Graphic file (type png)
  <use ./Bilder/Case2_Standard_Hough_Transformation.png>
 Package pdftex.def Info: ./Bilder/Case2_Standard_Hough_Transformation.png used 
-on input line 371.
+on input line 387.
 (pdftex.def)             Requested size: 204.85846pt x 86.74397pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
-ndard_Hough_Transformation.png>]
-<./Bilder/Case2_OutputImage.png, id=576, 642.4pt x 558.085pt>
+ [48 <./Bilder/Case2_InputImg.png> <./Bilder/Case2_IPM.png> <./Bilder/Case2_Sta
+ndard_Hough_Transformation.png>] <./Bilder/Case2_OutputImage.png, id=594, 642.4
+pt x 558.085pt>
 File: ./Bilder/Case2_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case2_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 393.
+Package pdftex.def Info: ./Bilder/Case2_OutputImage.png used on input line 409.
 
 (pdftex.def)             Requested size: 204.85846pt x 177.96921pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48 <./Bilder/Case2_OutputImage.png>]
-<./Bilder/Case3_OutputImage.png, id=587, 643.40375pt x 558.085pt>
-File: ./Bilder/Case3_OutputImage.png Graphic file (type png)
-
-<use ./Bilder/Case3_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 408.
-
-(pdftex.def)             Requested size: 204.85846pt x 177.68819pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [49 <./Bilder/Case3_OutputImage.png>]
-<./Bilder/Case4_OutputImage.png, id=597, 365.365pt x 315.1775pt>
-File: ./Bilder/Case4_OutputImage.png Graphic file (type png)
-
-<use ./Bilder/Case4_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case4_OutputImage.png used on input line 423.
-
-(pdftex.def)             Requested size: 204.85846pt x 176.71942pt.
-
-<./Bilder/Case5_OutputImage.png, id=601, 365.365pt x 318.18875pt>
+ [49]
+<./Bilder/Case5_OutputImage.png, id=602, 365.365pt x 318.18875pt>
 File: ./Bilder/Case5_OutputImage.png Graphic file (type png)
 
 <use ./Bilder/Case5_OutputImage.png>
-Package pdftex.def Info: ./Bilder/Case5_OutputImage.png used on input line 438.
+Package pdftex.def Info: ./Bilder/Case5_OutputImage.png used on input line 422.
 
 (pdftex.def)             Requested size: 204.85846pt x 178.4078pt.
+ [50 <./Bilder/Case2_OutputImage.png> <./Bilder/Case5_OutputImage.png>]
+<./Bilder/Case3_OutputImage.png, id=614, 643.40375pt x 558.085pt>
+File: ./Bilder/Case3_OutputImage.png Graphic file (type png)
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<use ./Bilder/Case3_OutputImage.png>
+Package pdftex.def Info: ./Bilder/Case3_OutputImage.png used on input line 440.
 
- [50 <./Bilder/Case4_OutputImage.png>]) (./inc/Evaluation_and_Discussion.tex [5
-1 <./Bilder/Case5_OutputImage.png>] [52
+(pdftex.def)             Requested size: 204.85846pt x 177.68819pt.
+) (./inc/Evaluation_and_Discussion.tex
+[51 <./Bilder/Case3_OutputImage.png>] [52
 
 
 ]
 chapter 5.
 [53]
-Overfull \hbox (7.00969pt too wide) in paragraph at lines 71--79
+Overfull \hbox (7.00969pt too wide) in paragraph at lines 100--108
  [][] 
  []
 
-[54]) (./inc/Conclusion.tex [55] [56
-
-
-]
+[54] [55]) (./inc/Conclusion.tex [56]
 chapter 6.
-) [57] [58
+) [57
 
 
-] (./sada_tudreport.bbl
+] [58] (./sada_tudreport.bbl
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              You should note, that in 1994 font command `\sc' has
@@ -1890,7 +1865,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 8.
+(scrreprt)              by `\normalfont \scshape ' on input line 11.
+
+
+Underfull \hbox (badness 3780) in paragraph at lines 11--15
+[]\T1/5ch/m/sc/11 Braunschweig, Tech-nis-che Uni-ver-sität\T1/5ch/m/n/11 : \T1/
+5ch/m/it/11 Carolo-Cup Reg-u-la-tions 2017\T1/5ch/m/n/11 .  url =
+ []
+
+
+Overfull \hbox (7.50032pt too wide) in paragraph at lines 11--15
+\T1/5ch/m/n/11 https://wiki.ifr.ing.tu-bs.de/carolocup/system/files/Regelwerk$[
+]$2017$[]$20161016$[]$en$[]$0.pdf,
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1904,7 +1891,13 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 12.
+(scrreprt)              by `\normalfont \scshape ' on input line 17.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--21
+[]\T1/5ch/m/sc/11 Allevato, Adam\T1/5ch/m/n/11 : \T1/5ch/m/it/11 How to Cal-i-b
+rate a Monoc-u-lar Cam-era\T1/5ch/m/n/11 .  url =
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1918,7 +1911,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 15.
+(scrreprt)              by `\normalfont \scshape ' on input line 23.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1932,7 +1925,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 15.
+(scrreprt)              by `\normalfont \scshape ' on input line 23.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1946,7 +1939,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 21.
+(scrreprt)              by `\normalfont \scshape ' on input line 29.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1960,7 +1953,19 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 25.
+(scrreprt)              by `\normalfont \scshape ' on input line 33.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
+[]\T1/5ch/m/sc/11 Kim, Daniel\T1/5ch/m/n/11 : \T1/5ch/m/it/11 So-bel Op-er-a-to
+r and Canny Edge De-tec-tor\T1/5ch/m/n/11 .  url =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--37
+\T1/5ch/m/n/11 http://www.egr.msu.edu/classes/ece480/capstone/fall13/group04/do
+cs/danapp.pdf,
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1974,7 +1979,15 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 28.
+(scrreprt)              by `\normalfont \scshape ' on input line 39.
+
+
+Overfull \hbox (276.15944pt too wide) in paragraph at lines 39--43
+[]\T1/5ch/m/sc/11 Team, OpenCV Dev\T1/5ch/m/n/11 : \T1/5ch/m/it/11 Im-age Fil-t
+er-ing\T1/5ch/m/n/11 .  url = https://docs.opencv.org/2.4/modules/imgproc/doc/f
+iltering.html?highlight=gaussianblur$\OT1/mdbch/m/n/11.5 #$\T1/5ch/m/n/11 gauss
+ianblur,
+ []
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -1988,7 +2001,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 31.
+(scrreprt)              by `\normalfont \scshape ' on input line 45.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2002,7 +2015,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 34.
+(scrreprt)              by `\normalfont \scshape ' on input line 48.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2016,7 +2029,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 38.
+(scrreprt)              by `\normalfont \scshape ' on input line 52.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2030,7 +2043,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 41.
+(scrreprt)              by `\normalfont \scshape ' on input line 55.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2044,7 +2057,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 44.
+(scrreprt)              by `\normalfont \scshape ' on input line 58.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2058,7 +2071,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 44.
+(scrreprt)              by `\normalfont \scshape ' on input line 58.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2072,7 +2085,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 50.
+(scrreprt)              by `\normalfont \scshape ' on input line 64.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2086,7 +2099,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 53.
+(scrreprt)              by `\normalfont \scshape ' on input line 64.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2100,7 +2113,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 56.
+(scrreprt)              by `\normalfont \scshape ' on input line 71.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2114,7 +2127,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 63.
+(scrreprt)              by `\normalfont \scshape ' on input line 74.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2128,51 +2141,14 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 66.
+(scrreprt)              by `\normalfont \scshape ' on input line 77.
 
 
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 73.
+Underfull \vbox (badness 1292) has occurred while \output is active []
+
+ [59
 
 
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 80.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 84.
-
-[59
 
 
 ]
@@ -2188,7 +2164,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 90.
+(scrreprt)              by `\normalfont \scshape ' on input line 84.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2202,7 +2178,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 93.
+(scrreprt)              by `\normalfont \scshape ' on input line 87.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2216,7 +2192,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 96.
+(scrreprt)              by `\normalfont \scshape ' on input line 94.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2230,21 +2206,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 99.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 102.
+(scrreprt)              by `\normalfont \scshape ' on input line 101.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2272,20 +2234,6 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 108.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\sc'!
-(scrreprt)              You should note, that in 1994 font command `\sc' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\sc' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
 (scrreprt)              by `\normalfont \scshape ' on input line 111.
 
 
@@ -2300,7 +2248,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 111.
+(scrreprt)              by `\normalfont \scshape ' on input line 114.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2314,7 +2262,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 116.
+(scrreprt)              by `\normalfont \scshape ' on input line 114.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2328,7 +2276,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 121.
+(scrreprt)              by `\normalfont \scshape ' on input line 119.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2342,7 +2290,7 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 121.
+(scrreprt)              by `\normalfont \scshape ' on input line 124.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\sc'!
@@ -2356,7 +2304,105 @@ Class scrreprt Warning: Usage of deprecated font command `\sc'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\sc' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
-(scrreprt)              by `\normalfont \scshape ' on input line 126.
+(scrreprt)              by `\normalfont \scshape ' on input line 124.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 129.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 134.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 137.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 141.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 144.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 147.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\sc'!
+(scrreprt)              You should note, that in 1994 font command `\sc' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\sc' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\sc' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\sc'
+(scrreprt)              by `\normalfont \scshape ' on input line 150.
 
 ) (./inc/Anhang.tex [60]
 chapter A.
@@ -2380,13 +2426,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  ) 
 Here is how much of TeX's memory you used:
- 17953 strings out of 493029
- 282087 string characters out of 6136235
- 468223 words of memory out of 5000000
- 20758 multiletter control sequences out of 15000+600000
+ 17948 strings out of 493029
+ 281785 string characters out of 6136235
+ 468179 words of memory out of 5000000
+ 20754 multiletter control sequences out of 15000+600000
  126964 words of font info for 102 fonts, out of 8000000 for 9000
  1147 hyphenation exceptions out of 8191
- 70i,13n,108p,1653b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,13n,108p,2339b,689s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</home/enis/.texmf-var/fonts/type
 1/softmake/charter/5chb8a.pfb></home/enis/.texmf-var/fonts/type1/softmake/chart
@@ -2401,10 +2447,10 @@ n/mdbch/md-chr7v.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdesi
 gn/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathdes
 ign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfon
 ts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (69 pages, 15128054 bytes).
+Output written on sada_tudreport.pdf (69 pages, 15064833 bytes).
 PDF statistics:
- 875 PDF objects out of 1000 (max. 8388607)
- 722 compressed objects within 8 object streams
+ 883 PDF objects out of 1000 (max. 8388607)
+ 731 compressed objects within 8 object streams
  215 named destinations out of 1000 (max. 500000)
- 550 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 545 words of extra memory for PDF output out of 10000 (max. 10000000)
 

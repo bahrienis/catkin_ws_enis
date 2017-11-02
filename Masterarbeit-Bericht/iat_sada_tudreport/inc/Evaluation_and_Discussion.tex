@@ -55,6 +55,35 @@ The advantage of this method is, it is the fastest method, which gets the frames
 
 
 
+\textbf{Method 1(b) : }The resolution of the frame from the camera is decreased in this method. The
+process in this method is nearly identical to the process in Method 1, but the resolution of the frame is four times smaller. Due to the presence of fewer pixels in the frames, the computing time is much less when compared to Method 1.
+
+
+
+\begin{table}[ht]
+\caption{Computing Times of Method 4} 
+\centering 
+  \begin{tabular}{ | c | c | c | c | c | c | c | c |}
+    \hline
+  
+  PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
+  0   &  0  &  0  &  0  &  0  &  0 &  0  &  0 \\ \hline  
+    
+    
+      \end{tabular}
+  \label{tab:Case4_Times}
+\end{table}
+
+The computing time is the biggest advantage of this method, but there are also some disadvantages of decreasing the resolution of the frames. The size of the lanes is also smaller in this method when compared to Method 1, so the reliability of the lane detection is a bit worse and is also more sensitive to the changing light conditions.
+
+This method should be used if a higher FPS value of the camera is desired. Because of the lower computing time, it is possible to raise the FPS value. This method is also useful if the processor is not powerful enough for a high computing effort.
+
+
+
+
+
+
+
 \textbf{Method 2 : }In the Method 1, the Inverse Perspective Method was used only for the fitted curves.
 But in this method, the IPM algorithm was used at the beginning. In the following table, the computing times for each algorithm, as well as the average computing time for this method, are shown. Terms used in Method 2, which were not used in Method 1, and their respective abbreviations are as follows:
 
@@ -85,6 +114,29 @@ effect. In the other words, the size of the lanes does not appear smaller even i
 
 
 
+\textbf{Method 2(b) : }This is also a method in which the resolution of the frames is decreased. In this method, the input size of the frame is converted directly at the beginning from a 640x480 pixel resolution to a 320x240 pixel resolution, resulting in a resolution that is four times less when compared with Method 2. As a result, the computing time is also less than in Method 2.
+
+
+\begin{table}[ht]
+\caption{Computing Times of Method 5} 
+\centering 
+  \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
+    \hline
+  
+  IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & KNN 	   & CF 	  & PUB 	& ACT \\ \hline  
+  0   &  0  &  0  &  0  &  0  &  0 &  0  &  0  & 0 & 0\\ \hline  
+    
+    
+      \end{tabular}
+  \label{tab:Case5_Times}
+\end{table}
+
+
+The advantages and disadvantages of descreasing the frame resolution are already mentioned in the Method 1.b description.
+
+
+
+
 \textbf{Method 3 : }This method is identical to Method 2, except for one difference. Instead of the
 K-Nearest Neighbors Algorithm, the Rectangle Algorithm is used. As a result, the terms and their respective abbreviations used in the following table are also identical to those used in Method 2, with the exception of REC (previously defined in Method 1), which replaces KNN:
 
@@ -105,51 +157,15 @@ K-Nearest Neighbors Algorithm, the Rectangle Algorithm is used. As a result, the
 
 With this method, the KNN algorithm and Rectangle algorithm can be compared to each other, because with the exception of when the algorithms are utilized in their respective methods, the results are quite similar. The results show that the KNN algorithm is faster when compared to the Rectangle algorithm. The main advantage of this method is again due to the IPM algorithm, but its high computing time is also the biggest disadvantage of this method.
 
-\textbf{Method 4 : }The resolution of the frame from the camera is decreased in this method. The
-process in this method is nearly identical to the process in Method 1, but the resolution of the frame is four times smaller. Due to the presence of fewer pixels in the frames, the computing time is much less when compared to Method 1.
-
-
-
-\begin{table}[ht]
-\caption{Computing Times of Method 4} 
-\centering 
-  \begin{tabular}{ | c | c | c | c | c | c | c | c |}
-    \hline
-  
-  PRE & SHT & FLL & PHT & REC & CF & PUB & ACT \\ \hline  
-  0   &  0  &  0  &  0  &  0  &  0 &  0  &  0 \\ \hline  
-    
-    
-      \end{tabular}
-  \label{tab:Case4_Times}
-\end{table}
-
-The computing time is the biggest advantage of this method, but there are also some disadvantages of decreasing the resolution of the frames. The size of the lanes is also smaller in this method when compared to Method 1, so the reliability of the lane detection is a bit worse and is also more sensitive to the changing light conditions.
-
-This method should be used if a higher FPS value of the camera is desired. Because of the lower computing time, it is possible to raise the FPS value. This method is also useful if the processor is not powerful enough for a high computing effort.
-
-
-
-\textbf{Method 5 : }This is also a method in which the resolution of the frames is decreased. In this method, the input size of the frame is converted directly at the beginning from a 640x480 pixel resolution to a 320x240 pixel resolution, resulting in a resolution that is four times less when compared with Method 2. As a result, the computing time is also less than in Method 2.
-
-
-\begin{table}[ht]
-\caption{Computing Times of Method 5} 
-\centering 
-  \begin{tabular}{ | c | c | c | c | c | c | c | c | c | c |}
-    \hline
-  
-  IPM 		& PRE 		& SHT	   & FLL 	   & PHT 	   & FSP 	    & KNN 	   & CF 	  & PUB 	& ACT \\ \hline  
-  0   &  0  &  0  &  0  &  0  &  0 &  0  &  0  & 0 & 0\\ \hline  
-    
-    
-      \end{tabular}
-  \label{tab:Case5_Times}
-\end{table}
 
 
 
 
-\section{Test Driving}\label{sec:Test Driving}
+\section{Lane Detection Quality}\label{sec:Lane Detection Quality}
 
+High computational performance is essential for lane detection, however this parameter alone is not sufficient for the algorithm to be considered successful. Another important criterion is the quality of lane detection. Each of the proposed methods has some advantages and disadvantages from this perspective. For instance, Inverse Perspective Mapping (IPM) algorithm adds more stability to the methods where it is used. That happens because IPM algorithm shows the lane from the bird's eye perspective, so the sizes of the lanes are the same. In Method 1, however, the IPM algorithm was not used, so the lanes' geometry changes depending on the proximity to the camera. That is why when the rectangle method is applied, the size of the rectangles should be adjusted according to the y-coordinate, otherwise the Probabilistic Hough Points from the different lines could be mixed up with each other. Using IPM in Method 3 allows such adjustments to be omitted.
+
+In addition, there are two different algorithms, which are used to group the Probabilistic Hough Points: k-Nearest Neighbors algorithm and the rectangle method. As mentioned in the previous section, KNN algorithm is faster compared to the rectangle method, however in many cases the direction of the curve must be detected to ensure that while choosing the nearest neighbors for the middle line, the Probabilistic Hough Points from the left or the right line are not taken into consideration. Rectangle method is immune to this problem, because the rectangles adjust their coordinates automatically based on the direction of the curves.
+
+Based on these results, the best quality of the lane detection is  achieved by combining IPM algorithm and the rectangle method, which is implemented in Method 3.
 
