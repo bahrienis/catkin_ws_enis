@@ -1,0 +1,2 @@
+# ROS settings
+source home/enis/catkin_ws/devel/setup.bash
