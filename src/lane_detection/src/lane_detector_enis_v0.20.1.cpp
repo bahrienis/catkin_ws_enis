@@ -20,6 +20,14 @@
 
 
 
+#include "std_msgs/String.h"
+#include <sstream>
+#include "std_msgs/MultiArrayLayout.h"
+#include "std_msgs/MultiArrayDimension.h"
+#include "std_msgs/Float32MultiArray.h"
+
+
+
 
 
 #include "IPM.h"
@@ -36,11 +44,21 @@ using namespace cv;
     int widthofframe = 640;
     int heightofframe = 480;
     int fpsvalue = 30;
+    int degreeofthepolynom = 2;
+    int firstpicsize = heightofframe/4.8;
+    int secondpicsize = heightofframe/3.2;
+    int thirdpicsize = heightofframe-(firstpicsize+secondpicsize);
+    double thresholdvalue = 0.6;
+    
+    double r[3];
     
     
     
 
-void curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, string color, IPM ipm) {
+double * curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, string color, IPM ipm) {
+  
+
+  
     int i, j, k, n, N;
     cout.precision(4); //set precision
     cout.setf(ios::fixed);
@@ -56,20 +74,20 @@ void curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, strin
     
     
     
-    for(i=0;i<N;i++){
+ /*   for(i=0;i<N;i++){
           
         cout << "IPM : " <<ipm.applyHomography(lanePoints.at(i)) << endl;
         cout << "Normal : " << lanePoints.at(i) << endl;
     }
     
-    
+ */   
 
     
     
     
     
     
-    n = 2; //polinomun derecesi
+    n = degreeofthepolynom; 					
     double X[2 * n + 1];
     for (i = 0; i < 2 * n + 1; i++) {
         X[i] = 0;
@@ -125,14 +143,21 @@ void curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, strin
         cout << " + (" << a[i] << ")" << "x´" << i;
     cout << "\n";
 
-
+	r[0] = a[0];
+	r[1] = a[1];
+	r[2] = a[2];
+	
+	return r;
+	
+	
     int p, r;
-    for (p = 0; p < 480; p++) {
+    for (p = 0; p < heightofframe; p++) {
         r = a[0] + a[1] * p + a[2] * p * p;
-        if (r >= 0 && r <= 640) {
+        if (r >= 0 && r <= widthofframe) {
             if (color == "red") {
                 circle(inputImgIPM, ipm.applyHomography(Point(r, p)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
                 circle(inputImg, Point(r, p), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+
             } else if (color == "blue") {
                 circle(inputImgIPM, ipm.applyHomography(Point(r, p)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
                 circle(inputImg, Point(r, p), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
@@ -228,19 +253,47 @@ int main(int argc, char **argv) {
 
     //SetUP ROS.
     ros::init(argc, argv, "lane_detector_enis");
+    
+    ros::NodeHandle n;
+    
+    
+    
+    
+    
+    
+   ros::Publisher rightLane_pub = n.advertise<std_msgs::Float32MultiArray>("rightLane", 1000);
+   ros::Publisher middleLane_pub = n.advertise<std_msgs::Float32MultiArray>("middleLane", 1000);
+   ros::Publisher leftLane_pub = n.advertise<std_msgs::Float32MultiArray>("leftLane", 1000);
 
-    //CV_CAP_ANY == 0 yazınca 2. kamera açılır.
+  ros::Rate loop_rate(30);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+    //CV_CAP_ANY == 0 turn on the 2. camera
+    
+  
 
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
     cap.set(CV_CAP_PROP_FPS, fpsvalue); //change the frame value
+    cap.set(CV_CAP_PROP_FRAME_WIDTH, widthofframe);
+    cap.set(CV_CAP_PROP_FRAME_HEIGHT, heightofframe);
+
 
     if (!cap.isOpened()) //if not success, exit program
     {
         cout << "Cannot open the video cam" << endl;
     }
 
-    double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of te video
+    double dWidth = cap.get(CV_CAP_PROP_FRAME_WIDTH); //get the width of frames of the video
     double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
     double dFrame = cap.get(CV_CAP_PROP_FPS);
 
@@ -273,26 +326,26 @@ int main(int argc, char **argv) {
 
     // The 4-points at the input image	
     vector<Point2f> origPoints;
-    origPoints.push_back(Point2f(0, dHeight));
-    origPoints.push_back(Point2f(dWidth, dHeight));
-    origPoints.push_back(Point2f(dWidth, 80));
-    origPoints.push_back(Point2f(0, 80));
+    origPoints.push_back(Point2f(0, heightofframe));
+    origPoints.push_back(Point2f(widthofframe, heightofframe));
+    origPoints.push_back(Point2f(widthofframe, heightofframe/8));
+    origPoints.push_back(Point2f(0, heightofframe/8));
 
     // The 4-points correspondences in the destination image
     vector<Point2f> dstPoints;
-    dstPoints.push_back(Point2f(dWidth / 2 - 50, dHeight));
-    dstPoints.push_back(Point2f(dWidth / 2 + 50, dHeight));
-    dstPoints.push_back(Point2f(dWidth, 0));
+    dstPoints.push_back(Point2f(widthofframe / 2 - (widthofframe/12.8), heightofframe));
+    dstPoints.push_back(Point2f(widthofframe / 2 + (widthofframe/12.8), heightofframe));
+    dstPoints.push_back(Point2f(widthofframe, 0));
     dstPoints.push_back(Point2f(0, 0));
 
     // IPM object
 
 
 
-    IPM ipm(Size(dWidth, dHeight), Size(dWidth, dHeight), origPoints, dstPoints);
+    IPM ipm(Size(widthofframe, heightofframe), Size(widthofframe, heightofframe), origPoints, dstPoints);
 
 
-    IPM backward_ipm(Size(dWidth, dHeight), Size(dWidth, dHeight), dstPoints, origPoints);
+    IPM backward_ipm(Size(widthofframe, heightofframe), Size(widthofframe, heightofframe), dstPoints, origPoints);
 
 
 
@@ -311,11 +364,10 @@ int main(int argc, char **argv) {
 
         Mat inputImg;
         Mat inputImgIPM;
-        Mat outputImg;
-        Mat outputImg2;
-        Mat cdst1;
+        Mat outputImgAfterGaussian;
+        Mat outputImgAfterThreshold;
         Mat grad;
-        Mat outputImg3;
+        Mat outputImgAfterGaussianGray;
         int scale = 1;
         int delta = 0;
         int ddepth = CV_16S;
@@ -325,15 +377,12 @@ int main(int argc, char **argv) {
         Point maxLoc;
         Mat grad_x, grad_y;
         Mat abs_grad_x, abs_grad_y;
-        Mat cdst, dst, gradcolor;
-        Mat upOutputImggray, downOutputImggray;
+        Mat gradcolor;
         Mat gradSmall, gradcolorSmall;
 
 
 
-		int firstpicsize = 100;
-        int secondpicsize = 150;
-        int thirdpicsize = 230;
+	
 
 
         vector<int> redlines;
@@ -390,7 +439,7 @@ int main(int argc, char **argv) {
         frameNum++;
 
 
-        //        bool bSuccess = cap.read(inputImg);
+ //               bool bSuccess = cap.read(inputImg);
 
 
 
@@ -416,13 +465,13 @@ int main(int argc, char **argv) {
 
 
 
-        GaussianBlur(inputImg, outputImg2, Size(3, 3), 0, 0, BORDER_DEFAULT); //GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
+        GaussianBlur(inputImg, outputImgAfterGaussian, Size(3, 3), 0, 0, BORDER_DEFAULT); //GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
 
 
-        cvtColor(outputImg2, outputImg3, CV_BGR2GRAY); // Bunu sil
+        cvtColor(outputImgAfterGaussian, outputImgAfterGaussianGray, CV_BGR2GRAY); // Bunu sil
 
 
-        minMaxLoc(outputImg3, &minVal, &maxVal, &minLoc, &maxLoc);
+        minMaxLoc(outputImgAfterGaussianGray, &minVal, &maxVal, &minLoc, &maxLoc);
 
         cout << "min val : " << minVal << endl;
         cout << "max val: " << maxVal << endl;
@@ -431,7 +480,7 @@ int main(int argc, char **argv) {
 
 
 
-        threshold(outputImg3, cdst1, 0.6 * maxVal, 255, 1);
+        threshold(outputImgAfterGaussianGray, outputImgAfterThreshold, thresholdvalue * maxVal, 255, 1);
 
 
 
@@ -440,9 +489,9 @@ int main(int argc, char **argv) {
 
 
         /// Gradient X
-        Sobel(cdst1, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT); 
+        Sobel(outputImgAfterThreshold, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT); 
         /// Gradient Y
-        Sobel(cdst1, grad_y, ddepth, 0, 1, 1, scale, delta, BORDER_DEFAULT); 
+        Sobel(outputImgAfterThreshold, grad_y, ddepth, 0, 1, 1, scale, delta, BORDER_DEFAULT); 
 
         convertScaleAbs(grad_x, abs_grad_x);
         convertScaleAbs(grad_y, abs_grad_y);
@@ -462,7 +511,7 @@ int main(int argc, char **argv) {
 
 
 
-        Rect Rec1(0, firstpicsize+secondpicsize, 640, thirdpicsize);
+        Rect Rec1(0, firstpicsize+secondpicsize, widthofframe, thirdpicsize);
         //        line(inputImg, Point(0,99),Point(640,99),Scalar(0,255,0),1,CV_AA);
         //   rectangle(inputImg, Rec1, Scalar(255), 1, 8, 0);
         //    rectangle(inputImg, Point(0, 0),Point(640, 99), Scalar(255), 1, 8, 0);
@@ -478,11 +527,11 @@ int main(int argc, char **argv) {
 
 
 
-        vector<Vec2f> lines1;
-        HoughLines(gradSmall, lines1, 2, CV_PI, 2, 0, 0);
+        vector<Vec2f> lines;
+        HoughLines(gradSmall, lines, 2, CV_PI, 2, 0, 0);
 
-        for (size_t i = 0; i < lines1.size(); i++) {
-            float rho = lines1[i][0], theta = lines1[i][1];
+        for (size_t i = 0; i < lines.size(); i++) {
+            float rho = lines[i][0], theta = lines[i][1];
             Point pt1, pt2;
             double a = cos(theta), b = sin(theta);
             double x0 = a*rho, y0 = b*rho;
@@ -515,7 +564,7 @@ int main(int argc, char **argv) {
 
         for (int i = 0; i < redlines.size(); i++) {
             if (i <= redlines.size() - 2) {
-                if (redlines.at(i) - redlines.at(i + 1) >= 50) {
+                if (redlines.at(i) - redlines.at(i + 1) >= (widthofframe/12.8)) {
                     if (rightLaneIndexFinish == 0) {
                         rightLaneIndexFinish = redlines.at(i);
                         middleLaneIndexStart = redlines.at(i + 1);
@@ -541,10 +590,10 @@ int main(int argc, char **argv) {
 
         //1. Bild         
 
-        vector<Vec4i> lines1P;
-        HoughLinesP(grad, lines1P, 2, CV_PI / 180, 2, 2, 2);
-        for (size_t i = 0; i < lines1P.size(); i++) {
-            Vec4i l = lines1P[i];
+        vector<Vec4i> linesP;
+        HoughLinesP(grad, linesP, 2, CV_PI / 180, 2, 2, 2);
+        for (size_t i = 0; i < linesP.size(); i++) {
+            Vec4i l = linesP[i];
             //            circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
             circle(inputImg, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             circle(inputImg, Point(l[2], l[3]), 1, Scalar(0, 255, 0), 5, CV_AA, 0);
@@ -635,16 +684,72 @@ int main(int argc, char **argv) {
        
 
         vector<Point> rightLanePoints = rectangle(inputImg, rightLaneStart, houghpoints, "right");
-        curvefitting(rightLanePoints, inputImg, inputImgIPM, "blue", ipm);
+        double *p  = curvefitting(rightLanePoints, inputImg, inputImgIPM, "red", ipm);
+
+
+
+    std_msgs::Float32MultiArray arrayRight;
+   arrayRight.data.clear();
+		//for loop, pushing data in the size of the array
+		for (int i = 0; i < 3; i++)
+		{
+			//assign array a random number between 0 and 255.
+			arrayRight.data.push_back(p[i]);
+		}
+    
+    rightLane_pub.publish(arrayRight);
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
         vector<Point> middleLanePoints = rectangle(inputImg, middleLaneStart, houghpoints, "middle");
-        curvefitting(middleLanePoints, inputImg, inputImgIPM, "red", ipm);
+        double *s  = curvefitting(middleLanePoints, inputImg, inputImgIPM, "green", ipm);
+        
+        
+        
+        std_msgs::Float32MultiArray arrayMiddle;
+   arrayMiddle.data.clear();
+		//for loop, pushing data in the size of the array
+		for (int i = 0; i < 3; i++)
+		{
+			//assign array a random number between 0 and 255.
+			arrayMiddle.data.push_back(s[i]);
+		}
+    
+    middleLane_pub.publish(arrayMiddle);
+
+
+    
+    
+    
+    
 
         vector<Point> leftLanePoints = rectangle(inputImg, leftLaneStart, houghpoints, "left");
-        curvefitting(leftLanePoints, inputImg, inputImgIPM, "green", ipm);
+        double *t  = curvefitting(leftLanePoints, inputImg, inputImgIPM, "blue", ipm);
 
 
+  std_msgs::Float32MultiArray arrayLeft;
+   arrayLeft.data.clear();
+		//for loop, pushing data in the size of the array
+		for (int i = 0; i < 3; i++)
+		{
+			//assign array a random number between 0 and 255.
+			arrayLeft.data.push_back(s[i]);
+		}
+    
+    leftLane_pub.publish(arrayLeft);
 
+    ros::spinOnce();
+
+    loop_rate.sleep();
 
 
 
