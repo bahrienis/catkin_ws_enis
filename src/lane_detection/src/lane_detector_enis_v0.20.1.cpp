@@ -32,6 +32,14 @@
 using namespace std;
 using namespace cv;
 
+    int numberoftheframe = 0;
+    int widthofframe = 640;
+    int heightofframe = 480;
+    int fpsvalue = 30;
+    
+    
+    
+
 void curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, string color, IPM ipm) {
     int i, j, k, n, N;
     cout.precision(4); //set precision
@@ -225,7 +233,7 @@ int main(int argc, char **argv) {
 
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
-    cap.set(CV_CAP_PROP_FPS, 30); //change the frame value
+    cap.set(CV_CAP_PROP_FPS, fpsvalue); //change the frame value
 
     if (!cap.isOpened()) //if not success, exit program
     {
@@ -242,9 +250,7 @@ int main(int argc, char **argv) {
     // namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
 
 
-    int sayi = 0;
-    int widthofframe = 640;
-    int heightofframe = 480;
+
 
 
 
@@ -305,9 +311,7 @@ int main(int argc, char **argv) {
 
         Mat inputImg;
         Mat inputImgIPM;
-        Mat inputImgGray;
         Mat outputImg;
-        Mat outputImg1;
         Mat outputImg2;
         Mat cdst1;
         Mat grad;
@@ -354,13 +358,13 @@ int main(int argc, char **argv) {
 
 
 
-             if (sayi >= 294) {
-                 sayi = 0;
+             if (numberoftheframe >= 294) {
+                 numberoftheframe = 0;
              }
 
-             std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(sayi) + ".jpg";
-             sayi++;
-             cout << "frame : " << sayi << endl;
+             std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(numberoftheframe) + ".jpg";
+             numberoftheframe++;
+             cout << "frame : " << numberoftheframe << endl;
          
 
 
@@ -436,9 +440,9 @@ int main(int argc, char **argv) {
 
 
         /// Gradient X
-        Sobel(cdst1, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT); //inputImgGray i src ile değiştir
+        Sobel(cdst1, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT); 
         /// Gradient Y
-        Sobel(cdst1, grad_y, ddepth, 0, 1, 1, scale, delta, BORDER_DEFAULT); //inputImgGray i src ile değiştir
+        Sobel(cdst1, grad_y, ddepth, 0, 1, 1, scale, delta, BORDER_DEFAULT); 
 
         convertScaleAbs(grad_x, abs_grad_x);
         convertScaleAbs(grad_y, abs_grad_y);
