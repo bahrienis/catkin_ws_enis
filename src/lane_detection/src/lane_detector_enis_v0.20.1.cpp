@@ -142,32 +142,34 @@ double * curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, s
     for (i = 0; i < n; i++)
         cout << " + (" << a[i] << ")" << "x´" << i;
     cout << "\n";
+    
+    for(int i=0;i < (degreeofthepolynom + 1); i++){
 
-	r[0] = a[0];
-	r[1] = a[1];
-	r[2] = a[2];
-	
-	return r;
+	r[i] = a[i];
+
+}
 	
 	
-    int p, r;
-    for (p = 0; p < heightofframe; p++) {
-        r = a[0] + a[1] * p + a[2] * p * p;
-        if (r >= 0 && r <= widthofframe) {
+	
+    int curvey, curvex;
+    for (curvey = 0; curvey < heightofframe; curvey++) {
+        curvex = a[0] + a[1] * curvey + a[2] * curvey * curvey;
+        if (curvex >= 0 && curvex <= widthofframe) {
             if (color == "red") {
-                circle(inputImgIPM, ipm.applyHomography(Point(r, p)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
-                circle(inputImg, Point(r, p), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImgIPM, ipm.applyHomography(Point(curvex, curvey)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImg, Point(curvex, curvey), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
 
             } else if (color == "blue") {
-                circle(inputImgIPM, ipm.applyHomography(Point(r, p)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
-                circle(inputImg, Point(r, p), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImgIPM, ipm.applyHomography(Point(curvex, curvey)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(curvex, curvey), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
             } else if (color == "green") {
-                circle(inputImgIPM, ipm.applyHomography(Point(r, p)), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
-                circle(inputImg, Point(r, p), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                circle(inputImgIPM, ipm.applyHomography(Point(curvex, curvey)), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                circle(inputImg, Point(curvex, curvey), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             }
         }
     }
 
+return r;
 
 }
 
@@ -690,10 +692,8 @@ int main(int argc, char **argv) {
 
     std_msgs::Float32MultiArray arrayRight;
    arrayRight.data.clear();
-		//for loop, pushing data in the size of the array
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < (degreeofthepolynom + 1); i++)
 		{
-			//assign array a random number between 0 and 255.
 			arrayRight.data.push_back(p[i]);
 		}
     
@@ -717,10 +717,10 @@ int main(int argc, char **argv) {
         
         std_msgs::Float32MultiArray arrayMiddle;
    arrayMiddle.data.clear();
-		//for loop, pushing data in the size of the array
-		for (int i = 0; i < 3; i++)
+		
+		for (int i = 0; i < (degreeofthepolynom + 1); i++)
 		{
-			//assign array a random number between 0 and 255.
+			
 			arrayMiddle.data.push_back(s[i]);
 		}
     
@@ -738,10 +738,10 @@ int main(int argc, char **argv) {
 
   std_msgs::Float32MultiArray arrayLeft;
    arrayLeft.data.clear();
-		//for loop, pushing data in the size of the array
-		for (int i = 0; i < 3; i++)
+		
+		for (int i = 0; i < (degreeofthepolynom + 1); i++)
 		{
-			//assign array a random number between 0 and 255.
+			
 			arrayLeft.data.push_back(s[i]);
 		}
     
