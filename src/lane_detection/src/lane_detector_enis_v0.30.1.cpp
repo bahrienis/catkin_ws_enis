@@ -1,4 +1,5 @@
 // Autor : Bahri Enis Demirtel
+//IPM + Hough Transformation + KNN + Curve Fitting
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 #include <cv_bridge/cv_bridge.h>
@@ -37,7 +38,7 @@
 
 
 
-//IPM + Hough Transformation + KNN + Curve Fitting
+
 
 
 
@@ -309,10 +310,10 @@ int main(int argc, char **argv) {
 
 
 
-    IPM ipm(Size(dWidth, dHeight), Size(dWidth, dHeight), origPoints, dstPoints);
+    IPM ipm(Size(widthofframe, heightofframe), Size(widthofframe, heightofframe), origPoints, dstPoints);
 
 
-    IPM backward_ipm(Size(dWidth, dHeight), Size(dWidth, dHeight), dstPoints, origPoints);
+    IPM backward_ipm(Size(widthofframe, heightofframe), Size(widthofframe, heightofframe), dstPoints, origPoints);
 
 
 
@@ -423,9 +424,7 @@ int main(int argc, char **argv) {
 
 
 
-Mat inputImg1;
-inRange(inputImg,Scalar(50,100,50), Scalar(150,250,100),inputImg1);
-imshow("Input1", inputImg1);
+
 
 
 
