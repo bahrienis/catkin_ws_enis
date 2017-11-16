@@ -409,20 +409,20 @@ int main(int argc, char **argv) {
 
 
 
-             if (numberoftheframe >= 294) {
+ /*            if (numberoftheframe >= 294) {
                  numberoftheframe = 0;
              }
 
              std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame" + std::to_string(numberoftheframe) + ".jpg";
              numberoftheframe++;
              cout << "frame : " << numberoftheframe << endl;
-         
+ */        
 
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
- //       std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame38.jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame38.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";

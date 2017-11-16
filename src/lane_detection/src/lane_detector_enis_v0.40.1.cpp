@@ -46,7 +46,7 @@ int heightofframe = 480;
 int widthofframe = 640;
 int degreeofthepolynom = 2;
 int fpsvalue = 30;
-double thresholdvalue = 0.9;
+double thresholdvalue = 0.6;
 double r[3];
 
 

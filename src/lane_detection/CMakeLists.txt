@@ -138,7 +138,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/lane_detector_enis_v0.40.1.cpp)
+add_executable(${PROJECT_NAME}_node src/deneme3.cpp)
 ##add_executable(${PROJECT_NAME}_node src/polynomial_fit.cpp)
 
 
