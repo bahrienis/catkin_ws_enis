@@ -555,32 +555,32 @@ roscpp_generate_messages_nodejs/fast:
 	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make lane_detection/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
-src/Method1.o: src/Method1.cpp.o
+src/Method2.o: src/Method2.cpp.o
 
-.PHONY : src/Method1.o
+.PHONY : src/Method2.o
 
 # target to build an object file
-src/Method1.cpp.o:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/Method1.cpp.o
-.PHONY : src/Method1.cpp.o
+src/Method2.cpp.o:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/Method2.cpp.o
+.PHONY : src/Method2.cpp.o
 
-src/Method1.i: src/Method1.cpp.i
+src/Method2.i: src/Method2.cpp.i
 
-.PHONY : src/Method1.i
+.PHONY : src/Method2.i
 
 # target to preprocess a source file
-src/Method1.cpp.i:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/Method1.cpp.i
-.PHONY : src/Method1.cpp.i
+src/Method2.cpp.i:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/Method2.cpp.i
+.PHONY : src/Method2.cpp.i
 
-src/Method1.s: src/Method1.cpp.s
+src/Method2.s: src/Method2.cpp.s
 
-.PHONY : src/Method1.s
+.PHONY : src/Method2.s
 
 # target to generate assembly for a file
-src/Method1.cpp.s:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/Method1.cpp.s
-.PHONY : src/Method1.cpp.s
+src/Method2.cpp.s:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/Method2.cpp.s
+.PHONY : src/Method2.cpp.s
 
 # Help Target
 help:
@@ -621,9 +621,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... src/Method1.o"
-	@echo "... src/Method1.i"
-	@echo "... src/Method1.s"
+	@echo "... src/Method2.o"
+	@echo "... src/Method2.i"
+	@echo "... src/Method2.s"
 .PHONY : help
 
 

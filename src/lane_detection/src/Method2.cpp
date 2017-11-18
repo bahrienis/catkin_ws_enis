@@ -1,4 +1,5 @@
 // Autor : Bahri Enis Demirtel
+//Method 2 and Method 2b
 //IPM + Hough Transformation + KNN + Curve Fitting
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
@@ -28,15 +29,7 @@
 #include "std_msgs/MultiArrayDimension.h"
 #include "std_msgs/Float32MultiArray.h"
 
-
-
-
-
-
-
-
 using namespace std;
-//using namespace cv;
 
 int heightofframe = 480;
 int widthofframe = 640;
@@ -44,19 +37,14 @@ int degreeofthepolynom = 2;
 int fpsvalue = 30;
 double thresholdvalue = 0.91;
 double r[3];
-int firstpicsize = 2*heightofframe/5;
-int framenumber = 0;
-
-
-
+int firstpicsize = 2 * heightofframe / 5;
 
 double * curvefitting(int numofHoughpoints,
         vector<double> x, vector<double> y, Mat inputImg, string color) {
     int i, j, k, n, N;
     cout.precision(4); //set precision
     cout.setf(ios::fixed);
-    N = numofHoughpoints; 
-
+    N = numofHoughpoints;
     n = degreeofthepolynom;
     double X[2 * n + 1];
     for (i = 0; i < 2 * n + 1; i++) {
@@ -77,8 +65,8 @@ double * curvefitting(int numofHoughpoints,
     for (i = 0; i <= n; i++)
         B[i][n + 1] = Y[i];
     n = n + 1;
-    
-     for (i = 0; i < n; i++)
+
+    for (i = 0; i < n; i++)
         for (k = i + 1; k < n; k++)
             if (B[i][i] < B[k][i])
                 for (j = 0; j <= n; j++) {
@@ -106,21 +94,11 @@ double * curvefitting(int numofHoughpoints,
     for (i = 0; i < n; i++)
         cout << " + (" << a[i] << ")" << "x´" << i;
     cout << "\n";
-    
-    
-    
-        for(int i=0;i < (degreeofthepolynom + 1); i++){
+    for (int i = 0; i < (degreeofthepolynom + 1); i++) {
+        r[i] = a[i];
+    }
 
-	r[i] = a[i];
-
-}
-
-
-
-
-
-
-int curvey, curvex;
+    int curvey, curvex;
     for (curvey = 0; curvey < heightofframe; curvey++) {
         curvex = a[0] + a[1] * curvey + a[2] * curvey * curvey;
         if (curvex >= 0 && curvex <= widthofframe) {
@@ -133,17 +111,8 @@ int curvey, curvex;
             }
         }
     }
-
-return r;
-
-
-
+    return r;
 }
-
-
-
-
-
 
 void detectDirection(vector<double> x_coord_vect, bool& direction_detected, int& direction) {
     int last_x = x_coord_vect.back();
@@ -156,17 +125,14 @@ void detectDirection(vector<double> x_coord_vect, bool& direction_detected, int&
 
 void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, string name, vector<Point2f> alldetectedpoints, int starting_x, int starting_y,
         int step, flann::Index& kdtree, int numOfPoints, int dWidth, int dHeight, Mat inputImg) {
-//    cout << "Inside getLinePoints for " << name << endl;
     bool direction_detected = false;
     int direction = 0;
     int current_x = starting_x;
 
     for (int current_y = starting_y; current_y > 0; current_y -= step) {
         if (x_coord_vect.size() > 5) {
-
             detectDirection(x_coord_vect, direction_detected, direction);
             if (direction_detected) {
- //               cout << "direction for " << name << " is " << direction << endl;
             }
         }
         std::vector<float> query;
@@ -182,27 +148,21 @@ void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, s
         for (int i = 0; i < indices.size(); i++) {
             int cur_x = alldetectedpoints.at(indices.at(i)).x;
             int cur_y = alldetectedpoints.at(indices.at(i)).y;
-
             bool is_x_coord_valid = !direction_detected || (direction_detected && direction == 1 ? cur_x - x_coord_vect.back() > 0 : cur_x - x_coord_vect.back() < 0);
-            bool is_y_coord_valid = y_coord_vect.size() == 0 || abs(cur_y - y_coord_vect.back()) < widthofframe/6.4;
+            bool is_y_coord_valid = y_coord_vect.size() == 0 || abs(cur_y - y_coord_vect.back()) < widthofframe / 6.4;
 
             if (is_x_coord_valid && is_y_coord_valid) {
-              //if (true) {
                 k_nearest_x.push_back(cur_x);
                 k_nearest_y.push_back(cur_y);
             }
         }
-
-
         double nextPointX = accumulate(k_nearest_x.begin(), k_nearest_x.end(), 0.0) / k_nearest_x.size();
         double nextPointY = accumulate(k_nearest_y.begin(), k_nearest_y.end(), 0.0) / k_nearest_y.size();
-
-
         if (nextPointX > 0 && nextPointX < dWidth && nextPointY > 0 && nextPointY < dHeight) {
 
             x_coord_vect.push_back(nextPointX);
             y_coord_vect.push_back(nextPointY);
- //           cout << "Point in " << name << ": [" << nextPointX << "," << nextPointY << "]" << endl;
+
             if (name == "left")
                 circle(inputImg, Point(nextPointX, nextPointY), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             else if (name == "mid")
@@ -217,42 +177,19 @@ void getLinePoints(vector<double>& x_coord_vect, vector<double>& y_coord_vect, s
 }
 
 int main(int argc, char **argv) {
-
     //SetUP ROS.
     ros::init(argc, argv, "lane_detector_enis");
-    
-    
-             
- 
-   ros::NodeHandle n;
-    
-    
-   ros::Publisher rightLane_pub = n.advertise<std_msgs::Float32MultiArray>("rightLane", 1000);
-   ros::Publisher middleLane_pub = n.advertise<std_msgs::Float32MultiArray>("middleLane", 1000);
-   ros::Publisher leftLane_pub = n.advertise<std_msgs::Float32MultiArray>("leftLane", 1000);
-
-  ros::Rate loop_rate(30);
-
- 
- 
-
-    //CV_CAP_ANY == 0 turns on the 2. camera
+    ros::NodeHandle n;
+    ros::Publisher rightLane_pub = n.advertise<std_msgs::Float32MultiArray>("rightLane", 1000);
+    ros::Publisher middleLane_pub = n.advertise<std_msgs::Float32MultiArray>("middleLane", 1000);
+    ros::Publisher leftLane_pub = n.advertise<std_msgs::Float32MultiArray>("leftLane", 1000);
+    ros::Rate loop_rate(30);
 
     VideoCapture cap(CV_CAP_ANY); // OPENT THE VIDEO CAMERO NO. 0
 
-	cap.set(CV_CAP_PROP_FRAME_WIDTH,widthofframe);
-	cap.set(CV_CAP_PROP_FRAME_HEIGHT,heightofframe);
+    cap.set(CV_CAP_PROP_FRAME_WIDTH, widthofframe);
+    cap.set(CV_CAP_PROP_FRAME_HEIGHT, heightofframe);
     cap.set(CV_CAP_PROP_FPS, fpsvalue); //change the frame value
-    
-    
-    
-    
-    
-    
-   
-    
-    
-    
 
     if (!cap.isOpened()) //if not success, exit program
     {
@@ -263,60 +200,45 @@ int main(int argc, char **argv) {
     double dHeight = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
     double dFrame = cap.get(CV_CAP_PROP_FPS);
 
-
     cout << "FPS value is " << dFrame << endl;
     cout << "Frame size: " << dWidth << " x " << dHeight << endl;
 
-    // namedWindow("MyVideo", CV_WINDOW_AUTOSIZE); //create a window called "MyVideo"
+    int number = 0;
 
-
-    int sayi = 0;
-    
     vector<double> left_line_a0;
     vector<double> left_line_a1;
     vector<double> left_line_a2;
-    
+
     vector<double> middle_line_a0;
     vector<double> middle_line_a1;
     vector<double> middle_line_a2;
-    
+
     vector<double> right_line_a0;
     vector<double> right_line_a1;
     vector<double> right_line_a2;
-
-
 
     // The 4-points at the input image	
     vector<Point2f> origPoints;
     origPoints.push_back(Point2f(0, heightofframe));
     origPoints.push_back(Point2f(widthofframe, heightofframe));
-    origPoints.push_back(Point2f(widthofframe, heightofframe/6));
-    origPoints.push_back(Point2f(0, heightofframe/6));
+    origPoints.push_back(Point2f(widthofframe, heightofframe / 6));
+    origPoints.push_back(Point2f(0, heightofframe / 6));
 
     // The 4-points correspondences in the destination image
     vector<Point2f> dstPoints;
-    dstPoints.push_back(Point2f(widthofframe / 2 - (widthofframe/12.8), heightofframe));
-    dstPoints.push_back(Point2f(widthofframe / 2 + (widthofframe/12.8), heightofframe));
+    dstPoints.push_back(Point2f(widthofframe / 2 - (widthofframe / 12.8), heightofframe));
+    dstPoints.push_back(Point2f(widthofframe / 2 + (widthofframe / 12.8), heightofframe));
     dstPoints.push_back(Point2f(widthofframe, 0));
     dstPoints.push_back(Point2f(0, 0));
 
     // IPM object
-
-
-
     IPM ipm(Size(widthofframe, heightofframe), Size(widthofframe, heightofframe), origPoints, dstPoints);
-
-
     IPM backward_ipm(Size(widthofframe, heightofframe), Size(widthofframe, heightofframe), dstPoints, origPoints);
-
-
 
     // Main loop
     int frameNum = 0;
-    
-  
-    for (;;) {
 
+    for (;;) {
 
         Mat inputImg;
         Mat outputImg;
@@ -337,38 +259,27 @@ int main(int argc, char **argv) {
         Mat grad_x, grad_y;
         Mat abs_grad_x, abs_grad_y;
 
-
-
-
-
         std::vector<Point2f> alldetectedpoints;
-
 
         int numOfRedLinesUp = 0;
         int findredlinesarray[640];
 
-
-
-      
-
         clock_t begin = clock();
 
+        /*       if (number >= 1520) {
+                   number = 0;
+               }
 
+               std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame" + std::to_string(number) + ".jpg";
+               number++;
+               cout << "frame : " << number << endl;
 
- /*       if (sayi >= 1520) {
-            sayi = 0;
-        }
-
-        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame" + std::to_string(sayi) + ".jpg";
-        sayi++;
-        cout << "frame : " << sayi << endl;
-
-*/
+         */
 
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
-//          std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
-		//    std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame1470.jpg";
+                  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+        //    std::string filename = "/home/enis/Desktop/Masterarbeit/photos_16.10.2017_lighton/frame1470.jpg";
 
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
@@ -376,72 +287,48 @@ int main(int argc, char **argv) {
         //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_lighton/frame97.jpg";
 
 
-/*        inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
-        if (inputImg.empty()) {
-            cout << "can not open " << filename << endl;
-            return -1;
-        }
-*/
+                inputImg = imread(filename, CV_LOAD_IMAGE_COLOR);
+                if (inputImg.empty()) {
+                    cout << "can not open " << filename << endl;
+                    return -1;
+                }
+         
         printf("FRAME #%6d ", frameNum);
         fflush(stdout);
         frameNum++;
 
-
-             bool bSuccess = cap.read(inputImg);
-
-
-
-
-
-
-
-
-
+ //       bool bSuccess = cap.read(inputImg);
 
         ipm.applyHomography(inputImg, outputImg);
         ipm.drawPoints(origPoints, inputImg);
 
-
         imshow("Input", inputImg);
-        
-        
         imshow("Output", outputImg);
 
-
-
-
-
         GaussianBlur(outputImg, outputImgAfterGaussian, Size(3, 3), 0, 0, BORDER_DEFAULT); //GaussianBlur( src, src, Size(3,3), 0, 0, BORDER_DEFAULT );		 
-
         cvtColor(outputImgAfterGaussian, outputImgAfterGaussianGray, CV_BGR2GRAY); // Bunu sil
-
         minMaxLoc(outputImgAfterGaussianGray, &minVal, &maxVal, &minLoc, &maxLoc);
 
         cout << "min val : " << minVal << endl;
         cout << "max val: " << maxVal << endl;
-  
-        
+
         threshold(outputImgAfterGaussianGray, outputImgAfterThreshold, thresholdvalue * maxVal, 255, 0);
 
-        
         /// Gradient X
-        Sobel(outputImgAfterThreshold, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT); 
+        Sobel(outputImgAfterThreshold, grad_x, ddepth, 1, 0, 1, scale, delta, BORDER_DEFAULT);
         /// Gradient Y
-        Sobel(outputImgAfterThreshold, grad_y, ddepth, 0, 1, 1, scale, delta, BORDER_DEFAULT); 
+        Sobel(outputImgAfterThreshold, grad_y, ddepth, 0, 1, 1, scale, delta, BORDER_DEFAULT);
 
         convertScaleAbs(grad_x, abs_grad_x);
         convertScaleAbs(grad_y, abs_grad_y);
 
         addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0, grad);
 
-
         cvtColor(grad, gradgray, CV_GRAY2BGR);
 
-        Rect Rec1(0, heightofframe-firstpicsize, widthofframe, firstpicsize);
-
+        Rect Rec1(0, heightofframe - firstpicsize, widthofframe, firstpicsize);
         gradSmall = grad(Rec1);
         cvtColor(gradSmall, gradcolorSmall, CV_GRAY2BGR);
-
 
         vector<Vec2f> lines1;
         HoughLines(gradSmall, lines1, 2, CV_PI, 2, 0, 0);
@@ -458,9 +345,7 @@ int main(int argc, char **argv) {
             line(gradcolorSmall, pt1, pt2, Scalar(0, 0, 150), 1, CV_AA);
         }
 
-
-
-        for (int i = widthofframe-1; i >= 0; i--) {
+        for (int i = widthofframe - 1; i >= 0; i--) {
             Vec3b intensity1 = gradcolorSmall.at<Vec3b>(10, i);
             uchar blue1 = intensity1.val[0];
             uchar green1 = intensity1.val[1];
@@ -477,37 +362,30 @@ int main(int argc, char **argv) {
         int leftLineIndex = 0;
 
         for (int i = 0; i < numOfRedLinesUp; i++) {
-            if (findredlinesarray[i] - findredlinesarray[i + 1] > widthofframe/16) {
+            if (findredlinesarray[i] - findredlinesarray[i + 1] > widthofframe / 16) {
                 midLineIndex = i + 1;
                 break;
             }
         }
         if (midLineIndex > 0) {
             for (int i = midLineIndex; i < numOfRedLinesUp; i++) {
-                if (findredlinesarray[i] - findredlinesarray[i + 1] > widthofframe/16) {
+                if (findredlinesarray[i] - findredlinesarray[i + 1] > widthofframe / 16) {
                     leftLineIndex = i + 1;
                     break;
                 }
             }
         }
 
-//        cout << "Right line coord :" << findredlinesarray[rightLineIndex] << endl;
-//        cout << "Middle line coord :" << findredlinesarray[midLineIndex] << endl;
-//        cout << "Left line coord :" << findredlinesarray[leftLineIndex] << endl;
-
         int x_coord_RightLine = findredlinesarray[rightLineIndex];
         int x_coord_MiddleLine = findredlinesarray[midLineIndex];
         int x_coord_LeftLine = findredlinesarray[leftLineIndex];
-
 
         vector<Vec4i> lines1P;
         HoughLinesP(grad, lines1P, 2, CV_PI / 180, 2, 2, 2);
         for (size_t i = 0; i < lines1P.size(); i++) {
             Vec4i l = lines1P[i];
-            //           circle(gradgray, Point(l[0], l[1]), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
             alldetectedpoints.push_back(Point2f(l[0], l[1]));
         }
-
 
         int max_y_forRightLine = 0;
         int max_y_forMiddleLine = 0;
@@ -526,13 +404,6 @@ int main(int argc, char **argv) {
             }
         }
 
-//      cout << "Right Line starting point: " << Point(x_coord_RightLine, max_y_forRightLine) << endl;
-//      cout << "Middle Line starting point: " << Point(x_coord_MiddleLine, max_y_forMiddleLine) << endl;
-//      cout << "Left Line starting point: " << Point(x_coord_LeftLine, max_y_forLeftLine) << endl;
-
-
-
-
         flann::KDTreeIndexParams indexParams;
         flann::Index kdtree(Mat(alldetectedpoints).reshape(1), indexParams);
 
@@ -544,122 +415,53 @@ int main(int argc, char **argv) {
         vector<double> y_middleLine;
         vector<double> x_leftLine;
         vector<double> y_leftLine;
-        
-        
 
         getLinePoints(x_rightLine, y_rightLine, "right", alldetectedpoints, x_coord_RightLine, max_y_forRightLine,
                 step, kdtree, numOfPoints, dWidth, dHeight, gradgray);
 
-
         getLinePoints(x_middleLine, y_middleLine, "mid", alldetectedpoints, x_coord_MiddleLine, max_y_forMiddleLine,
                 step, kdtree, numOfPoints, dWidth, dHeight, gradgray);
 
-
-        if(leftLineIndex>0){
+        if (leftLineIndex > 0) {
             getLinePoints(x_leftLine, y_leftLine, "left", alldetectedpoints, x_coord_LeftLine, max_y_forLeftLine,
                     step, kdtree, numOfPoints, dWidth, dHeight, gradgray);
         }
 
+        double *p = curvefitting(x_rightLine.size(), y_rightLine, x_rightLine, gradgray, "red");
 
-
-  double *p = curvefitting(x_rightLine.size(), y_rightLine, x_rightLine, gradgray, "red");
-
-
-
-
-
-    std_msgs::Float32MultiArray arrayRight;
-   arrayRight.data.clear();
-		for (int i = 0; i < (degreeofthepolynom + 1); i++)
-		{
-			arrayRight.data.push_back(p[i]);
-		}
-    
-    rightLane_pub.publish(arrayRight);
-
-
-
-
-
-     double *s = curvefitting(x_middleLine.size(), y_middleLine, x_middleLine, gradgray, "green");
-
-
-
-
-
-std_msgs::Float32MultiArray arrayMiddle;
-   arrayMiddle.data.clear();
-		
-		for (int i = 0; i < (degreeofthepolynom + 1); i++)
-		{
-			
-			arrayMiddle.data.push_back(s[i]);
-		}
-    
-    middleLane_pub.publish(arrayMiddle);
-    
-    
-    
-    
-    
-        if(leftLineIndex>0){
-        double *t = curvefitting(x_leftLine.size(), y_leftLine, x_leftLine, gradgray, "blue");
-        std_msgs::Float32MultiArray arrayLeft;
-   arrayLeft.data.clear();
-		
-		for (int i = 0; i < (degreeofthepolynom + 1); i++)
-		{
-			
-			arrayLeft.data.push_back(s[i]);
-		}
-    
-    leftLane_pub.publish(arrayLeft);
+        std_msgs::Float32MultiArray arrayRight;
+        arrayRight.data.clear();
+        for (int i = 0; i < (degreeofthepolynom + 1); i++) {
+            arrayRight.data.push_back(p[i]);
         }
-        
-        
-        
-        
-        
+        rightLane_pub.publish(arrayRight);
 
-    ros::spinOnce();
+        double *s = curvefitting(x_middleLine.size(), y_middleLine, x_middleLine, gradgray, "green");
 
-    loop_rate.sleep();
-    
-    
-    
+        std_msgs::Float32MultiArray arrayMiddle;
+        arrayMiddle.data.clear();
+        for (int i = 0; i < (degreeofthepolynom + 1); i++) {
+            arrayMiddle.data.push_back(s[i]);
+        }
+        middleLane_pub.publish(arrayMiddle);
 
+        if (leftLineIndex > 0) {
+            double *t = curvefitting(x_leftLine.size(), y_leftLine, x_leftLine, gradgray, "blue");
+            std_msgs::Float32MultiArray arrayLeft;
+            arrayLeft.data.clear();
+            for (int i = 0; i < (degreeofthepolynom + 1); i++) {
+                arrayLeft.data.push_back(s[i]);
+            }
+            leftLane_pub.publish(arrayLeft);
+        }
 
-        /*Mat tried;
-         
-               backward_ipm.applyHomography( gradgray, tried );	
-               backward_ipm.drawPoints(origPoints, inputImg );
-                 
-             imshow("try", tried); 
-         */
-         
-         
-         
-         
-
+        ros::spinOnce();
+        loop_rate.sleep();
 
         imshow("Hough", gradcolorSmall);
         imshow("Sobel", gradgray);
 
-
-
-string frame = "/home/pses/Desktop/Outputs/frame" + std::to_string(framenumber) + ".jpg";
-   imwrite(frame, gradgray);
-framenumber++;
-      
-        
-        
-        
-        
-
-
         waitKey(1);
-
-
 
         clock_t end = clock();
         double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
@@ -668,10 +470,3 @@ framenumber++;
     }
     return 0;
 }
-
-
-
-
-
-
-

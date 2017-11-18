@@ -23,10 +23,14 @@
       <df name="src">
         <in>IPM.cpp</in>
         <in>IPM.h</in>
+        <in>Method1.cpp</in>
+        <in>Method2.cpp</in>
+        <in>Method3.cpp</in>
         <in>Sobel_Canny.cpp</in>
         <in>cubic_spline.cpp</in>
         <in>deneme.cpp</in>
         <in>deneme2.cpp</in>
+        <in>deneme3.cpp</in>
         <in>example.cpp</in>
         <in>lane_detector_enis.cpp</in>
         <in>lane_detector_enis_v0.0.1.cpp</in>
