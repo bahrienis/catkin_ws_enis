@@ -55,7 +55,6 @@ Warning--entry type for "OpenCV_About" isn't style-file defined
 --line 355 of file ./bib/literature.bib
 Warning--entry type for "PD10BIMT" isn't style-file defined
 --line 363 of file ./bib/literature.bib
-Warning--I didn't find a database entry for "equationCurve_Fitting2"
 Name 1 in "Radovan Josth, Marketa Dubska, Adam Herout, and Jiri Havel" has a comma at the end for entry Standard_Hough
 while executing---line 1056 of file gerunsrt.bst
 Warning--empty year in Standard_Hough
@@ -87,7 +86,7 @@ Too many commas in name 1 of "Christian Lipski, Björn Scholz, Kai Berger, Christ
 while executing---line 1056 of file gerunsrt.bst
 You've used 34 entries,
             2016 wiz_defined-function locations,
-            673 strings with 10118 characters,
+            671 strings with 10074 characters,
 and the built_in function-call counts, 5399 in all, are:
 = -- 516
 > -- 150

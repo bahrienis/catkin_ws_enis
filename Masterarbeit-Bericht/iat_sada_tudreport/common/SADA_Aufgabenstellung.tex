@@ -1,47 +1,46 @@
 \section*{Aufgabenstellung}
-Im Rahmen des Projektseminars Echtzeitsysteme werden von Studenten The-
-men aus dem Bereich des autonomen Fahrens bearbeitet. Bisher haben sich die
-Fahrzeuge dabei frei im Raum bewegt, und eine Orientierung stützte sich im We-
-sentlichen auf Wände, die über Ultraschallsensoren und 2D- sowie 3D-Kameras
+Im Rahmen des Projektseminars Echtzeitsysteme werden von Studenten Themen aus 
+dem Bereich des autonomen Fahrens bearbeitet. Bisher haben sich die
+Fahrzeuge dabei frei im Raum bewegt, und eine Orientierung stützte sich im 
+Wesentlichen auf Wände, die über Ultraschallsensoren und 2D- sowie 3D-Kameras
 erkannt werden.
 
 Um realistischere Fahrsituationen zu behandeln, soll in Zukunft auf eine Fahrt
 innerhalb von markierten Fahrspuren umgestellt werden. Als mittelfristiges Ziel
-ist die Teilnahme studentischer Gruppen am Carolino-Cup zu nennen. Die Spe-
-zifikation der Fahrspurmarkierungen ist daher den Regeln zum Carolino-Cup zu
+ist die Teilnahme studentischer Gruppen am Carolo-Cup zu nennen. Die Spezifikation 
+der Fahrspurmarkierungen ist daher den Regeln zum Carolo-Cup zu
 entnehmen.
 
 Basisziel dieser Arbeit ist die Implementierung einer geeigneten Methode, die
 anhand von Kameradaten die aktuelle Fahrspur und die Nachbarfahrspur erkennt.
-Dabei ist der Verlauf der Fahrspur in einer geeigneten mathematischen Beschrei-
-bung anzugeben, aus der sich die Breite der Fahrspur, deren Krümmung und Krüm-
-mungsänderung über den Weg bestimmen lässt.
+Dabei ist der Verlauf der Fahrspur in einer geeigneten mathematischen Beschreibung 
+anzugeben, aus der sich die Breite der Fahrspur, deren Krümmung und Krümmungsänderung 
+über den Weg bestimmen lässt.
 
 Damit die Daten sinnvoll weiterverarbeitet werden können, ist eine genügend
 kleine Abtastzeit zu erreichen, und die Totzeit zwischen der Bilderfassung und der
-Ausgabe der Ergebnisse darf nicht zu hoch werden. Zudem sollte bei der in ei-
-nem Zeitschritt bestimmten Fahrspur angegeben werden, wie sich diese in Relation
+Ausgabe der Ergebnisse darf nicht zu hoch werden. Zudem sollte bei der in einem 
+Zeitschritt bestimmten Fahrspur angegeben werden, wie sich diese in Relation
 zur der im Schritt davor bestimmten Fahrspur verhält, um mit einem ortsfesten
 Koordinatensystem rechnen zu können.
 
-Diese Erkennung soll ausreichend robust sein, dass diese in Räumen sicher funk-
-tioniert. D. h. es müssen die typischerweise zu erwartenden Lichtbedingungen be-
-rücksichtigt werden.
+Diese Erkennung soll ausreichend robust sein, dass diese in Räumen sicher funktioniert. 
+D. h. es müssen die typischerweise zu erwartenden Lichtbedingungen berücksichtigt werden.
 
-Eine einfache Fahrzeugführung ist ebenfalls Bestandteil der Arbeit und not-
-wendig, um die Fahrspurerkennung validieren zu können. Diese ist jedoch nicht
-Schwerpunkt der Arbeit. Die Fahrzeugführung soll ein flüssiges, nicht zu langsa-
-mes Fahren innerhalb der erkannten Fahrspur ermöglichen.
+Eine einfache Fahrzeugführung ist ebenfalls Bestandteil der Arbeit und notwendig, um die 
+Fahrspurerkennung validieren zu können. Diese ist jedoch nicht
+Schwerpunkt der Arbeit. Die Fahrzeugführung soll ein flüssiges, nicht zu langsames Fahren 
+innerhalb der erkannten Fahrspur ermöglichen.
 
-Die Verwendung bestehender Lösungen ist möglich und wird \texttt bei entsprechen-
-den guten Ergebnissen \texttt auch positiv bewertet. Damit soll aber eine entsprechende
+Die Verwendung bestehender Lösungen ist möglich und wird \texttt bei entsprechenden guten 
+Ergebnissen \texttt auch positiv bewertet. Damit soll aber eine entsprechende
 Erweiterung wie
 
 \begin{itemize}
 
 \item das Erkennen von Kreuzungen,
 
-\item das Erreichen einer gewissen Robustheit gegenüber fehlerhaften (d. h. unterbrochenen) Markierungen (Hierbei sollte sich an den Regeln des Carolino-Cups orientiert werden.) und
+\item das Erreichen einer gewissen Robustheit gegenüber fehlerhaften (d. h. unterbrochenen) Markierungen (Hierbei sollte sich an den Regeln des Carolo-Cups orientiert werden.) und
 
 \item das Erkennen von Schildern
 

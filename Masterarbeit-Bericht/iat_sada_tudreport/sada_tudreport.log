@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  2 NOV 2017 09:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.9.8)  18 NOV 2017 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1385,12 +1385,12 @@ ap} </home/enis/.texmf-var/tex/latex/tuddesign/logo/tud_logo.pdf> <./common/rtm
 _mit_schrift.pdf>] [0
 
 ] (./common/SADA_Aufgabenstellung.tex
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 36.
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for TS1+5ch on input line 42.
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 41.
 
 (/home/enis/.texmf-var/tex/latex/tex-tudfonts/softmake/charter/ts15ch.fd
 File: ts15ch.fd 2008/06/23 Fontinst v1.927 font definitions for TS1/5ch.
@@ -1406,10 +1406,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: ./common/IAT_rtm.pdf Graphic file (type pdf)
 
 <use ./common/IAT_rtm.pdf>
-Package pdftex.def Info: ./common/IAT_rtm.pdf used on input line 85.
+Package pdftex.def Info: ./common/IAT_rtm.pdf used on input line 84.
 (pdftex.def)             Requested size: 85.35826pt x 40.82753pt.
 
-Overfull \hbox (2.32098pt too wide) in paragraph at lines 73--87
+Overfull \hbox (2.32098pt too wide) in paragraph at lines 72--86
 []$[]$ $[]$ 
  []
 
@@ -2589,7 +2589,7 @@ public/mathdesign/mdbch/md-chr7v.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/mathdesign/mdbch/md-chr7y.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/mathdesign/mdbch/md-chri7m.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/txfonts/t1xtt.pfb>
-Output written on sada_tudreport.pdf (71 pages, 15060861 bytes).
+Output written on sada_tudreport.pdf (71 pages, 15060830 bytes).
 PDF statistics:
  899 PDF objects out of 1000 (max. 8388607)
  746 compressed objects within 8 object streams
