@@ -22,7 +22,7 @@ opencv2/features2d/features2d.hpp
 iostream
 -
 
-/home/enis/catkin_ws/src/lane_detection/src/Method2.cpp
+/home/enis/catkin_ws/src/lane_detection/src/denemee.cpp
 ros/ros.h
 -
 image_transport/image_transport.h
@@ -35,10 +35,6 @@ opencv2/imgproc/imgproc.hpp
 -
 opencv2/highgui/highgui.hpp
 -
-opencv2/flann/miniflann.hpp
-/home/enis/catkin_ws/src/lane_detection/src/opencv2/flann/miniflann.hpp
-opencv2/flann/flann_base.hpp
-/home/enis/catkin_ws/src/lane_detection/src/opencv2/flann/flann_base.hpp
 iostream
 -
 stdio.h
@@ -55,18 +51,12 @@ termios.h
 -
 opencv2/core/core.hpp
 /home/enis/catkin_ws/src/lane_detection/src/opencv2/core/core.hpp
-cmath
+stdio.h
 -
 ctime
 -
-vector
--
 opencv2/imgcodecs.hpp
 /home/enis/catkin_ws/src/lane_detection/src/opencv2/imgcodecs.hpp
-IPM.h
-/home/enis/catkin_ws/src/lane_detection/src/IPM.h
-IPM.cpp
-/home/enis/catkin_ws/src/lane_detection/src/IPM.cpp
 std_msgs/String.h
 /home/enis/catkin_ws/src/lane_detection/src/std_msgs/String.h
 sstream
@@ -77,6 +67,10 @@ std_msgs/MultiArrayDimension.h
 /home/enis/catkin_ws/src/lane_detection/src/std_msgs/MultiArrayDimension.h
 std_msgs/Float32MultiArray.h
 /home/enis/catkin_ws/src/lane_detection/src/std_msgs/Float32MultiArray.h
+IPM.h
+/home/enis/catkin_ws/src/lane_detection/src/IPM.h
+IPM.cpp
+/home/enis/catkin_ws/src/lane_detection/src/IPM.cpp
 
 /opt/ros/kinetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h
