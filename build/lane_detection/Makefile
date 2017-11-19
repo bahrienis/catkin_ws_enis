@@ -555,32 +555,32 @@ roscpp_generate_messages_nodejs/fast:
 	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make lane_detection/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
-src/denemee.o: src/denemee.cpp.o
+src/denemee3.o: src/denemee3.cpp.o
 
-.PHONY : src/denemee.o
+.PHONY : src/denemee3.o
 
 # target to build an object file
-src/denemee.cpp.o:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee.cpp.o
-.PHONY : src/denemee.cpp.o
+src/denemee3.cpp.o:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee3.cpp.o
+.PHONY : src/denemee3.cpp.o
 
-src/denemee.i: src/denemee.cpp.i
+src/denemee3.i: src/denemee3.cpp.i
 
-.PHONY : src/denemee.i
+.PHONY : src/denemee3.i
 
 # target to preprocess a source file
-src/denemee.cpp.i:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee.cpp.i
-.PHONY : src/denemee.cpp.i
+src/denemee3.cpp.i:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee3.cpp.i
+.PHONY : src/denemee3.cpp.i
 
-src/denemee.s: src/denemee.cpp.s
+src/denemee3.s: src/denemee3.cpp.s
 
-.PHONY : src/denemee.s
+.PHONY : src/denemee3.s
 
 # target to generate assembly for a file
-src/denemee.cpp.s:
-	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee.cpp.s
-.PHONY : src/denemee.cpp.s
+src/denemee3.cpp.s:
+	cd /home/enis/catkin_ws/build && $(MAKE) -f lane_detection/CMakeFiles/lane_detection_node.dir/build.make lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee3.cpp.s
+.PHONY : src/denemee3.cpp.s
 
 # Help Target
 help:
@@ -621,9 +621,9 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... src/denemee.o"
-	@echo "... src/denemee.i"
-	@echo "... src/denemee.s"
+	@echo "... src/denemee3.o"
+	@echo "... src/denemee3.i"
+	@echo "... src/denemee3.s"
 .PHONY : help
 
 

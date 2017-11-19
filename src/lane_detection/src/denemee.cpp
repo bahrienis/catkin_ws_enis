@@ -105,13 +105,16 @@ double * curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, s
             if (color == "red") {
                 circle(inputImgIPM, Point(curvex, curvey), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
                 circle(inputImg, Point(curvex, curvey), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+           
 
             } else if (color == "blue") {
                 circle(inputImgIPM, Point(curvex, curvey), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
                 circle(inputImg, Point(curvex, curvey), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                
             } else if (color == "green") {
                 circle(inputImgIPM, Point(curvex, curvey), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
                 circle(inputImg, Point(curvex, curvey), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                
             }
         }
     }
@@ -254,6 +257,7 @@ int main(int argc, char **argv) {
         Mat grad_x, grad_y;
         Mat abs_grad_x, abs_grad_y;
         Mat gradcolor;
+        Mat gradcolor1;
         Mat gradSmall, gradcolorSmall;
         vector<int> redlines;
         vector<Point> houghpoints;
@@ -327,6 +331,11 @@ int main(int argc, char **argv) {
         gradSmall = grad(Rec1);
         gradcolorSmall = gradcolor(Rec1);
 
+gradcolor1 = gradcolor;
+
+
+ imshow("Sobel color1", gradcolor1);
+ 
         vector<Vec2f> lines;
         HoughLines(gradSmall, lines, 2, CV_PI, 2, 0, 0);
 
@@ -400,8 +409,8 @@ int main(int argc, char **argv) {
         cout << "results middle : " << middleLaneStart << endl;
         cout << "results left : " << leftLaneStart << endl;
 
-        vector<Point> rightLanePoints = rectangle(inputImg, rightLaneStart, houghpoints, "right");
-        double *p = curvefitting(rightLanePoints, inputImg, inputImgIPM, "red", ipm);
+        vector<Point> rightLanePoints = rectangle(gradcolor1, rightLaneStart, houghpoints, "right");
+        double *p = curvefitting(rightLanePoints, gradcolor1, inputImgIPM, "red", ipm);
         std_msgs::Float32MultiArray arrayRight;
         arrayRight.data.clear();
         for (int i = 0; i < (degreeofthepolynom + 1); i++) {
@@ -409,8 +418,8 @@ int main(int argc, char **argv) {
         }
 
         rightLane_pub.publish(arrayRight);
-        vector<Point> middleLanePoints = rectangle(inputImg, middleLaneStart, houghpoints, "middle");
-        double *s = curvefitting(middleLanePoints, inputImg, inputImgIPM, "green", ipm);
+        vector<Point> middleLanePoints = rectangle(gradcolor1, middleLaneStart, houghpoints, "middle");
+        double *s = curvefitting(middleLanePoints, gradcolor1, inputImgIPM, "green", ipm);
         std_msgs::Float32MultiArray arrayMiddle;
         arrayMiddle.data.clear();
         for (int i = 0; i < (degreeofthepolynom + 1); i++) {
@@ -418,8 +427,8 @@ int main(int argc, char **argv) {
         }
         middleLane_pub.publish(arrayMiddle);
 
-        vector<Point> leftLanePoints = rectangle(inputImg, leftLaneStart, houghpoints, "left");
-        double *t = curvefitting(leftLanePoints, inputImg, inputImgIPM, "blue", ipm);
+        vector<Point> leftLanePoints = rectangle(gradcolor1, leftLaneStart, houghpoints, "left");
+        double *t = curvefitting(leftLanePoints, gradcolor1, inputImgIPM, "blue", ipm);
         std_msgs::Float32MultiArray arrayLeft;
         arrayLeft.data.clear();
 
@@ -436,6 +445,7 @@ int main(int argc, char **argv) {
         imshow("Input Image", inputImg);
         imshow("Sobel", grad);
         imshow("Sobel color", gradcolor);
+       
         imshow("IPM", inputImgIPM);
 
         double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;

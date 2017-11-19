@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/enis/catkin_ws/src/lane_detection/src/denemee.cpp" "/home/enis/catkin_ws/build/lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee.cpp.o"
+  "/home/enis/catkin_ws/src/lane_detection/src/denemee3.cpp" "/home/enis/catkin_ws/build/lane_detection/CMakeFiles/lane_detection_node.dir/src/denemee3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
