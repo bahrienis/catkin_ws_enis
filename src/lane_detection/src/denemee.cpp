@@ -41,7 +41,7 @@ double r[3];
 
 double * curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, string color, IPM ipm) {
 
-    int i, j, k, n, N;
+       int i, j, k, n, N;
     cout.precision(4); //set precision
     cout.setf(ios::fixed);
     N = lanePoints.size();
@@ -103,14 +103,14 @@ double * curvefitting(vector<Point> lanePoints, Mat inputImg, Mat inputImgIPM, s
         curvex = a[0] + a[1] * curvey + a[2] * curvey * curvey;
         if (curvex >= 0 && curvex <= widthofframe) {
             if (color == "red") {
-                circle(inputImgIPM, ipm.applyHomography(Point(curvex, curvey)), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
+                circle(inputImgIPM, Point(curvex, curvey), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
                 circle(inputImg, Point(curvex, curvey), 1, Scalar(0, 0, 255), 1, CV_AA, 0);
 
             } else if (color == "blue") {
-                circle(inputImgIPM, ipm.applyHomography(Point(curvex, curvey)), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
+                circle(inputImgIPM, Point(curvex, curvey), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
                 circle(inputImg, Point(curvex, curvey), 1, Scalar(255, 0, 0), 1, CV_AA, 0);
             } else if (color == "green") {
-                circle(inputImgIPM, ipm.applyHomography(Point(curvex, curvey)), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
+                circle(inputImgIPM, Point(curvex, curvey), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
                 circle(inputImg, Point(curvex, curvey), 1, Scalar(0, 255, 0), 1, CV_AA, 0);
             }
         }
@@ -214,12 +214,12 @@ int main(int argc, char **argv) {
     cout << "FPS value is " << dFrame << endl;
     cout << "Frame size: " << dWidth << " x " << dHeight << endl;
 
-    // The 4-points at the input image	
+// The 4-points at the input image	
     vector<Point2f> origPoints;
     origPoints.push_back(Point2f(0, heightofframe));
     origPoints.push_back(Point2f(widthofframe, heightofframe));
-    origPoints.push_back(Point2f(widthofframe, heightofframe / 8));
-    origPoints.push_back(Point2f(0, heightofframe / 8));
+    origPoints.push_back(Point2f(widthofframe, heightofframe / 6));
+    origPoints.push_back(Point2f(0, heightofframe / 6));
 
     // The 4-points correspondences in the destination image
     vector<Point2f> dstPoints;
@@ -279,9 +279,10 @@ int main(int argc, char **argv) {
         numberoftheframe++;
         cout << "frame : " << numberoftheframe << endl;
 */
-        //std::string filename = "/home/enis/Desktop/Masterarbeit/photos_31.08.2017_geradeaus/frame187.jpg";
+        std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
         //  std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame9.jpg";
-               std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+ //              std::string filename = "/home/enis/Desktop/Masterarbeit/photos_04.09.2017/frame152.jpg";
+   //         std::string filename = "/home/enis/Desktop/photos_14.09.2017_lighton/frame467.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/deneme2/frame12.jpg";
         //std::string filename = "/home/enis/Desktop/Masterarbeit/frame0058.jpg";
         //std::string filename = "/home/enis/Desktop/frame12.jpg"; 
@@ -442,6 +443,8 @@ int main(int argc, char **argv) {
         cout << "time : " << 1000 * elapsed_secs << endl;
 
         waitKey(1);
+        
+        
 
     }
 }
